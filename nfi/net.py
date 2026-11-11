@@ -24,9 +24,12 @@ def _key(kind, body):
     return RAW / kind / h[:2] / f"{h}.json.gz"
 
 
-def _post(kind, url, body, cacheable=True):
+def _post(kind, url, body, cacheable=True, force=False):
+    """force=True re-fetches and overwrites a cached answer (used for the last page of a growing history)."""
     path = _key(kind, body)
-    if cacheable and path.exists():
+    if force and OFFLINE:
+        force = False
+    if cacheable and path.exists() and not force:
         return json.loads(gzip.decompress(path.read_bytes()))["response"]
     if OFFLINE:
         raise OfflineMiss(f"not in cache: {kind} {json.dumps(body)[:160]}")
@@ -74,10 +77,27 @@ def view(account, method, args, height):
     return json.loads(bytes(res["result"]).decode())
 
 
-def view_account(account, height):
+def _unknown_account(r):
+    cause = ((r or {}).get("error") or {}).get("cause") or {}
+    return cause.get("name") == "UNKNOWN_ACCOUNT"
+
+
+def account_state(account, height):
+    """view_account result dict; {"amount": "0", "locked": "0"} if the account did not exist yet at that
+    height (a true zero); None if the lookup failed or returned something else (missing, never zero)."""
     r = rpc("query", {"request_type": "view_account", "block_id": height, "account_id": account})
+    if _unknown_account(r):
+        return {"amount": "0", "locked": "0", "status": "not_created"}
     res = r.get("result")
-    return None if not res or "amount" not in res else int(res["amount"])
+    if not res or "amount" not in res or "locked" not in res:
+        return None
+    return {**res, "status": "observed"}
+
+
+def view_account(account, height):
+    """Liquid balance in yoctoNEAR: 0 if the account did not exist yet; None if the lookup failed."""
+    st = account_state(account, height)
+    return None if st is None else int(st["amount"])
 
 
 def block(height):
@@ -85,11 +105,11 @@ def block(height):
     return r.get("result", {}).get("header")
 
 
-def tx_account(account, limit=200, resume=None):
+def tx_account(account, limit=200, resume=None, force=False):
     body = {"account_id": account, "limit": limit, "desc": False}
     if resume:
         body["resume_token"] = resume
-    return _post("tx", TX_URL + "/account", body)
+    return _post("tx", TX_URL + "/account", body, force=force)
 
 
 def tx_details(hashes):

@@ -14,8 +14,9 @@ def collect(heights):
     for d in days:
         h = heights[d]
         bb, parts = buyback_fund(h)
+        hub = view_account(HUB, h)
         out["days"][d] = {"height": h, "pool_accounts": pool_accounts(POOL, h), "total_supply": supply_at(h),
-                          "hub_liquid": (view_account(HUB, h) or 0) / 1e24, "buyback_fund": bb,
+                          "hub_liquid": None if hub is None else hub / 1e24, "buyback_fund": bb,
                           "buyback_parts": parts}
     lo, hi = heights[days[0]], heights[days[-1]]
     starts = epoch_starts(lo, hi)

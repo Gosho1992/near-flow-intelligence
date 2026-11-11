@@ -10,7 +10,7 @@ Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](TH
 
 - NRR's staking accounts held <!--n:nrr_holdings_latest:int-->15,675,077<!--/n--> NEAR, after a peak of <!--n:nrr_peak:int-->17,537,598<!--/n--> NEAR on <!--n:nrr_peak_date:-->2026-10-28<!--/n--> (<!--n:change_since_peak_pct:spct-->-10.62%<!--/n--> since).
 - The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.45%<!--/n--> of Bitwise's published "NEAR in Trust" on every date we have.
-- Since <!--n:window_start:-->2026-09-28<!--/n-->: <!--n:creations_total:int-->17,544,103<!--/n--> NEAR moved into NRR's staking custody and <!--n:redemptions_total:int-->1,949,964<!--/n--> NEAR moved out, in <!--n:events:int-->178<!--/n--> classified transactions across <!--n:attributed_accounts:int-->73<!--/n--> accounts.
+- Since <!--n:window_start:-->2026-09-28<!--/n-->: <!--n:creations_total:int-->17,544,103<!--/n--> NEAR moved into NRR's staking custody and <!--n:redemptions_total:int-->1,949,964<!--/n--> NEAR moved out. Each move is a validated sequence of transactions: <!--n:creations_confirmed_count:int-->74<!--/n--> of <!--n:creations_count:int-->74<!--/n--> creations (hub funding → stake) and <!--n:redemptions_confirmed_count:int-->7<!--/n--> of <!--n:redemptions_count:int-->7<!--/n--> redemptions (unstake → withdraw → back to the custody hub) are confirmed, across <!--n:attributed_accounts:int-->73<!--/n--> accounts.
 - Over the same days the protocol minted <!--n:gross_issuance_total:int-->3,935,425<!--/n--> NEAR and the buyback fund's balance changed by <!--n:buyback_fund_change_total:int-->427,406<!--/n--> NEAR. NRR's custody moves were about <!--n:ratio_abs_custody_to_abs_buyback:x-->46×<!--/n--> the buyback fund's movement — a size comparison, not a claim of market buying or selling.
 - NRR holds <!--n:nrr_share_staked_pct_latest:pct-->2.68%<!--/n--> of all staked NEAR.
 
@@ -21,14 +21,14 @@ Python 3.10+ only. No API key, wallet, paid service or mainnet transaction.
 ```bash
 git clone https://github.com/Gosho1992/near-flow-intelligence && cd near-flow-intelligence
 make data     # rebuild every number offline from the committed chain cache
-make test     # 10 independent checks
+make test     # 18 independent checks
 make serve    # dashboard at http://127.0.0.1:8000
 ```
 
 What to look at, in order:
 
 1. **Do the chain numbers match Bitwise?** Open the dashboard: the dots on the holdings chart are Bitwise's published figures; the line is our reconstruction. `make test` fails if any gap exceeds 1%.
-2. **Where did the NEAR go?** In "Follow the NEAR", pick a redemption: unstake → withdraw → custody hub → next accounts, each with a NearBlocks link and the rule that labels the account.
+2. **Where did the NEAR go?** In "Follow the NEAR", pick a redemption: unstake → withdraw → custody hub → next accounts, each with a NearBlocks link, the rule that labels the account, and how sure the link is (observed, probable, ambiguous or unmatched).
 3. **How big is it?** "How big are these moves?" shows NRR's custody moves next to NEAR minted and the buyback-fund change, daily or cumulative.
 4. **What can't the chain prove?** The dashboard and THESIS.md list it: market trades inside exchanges, cash vs in-kind creations, legal ownership.
 
@@ -65,7 +65,7 @@ data/raw/     cached RPC and transaction-API responses (offline rebuild)
 data/work/    collected chain series
 data/out/     published outputs: daily.csv, events.csv, accounts.csv, traces.json, headline.json
 site/         static dashboard (Chart.js bundled)
-tests/        10 checks
+tests/        18 checks
 ```
 
 ## Disclosure

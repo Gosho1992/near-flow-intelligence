@@ -3,13 +3,18 @@ from .net import tx_account, tx_details, near
 
 
 def account_hashes(account):
+    """All transactions of an account. Full pages are immutable and cached; the last (partial) page is
+    re-fetched on every online run, so a refresh sees transactions made since the previous run."""
     out, resume = [], None
     while True:
         r = tx_account(account, 200, resume)
+        if len(r.get("account_txs", [])) < 200 or not r.get("resume_token"):
+            r = tx_account(account, 200, resume, force=True)
         out += r.get("account_txs", [])
-        resume = r.get("resume_token")
-        if not resume or not r.get("account_txs"):
+        nxt = r.get("resume_token")
+        if not nxt or not r.get("account_txs") or nxt == resume:
             break
+        resume = nxt
     return out
 
 

@@ -1,7 +1,7 @@
 """Attribute NRR custody accounts from the custody hub's transaction history, with evidence.
 
-Rule A (basket account): received principal (> 1,000 NEAR) from the hub AND later called
-deposit_and_stake on a staking pool. Each account gets an evidence record (funding + staking tx).
+Rule A (basket account): received principal (>= 1,000 NEAR) from the hub AND, strictly after that
+funding, itself called deposit_and_stake on the NRR pool. Each account gets an evidence record (funding + staking tx).
 """
 import json
 from .history import account_history
@@ -33,9 +33,52 @@ EXTRA = ["fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
          "508a5b6d2747f3dee3d38d467fadb6376e43723de4fb42e7cb32d1450d6960bd"]   # pass-through / side account seen in traces
 
 
+OTHER_BITWISE_POOLS = ["bitwise_1.poolv1.near", "svrn_bitwise.poolv1.near"]   # other Bitwise products: excluded
+HIGH_MAX_DELAY_H = 168        # funding -> stake within 7 days ...
+HIGH_MAX_GAP = 1.0            # ... and stake within 1 NEAR of the funding (gas, dust) => "high"
+
+
+def apply_rule(out_, histories, pools):
+    """Rule A, as a pure function so it can be tested: an account is attributed only if the hub funded it
+    with >= MIN_PRINCIPAL NEAR and, strictly AFTER that funding, the account itself called deposit_and_stake
+    on one of `pools`. Returns (accounts, rejected)."""
+    candidates = sorted({o["to"] for o in out_ if o["near"] >= MIN_PRINCIPAL})
+    accounts, rejected = [], []
+    for acct in candidates:
+        fundings = sorted((o for o in out_ if o["to"] == acct and o["near"] >= MIN_PRINCIPAL),
+                          key=lambda o: o["height"])
+        stakes = [t for t in histories.get(acct, []) if t["signer"] == acct and t["ok"]
+                  and t["receiver"] in pools and any(a.get("method") == "deposit_and_stake" for a in t["actions"])]
+        pair = None
+        for st in sorted(stakes, key=lambda t: t["height"]):
+            before = [f for f in fundings if f["height"] < st["height"]]
+            if before:
+                pair = (before[-1], st)
+                break
+        if not pair:
+            reason = ("no deposit_and_stake into the NRR pool" if not stakes
+                      else "staked before any hub funding")
+            rejected.append({"account": acct, "reason": reason, "received_near": sum(f["near"] for f in fundings),
+                             "first_funding_tx": fundings[0]["hash"]})
+            continue
+        f, st = pair
+        stake_near = sum(a.get("near", 0) for a in st["actions"] if a.get("method") == "deposit_and_stake")
+        delay_h = (int(st["ts"]) - int(f["ts"])) / 3.6e12
+        gap = f["near"] - stake_near
+        high = delay_h <= HIGH_MAX_DELAY_H and abs(gap) <= HIGH_MAX_GAP
+        accounts.append({
+            "account": acct, "pool": st["receiver"], "rule": "A",
+            "confidence": "high" if high else "medium",
+            "confidence_reason": (f"staked {stake_near:,.2f} NEAR {delay_h:.1f} h after receiving {f['near']:,.2f} "
+                                  f"NEAR from the hub (difference {gap:,.2f} NEAR)"),
+            "funding_tx": f["hash"], "funding_near": f["near"], "funding_height": f["height"],
+            "stake_tx": st["hash"], "stake_near": stake_near, "stake_height": st["height"],
+            "delay_hours": delay_h, "amount_gap_near": gap, "first_height": f["height"]})
+    return accounts, rejected
+
+
 def attribute():
     hist, out_, in_ = hub_transfers()
-    candidates = sorted({o["to"] for o in out_ if o["near"] >= MIN_PRINCIPAL})
     # Histories of the pool(s) and hub contain every stake/unstake/withdraw and every funding/return.
     pool_txs = [t for p in POOLS for t in account_history(p)]
     everything = {t["hash"]: t for t in pool_txs + hist}
@@ -48,24 +91,17 @@ def attribute():
             histories.setdefault(a, []).append(t)
     for a in histories:
         histories[a].sort(key=lambda x: (x["height"], x["hash"]))
-    accounts, others = [], []
-    for acct in candidates:
-        h = histories.get(acct, [])
-        funding = [o for o in out_ if o["to"] == acct and o["near"] >= MIN_PRINCIPAL]
-        stakes = [t for t in h if t["signer"] == acct and t["ok"] and any(
-            a.get("method") == "deposit_and_stake" for a in t["actions"])]
-        if funding and stakes:
-            accounts.append({"account": acct, "pool": stakes[0]["receiver"], "rule": "A",
-                             "confidence": "high: hub funding + deposit_and_stake observed",
-                             "funding_tx": funding[0]["hash"], "funding_near": funding[0]["near"],
-                             "stake_tx": stakes[0]["hash"], "first_height": funding[0]["height"]})
-        else:
-            others.append({"account": acct, "received_near": sum(f["near"] for f in funding),
-                           "staked": bool(stakes), "first_tx": funding[0]["hash"] if funding else None})
+    accounts, rejected = apply_rule(out_, histories, POOLS)
+    # every delegator's own pool transactions (heights), so reward probes can exclude any active account
+    activity = {}
+    for t in pool_txs:
+        if t["receiver"] in POOLS:
+            activity.setdefault(t["signer"], set()).add(t["height"])
     keep = {a["account"] for a in accounts} | set(EXTRA) | {HUB}
-    return {"hub": HUB, "fee_payer": FEE_PAYER, "accounts": accounts, "hub_counterparties_out": others,
+    return {"hub": HUB, "fee_payer": FEE_PAYER, "accounts": accounts, "hub_counterparties_out": rejected,
             "hub_in": in_, "hub_out": out_, "histories": {a: h for a, h in histories.items() if a in keep},
-            "sources": {"pools": POOLS, "extra_accounts": EXTRA}}
+            "pool_activity": {a: sorted(v) for a, v in sorted(activity.items())},
+            "sources": {"pools": POOLS, "extra_accounts": EXTRA, "excluded_pools": OTHER_BITWISE_POOLS}}
 
 
 if __name__ == "__main__":

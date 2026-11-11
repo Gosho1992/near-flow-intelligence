@@ -1,6 +1,6 @@
 """Daily chain series read from NEAR's archival RPC at 00:00 UTC block heights."""
 import datetime as dt
-from .net import rpc, view, view_account, block, near
+from .net import rpc, view, view_account, account_state, block, near
 
 START = dt.date(2026, 9, 25)
 POOL = "bitwise_2.poolv1.near"
@@ -51,10 +51,18 @@ def daily_heights(end=None, head_height=None):
 
 
 def pool_accounts(pool, h):
-    n = view(pool, "get_number_of_accounts", {}, h) or 0
+    """{account: (staked, unstaked, can_withdraw)} or None if any page could not be read (missing, never empty)."""
+    n = view(pool, "get_number_of_accounts", {}, h)
+    if n is None:
+        return None
     rows = []
     for i in range(0, n, 100):
-        rows += view(pool, "get_accounts", {"from_index": i, "limit": 100}, h) or []
+        page = view(pool, "get_accounts", {"from_index": i, "limit": 100}, h)
+        if page is None:
+            return None
+        rows += page
+    if len(rows) != n:
+        return None
     return {r["account_id"]: (near(r["staked_balance"]), near(r["unstaked_balance"]),
                               bool(r.get("can_withdraw", False))) for r in rows}
 
@@ -123,12 +131,13 @@ def validators_stake(next_epoch_start):
 
 
 def locked_sum(accounts, h):
-    """Total stake as the sum of `locked` balances of validator accounts at height h."""
+    """Total stake as the sum of `locked` balances of validator accounts at height h; None if any lookup failed."""
     tot = 0
     for a in accounts:
-        r = rpc("query", {"request_type": "view_account", "block_id": h, "account_id": a}).get("result")
-        if r and "locked" in r:
-            tot += int(r["locked"])
+        st = account_state(a, h)
+        if st is None:
+            return None
+        tot += int(st["locked"])
     return tot / 1e24
 
 
@@ -138,9 +147,10 @@ def buyback_fund(h):
         native = view_account(a, h)
         w = view("intents.near", "mt_balance_of", {"account_id": a, "token_id": WNEAR}, h)
         native_n = near(native) if native is not None else None
-        w_n = near(w) if w is not None else 0.0
+        w_n = near(w) if w is not None else None          # a failed wNEAR lookup is missing, not zero
         parts[a] = {"native": native_n, "wnear_in_intents": w_n}
-        if native_n is None:
-            return None, parts
-        total += native_n + w_n
+        if native_n is None or w_n is None:
+            total = None
+        if total is not None:
+            total += native_n + w_n
     return total, parts
