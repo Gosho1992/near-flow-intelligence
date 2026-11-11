@@ -281,7 +281,7 @@ def build():
 def rnd(x):
     """Round floats to 6 decimals so outputs are identical across Python versions and platforms."""
     if isinstance(x, float):
-        return round(x, 6)
+        return round(x, 6) + 0.0   # + 0.0 also turns -0.0 into 0.0
     if isinstance(x, dict):
         return {k: rnd(v) for k, v in x.items()}
     if isinstance(x, list):
