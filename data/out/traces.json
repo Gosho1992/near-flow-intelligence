@@ -1,0 +1,4950 @@
+[
+ {
+  "account": "2230b37461c768dba66d256f706c7da8022a3569fd92010a26a1990106ae0b51",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "BXU5td5bxg53pE9dKbrU4R4vSr5s47kitkJtm8WUCfzx",
+    "height": 219857761,
+    "near": 0.042499999999999996,
+    "time": "2026-10-13 19:17 UTC",
+    "ts": 1791919026476793897
+   },
+   {
+    "from": "466222f1d229ca75ae9b4c82202e0e0b2fc3f6bdbdbac3704e8bf1808baa6093",
+    "from_label": "exchange-style wallet (heuristic: 10,447 transactions)",
+    "hash": "FTbmM8wdfyGdbY3TbLdJXSMCQDY3BoHwGjDJEmjAUsKy",
+    "height": 219852204,
+    "near": 939744.1590328799,
+    "time": "2026-10-13 18:22 UTC",
+    "ts": 1791915732609300298
+   },
+   {
+    "from": "25ab96ddd0d9a8e0ab48b45c2ef7473a83c4ff7e49239b46613b3d688e024731",
+    "from_label": "exchange-style wallet (heuristic: 224,464 transactions)",
+    "hash": "Hh7QWudXuuAHCLqTxuKVkb6ZeQRDMMWs6GDcmTz9sCZs",
+    "height": 219837244,
+    "near": 469898.44865388,
+    "time": "2026-10-13 15:53 UTC",
+    "ts": 1791906782922762212
+   }
+  ],
+  "kind": "creation",
+  "near": 1827321.3132738501,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "FfscLX4SMjVwGD9RBtXvP7mQpkoaVeBdzHmzhC4Ejfyb",
+    "height": 219858260,
+    "near": 1827321.3632738502,
+    "time": "2026-10-13 19:22 UTC",
+    "to": "2230b37461c768dba66d256f706c7da8022a3569fd92010a26a1990106ae0b51",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-14"
+   },
+   {
+    "account": "2230b37461c768dba66d256f706c7da8022a3569fd92010a26a1990106ae0b51",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "6HedmH3fmDef76bvLRSqpFjVafU8wCKTQ6bDRLSYsGqQ",
+    "height": 219862296,
+    "near": 1827321.3132738501,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-13 20:14 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-14"
+   }
+  ],
+  "time": "2026-10-13 20:14 UTC"
+ },
+ {
+  "account": "f17a11905a5ee355f54d98f379cf2e25ccbee70068cfebab0df0b0ad5af72adf",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7DyZkXunFbm7zr9z1VA4WX2Y5VwexMZ1UPeHEFJRJ4d",
+    "height": 218107481,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 20:48 UTC",
+    "ts": 1790887720338535235
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5pcDpt26LqFvaG7XJYB23ysKedUDrmiD4teKK9LJySTg",
+    "height": 218104693,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 20:21 UTC",
+    "ts": 1790886070363214527
+   },
+   {
+    "from": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+    "from_label": "unlabelled account (2,337 transactions)",
+    "hash": "3oBMKFBuuriQqjFbeLzbMmE73dsNDJrMhRjkHFx4QiPD",
+    "height": 218102084,
+    "near": 1326631.545365,
+    "time": "2026-10-01 19:55 UTC",
+    "ts": 1790884525467083012
+   }
+  ],
+  "kind": "creation",
+  "near": 1304748.8288375314,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "BukRuebjJUoL2vh7dWrADCZZCzQY7HyCUEjhFnxXKWaQ",
+    "height": 218107826,
+    "near": 1304748.8788375314,
+    "time": "2026-10-01 20:52 UTC",
+    "to": "f17a11905a5ee355f54d98f379cf2e25ccbee70068cfebab0df0b0ad5af72adf",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-02"
+   },
+   {
+    "account": "f17a11905a5ee355f54d98f379cf2e25ccbee70068cfebab0df0b0ad5af72adf",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GuJrgQnV36Muj7PeD2RnNNDpVQwLMKvsQb1Rgoooks88",
+    "height": 218110286,
+    "near": 1304748.8288375314,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 21:17 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 21:17 UTC"
+ },
+ {
+  "account": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+  "kind": "redemption",
+  "near": 785565.278358313,
+  "steps": [
+   {
+    "account": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "DReT5o8Su5XbJsncshAeT6y5GgSJ7dFqvbQJGLa5tHBP",
+    "height": 221879092,
+    "near": 785565.2783583129,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-27 21:00 UTC",
+    "type": "unstake",
+    "window": "2026-10-28"
+   },
+   {
+    "account": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GfDD3r2VY4Ekk69XzWxsH7Bxs1V8Earq3JLnGydp81Lh",
+    "height": 222026016,
+    "near": 785565.278358313,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-28 20:38 UTC",
+    "type": "redemption_withdraw",
+    "window": "2026-10-29"
+   },
+   {
+    "account": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "BtpSyHkpcJGTwCDiduHv6DSRRXZY6pHsMzCz9sHwooXn",
+    "height": 222125631,
+    "near": 785565.7161833763,
+    "time": "2026-10-29 12:37 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "type": "return_to_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "HGoVh1YXgwjXYHm9bbtvGts78iVhT9gZKLUrDDpP1YLo",
+    "height": 222146377,
+    "near": 1045152.0,
+    "time": "2026-10-29 16:07 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "type": "hub_next_unmatched"
+   }
+  ],
+  "time": "2026-10-28 20:38 UTC"
+ },
+ {
+  "account": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+  "kind": "redemption",
+  "near": 785418.3085756049,
+  "steps": [
+   {
+    "account": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "73ih8VnxvKFPviDKac9G4cLFswEo5uu6MoqakuaTcvEV",
+    "height": 222916790,
+    "near": 785418.3085756049,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-03 19:57 UTC",
+    "type": "unstake",
+    "window": "2026-11-04"
+   },
+   {
+    "account": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "92bCMJKYqa9EQtRHdy76r3G239mfCpwTH3T4ZrHZ6ahn",
+    "height": 223058418,
+    "near": 785418.3085756049,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-04 19:14 UTC",
+    "type": "redemption_withdraw",
+    "window": "2026-11-05"
+   },
+   {
+    "account": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "DJJmAbY5useNH1eWxuh4wxfAXCKFLqnhDZZUWzYYHUYr",
+    "height": 223070757,
+    "near": 785418.7461077217,
+    "time": "2026-11-04 21:15 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "type": "return_to_hub",
+    "window": "2026-11-05"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "combined_with": [
+     "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7"
+    ],
+    "hash": "8QaAyXttbEinL14J9eHovrb1sc82LUHJc7nDGETh7dNn",
+    "height": 223187992,
+    "near": 941017.10769234,
+    "time": "2026-11-05 16:02 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "DxDqkJWpQdy1VAFnuxCAYySRVgknT2NAggnKX2GkVy3h",
+    "height": 223188184,
+    "near": 941017.1068573504,
+    "time": "2026-11-05 16:03 UTC",
+    "to": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "to_label": "exchange-style wallet (heuristic: 79,032 transactions)",
+    "type": "onward"
+   }
+  ],
+  "time": "2026-11-04 19:14 UTC"
+ },
+ {
+  "account": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AUe84saom3zoh4neCpBhmg43aXUDHtgK6rNTDWZR6To",
+    "height": 219956181,
+    "near": 0.042499999999999996,
+    "time": "2026-10-14 16:35 UTC",
+    "ts": 1791995726624280240
+   },
+   {
+    "from": "1e6ef8464ce09f96c6fc22583ead00fa0b65119128daa9732366d2a2e856e960",
+    "from_label": "exchange-style wallet (heuristic: 211,992 transactions)",
+    "hash": "7tCvX5XneqNgxuNEupDkFwihZ7AKoEESf569ZdtXDhCp",
+    "height": 219943718,
+    "near": 630000.0,
+    "time": "2026-10-14 14:27 UTC",
+    "ts": 1791988045566574879
+   },
+   {
+    "from": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+    "from_label": "unlabelled account (2,337 transactions)",
+    "hash": "GhwzLANq8zpeWTTCLu9WPA1WmyHhsWy995wWGXJpkNMX",
+    "height": 219925782,
+    "near": 153358.4298165,
+    "time": "2026-10-14 10:25 UTC",
+    "ts": 1791973520831331923
+   }
+  ],
+  "kind": "creation",
+  "near": 783358.4152015104,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "AsuVvDgcYh1jmhxB2X9DiVFn5F4NsStVrvBMpsJEtuaY",
+    "height": 219956848,
+    "near": 783358.4652015105,
+    "time": "2026-10-14 16:42 UTC",
+    "to": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-15"
+   },
+   {
+    "account": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "FkyjiemjA5ELmMFCALwSpnzzxb17cJb7ogP2HAdABqsu",
+    "height": 219959393,
+    "near": 783358.4152015104,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-14 17:07 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-15"
+   }
+  ],
+  "time": "2026-10-14 17:07 UTC"
+ },
+ {
+  "account": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5pcDpt26LqFvaG7XJYB23ysKedUDrmiD4teKK9LJySTg",
+    "height": 218104693,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 20:21 UTC",
+    "ts": 1790886070363214527
+   },
+   {
+    "from": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+    "from_label": "unlabelled account (2,337 transactions)",
+    "hash": "3oBMKFBuuriQqjFbeLzbMmE73dsNDJrMhRjkHFx4QiPD",
+    "height": 218102084,
+    "near": 1326631.545365,
+    "time": "2026-10-01 19:55 UTC",
+    "ts": 1790884525467083012
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9Kdr69RPKBv1RbcSpHKJhWB6yLmp1Rv39qgkq8i4ecMR",
+    "height": 218091499,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 18:11 UTC",
+    "ts": 1790878261689140657
+   }
+  ],
+  "kind": "creation",
+  "near": 782849.2136095,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "2yMsecRcouGW49jn9MQ8WTRqM7gi5s7TcS14Lai1PmMT",
+    "height": 218105292,
+    "near": 782849.2636095,
+    "time": "2026-10-01 20:27 UTC",
+    "to": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-02"
+   },
+   {
+    "account": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "AK5w4jhZkhCb1grAqiy7ZSfmRpmsgoMWzhzozXMyommc",
+    "height": 218107826,
+    "near": 782849.2136095,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 20:52 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 20:52 UTC"
+ },
+ {
+  "account": "c10bae04ffbad00ac6098464c05e1c7fa5069af8a9282099860cdd5fbd56bd26",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "BbodgyuWbzSgz9nfHxoAJ5cnRSDxFCyQNJLFaE7wsSo6",
+    "height": 220829447,
+    "near": 0.042499999999999996,
+    "time": "2026-10-20 16:56 UTC",
+    "ts": 1792515410653412932
+   },
+   {
+    "from": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "from_label": "exchange-style wallet (heuristic: 79,032 transactions)",
+    "hash": "4bUpDJcFBnRvW1SuzDqg3WG56SttY2XUSgGnY2a6kSvB",
+    "height": 220811223,
+    "near": 574542.83076157,
+    "time": "2026-10-20 13:52 UTC",
+    "ts": 1792504330795468271
+   },
+   {
+    "from": "466222f1d229ca75ae9b4c82202e0e0b2fc3f6bdbdbac3704e8bf1808baa6093",
+    "from_label": "exchange-style wallet (heuristic: 10,447 transactions)",
+    "hash": "8qoQ57EayeW62N9cEDAKcCgQjb6wToFqdX4PCn4DqtZp",
+    "height": 220810670,
+    "near": 522311.6643287,
+    "time": "2026-10-20 13:46 UTC",
+    "ts": 1792504007308468808
+   }
+  ],
+  "kind": "creation",
+  "near": 574443.8114115909,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "8gWLH6qS3XkYDKTLnrmqNki2XhT9aM3winbFAUgNG5sY",
+    "height": 220829959,
+    "near": 1096854.5304752805,
+    "time": "2026-10-20 17:02 UTC",
+    "to": "c10bae04ffbad00ac6098464c05e1c7fa5069af8a9282099860cdd5fbd56bd26",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-21"
+   },
+   {
+    "account": "c10bae04ffbad00ac6098464c05e1c7fa5069af8a9282099860cdd5fbd56bd26",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "DtNdDWSDddmTNdVfKnCRTnjYDZxXELQMDpoGw6ELqx8v",
+    "height": 220837912,
+    "near": 574443.8114115909,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-20 18:23 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-21"
+   }
+  ],
+  "time": "2026-10-20 18:23 UTC"
+ },
+ {
+  "account": "3ff02af0c2435a9cbc6f1d7c5b0cabeac32ac4621a5c7e0ca3e6b3c109ce2098",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CnNvCusDqT47qJDyZaydVPx7oyWnw2gbZf9qoaAuD2uH",
+    "height": 217980860,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:19 UTC",
+    "ts": 1790810367674377674
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7FaWkwLYFt85jLVSc872vqePLYjKj7vgaayq9KesJxAP",
+    "height": 217980424,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:15 UTC",
+    "ts": 1790810112175439448
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "D4sVZUjCyJJBSF9AGrrScgFL5VNiLEq5d9cndagmdSta",
+    "height": 217979340,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:04 UTC",
+    "ts": 1790809479503603964
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "JDZ4rQpYRe9Adoepsym6oGKQmwFqTSUQJnamQUDt4ySR",
+    "height": 217981635,
+    "near": 521909.9478079,
+    "time": "2026-09-30 23:27 UTC",
+    "to": "3ff02af0c2435a9cbc6f1d7c5b0cabeac32ac4621a5c7e0ca3e6b3c109ce2098",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "3ff02af0c2435a9cbc6f1d7c5b0cabeac32ac4621a5c7e0ca3e6b3c109ce2098",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "MbQ1LPYrfUQKUk6Wdt3s18Tjj5pcQ1CjzCGf2G7vdjT",
+    "height": 217985896,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:09 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:09 UTC"
+ },
+ {
+  "account": "35bffb936464a494130a24d33df4f6f70b4c98102b56ec3d7afe9a1729a00619",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "D4sVZUjCyJJBSF9AGrrScgFL5VNiLEq5d9cndagmdSta",
+    "height": 217979340,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:04 UTC",
+    "ts": 1790809479503603964
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6GsVQykAQvANHa8u78S4mjFaRUdaPiGTRpYVy2N7aAS9",
+    "height": 217978694,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:58 UTC",
+    "ts": 1790809097119222933
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "53vb4s6qETteZiYb4QEmSafK2dB19QdZxmcskZHDkRrq",
+    "height": 217977816,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:49 UTC",
+    "ts": 1790808573348439175
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "DmGoU354B1eWbqpp5t4Pxy3GtnRQDuY7BfN1KiR2Tvxf",
+    "height": 217980101,
+    "near": 521909.9478079,
+    "time": "2026-09-30 23:12 UTC",
+    "to": "35bffb936464a494130a24d33df4f6f70b4c98102b56ec3d7afe9a1729a00619",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "35bffb936464a494130a24d33df4f6f70b4c98102b56ec3d7afe9a1729a00619",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "8MdnHrntof2nYhjr59n33Hk3J534sUy2MZhPeaj3qz1d",
+    "height": 217986001,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:10 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:10 UTC"
+ },
+ {
+  "account": "62b25a67d1fd52065a764498d3acde83a0a70adf5ad29f952452e7bcda73851d",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "KZ6tFuXYAy5BTzFE7WKtnruqJhMY3KVtjgF2qXCXZXo",
+    "height": 217982471,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:35 UTC",
+    "ts": 1790811318875120159
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "59GKm273NXbaaXhTD2pnP52a4TW6xgwWnv7TbJss7bqe",
+    "height": 217981878,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:29 UTC",
+    "ts": 1790810966739745854
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CnNvCusDqT47qJDyZaydVPx7oyWnw2gbZf9qoaAuD2uH",
+    "height": 217980860,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:19 UTC",
+    "ts": 1790810367674377674
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "BrXeM1qKyWz5kTXYgkhw3WjEMaaBKNfr1tMAu3jLNzSq",
+    "height": 217982642,
+    "near": 521909.9478079,
+    "time": "2026-09-30 23:37 UTC",
+    "to": "62b25a67d1fd52065a764498d3acde83a0a70adf5ad29f952452e7bcda73851d",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "62b25a67d1fd52065a764498d3acde83a0a70adf5ad29f952452e7bcda73851d",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "2Racx3j1kX5hqDbWymC9c9vJMt4fPfhYBbx3wLuftrfM",
+    "height": 217986002,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:10 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:10 UTC"
+ },
+ {
+  "account": "f9c16b87f417d159eac4069c8f767dc3c4771e5e87eaea7140ef5d0496bf75c7",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "59GKm273NXbaaXhTD2pnP52a4TW6xgwWnv7TbJss7bqe",
+    "height": 217981878,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:29 UTC",
+    "ts": 1790810966739745854
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CnNvCusDqT47qJDyZaydVPx7oyWnw2gbZf9qoaAuD2uH",
+    "height": 217980860,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:19 UTC",
+    "ts": 1790810367674377674
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7FaWkwLYFt85jLVSc872vqePLYjKj7vgaayq9KesJxAP",
+    "height": 217980424,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:15 UTC",
+    "ts": 1790810112175439448
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "8eNxoH3sha9ZkN3sTqqiQ17M8rbhPpUpd6JTSk4XfYg5",
+    "height": 217982036,
+    "near": 521909.9478079,
+    "time": "2026-09-30 23:31 UTC",
+    "to": "f9c16b87f417d159eac4069c8f767dc3c4771e5e87eaea7140ef5d0496bf75c7",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "f9c16b87f417d159eac4069c8f767dc3c4771e5e87eaea7140ef5d0496bf75c7",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "9GkYvbHg1EivSkZLuh5TB7fZc9YMQx4xfTp2yykULPHa",
+    "height": 217986714,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:17 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:17 UTC"
+ },
+ {
+  "account": "8fe9a14b6873f339cb9957e166018a2311c0718330fb6651dca82440c162adf6",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5Hj2CbUGhChBgPiaoWDhZ3e5sA1sE7eeoBGV3GJagrqP",
+    "height": 217983375,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:44 UTC",
+    "ts": 1790811858726116926
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "KZ6tFuXYAy5BTzFE7WKtnruqJhMY3KVtjgF2qXCXZXo",
+    "height": 217982471,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:35 UTC",
+    "ts": 1790811318875120159
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "59GKm273NXbaaXhTD2pnP52a4TW6xgwWnv7TbJss7bqe",
+    "height": 217981878,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:29 UTC",
+    "ts": 1790810966739745854
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "EovhYA2tu7kc7faDco94vMARD1ZUkjiFFbvKRmM3pXvW",
+    "height": 217984168,
+    "near": 521909.9478079,
+    "time": "2026-09-30 23:52 UTC",
+    "to": "8fe9a14b6873f339cb9957e166018a2311c0718330fb6651dca82440c162adf6",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "8fe9a14b6873f339cb9957e166018a2311c0718330fb6651dca82440c162adf6",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7mC6kE9ZHb8uPNpWmW3ZfvbgGY9bgDWBiAjUEbk2DWNr",
+    "height": 217986714,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:17 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:17 UTC"
+ },
+ {
+  "account": "88db836bdfa4ae5b82a9d92ad732572b2e8d77fab5fb2e5ef6f262bd0b77821d",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CHYWE7FCkubN1PPKzxU5wefjeN47GGQau5UbfMXFSoKk",
+    "height": 217984410,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:54 UTC",
+    "ts": 1790812464307825822
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5Hj2CbUGhChBgPiaoWDhZ3e5sA1sE7eeoBGV3GJagrqP",
+    "height": 217983375,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:44 UTC",
+    "ts": 1790811858726116926
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "KZ6tFuXYAy5BTzFE7WKtnruqJhMY3KVtjgF2qXCXZXo",
+    "height": 217982471,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:35 UTC",
+    "ts": 1790811318875120159
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "5FWKsvcPFW9RNDyRmbCjrD8AAne2vycgT9UkTv61Vdar",
+    "height": 217984575,
+    "near": 521909.9478079,
+    "time": "2026-09-30 23:56 UTC",
+    "to": "88db836bdfa4ae5b82a9d92ad732572b2e8d77fab5fb2e5ef6f262bd0b77821d",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "88db836bdfa4ae5b82a9d92ad732572b2e8d77fab5fb2e5ef6f262bd0b77821d",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "8SpzKbWjkZu17ojksScezPx4y3fqDsTAa3EYJiAipuDp",
+    "height": 217986715,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:17 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:17 UTC"
+ },
+ {
+  "account": "705aca70c92faaad0d19873e039bdbdab74f8fbdd10f5214df1d8f1024ca40de",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E4YXHkJQTfmEX6W5TrsTA1uogcnAvSvxnZJWzMmbCJfa",
+    "height": 217984793,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:58 UTC",
+    "ts": 1790812691845462674
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CHYWE7FCkubN1PPKzxU5wefjeN47GGQau5UbfMXFSoKk",
+    "height": 217984410,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:54 UTC",
+    "ts": 1790812464307825822
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5Hj2CbUGhChBgPiaoWDhZ3e5sA1sE7eeoBGV3GJagrqP",
+    "height": 217983375,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:44 UTC",
+    "ts": 1790811858726116926
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "oZKqAZXG55fG4g51NQ9c2juh92Bu773gRtbJmBwNtSG",
+    "height": 217984979,
+    "near": 521909.9478079,
+    "time": "2026-10-01 00:00 UTC",
+    "to": "705aca70c92faaad0d19873e039bdbdab74f8fbdd10f5214df1d8f1024ca40de",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-02"
+   },
+   {
+    "account": "705aca70c92faaad0d19873e039bdbdab74f8fbdd10f5214df1d8f1024ca40de",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "HhQq6Uf65rmUAg97ZkMuxpH7DZzSGQiznC2Ke8uoMKLF",
+    "height": 217986718,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:17 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:17 UTC"
+ },
+ {
+  "account": "2e3df932571c2d5a22257cd7efc687a2dcd52a4dad97ed01d322686582809e2a",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7FaWkwLYFt85jLVSc872vqePLYjKj7vgaayq9KesJxAP",
+    "height": 217980424,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:15 UTC",
+    "ts": 1790810112175439448
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "D4sVZUjCyJJBSF9AGrrScgFL5VNiLEq5d9cndagmdSta",
+    "height": 217979340,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:04 UTC",
+    "ts": 1790809479503603964
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6GsVQykAQvANHa8u78S4mjFaRUdaPiGTRpYVy2N7aAS9",
+    "height": 217978694,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:58 UTC",
+    "ts": 1790809097119222933
+   }
+  ],
+  "kind": "creation",
+  "near": 521909.8978079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "Cscd5J2ZHyktS3VZ1vzwweKPyPrRXaznLjERKX5ykqxD",
+    "height": 217980611,
+    "near": 521909.9478079,
+    "time": "2026-09-30 23:17 UTC",
+    "to": "2e3df932571c2d5a22257cd7efc687a2dcd52a4dad97ed01d322686582809e2a",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "2e3df932571c2d5a22257cd7efc687a2dcd52a4dad97ed01d322686582809e2a",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "DHNafZP9LoJMvJr82vXcrGgMwPsAh8BvH3jz12frQfwg",
+    "height": 217989900,
+    "near": 521909.8978079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:48 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:48 UTC"
+ },
+ {
+  "account": "6851258857b2c981c9a95cbec0b27f978cf502a981999a21a67edcec3fa52189",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9Kdr69RPKBv1RbcSpHKJhWB6yLmp1Rv39qgkq8i4ecMR",
+    "height": 218091499,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 18:11 UTC",
+    "ts": 1790878261689140657
+   },
+   {
+    "from": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+    "from_label": "unlabelled account (2,337 transactions)",
+    "hash": "AkrVfEtzSTVXP5UZENcmhd6dPBLSb9JUY5tukZ5rWMKg",
+    "height": 218074278,
+    "near": 782865.0,
+    "time": "2026-10-01 15:20 UTC",
+    "ts": 1790868022445216848
+   },
+   {
+    "from": "ab0ccd54641a3df0a807be6595e6396ce20c806678a5028dac4a820474737850",
+    "from_label": "unlabelled account",
+    "hash": "GwBLSLubGeAtgnmb26QsYdoeGPjcXttwDviprnVa6h7U",
+    "height": 218070651,
+    "near": 500000.0,
+    "time": "2026-10-01 14:44 UTC",
+    "ts": 1790865849456932612
+   }
+  ],
+  "kind": "creation",
+  "near": 521899.459073,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "6tPmPZopBoV8ptTmkLVmpNFZUuwHSdQXKkYo1n4VqkjL",
+    "height": 218092105,
+    "near": 521899.509073,
+    "time": "2026-10-01 18:17 UTC",
+    "to": "6851258857b2c981c9a95cbec0b27f978cf502a981999a21a67edcec3fa52189",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-02"
+   },
+   {
+    "account": "6851258857b2c981c9a95cbec0b27f978cf502a981999a21a67edcec3fa52189",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3ujTiQ1wkzYcbpQwTns7Yc2vGaANiTZdSeub7GNMwwBn",
+    "height": 218093822,
+    "near": 521899.459073,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 18:34 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 18:34 UTC"
+ },
+ {
+  "account": "15863c9825054c6539e541f9012cfe2eb5c2fe73b02467a95407eb760eb5db10",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5otJUCRyrztBcpAZNJoWocZdbCDK9nEBTzuLdmLuYA5a",
+    "height": 218238311,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 18:16 UTC",
+    "ts": 1790964990785362789
+   },
+   {
+    "from": "0455d9461774a04988e547f5822922062a7d60bf15585d65dceb65e04b94c1d6",
+    "from_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "6Jq3TRY3fH7ZLSP7bcpbfG78Dct2EoGwF6JBgPVzBaLy",
+    "height": 218236330,
+    "near": 208755.65583644,
+    "time": "2026-10-02 17:57 UTC",
+    "ts": 1790963822315043131
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5ywJCYELFHtkZJD7bR4MJpq6psU3qq6cWKEpRPKvsXUV",
+    "height": 218233529,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:29 UTC",
+    "ts": 1790962178315601878
+   }
+  ],
+  "kind": "creation",
+  "near": 521889.4272861732,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "EgXPCksBuqnD8uqcqc6K6Z21MVxJPdP3WXpySthKM8bU",
+    "height": 218238871,
+    "near": 521889.47728617326,
+    "time": "2026-10-02 18:22 UTC",
+    "to": "15863c9825054c6539e541f9012cfe2eb5c2fe73b02467a95407eb760eb5db10",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-03"
+   },
+   {
+    "account": "15863c9825054c6539e541f9012cfe2eb5c2fe73b02467a95407eb760eb5db10",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3fvLayhA31d8HUpaRDduay2XpzKhQEvtQm17rtf7jvGn",
+    "height": 218249695,
+    "near": 521889.4272861732,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-02 20:08 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-03"
+   }
+  ],
+  "time": "2026-10-02 20:08 UTC"
+ },
+ {
+  "account": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6D8xzvshj3fNxYFpQHybmfv8TfUrY33Pg4vuebje511V",
+    "height": 220678133,
+    "near": 0.042499999999999996,
+    "time": "2026-10-19 15:58 UTC",
+    "ts": 1792425491935618382
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9kqJbQaERAVs7LJmuvPeHA7yfFXYRZEzv9gizPsaGpCY",
+    "height": 220677167,
+    "near": 0.042499999999999996,
+    "time": "2026-10-19 15:48 UTC",
+    "ts": 1792424913763474819
+   },
+   {
+    "from": "25ab96ddd0d9a8e0ab48b45c2ef7473a83c4ff7e49239b46613b3d688e024731",
+    "from_label": "exchange-style wallet (heuristic: 224,464 transactions)",
+    "hash": "2jHtbReWexKsqYHvaFgiDs3H9AEioEW926D1NN1VMsw3",
+    "height": 220630062,
+    "near": 522292.7983302,
+    "time": "2026-10-19 07:57 UTC",
+    "ts": 1792396630591195662
+   }
+  ],
+  "kind": "creation",
+  "near": 261146.41993512094,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "59KAGM5QsAfAWtyxXKtnSwpaJXxeSUFcArpwyBuyik3B",
+    "height": 220678322,
+    "near": 261146.46993512093,
+    "time": "2026-10-19 16:00 UTC",
+    "to": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-20"
+   },
+   {
+    "account": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3WN7cVDGMeLR9JKhvnzNwS8h1h2ByWyzCCju4chGc8yn",
+    "height": 220680034,
+    "near": 261146.41993512094,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-19 16:17 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-20"
+   }
+  ],
+  "time": "2026-10-19 16:17 UTC"
+ },
+ {
+  "account": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9kqJbQaERAVs7LJmuvPeHA7yfFXYRZEzv9gizPsaGpCY",
+    "height": 220677167,
+    "near": 0.042499999999999996,
+    "time": "2026-10-19 15:48 UTC",
+    "ts": 1792424913763474819
+   },
+   {
+    "from": "25ab96ddd0d9a8e0ab48b45c2ef7473a83c4ff7e49239b46613b3d688e024731",
+    "from_label": "exchange-style wallet (heuristic: 224,464 transactions)",
+    "hash": "2jHtbReWexKsqYHvaFgiDs3H9AEioEW926D1NN1VMsw3",
+    "height": 220630062,
+    "near": 522292.7983302,
+    "time": "2026-10-19 07:57 UTC",
+    "ts": 1792396630591195662
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9wsVuAwtM3uGer83142YaJjey8uJPGDrpdM3ixnoBrzd",
+    "height": 220258172,
+    "near": 0.042499999999999996,
+    "time": "2026-10-16 18:21 UTC",
+    "ts": 1792174888916818140
+   }
+  ],
+  "kind": "creation",
+  "near": 261146.3491651,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3qTXawX8T86jz8BuBDRgXBz8NVPuA8rwXgVo4VzcN232",
+    "height": 220677316,
+    "near": 261146.3991651,
+    "time": "2026-10-19 15:50 UTC",
+    "to": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-20"
+   },
+   {
+    "account": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "UHRedZW2ybv8NQN8E6NButcYDKitj3RF6QGV1mAzVqA",
+    "height": 220679528,
+    "near": 261146.3491651,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-19 16:12 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-20"
+   }
+  ],
+  "time": "2026-10-19 16:12 UTC"
+ },
+ {
+  "account": "7992cd2dc974e4a14ae6c027f3763b5e8b31977d228a59d5e903e4cfcc7d9a24",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HMbP4c1uKkyTc3B3di3uaLf4sUSYZAAX7gpogtZ1Tmxs",
+    "height": 219249156,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:33 UTC",
+    "ts": 1791559985049655793
+   },
+   {
+    "from": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "from_label": "exchange-style wallet (heuristic: 79,032 transactions)",
+    "hash": "7Uof4FWMwBdZ1bQSgZte3oYedXWDQqtWoHMSPWRyFsXo",
+    "height": 219235185,
+    "near": 450000.0,
+    "time": "2026-10-09 13:16 UTC",
+    "ts": 1791551767047824721
+   },
+   {
+    "from": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "from_label": "exchange-style wallet (heuristic: 79,032 transactions)",
+    "hash": "GD5fuqudDEUZKoLisRxKYLv1f7PhrX51BSEwReMjfDK5",
+    "height": 219233687,
+    "near": 437545.75921193,
+    "time": "2026-10-09 13:01 UTC",
+    "ts": 1791550867449628616
+   }
+  ],
+  "kind": "creation",
+  "near": 261042.82035645,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "9YU5MLsR2BJh6CNy9CV9pcojXNWQkkk5iUsRY6o6SqAY",
+    "height": 219249355,
+    "near": 261042.87035645,
+    "time": "2026-10-09 15:35 UTC",
+    "to": "7992cd2dc974e4a14ae6c027f3763b5e8b31977d228a59d5e903e4cfcc7d9a24",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-10"
+   },
+   {
+    "account": "7992cd2dc974e4a14ae6c027f3763b5e8b31977d228a59d5e903e4cfcc7d9a24",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3Wqep7gsU6q16VfuruCS2pp4gq6Av4dpZhkiBuZTo1wE",
+    "height": 219260776,
+    "near": 261042.82035645,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-09 17:27 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-10"
+   }
+  ],
+  "time": "2026-10-09 17:27 UTC"
+ },
+ {
+  "account": "8439d57e4e65306dfdf28786037ac5491a9bfab8d149906f38f4bdd1f36c2632",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7d31BqtrZgywBngq3tn5sw9WVK2vMyGit41T9scwF4kR",
+    "height": 219249620,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:37 UTC",
+    "ts": 1791560254662603809
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HMbP4c1uKkyTc3B3di3uaLf4sUSYZAAX7gpogtZ1Tmxs",
+    "height": 219249156,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:33 UTC",
+    "ts": 1791559985049655793
+   },
+   {
+    "from": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "from_label": "exchange-style wallet (heuristic: 79,032 transactions)",
+    "hash": "7Uof4FWMwBdZ1bQSgZte3oYedXWDQqtWoHMSPWRyFsXo",
+    "height": 219235185,
+    "near": 450000.0,
+    "time": "2026-10-09 13:16 UTC",
+    "ts": 1791551767047824721
+   }
+  ],
+  "kind": "creation",
+  "near": 261042.82035645,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "Ee7Vjn9QceFBeZ9RNnz2Yb8hysYP9kmPC6DpTwmJgXFR",
+    "height": 219250080,
+    "near": 261042.87035645,
+    "time": "2026-10-09 15:42 UTC",
+    "to": "8439d57e4e65306dfdf28786037ac5491a9bfab8d149906f38f4bdd1f36c2632",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-10"
+   },
+   {
+    "account": "8439d57e4e65306dfdf28786037ac5491a9bfab8d149906f38f4bdd1f36c2632",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GKuUGpkM6M6iz1C1Bf4i4FLsGy5prcJ149PeqAJmX2sy",
+    "height": 219260776,
+    "near": 261042.82035645,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-09 17:27 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-10"
+   }
+  ],
+  "time": "2026-10-09 17:27 UTC"
+ },
+ {
+  "account": "22271cd14a643969f647e2209eb37e9a16aca80853a34d301b3437fbaa0cf716",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "T8Jd8pQheov2JZSZck3bAvRYfzhopgST4YGcb4Fh35H",
+    "height": 219250314,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:44 UTC",
+    "ts": 1791560659995783332
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7d31BqtrZgywBngq3tn5sw9WVK2vMyGit41T9scwF4kR",
+    "height": 219249620,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:37 UTC",
+    "ts": 1791560254662603809
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HMbP4c1uKkyTc3B3di3uaLf4sUSYZAAX7gpogtZ1Tmxs",
+    "height": 219249156,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:33 UTC",
+    "ts": 1791559985049655793
+   }
+  ],
+  "kind": "creation",
+  "near": 261042.82035645,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "7Y141CpTNqoKdLKr1Lbif6M8BeMpcVyq7vXRVtt3xEkg",
+    "height": 219251108,
+    "near": 261042.87035645,
+    "time": "2026-10-09 15:52 UTC",
+    "to": "22271cd14a643969f647e2209eb37e9a16aca80853a34d301b3437fbaa0cf716",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-10"
+   },
+   {
+    "account": "22271cd14a643969f647e2209eb37e9a16aca80853a34d301b3437fbaa0cf716",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "66qjuuUg2q955uwf7J6LFSLA8d3irzgkh97MbZV4W3W6",
+    "height": 219260777,
+    "near": 261042.82035645,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-09 17:27 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-10"
+   }
+  ],
+  "time": "2026-10-09 17:27 UTC"
+ },
+ {
+  "account": "53e9b219c10cb6c5d52eab78d412e38241f3b13b5d412c78f19fcad94e571fcc",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "DAZkHfAw27gAPSTshVw91f22CCrPkwgg5irmHhzyFJtf",
+    "height": 217985253,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 00:02 UTC",
+    "ts": 1790812962548975424
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E4YXHkJQTfmEX6W5TrsTA1uogcnAvSvxnZJWzMmbCJfa",
+    "height": 217984793,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:58 UTC",
+    "ts": 1790812691845462674
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CHYWE7FCkubN1PPKzxU5wefjeN47GGQau5UbfMXFSoKk",
+    "height": 217984410,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:54 UTC",
+    "ts": 1790812464307825822
+   }
+  ],
+  "kind": "creation",
+  "near": 260954.92390395,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3bbBLUNbzkGRC5NTkt4n65LjrAvZ4S3rWCbef68bTHqa",
+    "height": 217985692,
+    "near": 260954.97390395,
+    "time": "2026-10-01 00:07 UTC",
+    "to": "53e9b219c10cb6c5d52eab78d412e38241f3b13b5d412c78f19fcad94e571fcc",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-02"
+   },
+   {
+    "account": "53e9b219c10cb6c5d52eab78d412e38241f3b13b5d412c78f19fcad94e571fcc",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "2nebbg5ed4AyzpTAh8pLHzqUyZfFNckewqVRFmSrhEyA",
+    "height": 217988250,
+    "near": 260954.92390395,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:32 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:32 UTC"
+ },
+ {
+  "account": "704cd9cd0d4d46e5ce099f9ef8d2f2767e5ff5334c3a9a958efa8f77f3195791",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7Fxsm1y63Rx3RkUogBhRZTd6GWd51m8tcNA5M1M27YR1",
+    "height": 218232597,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:20 UTC",
+    "ts": 1790961637266944613
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HTafzkSQ5PAF8LgRSCeB1x9VvEEYj8hKPds1eArNe3gw",
+    "height": 218232184,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:16 UTC",
+    "ts": 1790961398342142186
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FQXiFQNuTiPwb6Hd8gYiVcYDrJ6J8trrNMfvrD5Q149U",
+    "height": 218231372,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:08 UTC",
+    "ts": 1790960921869157444
+   }
+  ],
+  "kind": "creation",
+  "near": 260944.59479555,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "2MCrFJjXVKbQJCJe2ogTZ2cbTStnwiNDDUeZp1PGvjwq",
+    "height": 218233263,
+    "near": 260944.64479555,
+    "time": "2026-10-02 17:27 UTC",
+    "to": "704cd9cd0d4d46e5ce099f9ef8d2f2767e5ff5334c3a9a958efa8f77f3195791",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-03"
+   },
+   {
+    "account": "704cd9cd0d4d46e5ce099f9ef8d2f2767e5ff5334c3a9a958efa8f77f3195791",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "9ydvd6BNAKxfgyC7SVvtZfsmfCE8p69vQJuTEegAXugu",
+    "height": 218249593,
+    "near": 260944.59479555,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-02 20:07 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-03"
+   }
+  ],
+  "time": "2026-10-02 20:07 UTC"
+ },
+ {
+  "account": "1ae051814cb385f11242b19a29a40c9a7b33ea769589f8d37d551d7a66eb39fb",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5ywJCYELFHtkZJD7bR4MJpq6psU3qq6cWKEpRPKvsXUV",
+    "height": 218233529,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:29 UTC",
+    "ts": 1790962178315601878
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7Fxsm1y63Rx3RkUogBhRZTd6GWd51m8tcNA5M1M27YR1",
+    "height": 218232597,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:20 UTC",
+    "ts": 1790961637266944613
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HTafzkSQ5PAF8LgRSCeB1x9VvEEYj8hKPds1eArNe3gw",
+    "height": 218232184,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:16 UTC",
+    "ts": 1790961398342142186
+   }
+  ],
+  "kind": "creation",
+  "near": 260944.59479555,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "FMYyQbWiwuUfgibAcBAcxUshVzPNQARdLVeKM2yB6t4w",
+    "height": 218234284,
+    "near": 260944.64479555,
+    "time": "2026-10-02 17:37 UTC",
+    "to": "1ae051814cb385f11242b19a29a40c9a7b33ea769589f8d37d551d7a66eb39fb",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-03"
+   },
+   {
+    "account": "1ae051814cb385f11242b19a29a40c9a7b33ea769589f8d37d551d7a66eb39fb",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "BHPvqjW8UFeC4t1tDbU1WsNtc8jU6JAUC56YrDrJhkHT",
+    "height": 218249592,
+    "near": 260944.59479555,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-02 20:07 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-03"
+   }
+  ],
+  "time": "2026-10-02 20:07 UTC"
+ },
+ {
+  "account": "fc9f541039781109266c795005bdae35645de607dab168687d8ac1ca18ed051e",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5gmu8SnAz84LBqNZe2s9A1PztcdQPE7gJwoYShinpn21",
+    "height": 218668743,
+    "near": 0.042499999999999996,
+    "time": "2026-10-05 16:31 UTC",
+    "ts": 1791217905278957099
+   },
+   {
+    "from": "ab0ccd54641a3df0a807be6595e6396ce20c806678a5028dac4a820474737850",
+    "from_label": "unlabelled account",
+    "hash": "zd74yuhHGcb7LK8eGgtnpLWkeSe4WM9DbC7Y22ecPWC",
+    "height": 218664357,
+    "near": 52186.66190083,
+    "time": "2026-10-05 15:48 UTC",
+    "ts": 1791215339390029413
+   },
+   {
+    "from": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+    "from_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3cKk3MfJMATU5pK2BppB1MNn1AgPoTrnTuQujJZLG1v3",
+    "height": 218245002,
+    "near": 208755.65583644,
+    "time": "2026-10-02 19:22 UTC",
+    "ts": 1790968921930596437
+   }
+  ],
+  "kind": "creation",
+  "near": 260942.30312228046,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3jtwTpZFuj6ak3QurnMCyGz1o1DYCN1Y69S7tJvgF3VJ",
+    "height": 218669283,
+    "near": 260942.35312228047,
+    "time": "2026-10-05 16:37 UTC",
+    "to": "fc9f541039781109266c795005bdae35645de607dab168687d8ac1ca18ed051e",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-06"
+   },
+   {
+    "account": "fc9f541039781109266c795005bdae35645de607dab168687d8ac1ca18ed051e",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "AaqBm4RcYwYZfnUC1QfjiWEnz7daMrUStWe1P5onfzKN",
+    "height": 218673305,
+    "near": 260942.30312228046,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-05 17:17 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-06"
+   }
+  ],
+  "time": "2026-10-05 17:17 UTC"
+ },
+ {
+  "account": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+  "kind": "redemption",
+  "near": 209710.05361789055,
+  "steps": [
+   {
+    "account": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "875Mx61jAqUuRZK8dZAUksxcWSHpTuG9PYskGvcrVJoT",
+    "height": 223216335,
+    "near": 209710.05361789052,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-05 20:34 UTC",
+    "type": "unstake",
+    "window": "2026-11-06"
+   },
+   {
+    "account": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "2uGqMqvvDdopbLm8eEtV2nFhDeL84NTkCQz7C2yxF6Hz",
+    "height": 223364868,
+    "near": 209710.05361789055,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-06 20:21 UTC",
+    "type": "redemption_withdraw",
+    "window": "2026-11-07"
+   },
+   {
+    "account": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7WvnyH5Gyt9TLVjmiwu7EnSapxjeF9jT284ajfzwkv4C",
+    "height": 223776826,
+    "near": 209710.49144372778,
+    "time": "2026-11-09 14:02 UTC",
+    "to": "508a5b6d2747f3dee3d38d467fadb6376e43723de4fb42e7cb32d1450d6960bd",
+    "to_label": "unlabelled account (8 transactions)",
+    "type": "transfer_out",
+    "window": "2026-11-10"
+   },
+   {
+    "account": "508a5b6d2747f3dee3d38d467fadb6376e43723de4fb42e7cb32d1450d6960bd",
+    "account_label": "unlabelled account (8 transactions)",
+    "hash": "J1sc9odnqR1ANyewpS9QguEcvNcGekna2uzzNHQ3vXMz",
+    "height": 223779422,
+    "near": 209710.49144372778,
+    "time": "2026-11-09 14:27 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "type": "return_to_hub"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "combined_with": [],
+    "hash": "Fzuryt1enZuUwKx4eoQnijWci93DLZ5FNaneTNBv65gx",
+    "height": 223786513,
+    "near": 209146.27102244,
+    "time": "2026-11-09 15:37 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "FvXFUHYvWuZqAYWParcHQm64CjBjtHfX1iu6QzNbfYGc",
+    "height": 223786733,
+    "near": 209146.27018745046,
+    "time": "2026-11-09 15:39 UTC",
+    "to": "3e93b62aec7f1275a2eb6a0145d1d6406fd94f6c44f7fd705711f8139b5d25f9",
+    "to_label": "exchange-style wallet (heuristic: 74,612 transactions)",
+    "type": "onward"
+   }
+  ],
+  "time": "2026-11-06 20:21 UTC"
+ },
+ {
+  "account": "ce8b9ff34bfba8179225c7c923f03d8068b5d0e90eeb3014fc5c81cc27d312c7",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CS35JScj4qXCb11WHi6qrboCQWnrW2j5gePmUHqgf1KD",
+    "height": 221717837,
+    "near": 0.042499999999999996,
+    "time": "2026-10-26 17:10 UTC",
+    "ts": 1793034634375988451
+   },
+   {
+    "from": "3e93b62aec7f1275a2eb6a0145d1d6406fd94f6c44f7fd705711f8139b5d25f9",
+    "from_label": "exchange-style wallet (heuristic: 74,612 transactions)",
+    "hash": "2XYADwTumBP3CXj45MoWPCNJgNkzqRQxBZ3dM7z5cRfj",
+    "height": 221668282,
+    "near": 208989.77393076,
+    "time": "2026-10-26 09:16 UTC",
+    "ts": 1793006176502558938
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HpJRYQoAdWUQbwd6mnLhD6ViP3byMf3AKGa1v86Msaer",
+    "height": 221261605,
+    "near": 0.042499999999999996,
+    "time": "2026-10-23 16:17 UTC",
+    "ts": 1792772230571841079
+   }
+  ],
+  "kind": "creation",
+  "near": 208989.75931577047,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "GkUm5844DABi2ENv6BDs3kSJSdraP8ndQBbFUdbxSTau",
+    "height": 221717992,
+    "near": 208989.80931577046,
+    "time": "2026-10-26 17:12 UTC",
+    "to": "ce8b9ff34bfba8179225c7c923f03d8068b5d0e90eeb3014fc5c81cc27d312c7",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-27"
+   },
+   {
+    "account": "ce8b9ff34bfba8179225c7c923f03d8068b5d0e90eeb3014fc5c81cc27d312c7",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "C4osJ9sJdvm2vzaLtRj1NaJ343rrAqW6F8x31daCDE5B",
+    "height": 221725829,
+    "near": 208989.75931577047,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-26 18:27 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-27"
+   }
+  ],
+  "time": "2026-10-26 18:27 UTC"
+ },
+ {
+  "account": "7ef60701ce091afffb0b861edb0e84fa373e799bfa015e96f40e9a8faf5cd1dd",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9wsVuAwtM3uGer83142YaJjey8uJPGDrpdM3ixnoBrzd",
+    "height": 220258172,
+    "near": 0.042499999999999996,
+    "time": "2026-10-16 18:21 UTC",
+    "ts": 1792174888916818140
+   },
+   {
+    "from": "ab0ccd54641a3df0a807be6595e6396ce20c806678a5028dac4a820474737850",
+    "from_label": "unlabelled account",
+    "hash": "FjKqAdR1LWuPXmaKXnAWKAVy8edj7uH8cZzBsJEbcz9p",
+    "height": 220234607,
+    "near": 60000.0,
+    "time": "2026-10-16 14:25 UTC",
+    "ts": 1792160754741894882
+   },
+   {
+    "from": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+    "from_label": "unlabelled account (2,337 transactions)",
+    "hash": "B3xpvHp8zUU6pJeukLRATxHXXPMCaghMvuGEiJ6Vmts7",
+    "height": 220204266,
+    "near": 148908.1385774,
+    "time": "2026-10-16 09:22 UTC",
+    "ts": 1792142545308235061
+   }
+  ],
+  "kind": "creation",
+  "near": 208908.12396241046,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "A6n5JPvfoFEC5Dt7hbKqHFgxKuUTJabvsGx4hbc4wARj",
+    "height": 220258334,
+    "near": 208908.17396241045,
+    "time": "2026-10-16 18:23 UTC",
+    "to": "7ef60701ce091afffb0b861edb0e84fa373e799bfa015e96f40e9a8faf5cd1dd",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-17"
+   },
+   {
+    "account": "7ef60701ce091afffb0b861edb0e84fa373e799bfa015e96f40e9a8faf5cd1dd",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "14aYByd8AA1vJXx5RuL1T1PEiM1Pz2Q7TP42gBwTqTDE",
+    "height": 220267785,
+    "near": 208908.12396241046,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-16 19:57 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-17"
+   }
+  ],
+  "time": "2026-10-16 19:57 UTC"
+ },
+ {
+  "account": "579be09944401fa3132200493b2b1143b042a1c04e9c43d898699e4382a0f967",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "4yBHdNRnB5G1GADR1WVSBVLxyaF2Nhp2XEvEfUnjb9gH",
+    "height": 219115169,
+    "near": 0.042499999999999996,
+    "time": "2026-10-08 17:36 UTC",
+    "ts": 1791481019440199714
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7CyRSP7WrLNFLjVwA1iFVzHPU1Botn144o4m8PxBnVi",
+    "height": 219107399,
+    "near": 0.042499999999999996,
+    "time": "2026-10-08 16:20 UTC",
+    "ts": 1791476409831606825
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5DfStFPjdbJR6oeKSjbtPbVty9w1edcy2pN87JmEg3u",
+    "height": 219099882,
+    "near": 0.042499999999999996,
+    "time": "2026-10-08 15:05 UTC",
+    "ts": 1791471953368761201
+   }
+  ],
+  "kind": "creation",
+  "near": 208820.6027584314,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "4KcvNHJHcPqppGAq8ove7iwbmFaNGPXkp8fbjwsACyHV",
+    "height": 219115694,
+    "near": 208820.6527584314,
+    "time": "2026-10-08 17:42 UTC",
+    "to": "579be09944401fa3132200493b2b1143b042a1c04e9c43d898699e4382a0f967",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-09"
+   },
+   {
+    "account": "579be09944401fa3132200493b2b1143b042a1c04e9c43d898699e4382a0f967",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "65tmF9ENJu4yLv64Udho23Cmg8ysxwxEkYSEBJvLsoqN",
+    "height": 219117725,
+    "near": 208820.6027584314,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-08 18:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-09"
+   }
+  ],
+  "time": "2026-10-08 18:02 UTC"
+ },
+ {
+  "account": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FQXiFQNuTiPwb6Hd8gYiVcYDrJ6J8trrNMfvrD5Q149U",
+    "height": 218231372,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:08 UTC",
+    "ts": 1790960921869157444
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E6mAxJkYkMmw5FiML3dJUp9jjtAsFQ2Gh5knk7CD8cZB",
+    "height": 218230873,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:03 UTC",
+    "ts": 1790960622983725549
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "46hLVqB5EZFZ6ddVX2SYeFLXozqym1cFviXTuq76z8xL",
+    "height": 218230405,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 16:59 UTC",
+    "ts": 1790960348145407819
+   }
+  ],
+  "kind": "creation",
+  "near": 208820.58570841045,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "HgDKQDB9jZMgt57mnc2riWeUMPxRfBPQDRcdW7fJmQNv",
+    "height": 218231717,
+    "near": 208755.71583644,
+    "time": "2026-10-02 17:12 UTC",
+    "to": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-03"
+   },
+   {
+    "account": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "HXqS7Dfm6QAqoYM7tAc3hLFiM3NhUhqURYcUW6noVaUB",
+    "height": 219117723,
+    "near": 208820.58570841045,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-08 18:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-09"
+   }
+  ],
+  "time": "2026-10-08 18:02 UTC"
+ },
+ {
+  "account": "0455d9461774a04988e547f5822922062a7d60bf15585d65dceb65e04b94c1d6",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HTafzkSQ5PAF8LgRSCeB1x9VvEEYj8hKPds1eArNe3gw",
+    "height": 218232184,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:16 UTC",
+    "ts": 1790961398342142186
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FQXiFQNuTiPwb6Hd8gYiVcYDrJ6J8trrNMfvrD5Q149U",
+    "height": 218231372,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:08 UTC",
+    "ts": 1790960921869157444
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E6mAxJkYkMmw5FiML3dJUp9jjtAsFQ2Gh5knk7CD8cZB",
+    "height": 218230873,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:03 UTC",
+    "ts": 1790960622983725549
+   }
+  ],
+  "kind": "creation",
+  "near": 208820.58570841045,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "4TrVLWHzE8soiJvg7tGDzvhxR6sQodnLsZi6Gk2EVU6q",
+    "height": 218232331,
+    "near": 208755.71583644,
+    "time": "2026-10-02 17:18 UTC",
+    "to": "0455d9461774a04988e547f5822922062a7d60bf15585d65dceb65e04b94c1d6",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-03"
+   },
+   {
+    "account": "0455d9461774a04988e547f5822922062a7d60bf15585d65dceb65e04b94c1d6",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "75x2C43R4tgn2fTc41CQyycDoATSztPwCoxxSaaKdZqZ",
+    "height": 219117724,
+    "near": 208820.58570841045,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-08 18:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-09"
+   }
+  ],
+  "time": "2026-10-08 18:02 UTC"
+ },
+ {
+  "account": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "46hLVqB5EZFZ6ddVX2SYeFLXozqym1cFviXTuq76z8xL",
+    "height": 218230405,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 16:59 UTC",
+    "ts": 1790960348145407819
+   },
+   {
+    "from": "1e6ef8464ce09f96c6fc22583ead00fa0b65119128daa9732366d2a2e856e960",
+    "from_label": "exchange-style wallet (heuristic: 211,992 transactions)",
+    "hash": "4Br3DzPqEKBaD31fRKLUH6KD2tjhyivcKRHbkmFDo2RK",
+    "height": 218220224,
+    "near": 543779.0,
+    "time": "2026-10-02 15:19 UTC",
+    "ts": 1790954348609339162
+   },
+   {
+    "from": "1e6ef8464ce09f96c6fc22583ead00fa0b65119128daa9732366d2a2e856e960",
+    "from_label": "exchange-style wallet (heuristic: 211,992 transactions)",
+    "hash": "Eiy3a29XBhy8js4FNuPvxNeNz7bL72wfmBtacNqq1vZ4",
+    "height": 218219047,
+    "near": 500000.0,
+    "time": "2026-10-02 15:07 UTC",
+    "ts": 1790953646456232983
+   }
+  ],
+  "kind": "creation",
+  "near": 208755.66583644,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "9cCEpP3B4zbTQEoetSdEktaES5XUuZYPUhMQR9j8Y1of",
+    "height": 218230606,
+    "near": 208755.71583644,
+    "time": "2026-10-02 17:01 UTC",
+    "to": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-03"
+   },
+   {
+    "account": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GyQJsE6K2XsPCJWfVSZ7v68Gq658xXdaWdJpMwuEN4ZG",
+    "height": 218249390,
+    "near": 208755.66583644,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-02 20:05 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-03"
+   }
+  ],
+  "time": "2026-10-02 20:05 UTC"
+ },
+ {
+  "account": "008651a4845030e71aad6551725e153aeea2c680c6476e8ddc0dae0e4c9b025b",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E6mAxJkYkMmw5FiML3dJUp9jjtAsFQ2Gh5knk7CD8cZB",
+    "height": 218230873,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 17:03 UTC",
+    "ts": 1790960622983725549
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "46hLVqB5EZFZ6ddVX2SYeFLXozqym1cFviXTuq76z8xL",
+    "height": 218230405,
+    "near": 0.042499999999999996,
+    "time": "2026-10-02 16:59 UTC",
+    "ts": 1790960348145407819
+   },
+   {
+    "from": "1e6ef8464ce09f96c6fc22583ead00fa0b65119128daa9732366d2a2e856e960",
+    "from_label": "exchange-style wallet (heuristic: 211,992 transactions)",
+    "hash": "4Br3DzPqEKBaD31fRKLUH6KD2tjhyivcKRHbkmFDo2RK",
+    "height": 218220224,
+    "near": 543779.0,
+    "time": "2026-10-02 15:19 UTC",
+    "ts": 1790954348609339162
+   }
+  ],
+  "kind": "creation",
+  "near": 208755.66583644,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "A7ZuF9q163vj1QtYNntyFbdCFfo9oCv9Cp3U84WaqYY8",
+    "height": 218231115,
+    "near": 208755.71583644,
+    "time": "2026-10-02 17:06 UTC",
+    "to": "008651a4845030e71aad6551725e153aeea2c680c6476e8ddc0dae0e4c9b025b",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-03"
+   },
+   {
+    "account": "008651a4845030e71aad6551725e153aeea2c680c6476e8ddc0dae0e4c9b025b",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "DZQjX6U1KrJjx332royGEvzRitstPkrQ6eZm8GjeNxd3",
+    "height": 218250109,
+    "near": 208755.66583644,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-02 20:12 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-03"
+   }
+  ],
+  "time": "2026-10-02 20:12 UTC"
+ },
+ {
+  "account": "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7",
+  "kind": "redemption",
+  "near": 157268.69915634007,
+  "steps": [
+   {
+    "account": "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "H3kruX9S6aDBVKpSAieVkUDXAtvdByzbn8EKni7SG5KH",
+    "height": 222916501,
+    "near": 157268.69915634007,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-03 19:54 UTC",
+    "type": "unstake",
+    "window": "2026-11-04"
+   },
+   {
+    "account": "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "HCjB1B4SFnhSXxDEgfU4XvLeHu3rWqFFTSsHCLMA3WDk",
+    "height": 223058726,
+    "near": 157268.69915634007,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-04 19:17 UTC",
+    "type": "redemption_withdraw",
+    "window": "2026-11-05"
+   },
+   {
+    "account": "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "HLc2r6Nw36r18vNS5Nbzg2GegnUNEFaBYT5Ag3be2Yuu",
+    "height": 223070338,
+    "near": 157269.1369813999,
+    "time": "2026-11-04 21:11 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "type": "return_to_hub",
+    "window": "2026-11-05"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "combined_with": [
+     "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672"
+    ],
+    "hash": "8QaAyXttbEinL14J9eHovrb1sc82LUHJc7nDGETh7dNn",
+    "height": 223187992,
+    "near": 941017.10769234,
+    "time": "2026-11-05 16:02 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "DxDqkJWpQdy1VAFnuxCAYySRVgknT2NAggnKX2GkVy3h",
+    "height": 223188184,
+    "near": 941017.1068573504,
+    "time": "2026-11-05 16:03 UTC",
+    "to": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "to_label": "exchange-style wallet (heuristic: 79,032 transactions)",
+    "type": "onward"
+   }
+  ],
+  "time": "2026-11-04 19:17 UTC"
+ },
+ {
+  "account": "eeee0a0f709ca49f85d9acbef4a6d00748873a7090500e14d2dc211d5d08a023",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "EyMMxouJ7PBZ2Ldr8ocpykVb915DuPCUeRNGbfCJUHUA",
+    "height": 221118806,
+    "near": 0.042499999999999996,
+    "time": "2026-10-22 16:54 UTC",
+    "ts": 1792688087413141747
+   },
+   {
+    "from": "3e93b62aec7f1275a2eb6a0145d1d6406fd94f6c44f7fd705711f8139b5d25f9",
+    "from_label": "exchange-style wallet (heuristic: 74,612 transactions)",
+    "hash": "B3bHzfxbXJLkBh1eKDKYikzZCNeJwkwCfwU7bV8JesLf",
+    "height": 221107541,
+    "near": 156730.78666668,
+    "time": "2026-10-22 15:02 UTC",
+    "ts": 1792681334481313745
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Ajnyvzz9RJ1KgzffRXVisk65L3wL5RxS1CAtewzhFnu9",
+    "height": 221105763,
+    "near": 0.042499999999999996,
+    "time": "2026-10-22 14:44 UTC",
+    "ts": 1792680287525065837
+   }
+  ],
+  "kind": "creation",
+  "near": 156730.8137167009,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "FKWzzHrBHuYbgbgiFLwmkbVtvUZv2nBD29nr8NGTrZbH",
+    "height": 221119548,
+    "near": 156730.86371670093,
+    "time": "2026-10-22 17:02 UTC",
+    "to": "eeee0a0f709ca49f85d9acbef4a6d00748873a7090500e14d2dc211d5d08a023",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-23"
+   },
+   {
+    "account": "eeee0a0f709ca49f85d9acbef4a6d00748873a7090500e14d2dc211d5d08a023",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "Ccxra96RiKbX68pQgFGHgva2nmRsGJsyE57VxF5JyH1W",
+    "height": 221122903,
+    "near": 156730.8137167009,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-22 17:35 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-23"
+   }
+  ],
+  "time": "2026-10-22 17:35 UTC"
+ },
+ {
+  "account": "8da3458341cd5d3d04c4ba0b7b128a2963d9e06342780ef5d9f5109d59f8c3cb",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "3xbmd4xPELxunZ6YcpHJ38ULBf4hgGMT5XSokuMhqGPe",
+    "height": 217987281,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 00:22 UTC",
+    "ts": 1790814155024806542
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "DAZkHfAw27gAPSTshVw91f22CCrPkwgg5irmHhzyFJtf",
+    "height": 217985253,
+    "near": 0.042499999999999996,
+    "time": "2026-10-01 00:02 UTC",
+    "ts": 1790812962548975424
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E4YXHkJQTfmEX6W5TrsTA1uogcnAvSvxnZJWzMmbCJfa",
+    "height": 217984793,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 23:58 UTC",
+    "ts": 1790812691845462674
+   }
+  ],
+  "kind": "creation",
+  "near": 156574.32691777803,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "DgUxW9zDtnWx97V3auWkG2GtbusqzzzX55SFv26WguA9",
+    "height": 217987740,
+    "near": 156574.37691777805,
+    "time": "2026-10-01 00:27 UTC",
+    "to": "8da3458341cd5d3d04c4ba0b7b128a2963d9e06342780ef5d9f5109d59f8c3cb",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-02"
+   },
+   {
+    "account": "8da3458341cd5d3d04c4ba0b7b128a2963d9e06342780ef5d9f5109d59f8c3cb",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "5emXKLRdjoypxZ6Mu7ESjT5EfV5thJTxccUjgEvzEMPV",
+    "height": 217988763,
+    "near": 156574.32691777803,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:37 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:37 UTC"
+ },
+ {
+  "account": "a017b5cb7194e81ae6f2224753e53af95774af6d6117beb1ea4c23d37634547d",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "GphiNqbTS6CP6DkpemU35aGmt8Sw39HVbnCrJSKcZwTN",
+    "height": 217977360,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:45 UTC",
+    "ts": 1790808303071283296
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6nnVp6QuFsva7CDQf48pfQhvqfUpJWGgvChiuzo1juqm",
+    "height": 217976247,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:34 UTC",
+    "ts": 1790807652931021726
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "8VMbn6nwG4xmtXbHVCbnUgCRzfu8SC38s4KRKabAm3pQ",
+    "height": 217975296,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:24 UTC",
+    "ts": 1790807090849303423
+   }
+  ],
+  "kind": "creation",
+  "near": 156572.93434237,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "HUrStWJXp2FrV86uqVxKdQztV37qbeiqPS7ynwvq3mQD",
+    "height": 217977566,
+    "near": 156572.98434237,
+    "time": "2026-09-30 22:47 UTC",
+    "to": "a017b5cb7194e81ae6f2224753e53af95774af6d6117beb1ea4c23d37634547d",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "a017b5cb7194e81ae6f2224753e53af95774af6d6117beb1ea4c23d37634547d",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "6tUMU4R4yUfVhGBN45spPx3JLfzerycVJtxy86izZQWL",
+    "height": 217985187,
+    "near": 156572.93434237,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:02 UTC"
+ },
+ {
+  "account": "8ae7df97b6af1fccead6bb7b2ce9096878508442dfa3ca6b053bf3a717183e5b",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "8VMbn6nwG4xmtXbHVCbnUgCRzfu8SC38s4KRKabAm3pQ",
+    "height": 217975296,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:24 UTC",
+    "ts": 1790807090849303423
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Bx5RcqUDHDi9Y9TTtm4BoFKLrQ7MbE9ydJGnVLCsDS3m",
+    "height": 217974254,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:14 UTC",
+    "ts": 1790806478490686721
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6xEH2AmbZf1Jq4QNXSF92KVGq9LkvLwP4qY8BmaV3DXY",
+    "height": 217973632,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:08 UTC",
+    "ts": 1790806117133808402
+   }
+  ],
+  "kind": "creation",
+  "near": 156572.93434237,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "9n5usFJGwApiZQcisUZQw5A1WKGsCUyPEDqkoMwqXmin",
+    "height": 217975417,
+    "near": 156572.98434237,
+    "time": "2026-09-30 22:26 UTC",
+    "to": "8ae7df97b6af1fccead6bb7b2ce9096878508442dfa3ca6b053bf3a717183e5b",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "8ae7df97b6af1fccead6bb7b2ce9096878508442dfa3ca6b053bf3a717183e5b",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GrgqM6NfbRGPb1rTp8SUasyaBT8kH8WcVLKzpyy3eMfu",
+    "height": 217985285,
+    "near": 156572.93434237,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:03 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:03 UTC"
+ },
+ {
+  "account": "2b01e8ca6b082d15f1959c858109565b53534a2c8e1c3f62db67c4b82623c387",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6GsVQykAQvANHa8u78S4mjFaRUdaPiGTRpYVy2N7aAS9",
+    "height": 217978694,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:58 UTC",
+    "ts": 1790809097119222933
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "53vb4s6qETteZiYb4QEmSafK2dB19QdZxmcskZHDkRrq",
+    "height": 217977816,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:49 UTC",
+    "ts": 1790808573348439175
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "GphiNqbTS6CP6DkpemU35aGmt8Sw39HVbnCrJSKcZwTN",
+    "height": 217977360,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:45 UTC",
+    "ts": 1790808303071283296
+   }
+  ],
+  "kind": "creation",
+  "near": 156572.93434237,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "ABWWvy2pvHgEhScPmtXNeiaWuknHAa5NLjJbfjuV9EEL",
+    "height": 217979075,
+    "near": 156572.98434237,
+    "time": "2026-09-30 23:02 UTC",
+    "to": "2b01e8ca6b082d15f1959c858109565b53534a2c8e1c3f62db67c4b82623c387",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "2b01e8ca6b082d15f1959c858109565b53534a2c8e1c3f62db67c4b82623c387",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7HdNDJHA2nmpmfp6Muty2svArrEJxR6VQotN5rNqNNKA",
+    "height": 217985489,
+    "near": 156572.93434237,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:05 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:05 UTC"
+ },
+ {
+  "account": "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6nnVp6QuFsva7CDQf48pfQhvqfUpJWGgvChiuzo1juqm",
+    "height": 217976247,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:34 UTC",
+    "ts": 1790807652931021726
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "8VMbn6nwG4xmtXbHVCbnUgCRzfu8SC38s4KRKabAm3pQ",
+    "height": 217975296,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:24 UTC",
+    "ts": 1790807090849303423
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Bx5RcqUDHDi9Y9TTtm4BoFKLrQ7MbE9ydJGnVLCsDS3m",
+    "height": 217974254,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:14 UTC",
+    "ts": 1790806478490686721
+   }
+  ],
+  "kind": "creation",
+  "near": 156572.93434237,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "Fh4YpPvm5AqcT3mFFxmSxVAEDXSq5gcngUiWdzA8iJg2",
+    "height": 217977050,
+    "near": 156572.98434237,
+    "time": "2026-09-30 22:42 UTC",
+    "to": "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "DHDPoKjyqZFMPkceTLbtDw7V5PHLZYezo1ucSqktdtEy",
+    "height": 217986205,
+    "near": 156572.93434237,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:12 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:12 UTC"
+ },
+ {
+  "account": "de4cd583a7fb40c3f9bb840326aafc4e1bd367382777352e0329cb6f7a9771bb",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "53vb4s6qETteZiYb4QEmSafK2dB19QdZxmcskZHDkRrq",
+    "height": 217977816,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:49 UTC",
+    "ts": 1790808573348439175
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "GphiNqbTS6CP6DkpemU35aGmt8Sw39HVbnCrJSKcZwTN",
+    "height": 217977360,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:45 UTC",
+    "ts": 1790808303071283296
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6nnVp6QuFsva7CDQf48pfQhvqfUpJWGgvChiuzo1juqm",
+    "height": 217976247,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:34 UTC",
+    "ts": 1790807652931021726
+   }
+  ],
+  "kind": "creation",
+  "near": 156572.93434237,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "6HxkEGeCRw8iRwG5wfNEpgEEjMMje92vkTofWuJyCv9P",
+    "height": 217977962,
+    "near": 156572.98434237,
+    "time": "2026-09-30 22:51 UTC",
+    "to": "de4cd583a7fb40c3f9bb840326aafc4e1bd367382777352e0329cb6f7a9771bb",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "de4cd583a7fb40c3f9bb840326aafc4e1bd367382777352e0329cb6f7a9771bb",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "CjRypwfgPLZCv6wfJrgYYgS7YNSYH9zgsDiht8zbZsuC",
+    "height": 217986206,
+    "near": 156572.93434237,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:12 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:12 UTC"
+ },
+ {
+  "account": "d18e2eefa397cea5b77b3352e8d5ec1067640459611bbcfe72c53c2bb21cc72a",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "HpJRYQoAdWUQbwd6mnLhD6ViP3byMf3AKGa1v86Msaer",
+    "height": 221261605,
+    "near": 0.042499999999999996,
+    "time": "2026-10-23 16:17 UTC",
+    "ts": 1792772230571841079
+   },
+   {
+    "from": "3e93b62aec7f1275a2eb6a0145d1d6406fd94f6c44f7fd705711f8139b5d25f9",
+    "from_label": "exchange-style wallet (heuristic: 74,612 transactions)",
+    "hash": "B7jyJCZnih5Nbrh7NBPaqELg2bABLDo7PxkSSvQ8Nxeh",
+    "height": 221246498,
+    "near": 104496.02222642,
+    "time": "2026-10-23 13:52 UTC",
+    "ts": 1792763533146375039
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "4PCnLD8p1SqNgVzd4z7UUqMgv21D62U9HHpe5Uts7SR3",
+    "height": 221140696,
+    "near": 0.042499999999999996,
+    "time": "2026-10-22 20:31 UTC",
+    "ts": 1792701082392040821
+   }
+  ],
+  "kind": "creation",
+  "near": 104496.02017143046,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "AqwVuk7VWgikkJNk4VabLmicjFY5NmWaZHQoXimK7vSU",
+    "height": 221261802,
+    "near": 104496.07017143046,
+    "time": "2026-10-23 16:19 UTC",
+    "to": "d18e2eefa397cea5b77b3352e8d5ec1067640459611bbcfe72c53c2bb21cc72a",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-24"
+   },
+   {
+    "account": "d18e2eefa397cea5b77b3352e8d5ec1067640459611bbcfe72c53c2bb21cc72a",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "ELB7ovBNqopAMWZ6vkUxkvAwW8zqSsAWXtXjUsQPQ6JR",
+    "height": 221273596,
+    "near": 104496.02017143046,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-23 18:12 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-24"
+   }
+  ],
+  "time": "2026-10-23 18:12 UTC"
+ },
+ {
+  "account": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "gf5FCLzZoSn5z64SasVX5YL3WQ3FsTGBdTYirKuj9Sv",
+    "height": 219251876,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:59 UTC",
+    "ts": 1791561572223552614
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "T8Jd8pQheov2JZSZck3bAvRYfzhopgST4YGcb4Fh35H",
+    "height": 219250314,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:44 UTC",
+    "ts": 1791560659995783332
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7d31BqtrZgywBngq3tn5sw9WVK2vMyGit41T9scwF4kR",
+    "height": 219249620,
+    "near": 0.042499999999999996,
+    "time": "2026-10-09 15:37 UTC",
+    "ts": 1791560254662603809
+   }
+  ],
+  "kind": "creation",
+  "near": 104417.23968262185,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "GpsjfYtcddHunjef1BNk6nxerLZfSYmGkBvDLZhfbbyj",
+    "height": 219252025,
+    "near": 104417.28968262185,
+    "time": "2026-10-09 16:01 UTC",
+    "to": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-10"
+   },
+   {
+    "account": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GKM1hcFyx8nbapiyKJJgT6cy1PbYXKoUnps66C82432X",
+    "height": 219260778,
+    "near": 104417.23968262185,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-09 17:27 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-10"
+   }
+  ],
+  "time": "2026-10-09 17:27 UTC"
+ },
+ {
+  "account": "e087db714b5dea76ae677ceee225212c05d43c408d09fd8b63ce72a9c3ab7dbf",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "3T2QWFGoXfM5UyzCkL3VSampJz5sBc4Nrr7mcg1aNFiJ",
+    "height": 217970651,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:39 UTC",
+    "ts": 1790804356015512485
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5odimU1KS2LzN5FFNweL3Kkf3wJDVS2GZM7UhLVMTA3z",
+    "height": 217969630,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:29 UTC",
+    "ts": 1790803757056958663
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AxKrkZNcDpZgfqay7MHwGfh2Sjb8LnfCyCRnBTvjEBKR",
+    "height": 217968614,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:19 UTC",
+    "ts": 1790803157438788440
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "2KRUh9aewzniDGhVZ8jjP5AKjc595ZFgGb2pFCencNgH",
+    "height": 217970836,
+    "near": 104381.98956158,
+    "time": "2026-09-30 21:41 UTC",
+    "to": "e087db714b5dea76ae677ceee225212c05d43c408d09fd8b63ce72a9c3ab7dbf",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "e087db714b5dea76ae677ceee225212c05d43c408d09fd8b63ce72a9c3ab7dbf",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "8w5BUSZ9KkMKex1JXHHjLgpGTRPMEsYgDhfiZHBtyRgG",
+    "height": 217984776,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:58 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:58 UTC"
+ },
+ {
+  "account": "e95ab4e7eb61efd0432d7a9a303162afad8f7cfd5bae2a6d79371a9639f846ec",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "H34owezNMH4dymz6cJFYbaLUCp6Y54TdifUZELFffAqm",
+    "height": 217971099,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:43 UTC",
+    "ts": 1790804618232390817
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "3T2QWFGoXfM5UyzCkL3VSampJz5sBc4Nrr7mcg1aNFiJ",
+    "height": 217970651,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:39 UTC",
+    "ts": 1790804356015512485
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5odimU1KS2LzN5FFNweL3Kkf3wJDVS2GZM7UhLVMTA3z",
+    "height": 217969630,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:29 UTC",
+    "ts": 1790803757056958663
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "Z7HHjomRMLTgid5YqEXCxcNJgCPtf7kaVPg9327GBE3",
+    "height": 217971243,
+    "near": 104381.98956158,
+    "time": "2026-09-30 21:45 UTC",
+    "to": "e95ab4e7eb61efd0432d7a9a303162afad8f7cfd5bae2a6d79371a9639f846ec",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "e95ab4e7eb61efd0432d7a9a303162afad8f7cfd5bae2a6d79371a9639f846ec",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "72z9MgePi6DnXfMPZkCSfasmR6Hv8HxFxgp49j1T1NMv",
+    "height": 217984778,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:58 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:58 UTC"
+ },
+ {
+  "account": "9c468a7f2555c517179444334821a3309229d682e6a89e735e72f4ac2f36d52a",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5odimU1KS2LzN5FFNweL3Kkf3wJDVS2GZM7UhLVMTA3z",
+    "height": 217969630,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:29 UTC",
+    "ts": 1790803757056958663
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AxKrkZNcDpZgfqay7MHwGfh2Sjb8LnfCyCRnBTvjEBKR",
+    "height": 217968614,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:19 UTC",
+    "ts": 1790803157438788440
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5kJT5SEUWLVoEWxxPtTwxno5NbdqNwgD9t3r9HxmMAij",
+    "height": 217967804,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:11 UTC",
+    "ts": 1790802677419082697
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3RjdVtiQThmY75WDUpU24o5LfNo5Jv84yvQeGR6Bt5LJ",
+    "height": 217970422,
+    "near": 104381.98956158,
+    "time": "2026-09-30 21:37 UTC",
+    "to": "9c468a7f2555c517179444334821a3309229d682e6a89e735e72f4ac2f36d52a",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "9c468a7f2555c517179444334821a3309229d682e6a89e735e72f4ac2f36d52a",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7Rfo5d1o32S1gbpZbLaHTQ8q4dQAA7JaaEszRnq9aDYg",
+    "height": 217984880,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:59 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:59 UTC"
+ },
+ {
+  "account": "90480d4be453fd300153204bdade68111436f8dd0cbd79579ee307ae4070e76e",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6xEH2AmbZf1Jq4QNXSF92KVGq9LkvLwP4qY8BmaV3DXY",
+    "height": 217973632,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:08 UTC",
+    "ts": 1790806117133808402
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "4yC1Ce7HFmXXcSDxBMHwpVtXBwqUVdovwPfUzxuqDGwJ",
+    "height": 217973229,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:04 UTC",
+    "ts": 1790805877412291706
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "GRfV3pP3V6hQEpr7goCY5CwLiftwFU9Wfh5HMDECShEJ",
+    "height": 217972162,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:54 UTC",
+    "ts": 1790805248434143734
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3Hsh4TUwZeXbbyxi3nr2xCqs2A2iCnCJ7sWTSUKdH5YW",
+    "height": 217973986,
+    "near": 104381.98956158,
+    "time": "2026-09-30 22:12 UTC",
+    "to": "90480d4be453fd300153204bdade68111436f8dd0cbd79579ee307ae4070e76e",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "90480d4be453fd300153204bdade68111436f8dd0cbd79579ee307ae4070e76e",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "795bte67CTix1Z9EVrCkqeC6iUpKwxSctV8AEqWUmRjX",
+    "height": 217984979,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:00 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:00 UTC"
+ },
+ {
+  "account": "80a8d837d7c6ec6155d33e1233bff8e3354b8c66b4a934459994137ed6c6ae85",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9LSkeBYgbKMTQcv1Cows6vWQXWrKf8yLWxBivRGmPdfq",
+    "height": 217971540,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:47 UTC",
+    "ts": 1790804877027415597
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "H34owezNMH4dymz6cJFYbaLUCp6Y54TdifUZELFffAqm",
+    "height": 217971099,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:43 UTC",
+    "ts": 1790804618232390817
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "3T2QWFGoXfM5UyzCkL3VSampJz5sBc4Nrr7mcg1aNFiJ",
+    "height": 217970651,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:39 UTC",
+    "ts": 1790804356015512485
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3SWdejgWgiviqbYnZL65ehcaXVrYoMvtooXRCZrr3Ln8",
+    "height": 217971948,
+    "near": 104381.98956158,
+    "time": "2026-09-30 21:52 UTC",
+    "to": "80a8d837d7c6ec6155d33e1233bff8e3354b8c66b4a934459994137ed6c6ae85",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "80a8d837d7c6ec6155d33e1233bff8e3354b8c66b4a934459994137ed6c6ae85",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "8tP3KECDpHfJnoAvN3iKY2KH7xf9tspwtjrcHJSAXxsW",
+    "height": 217985186,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:02 UTC"
+ },
+ {
+  "account": "4acc4cf416b69dd4007fb07f16cf55790ba2a391f04e555d5bc210b2a0a9b229",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "4yC1Ce7HFmXXcSDxBMHwpVtXBwqUVdovwPfUzxuqDGwJ",
+    "height": 217973229,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:04 UTC",
+    "ts": 1790805877412291706
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "GRfV3pP3V6hQEpr7goCY5CwLiftwFU9Wfh5HMDECShEJ",
+    "height": 217972162,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:54 UTC",
+    "ts": 1790805248434143734
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9LSkeBYgbKMTQcv1Cows6vWQXWrKf8yLWxBivRGmPdfq",
+    "height": 217971540,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:47 UTC",
+    "ts": 1790804877027415597
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "EvifKFZKpeRDq6xJSk9jVyxguibxCPAvFcN8aJroMYke",
+    "height": 217973372,
+    "near": 104381.98956158,
+    "time": "2026-09-30 22:06 UTC",
+    "to": "4acc4cf416b69dd4007fb07f16cf55790ba2a391f04e555d5bc210b2a0a9b229",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "4acc4cf416b69dd4007fb07f16cf55790ba2a391f04e555d5bc210b2a0a9b229",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GNMByZJRYrHF3W7W7sitiq7NtsnxR6vqNuGYwqmEnQ4F",
+    "height": 217985184,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:02 UTC"
+ },
+ {
+  "account": "fa0ccd4de3830d50bac2a54d3229c67707f4c9d1308263d0c882209cf5457d10",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Bx5RcqUDHDi9Y9TTtm4BoFKLrQ7MbE9ydJGnVLCsDS3m",
+    "height": 217974254,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:14 UTC",
+    "ts": 1790806478490686721
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6xEH2AmbZf1Jq4QNXSF92KVGq9LkvLwP4qY8BmaV3DXY",
+    "height": 217973632,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:08 UTC",
+    "ts": 1790806117133808402
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "4yC1Ce7HFmXXcSDxBMHwpVtXBwqUVdovwPfUzxuqDGwJ",
+    "height": 217973229,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 22:04 UTC",
+    "ts": 1790805877412291706
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3XbNDxfxkbxvM7Bwrp7rrV3DAeJxRsC71BBiehcdvHje",
+    "height": 217975012,
+    "near": 104381.98956158,
+    "time": "2026-09-30 22:22 UTC",
+    "to": "fa0ccd4de3830d50bac2a54d3229c67707f4c9d1308263d0c882209cf5457d10",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "fa0ccd4de3830d50bac2a54d3229c67707f4c9d1308263d0c882209cf5457d10",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "6AagyQpHDZxFQUHsEHQ61r9BtiSuPTPKGqq9qH3mBCgA",
+    "height": 217985185,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:02 UTC"
+ },
+ {
+  "account": "48caac239e6131ec5603339b3ab044983e78a8d6be4deb3b8f9e732c4af47660",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5kJT5SEUWLVoEWxxPtTwxno5NbdqNwgD9t3r9HxmMAij",
+    "height": 217967804,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:11 UTC",
+    "ts": 1790802677419082697
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AdbVd91T4a1WFeYZkaBbLUx2N1bic6THVW3MnMit7pJ6",
+    "height": 217966699,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:00 UTC",
+    "ts": 1790802018643044550
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "D2kwuwXkmcap6o4xfcp96scMwU9AC3igDF6eBgZNnKKS",
+    "height": 217965587,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:49 UTC",
+    "ts": 1790801358077949469
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "AYqZNSdCaFQG37JVdy8cjX9z8sLLNr4L8CUSVBVZ1Td7",
+    "height": 217968384,
+    "near": 104381.98956158,
+    "time": "2026-09-30 21:17 UTC",
+    "to": "48caac239e6131ec5603339b3ab044983e78a8d6be4deb3b8f9e732c4af47660",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "48caac239e6131ec5603339b3ab044983e78a8d6be4deb3b8f9e732c4af47660",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "6sFEe9AQY29mHgKmCpP12sPe7XFesHEFHJwb8Q76nq6T",
+    "height": 217985691,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:07 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:07 UTC"
+ },
+ {
+  "account": "46fbd02c9dd7b9946cf2b58b180f4d5ded44b9eae153797527bbdc7cec8b9346",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AxKrkZNcDpZgfqay7MHwGfh2Sjb8LnfCyCRnBTvjEBKR",
+    "height": 217968614,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:19 UTC",
+    "ts": 1790803157438788440
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5kJT5SEUWLVoEWxxPtTwxno5NbdqNwgD9t3r9HxmMAij",
+    "height": 217967804,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:11 UTC",
+    "ts": 1790802677419082697
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AdbVd91T4a1WFeYZkaBbLUx2N1bic6THVW3MnMit7pJ6",
+    "height": 217966699,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:00 UTC",
+    "ts": 1790802018643044550
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "9b1KTWEKHGZkv2j2zxVEFsBajw2eDJrGz3nhZSg6nZ99",
+    "height": 217968795,
+    "near": 104381.98956158,
+    "time": "2026-09-30 21:21 UTC",
+    "to": "46fbd02c9dd7b9946cf2b58b180f4d5ded44b9eae153797527bbdc7cec8b9346",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "46fbd02c9dd7b9946cf2b58b180f4d5ded44b9eae153797527bbdc7cec8b9346",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "5DxLY2r3peZKrkUa9ekZqK8aeoq4FdtXMWG6iuyLJKnF",
+    "height": 217985690,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:07 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:07 UTC"
+ },
+ {
+  "account": "c3af4956181a95b8f24f78f4454aa0d2f840da5213b0bf0cc3450f57ea9f9f30",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "GRfV3pP3V6hQEpr7goCY5CwLiftwFU9Wfh5HMDECShEJ",
+    "height": 217972162,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:54 UTC",
+    "ts": 1790805248434143734
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9LSkeBYgbKMTQcv1Cows6vWQXWrKf8yLWxBivRGmPdfq",
+    "height": 217971540,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:47 UTC",
+    "ts": 1790804877027415597
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "H34owezNMH4dymz6cJFYbaLUCp6Y54TdifUZELFffAqm",
+    "height": 217971099,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:43 UTC",
+    "ts": 1790804618232390817
+   }
+  ],
+  "kind": "creation",
+  "near": 104381.93956158,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "G8SBr3HHPdzCnzeCXBENvwqGF3QBBhC9xSFmLSTyYKR8",
+    "height": 217972967,
+    "near": 104381.98956158,
+    "time": "2026-09-30 22:02 UTC",
+    "to": "c3af4956181a95b8f24f78f4454aa0d2f840da5213b0bf0cc3450f57ea9f9f30",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "c3af4956181a95b8f24f78f4454aa0d2f840da5213b0bf0cc3450f57ea9f9f30",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "66Pr1DQrbKZ5mci1EZfPVkp2iy2bbahczpmYA3KWmiDR",
+    "height": 217985692,
+    "near": 104381.93956158,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:07 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:07 UTC"
+ },
+ {
+  "account": "f2962cf53d475c92d0545f906679903300236c792dd6c14d5306532592a17d22",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "85xXyvxbc8zSgThaTifBmCjN5nLQoHUS3hQmaNxnoh78",
+    "height": 218823075,
+    "near": 0.042499999999999996,
+    "time": "2026-10-06 17:43 UTC",
+    "ts": 1791308580017565570
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5jZEG9rdApprkgVpSZacthJe2tuizyQwJcVcTE1QRW6B",
+    "height": 218818467,
+    "near": 0.042499999999999996,
+    "time": "2026-10-06 16:57 UTC",
+    "ts": 1791305850671774566
+   },
+   {
+    "from": "466222f1d229ca75ae9b4c82202e0e0b2fc3f6bdbdbac3704e8bf1808baa6093",
+    "from_label": "exchange-style wallet (heuristic: 10,447 transactions)",
+    "hash": "GnrrYSSvJJfAGRyjEhZxepgbtrsMPL5ThA3ySS9XFQHL",
+    "height": 218812783,
+    "near": 1.0,
+    "time": "2026-10-06 16:01 UTC",
+    "ts": 1791302466086364371
+   }
+  ],
+  "kind": "creation",
+  "near": 104377.27041936092,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "8yQFUCCe6vGkSkeA3gFVSsQWGJKrQzS3JGs8WeZY8P6g",
+    "height": 218823485,
+    "near": 104377.32041936093,
+    "time": "2026-10-06 17:47 UTC",
+    "to": "f2962cf53d475c92d0545f906679903300236c792dd6c14d5306532592a17d22",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-07"
+   },
+   {
+    "account": "f2962cf53d475c92d0545f906679903300236c792dd6c14d5306532592a17d22",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "9f4LXojts3SSAGz5XfZSxdcz7zb6EPZzi2cSDu7L8EmS",
+    "height": 218827218,
+    "near": 104377.27041936092,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-06 18:24 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-07"
+   }
+  ],
+  "time": "2026-10-06 18:24 UTC"
+ },
+ {
+  "account": "432766610e6d7069916d5207202505f46244539b905bb73e66e7ff3094e7b4c5",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "ErxFj3kbimKtpt4JfsgryrnGW7CbctUT1yjzWao2awgu",
+    "height": 217685914,
+    "near": 0.042499999999999996,
+    "time": "2026-09-28 21:24 UTC",
+    "ts": 1790630653292168310
+   },
+   {
+    "from": "717f12dd9354b83dac4c80b60dbc15712baac97834d63ccf545c53db57d9eeb3",
+    "from_label": "unlabelled account",
+    "hash": "C6CCVp1LDS1Kh3Du2W4gWneb1rqHNNwzGLXntEj41v2T",
+    "height": 217684073,
+    "near": 1.169e-05,
+    "time": "2026-09-28 21:04 UTC",
+    "ts": 1790629495693817565
+   },
+   {
+    "from": "717f12dd9354b83dac4c80b60dbc15712baac97834d63ccf545c53db57d9eeb3",
+    "from_label": "unlabelled account",
+    "hash": "7aHasgaqr2ZRUPaB3wPfmgLS8G8uH6Kz4wZdbhJVVzvM",
+    "height": 217681403,
+    "near": 104384.1336,
+    "time": "2026-09-28 20:38 UTC",
+    "ts": 1790627914013506061
+   }
+  ],
+  "kind": "creation",
+  "near": 52192.14629089231,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "9Y1D8K9BYiZHFNXBaQwL7saz4CQ2wdV6GfcpRADAUqz2",
+    "height": 217686095,
+    "near": 52192.06680585,
+    "time": "2026-09-28 21:26 UTC",
+    "to": "432766610e6d7069916d5207202505f46244539b905bb73e66e7ff3094e7b4c5",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-09-29"
+   },
+   {
+    "account": "432766610e6d7069916d5207202505f46244539b905bb73e66e7ff3094e7b4c5",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "Ao7qRqwzWpypauCWRWwbh9TpHrTpFTfxvd8YFX4Kk1Um",
+    "height": 217689935,
+    "near": 52192.14629089231,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-28 22:04 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-09-29"
+   }
+  ],
+  "time": "2026-09-28 22:04 UTC"
+ },
+ {
+  "account": "23ba8249cba5f4d5773d3bd3ce422f305a6cdfc15637e76a8e6d7294084b8b5c",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Hzqb3HLZFRK9ZuMxZv2P5TvrBBfT22Fp2DwUkcjRPfQz",
+    "height": 217959472,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:49 UTC",
+    "ts": 1790797762733826067
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "chapbRmCov74nGQueFS5QeeX9jUM3iJHU9JppAZo29V",
+    "height": 217958865,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:43 UTC",
+    "ts": 1790797403960188216
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5NnxWU2EDPFBNhjCtGygHeucjUaSzHjEzcd9cpVdaZWJ",
+    "height": 217958446,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:39 UTC",
+    "ts": 1790797152442470587
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "AF2MA8tknqhcPVZqcqSasxAwxT1cfDmCbtg9E2if7uaT",
+    "height": 217959641,
+    "near": 52190.99478079,
+    "time": "2026-09-30 19:51 UTC",
+    "to": "23ba8249cba5f4d5773d3bd3ce422f305a6cdfc15637e76a8e6d7294084b8b5c",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "23ba8249cba5f4d5773d3bd3ce422f305a6cdfc15637e76a8e6d7294084b8b5c",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "JCPBvbP3guENQ9rE3wLnyjyZfj8FmrMfA1Py6uEsaQKN",
+    "height": 217984168,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:52 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:52 UTC"
+ },
+ {
+  "account": "b33d48725ff20ebfab110f287f99a657a5b7be5957382dcf4472d0fba81d0456",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "chapbRmCov74nGQueFS5QeeX9jUM3iJHU9JppAZo29V",
+    "height": 217958865,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:43 UTC",
+    "ts": 1790797403960188216
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5NnxWU2EDPFBNhjCtGygHeucjUaSzHjEzcd9cpVdaZWJ",
+    "height": 217958446,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:39 UTC",
+    "ts": 1790797152442470587
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5zBTueZCWNCgvnJwEmL3JJ3BaJXnumGfTXHUav29zRKn",
+    "height": 217957462,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:29 UTC",
+    "ts": 1790796572634490820
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "Edvn4647Mz8hwT1RvJYsQKTyGfsgQqNTY7bGKaYT7J2V",
+    "height": 217959232,
+    "near": 52190.99478079,
+    "time": "2026-09-30 19:47 UTC",
+    "to": "b33d48725ff20ebfab110f287f99a657a5b7be5957382dcf4472d0fba81d0456",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "b33d48725ff20ebfab110f287f99a657a5b7be5957382dcf4472d0fba81d0456",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3tLAwkYLDecZBMNTm9qVz2ymonsVYjDuu6ZwFtMPXTT5",
+    "height": 217984270,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:53 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:53 UTC"
+ },
+ {
+  "account": "0afacba385227af2cc8a39e7ec020d2bb7eca2fbd243ad8609978c68bad79ecd",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FnyVBLFDUYqjxGnngUGSockrtu29ZwcrZEAr8g8r2tx4",
+    "height": 217962421,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:18 UTC",
+    "ts": 1790799499502252211
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "EeDjHY64UF7naqzx8eFWqfHHL5zK7DP69hRt3yivET2p",
+    "height": 217962018,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:14 UTC",
+    "ts": 1790799263113557164
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7E8jJKPhnm9G9r8eXeu3JQYgRF9spZbg8PfkiUMDPdGF",
+    "height": 217961102,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:05 UTC",
+    "ts": 1790798723284896620
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "ZPjDy9aKirr9kVvuiwrYXZc7KzFRKupV9NSTvnZPKzQ",
+    "height": 217962805,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:22 UTC",
+    "to": "0afacba385227af2cc8a39e7ec020d2bb7eca2fbd243ad8609978c68bad79ecd",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "0afacba385227af2cc8a39e7ec020d2bb7eca2fbd243ad8609978c68bad79ecd",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "sngWPhoEfH9N63NqLL7rTd6b8nppPwYBqfAH9Q1Wh7M",
+    "height": 217984271,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:53 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:53 UTC"
+ },
+ {
+  "account": "8e5f93faef56f9dba63057ee02112264ce9484e4c11acb5af00c3955a3be4b2c",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "55d9CizZDMcQSjUAvXBUayedPdqZPyFtJzQUyp6eQ7xi",
+    "height": 217963037,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:24 UTC",
+    "ts": 1790799858320308808
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FnyVBLFDUYqjxGnngUGSockrtu29ZwcrZEAr8g8r2tx4",
+    "height": 217962421,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:18 UTC",
+    "ts": 1790799499502252211
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "EeDjHY64UF7naqzx8eFWqfHHL5zK7DP69hRt3yivET2p",
+    "height": 217962018,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:14 UTC",
+    "ts": 1790799263113557164
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "46wdcHtebmnJkj1g7GyYss8Yo1ug8zSq5YRVDtw1TgZ6",
+    "height": 217963827,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:32 UTC",
+    "to": "8e5f93faef56f9dba63057ee02112264ce9484e4c11acb5af00c3955a3be4b2c",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "8e5f93faef56f9dba63057ee02112264ce9484e4c11acb5af00c3955a3be4b2c",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "A8o92CoHFzC8rZh6KmZdrNfjtA3ek5njCE8yeG4pSMad",
+    "height": 217984373,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:54 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:54 UTC"
+ },
+ {
+  "account": "dff35ab746d298b9b17149e7f4cb1d5e8be17310d522645dbda9dac7fd4f47ed",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AdbVd91T4a1WFeYZkaBbLUx2N1bic6THVW3MnMit7pJ6",
+    "height": 217966699,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 21:00 UTC",
+    "ts": 1790802018643044550
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "D2kwuwXkmcap6o4xfcp96scMwU9AC3igDF6eBgZNnKKS",
+    "height": 217965587,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:49 UTC",
+    "ts": 1790801358077949469
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FFRBEBxicMzY8Umc4LaEPLhYv1kdGWkpHNjU1NVAPA1b",
+    "height": 217965080,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:44 UTC",
+    "ts": 1790801057989429589
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "F9EPQ9pkTATkh2E6bHoTA6HwwNAxXVovpcypDnPWo4xV",
+    "height": 217966875,
+    "near": 52190.99478079,
+    "time": "2026-09-30 21:02 UTC",
+    "to": "dff35ab746d298b9b17149e7f4cb1d5e8be17310d522645dbda9dac7fd4f47ed",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "dff35ab746d298b9b17149e7f4cb1d5e8be17310d522645dbda9dac7fd4f47ed",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "51tMu8BMg3S8cRPNRnyrNYD6fANtKLVAnV4euZe7MXPu",
+    "height": 217984374,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:54 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:54 UTC"
+ },
+ {
+  "account": "7ac061cd09ddbb4b404961d829022db0dd8fec9d4bdecd131cdec3e03e612f19",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7E8jJKPhnm9G9r8eXeu3JQYgRF9spZbg8PfkiUMDPdGF",
+    "height": 217961102,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:05 UTC",
+    "ts": 1790798723284896620
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6TVQWPqoMSyRxozxviJsXMuPidhoZEBYVQ7ikAcjwtHF",
+    "height": 217959987,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:54 UTC",
+    "ts": 1790798063081685293
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Hzqb3HLZFRK9ZuMxZv2P5TvrBBfT22Fp2DwUkcjRPfQz",
+    "height": 217959472,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:49 UTC",
+    "ts": 1790797762733826067
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "JBMNgSqW41GEsFcUVagcZwRc8hMRXhVFY1mGHDfJbnWz",
+    "height": 217961777,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:12 UTC",
+    "to": "7ac061cd09ddbb4b404961d829022db0dd8fec9d4bdecd131cdec3e03e612f19",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "7ac061cd09ddbb4b404961d829022db0dd8fec9d4bdecd131cdec3e03e612f19",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "8dbvnYv2Rc6aXoLWocJAGFQhJdvb39GUbRstPYgAfUwZ",
+    "height": 217984474,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:55 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:55 UTC"
+ },
+ {
+  "account": "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "EeDjHY64UF7naqzx8eFWqfHHL5zK7DP69hRt3yivET2p",
+    "height": 217962018,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:14 UTC",
+    "ts": 1790799263113557164
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "7E8jJKPhnm9G9r8eXeu3JQYgRF9spZbg8PfkiUMDPdGF",
+    "height": 217961102,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:05 UTC",
+    "ts": 1790798723284896620
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6TVQWPqoMSyRxozxviJsXMuPidhoZEBYVQ7ikAcjwtHF",
+    "height": 217959987,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:54 UTC",
+    "ts": 1790798063081685293
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "E4D6KAM3Ci94dqwoEgdmwAVg596q6iAbkvrJkoYMpvz4",
+    "height": 217962188,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:16 UTC",
+    "to": "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3R6yYDEfibrj2ec83Ew9NZw5eTsAezax9LRGCYw7M91T",
+    "height": 217984473,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:55 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:55 UTC"
+ },
+ {
+  "account": "aa648a5cef0c8bcac7b1ae889bf381eb1df0e99131e97cf6125abb4457f3a13e",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "D2kwuwXkmcap6o4xfcp96scMwU9AC3igDF6eBgZNnKKS",
+    "height": 217965587,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:49 UTC",
+    "ts": 1790801358077949469
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FFRBEBxicMzY8Umc4LaEPLhYv1kdGWkpHNjU1NVAPA1b",
+    "height": 217965080,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:44 UTC",
+    "ts": 1790801057989429589
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AB5Bg5seAjnsggKQfV2Z3P3TW1rNpiHzDL7o1YLzrdz8",
+    "height": 217964063,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:34 UTC",
+    "ts": 1790800462709405212
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "F9N2gqRr8eHnrMQSRxYw9v3JyP5TAKwM21NtTw9S77mv",
+    "height": 217966367,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:57 UTC",
+    "to": "aa648a5cef0c8bcac7b1ae889bf381eb1df0e99131e97cf6125abb4457f3a13e",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "aa648a5cef0c8bcac7b1ae889bf381eb1df0e99131e97cf6125abb4457f3a13e",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7KDLnVTtAF6DyzJRNwtER9TBFYpxj11xQ5YzRcjQLtum",
+    "height": 217984575,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:56 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:56 UTC"
+ },
+ {
+  "account": "cd12e2bb67025e6cfb3e937a3f63f32f51f8dd68845590c90f8a12fdf82404c2",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5zBTueZCWNCgvnJwEmL3JJ3BaJXnumGfTXHUav29zRKn",
+    "height": 217957462,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:29 UTC",
+    "ts": 1790796572634490820
+   },
+   {
+    "from": "1e6ef8464ce09f96c6fc22583ead00fa0b65119128daa9732366d2a2e856e960",
+    "from_label": "exchange-style wallet (heuristic: 211,992 transactions)",
+    "hash": "9QXbEMVp36MRHqxDdfhHG4af8LeaYwLiw4aH5zy2gp1w",
+    "height": 217952139,
+    "near": 699820.0,
+    "time": "2026-09-30 18:37 UTC",
+    "ts": 1790793434328230713
+   },
+   {
+    "from": "1e6ef8464ce09f96c6fc22583ead00fa0b65119128daa9732366d2a2e856e960",
+    "from_label": "exchange-style wallet (heuristic: 211,992 transactions)",
+    "hash": "En1FFkhJozuTc72FEGbRbH1g1eioVAftFe1SWs6bxdPz",
+    "height": 217951523,
+    "near": 374724.0,
+    "time": "2026-09-30 18:31 UTC",
+    "ts": 1790793071555119399
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "9AuPGM7pzU46etAPukaNKb19kHtx7LgnoBy8743W493t",
+    "height": 217958225,
+    "near": 52190.99478079,
+    "time": "2026-09-30 19:37 UTC",
+    "to": "cd12e2bb67025e6cfb3e937a3f63f32f51f8dd68845590c90f8a12fdf82404c2",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "cd12e2bb67025e6cfb3e937a3f63f32f51f8dd68845590c90f8a12fdf82404c2",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "G9FZyaQDaMmBeYgeXGL7fsSCaC1kg7Biax4hZPFVFP8J",
+    "height": 217984675,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:57 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:57 UTC"
+ },
+ {
+  "account": "83e8cbcbb73b57406dfa2287985c9f05f35ebcff3f96d0a7399de385186c57c5",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "6TVQWPqoMSyRxozxviJsXMuPidhoZEBYVQ7ikAcjwtHF",
+    "height": 217959987,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:54 UTC",
+    "ts": 1790798063081685293
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Hzqb3HLZFRK9ZuMxZv2P5TvrBBfT22Fp2DwUkcjRPfQz",
+    "height": 217959472,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:49 UTC",
+    "ts": 1790797762733826067
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "chapbRmCov74nGQueFS5QeeX9jUM3iJHU9JppAZo29V",
+    "height": 217958865,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:43 UTC",
+    "ts": 1790797403960188216
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "2nawRgopzHgTWiKxWyhuPqdzgFydXFq26zMteSHmC2Z2",
+    "height": 217960765,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:02 UTC",
+    "to": "83e8cbcbb73b57406dfa2287985c9f05f35ebcff3f96d0a7399de385186c57c5",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "83e8cbcbb73b57406dfa2287985c9f05f35ebcff3f96d0a7399de385186c57c5",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "H9CxuRKWK57v5b6eVuFNeCg1Ao9nGNt78LbF5XZs3mu8",
+    "height": 217984675,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:57 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:57 UTC"
+ },
+ {
+  "account": "7f8c6524cfaa5eb85b1dcb0d817bef51c86ff85f2856fa740257170ea270e888",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AB5Bg5seAjnsggKQfV2Z3P3TW1rNpiHzDL7o1YLzrdz8",
+    "height": 217964063,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:34 UTC",
+    "ts": 1790800462709405212
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "55d9CizZDMcQSjUAvXBUayedPdqZPyFtJzQUyp6eQ7xi",
+    "height": 217963037,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:24 UTC",
+    "ts": 1790799858320308808
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FnyVBLFDUYqjxGnngUGSockrtu29ZwcrZEAr8g8r2tx4",
+    "height": 217962421,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:18 UTC",
+    "ts": 1790799499502252211
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "DAJGJQQjLuVaqVeozHjJAG6JMffHrntZDWw9YYLNLifN",
+    "height": 217964849,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:42 UTC",
+    "to": "7f8c6524cfaa5eb85b1dcb0d817bef51c86ff85f2856fa740257170ea270e888",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "7f8c6524cfaa5eb85b1dcb0d817bef51c86ff85f2856fa740257170ea270e888",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "CFCHjAwLrZv8ST7QZEvgFzcxHUiq5Rin1n4k4oz7sGfX",
+    "height": 217984677,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:57 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:57 UTC"
+ },
+ {
+  "account": "47f7d22fdf6f910fe7651760239b477eedbd285d6189406b10f5c8924869a0e7",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FFRBEBxicMzY8Umc4LaEPLhYv1kdGWkpHNjU1NVAPA1b",
+    "height": 217965080,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:44 UTC",
+    "ts": 1790801057989429589
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AB5Bg5seAjnsggKQfV2Z3P3TW1rNpiHzDL7o1YLzrdz8",
+    "height": 217964063,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:34 UTC",
+    "ts": 1790800462709405212
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "55d9CizZDMcQSjUAvXBUayedPdqZPyFtJzQUyp6eQ7xi",
+    "height": 217963037,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 20:24 UTC",
+    "ts": 1790799858320308808
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3C7tb4JTJZESEg2pELDNg5izA3osxwRLejY6MZn7AG8y",
+    "height": 217965257,
+    "near": 52190.99478079,
+    "time": "2026-09-30 20:46 UTC",
+    "to": "47f7d22fdf6f910fe7651760239b477eedbd285d6189406b10f5c8924869a0e7",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "47f7d22fdf6f910fe7651760239b477eedbd285d6189406b10f5c8924869a0e7",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "BzxKVEyLNqMqYtmCjVTsojpEwhHT9siNNxSNdSMgpsRx",
+    "height": 217984676,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-09-30 23:57 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-01"
+   }
+  ],
+  "time": "2026-09-30 23:57 UTC"
+ },
+ {
+  "account": "df65a245609c5995eb2096b9c744bcfca663efd152e0d5236fce7fc4a8805e51",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5NnxWU2EDPFBNhjCtGygHeucjUaSzHjEzcd9cpVdaZWJ",
+    "height": 217958446,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:39 UTC",
+    "ts": 1790797152442470587
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5zBTueZCWNCgvnJwEmL3JJ3BaJXnumGfTXHUav29zRKn",
+    "height": 217957462,
+    "near": 0.042499999999999996,
+    "time": "2026-09-30 19:29 UTC",
+    "ts": 1790796572634490820
+   },
+   {
+    "from": "1e6ef8464ce09f96c6fc22583ead00fa0b65119128daa9732366d2a2e856e960",
+    "from_label": "exchange-style wallet (heuristic: 211,992 transactions)",
+    "hash": "9QXbEMVp36MRHqxDdfhHG4af8LeaYwLiw4aH5zy2gp1w",
+    "height": 217952139,
+    "near": 699820.0,
+    "time": "2026-09-30 18:37 UTC",
+    "ts": 1790793434328230713
+   }
+  ],
+  "kind": "creation",
+  "near": 52190.94478079,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "DZNyyPmXSn39fwhsV78wFNABCxyaEeam3MAWkZ8oy5oL",
+    "height": 217958627,
+    "near": 52190.99478079,
+    "time": "2026-09-30 19:41 UTC",
+    "to": "df65a245609c5995eb2096b9c744bcfca663efd152e0d5236fce7fc4a8805e51",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-01"
+   },
+   {
+    "account": "df65a245609c5995eb2096b9c744bcfca663efd152e0d5236fce7fc4a8805e51",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "CXgsJXq3FpdKPoq2fQx6Lm8Vp3KebvqBFhQW9NfTmohD",
+    "height": 217985185,
+    "near": 52190.94478079,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-01 00:02 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-02"
+   }
+  ],
+  "time": "2026-10-01 00:02 UTC"
+ },
+ {
+  "account": "8404644d066b9c292d0c45f39b321bb5c5dc316402b802d6ba1a3c1dd1960474",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "2FdG1YjVnbqD3Kiq2ydWWPCo6GcpzhyhE6voEf3JQxGj",
+    "height": 222155871,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:41 UTC",
+    "ts": 1793295709799291943
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CNRzT41TeGCvynBQ1SHj5GBFiwLm59B7in1CraPQ6i6y",
+    "height": 222153932,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:22 UTC",
+    "ts": 1793294550133982521
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AG8oTKZ1UnSqWwdmePkj3KG9FPkGphwoSkREmjcCzU1a",
+    "height": 222153529,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:18 UTC",
+    "ts": 1793294311467426644
+   }
+  ],
+  "kind": "creation",
+  "near": 17312.345429260848,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "Cd1R8hLS2bykNgu8TAL6qcgxPoY7k6A35NvEnigDEoVf",
+    "height": 222155999,
+    "near": 17312.395429260847,
+    "time": "2026-10-29 17:43 UTC",
+    "to": "8404644d066b9c292d0c45f39b321bb5c5dc316402b802d6ba1a3c1dd1960474",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "8404644d066b9c292d0c45f39b321bb5c5dc316402b802d6ba1a3c1dd1960474",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "FLX9FseJ9XRdZLWXdMyF5zuRjj3Ppw18rp6JcR1aRQZ6",
+    "height": 222160899,
+    "near": 17312.345429260848,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:32 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:32 UTC"
+ },
+ {
+  "account": "0fbe14e2efc88befe1e086593ebc2a9ab1d98ec6f6718f23424d0c2e259d4f6a",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CNRzT41TeGCvynBQ1SHj5GBFiwLm59B7in1CraPQ6i6y",
+    "height": 222153932,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:22 UTC",
+    "ts": 1793294550133982521
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AG8oTKZ1UnSqWwdmePkj3KG9FPkGphwoSkREmjcCzU1a",
+    "height": 222153529,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:18 UTC",
+    "ts": 1793294311467426644
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E1mh3VsWjZrEXVrjcFxyYyq7MmGakFbrMb7HRaNJQsxu",
+    "height": 222153127,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:14 UTC",
+    "ts": 1793294070824796789
+   }
+  ],
+  "kind": "creation",
+  "near": 10299.95,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "5iBwVFA6mTiGYBGYeJJUvDGtRovL2z8wpTamXYixvwtK",
+    "height": 222154396,
+    "near": 10300.0,
+    "time": "2026-10-29 17:27 UTC",
+    "to": "0fbe14e2efc88befe1e086593ebc2a9ab1d98ec6f6718f23424d0c2e259d4f6a",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "0fbe14e2efc88befe1e086593ebc2a9ab1d98ec6f6718f23424d0c2e259d4f6a",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3hRy1rBSddKLCjQJHDH6WXQ8HzVpxtLWgUoUPXTs7Pos",
+    "height": 222160795,
+    "near": 10299.95,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:31 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:31 UTC"
+ },
+ {
+  "account": "c297f8e647e9952e26c2a4ebd771c4284137248a7046f87b974674fc4db6d3e2",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "AG8oTKZ1UnSqWwdmePkj3KG9FPkGphwoSkREmjcCzU1a",
+    "height": 222153529,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:18 UTC",
+    "ts": 1793294311467426644
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E1mh3VsWjZrEXVrjcFxyYyq7MmGakFbrMb7HRaNJQsxu",
+    "height": 222153127,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:14 UTC",
+    "ts": 1793294070824796789
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FjJwrZcAiX5YNe1e4rVkU1oeUXLoaX5MFHcws8vQfpwv",
+    "height": 222152122,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:04 UTC",
+    "ts": 1793293471153847085
+   }
+  ],
+  "kind": "creation",
+  "near": 10299.95,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "6SfTD3umtApx1v2HniDd23GBKvLGwSBasGxZeRtN6Pjf",
+    "height": 222153688,
+    "near": 10300.0,
+    "time": "2026-10-29 17:20 UTC",
+    "to": "c297f8e647e9952e26c2a4ebd771c4284137248a7046f87b974674fc4db6d3e2",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "c297f8e647e9952e26c2a4ebd771c4284137248a7046f87b974674fc4db6d3e2",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "9ZS6Z45FvS3Z9GEZoUUPf8wQQcBVL7vQ63jDWbXEtbte",
+    "height": 222160899,
+    "near": 10299.95,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:32 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:32 UTC"
+ },
+ {
+  "account": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
+  "kind": "redemption",
+  "near": 5000.717764363346,
+  "steps": [
+   {
+    "account": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "2iCGaH9cWz7dS3gZr9nBPjs9uLsh2oh5iWCB5rm6oJkL",
+    "height": 222332911,
+    "near": 5000.717764363347,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-30 22:22 UTC",
+    "type": "unstake",
+    "window": "2026-10-31"
+   },
+   {
+    "account": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "BoiA9tsvAAY5wiQ7bJe4u88GM7ZTRYcSZk4tsXzCQmuj",
+    "height": 222544826,
+    "near": 5000.717764363346,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-01 08:33 UTC",
+    "type": "redemption_withdraw",
+    "window": "2026-11-02"
+   },
+   {
+    "account": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "3KdmojE72mYYj1bCeJFFYenffC9E3emzsg5UcJoHxV6H",
+    "height": 222727378,
+    "near": 5001.155590845574,
+    "time": "2026-11-02 13:52 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "type": "return_to_hub",
+    "window": "2026-11-03"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3kpedG6q2NT28z1VjCvZBw4B5nqyUoZXtS1A9o3oAtuS",
+    "height": 222903073,
+    "near": 10862.59207459,
+    "time": "2026-11-03 17:44 UTC",
+    "to": "30a690914e3eb679ff895a978e77abaf522c022f048433e9b1aec70ae076dadf",
+    "to_label": "unlabelled account (3 transactions)",
+    "type": "hub_next_unmatched"
+   }
+  ],
+  "time": "2026-11-01 08:33 UTC"
+ },
+ {
+  "account": "f166c0a5a5119414f18392cb20648ebe4bc6bcbbe18607047b79d928481ac779",
+  "kind": "redemption",
+  "near": 5000.717764363346,
+  "steps": [
+   {
+    "account": "f166c0a5a5119414f18392cb20648ebe4bc6bcbbe18607047b79d928481ac779",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "D77Yg5bJPrf6xDgugCYmv967tH7Gdm7k4w2auCj5AbmT",
+    "height": 222332602,
+    "near": 5000.717764363347,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-30 22:19 UTC",
+    "type": "unstake",
+    "window": "2026-10-31"
+   },
+   {
+    "account": "f166c0a5a5119414f18392cb20648ebe4bc6bcbbe18607047b79d928481ac779",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "CNtJT9i83WVN9WMdMxQxwyr7773nYUPihBypJtVAQM7A",
+    "height": 222544828,
+    "near": 5000.717764363346,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-01 08:33 UTC",
+    "type": "redemption_withdraw",
+    "window": "2026-11-02"
+   },
+   {
+    "account": "f166c0a5a5119414f18392cb20648ebe4bc6bcbbe18607047b79d928481ac779",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7YUdZNzM4VHjt9iPYeimZ7Wr1FXdAUYZpfdtQvuUrMZ",
+    "height": 222727381,
+    "near": 5001.155599497891,
+    "time": "2026-11-02 13:52 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "type": "return_to_hub",
+    "window": "2026-11-03"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3kpedG6q2NT28z1VjCvZBw4B5nqyUoZXtS1A9o3oAtuS",
+    "height": 222903073,
+    "near": 10862.59207459,
+    "time": "2026-11-03 17:44 UTC",
+    "to": "30a690914e3eb679ff895a978e77abaf522c022f048433e9b1aec70ae076dadf",
+    "to_label": "unlabelled account (3 transactions)",
+    "type": "hub_next_unmatched"
+   }
+  ],
+  "time": "2026-11-01 08:33 UTC"
+ },
+ {
+  "account": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FjJwrZcAiX5YNe1e4rVkU1oeUXLoaX5MFHcws8vQfpwv",
+    "height": 222152122,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:04 UTC",
+    "ts": 1793293471153847085
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5LchaaiVdKLw6JUYFkzG758iJ1uDaP6TDBBDsV32fTf6",
+    "height": 222151320,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:56 UTC",
+    "ts": 1793292987018483964
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9APiJVcGQVGPtnjSqfRzqbCKfx3kgSY9pRrrCjqCAi6i",
+    "height": 222150921,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:52 UTC",
+    "ts": 1793292747602102398
+   }
+  ],
+  "kind": "creation",
+  "near": 4999.95,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "4q74JnJcC9rgjZRPaiP2aP3wZGBGXWBz2m2iVVycL1EP",
+    "height": 222152876,
+    "near": 5000.0,
+    "time": "2026-10-29 17:12 UTC",
+    "to": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7SAsu9XoiFCr22iVdubhWZqDUJiyr3aiN35uvLsraam8",
+    "height": 222161205,
+    "near": 4999.95,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:35 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:35 UTC"
+ },
+ {
+  "account": "f166c0a5a5119414f18392cb20648ebe4bc6bcbbe18607047b79d928481ac779",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "E1mh3VsWjZrEXVrjcFxyYyq7MmGakFbrMb7HRaNJQsxu",
+    "height": 222153127,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:14 UTC",
+    "ts": 1793294070824796789
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "FjJwrZcAiX5YNe1e4rVkU1oeUXLoaX5MFHcws8vQfpwv",
+    "height": 222152122,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 17:04 UTC",
+    "ts": 1793293471153847085
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5LchaaiVdKLw6JUYFkzG758iJ1uDaP6TDBBDsV32fTf6",
+    "height": 222151320,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:56 UTC",
+    "ts": 1793292987018483964
+   }
+  ],
+  "kind": "creation",
+  "near": 4999.95,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "2AkwgR3DU1NxNcp9FpwTUazJeLvXGN2gVagBpTFBdrVU",
+    "height": 222153281,
+    "near": 5000.0,
+    "time": "2026-10-29 17:16 UTC",
+    "to": "f166c0a5a5119414f18392cb20648ebe4bc6bcbbe18607047b79d928481ac779",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "f166c0a5a5119414f18392cb20648ebe4bc6bcbbe18607047b79d928481ac779",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "6SF1eKUQhMBTTMdcbu17Exwk38M9NiKxrxWSpBrUvQKF",
+    "height": 222161205,
+    "near": 4999.95,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:35 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:35 UTC"
+ },
+ {
+  "account": "2d6eb03dc605e7834b0d1e4d2811792837ad6a536b77b2056af3059e86d3dbda",
+  "kind": "redemption",
+  "near": 2000.257101138706,
+  "steps": [
+   {
+    "account": "2d6eb03dc605e7834b0d1e4d2811792837ad6a536b77b2056af3059e86d3dbda",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "Bh5X29g5ZDesXDGuKVsxoyLW3WAHjXdZDGRTFy1TnHwn",
+    "height": 222332910,
+    "near": 2000.2571011387063,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-30 22:22 UTC",
+    "type": "unstake",
+    "window": "2026-10-31"
+   },
+   {
+    "account": "2d6eb03dc605e7834b0d1e4d2811792837ad6a536b77b2056af3059e86d3dbda",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "Hd6AQp1Cop1t6voZtnDb5ykuB4MwPCaBanAqfk8UFw7K",
+    "height": 222545238,
+    "near": 2000.257101138706,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-11-01 08:37 UTC",
+    "type": "redemption_withdraw",
+    "window": "2026-11-02"
+   },
+   {
+    "account": "2d6eb03dc605e7834b0d1e4d2811792837ad6a536b77b2056af3059e86d3dbda",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "GhvmTb7eXK8Tr21Y6nSE6ruPRvavMH9FRirqXA6kB37Y",
+    "height": 222727895,
+    "near": 2000.6949296554424,
+    "time": "2026-11-02 13:57 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "type": "return_to_hub",
+    "window": "2026-11-03"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "3kpedG6q2NT28z1VjCvZBw4B5nqyUoZXtS1A9o3oAtuS",
+    "height": 222903073,
+    "near": 10862.59207459,
+    "time": "2026-11-03 17:44 UTC",
+    "to": "30a690914e3eb679ff895a978e77abaf522c022f048433e9b1aec70ae076dadf",
+    "to_label": "unlabelled account (3 transactions)",
+    "type": "hub_next_unmatched"
+   }
+  ],
+  "time": "2026-11-01 08:37 UTC"
+ },
+ {
+  "account": "2d6eb03dc605e7834b0d1e4d2811792837ad6a536b77b2056af3059e86d3dbda",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "G65Fpa4CUmAsJanq81eeQDYcf3RqV7aS68BPGY2HxxLd",
+    "height": 222150542,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:48 UTC",
+    "ts": 1793292523328822587
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Cv2KVqyZ6Pc4Vb5uEf3yMc7ejnwcPDMZptW2oTc69Crr",
+    "height": 222145864,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:01 UTC",
+    "ts": 1793289712574261873
+   },
+   {
+    "from": "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8",
+    "from_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "BtpSyHkpcJGTwCDiduHv6DSRRXZY6pHsMzCz9sHwooXn",
+    "height": 222125631,
+    "near": 785565.7161833763,
+    "time": "2026-10-29 12:37 UTC",
+    "ts": 1793277422899410466
+   }
+  ],
+  "kind": "creation",
+  "near": 1999.95,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "7SWXCRpjWetnYd4UpKKfFtMciS7qVoHmaFdpXRbXLtJx",
+    "height": 222150677,
+    "near": 2000.0,
+    "time": "2026-10-29 16:50 UTC",
+    "to": "2d6eb03dc605e7834b0d1e4d2811792837ad6a536b77b2056af3059e86d3dbda",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "2d6eb03dc605e7834b0d1e4d2811792837ad6a536b77b2056af3059e86d3dbda",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "7HsQE4a5gCXTU5tyE3wKbQmDPg7QuCKfxi6eJsv4W6sf",
+    "height": 222160998,
+    "near": 1999.95,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:33 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:33 UTC"
+ },
+ {
+  "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9APiJVcGQVGPtnjSqfRzqbCKfx3kgSY9pRrrCjqCAi6i",
+    "height": 222150921,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:52 UTC",
+    "ts": 1793292747602102398
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "G65Fpa4CUmAsJanq81eeQDYcf3RqV7aS68BPGY2HxxLd",
+    "height": 222150542,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:48 UTC",
+    "ts": 1793292523328822587
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "Cv2KVqyZ6Pc4Vb5uEf3yMc7ejnwcPDMZptW2oTc69Crr",
+    "height": 222145864,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:01 UTC",
+    "ts": 1793289712574261873
+   }
+  ],
+  "kind": "creation",
+  "near": 1999.95,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "He5SWW7Ut5UbriD6cJrLZHcUA1MKrnxXbrFY3SNY62bJ",
+    "height": 222151074,
+    "near": 2000.0,
+    "time": "2026-10-29 16:54 UTC",
+    "to": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "4Hz5N8W7UvpwZiXt5T4CWMn5ySTW6TWTPe3HeGaXyr6C",
+    "height": 222161407,
+    "near": 1999.95,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:37 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:37 UTC"
+ },
+ {
+  "account": "e868667c07d16a3323b06742c9ee45cfe0c2f837a27ec5571237294af11839ba",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "5LchaaiVdKLw6JUYFkzG758iJ1uDaP6TDBBDsV32fTf6",
+    "height": 222151320,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:56 UTC",
+    "ts": 1793292987018483964
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9APiJVcGQVGPtnjSqfRzqbCKfx3kgSY9pRrrCjqCAi6i",
+    "height": 222150921,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:52 UTC",
+    "ts": 1793292747602102398
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "G65Fpa4CUmAsJanq81eeQDYcf3RqV7aS68BPGY2HxxLd",
+    "height": 222150542,
+    "near": 0.042499999999999996,
+    "time": "2026-10-29 16:48 UTC",
+    "ts": 1793292523328822587
+   }
+  ],
+  "kind": "creation",
+  "near": 1999.95,
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "hash": "HUuxgmfmoPY44oYiL2iw2JBM6GgCutygC8YSUUaKn2b6",
+    "height": 222151874,
+    "near": 2000.0,
+    "time": "2026-10-29 17:02 UTC",
+    "to": "e868667c07d16a3323b06742c9ee45cfe0c2f837a27ec5571237294af11839ba",
+    "to_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "type": "funded_by_hub",
+    "window": "2026-10-30"
+   },
+   {
+    "account": "e868667c07d16a3323b06742c9ee45cfe0c2f837a27ec5571237294af11839ba",
+    "account_label": "NRR basket account (rule A: hub funding + deposit_and_stake)",
+    "hash": "jzZ7pPBgU9Mab6S8njZ7SXYNCUgtweR9DKJzRud2qui",
+    "height": 222161408,
+    "near": 1999.95,
+    "pool": "bitwise_2.poolv1.near",
+    "time": "2026-10-29 18:37 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "type": "creation_stake",
+    "window": "2026-10-30"
+   }
+  ],
+  "time": "2026-10-29 18:37 UTC"
+ }
+]

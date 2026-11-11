@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEAR Flow Intelligence — Bitwise's NEAR ETF, rebuilt from the chain</title>
+<meta name="description" content="Daily NEAR held by Bitwise's NRR ETF, reconstructed from NEAR staking accounts, checked against Bitwise's own figures and compared with NEAR's new supply and buyback fund.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14233a; --slate:#5a6a7c; --line:#d8dee5; --paper:#eef1f4; --panel:#ffffff;
+  --in:#0e7c6b; --out:#9b2c2c; --supply:#7d8ba0; --buyback:#b0861a; --issuer:#14233a;
+  --focus:#2f6fdd;
+  --serif:"Spectral",Georgia,serif; --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.55;font-variant-numeric:tabular-nums}
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,tr:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.top{padding:28px 0 0}
+.brand{font-weight:600;font-size:15px;color:var(--slate)}
+.brand strong{color:var(--ink)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.01em;margin:18px 0 12px;max-width:16ch}
+.lede{font-size:19px;max-width:62ch;color:#2b3a50;margin:0 0 26px}
+h2{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.15;margin:0 0 6px}
+.sub{color:var(--slate);max-width:68ch;margin:0 0 18px}
+section{padding:46px 0;border-top:1px solid var(--line)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px}
+.hero{display:grid;grid-template-columns:1fr;gap:18px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.fact{padding:16px 18px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact .v{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.1}
+.fact .k{color:var(--slate);font-size:14px;margin-top:4px}
+.chart{position:relative;height:360px}
+.chart.short{height:300px}
+.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--slate);margin-top:10px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:12px}
+.toggle button{font:inherit;font-size:14px;border:0;background:var(--panel);color:var(--ink);padding:7px 14px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.ratio{font-family:var(--serif);font-size:22px;margin:16px 0 0;max-width:60ch}
+/* trace */
+.trace-head{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+select{font:inherit;font-size:15px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink);max-width:100%}
+ol.path{list-style:none;margin:0;padding:0;counter-reset:hop}
+ol.path li{counter-increment:hop;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+ol.path li:last-child{border-bottom:0}
+ol.path li::before{content:counter(hop);width:32px;height:32px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:700;font-size:14px}
+.hop-title{font-weight:600}
+.hop-meta{color:var(--slate);font-size:14px;word-break:break-all}
+.amt{font-family:var(--serif);font-size:20px;font-weight:600}
+.conf{display:inline-block;font-size:13px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);margin-left:6px;color:var(--slate)}
+.context{margin-top:14px;font-size:14px;color:var(--slate)}
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:760px}
+th,td{padding:8px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--slate);background:#f7f9fa;position:sticky;top:0}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:#f5f8fa}
+td.in{color:var(--in)} td.out{color:var(--out)}
+tr.detail td{text-align:left;background:#fafbfc;white-space:normal;cursor:default}
+.evt{display:block;margin:2px 0}
+.issuerrow td{font-weight:600}
+/* fund */
+dl.fund{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+dl.fund div{padding:14px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+dl.fund dt{color:var(--slate);font-size:14px}
+dl.fund dd{margin:2px 0 0;font-family:var(--serif);font-size:24px;font-weight:600}
+.note{font-size:14px;color:var(--slate);margin-top:10px;max-width:72ch}
+/* proves */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.two ul{margin:0;padding-left:20px}
+.two li{margin:6px 0}
+.two h3{font-size:17px;margin:0 0 8px}
+pre{background:var(--ink);color:#e9eef5;padding:16px;border-radius:6px;overflow-x:auto;font-size:14px;line-height:1.5}
+footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px solid var(--line)}
+.err{background:#fff4f4;border:1px solid #e6b7b7;color:var(--out);padding:14px;border-radius:6px}
+@media (max-width:760px){
+  .facts,dl.fund{grid-template-columns:1fr}
+  .fact{border-right:0;border-bottom:1px solid var(--line)}
+  .two{grid-template-columns:1fr}
+  .chart{height:300px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <div class="brand"><strong>NEAR Flow Intelligence</strong> — institutional holdings, on-chain flows and token supply for NEAR</div>
+  <h1>Bitwise's NEAR ETF, rebuilt from the chain.</h1>
+  <p class="lede" id="lede">Every day we add up the staking accounts that hold the NRR ETF's NEAR, check the total against Bitwise's own published figure, and set its moves next to NEAR's new supply and the protocol's buyback fund.</p>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="facts" id="facts" aria-live="polite"></div>
+    <div class="panel">
+      <div class="chart"><canvas id="holdings" role="img" aria-label="NRR holdings rebuilt from the chain, with Bitwise's published figures"></canvas></div>
+      <div class="legend">
+        <span><span class="sw" style="background:var(--in)"></span>Staked by NRR's accounts (chain)</span>
+        <span><span class="sw" style="background:#9fc9c1"></span>NEAR in transit in NRR's accounts (chain)</span>
+        <span><span class="sw" style="background:var(--issuer);border-radius:50%"></span>Bitwise's published "NEAR in Trust"</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="compare">
+    <h2>How big are these moves?</h2>
+    <p class="sub">Daily NEAR moved into and out of NRR's staking custody, next to the NEAR the protocol mints each day and the change in its buyback fund. All in NEAR, same days. This is a size comparison: custody moves are not proof of market buying or selling.</p>
+    <div class="toggle" role="group" aria-label="View">
+      <button type="button" aria-pressed="true" data-mode="daily">Daily</button>
+      <button type="button" aria-pressed="false" data-mode="cum">Cumulative</button>
+    </div>
+    <div class="panel">
+      <div class="chart short"><canvas id="flows" role="img" aria-label="NRR custody moves compared with NEAR issuance and buyback-fund change"></canvas></div>
+      <div class="legend">
+        <span><span class="sw" style="background:var(--in)"></span>Into NRR custody</span>
+        <span><span class="sw" style="background:var(--out)"></span>Out of NRR custody</span>
+        <span><span class="sw" style="background:var(--supply)"></span>NEAR minted by the protocol</span>
+        <span><span class="sw" style="background:var(--buyback)"></span>Buyback-fund balance change</span>
+      </div>
+    </div>
+    <p class="ratio" id="ratio"></p>
+  </section>
+
+  <section id="trace">
+    <h2>Follow the NEAR</h2>
+    <p class="sub">Pick a creation or a redemption and follow it account by account. Every step links to the transaction on NearBlocks, with the rule we used to label each account.</p>
+    <div class="trace-head">
+      <label for="tracePick" class="sr">Movement</label>
+      <select id="tracePick"></select>
+    </div>
+    <div class="panel"><ol class="path" id="path"></ol><div class="context" id="tracectx"></div></div>
+  </section>
+
+  <section id="days">
+    <h2>Day by day</h2>
+    <p class="sub">One row per day at 00:00 UTC. Select a row to see the transactions behind it. Rewards are measured from delegators who made no transactions that day; whatever is left is shown as unexplained, never hidden.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Date</th><th>Into custody</th><th>Out of custody</th><th>Staking rewards</th><th>Unexplained</th><th>Holdings</th><th>Bitwise figure</th><th>Gap</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="fund">
+    <h2>Fund details</h2>
+    <p class="sub">From Bitwise's NRR page, dated. Shares outstanding are implied: NEAR in Trust divided by NEAR per share.</p>
+    <dl class="fund" id="fundgrid"></dl>
+    <p class="note" id="fundnote"></p>
+  </section>
+
+  <section id="limits">
+    <h2>What this proves, and what it doesn't</h2>
+    <div class="two">
+      <div class="panel">
+        <h3>Shown directly by the chain</h3>
+        <ul>
+          <li>The NEAR staked by the accounts our rule attributes to NRR, every day.</li>
+          <li>Every creation and redemption transaction, with amounts.</li>
+          <li>Where redeemed NEAR went next, hop by hop.</li>
+          <li>NEAR's total supply, the NEAR minted each epoch, and total stake.</li>
+          <li>The buyback fund's balance, including its wNEAR inside NEAR Intents.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Not shown by the chain</h3>
+        <ul>
+          <li>Whether NEAR moving into custody was bought on the market, or delivered from existing holdings.</li>
+          <li>Whether redeemed NEAR was sold. Trades inside an exchange are not on-chain.</li>
+          <li>Legal ownership of the accounts. Our attribution is rule-based and checked against Bitwise's figures.</li>
+          <li>Executed buyback purchases or burns. We show the buyback fund's balance only.</li>
+          <li>Other NEAR investment products, which are not yet attributed on-chain.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="verify">
+    <h2>Check it yourself</h2>
+    <p class="sub">Everything on this page is rebuilt from cached public chain data by one command. No API key, wallet or paid service.</p>
+<pre>git clone https://github.com/Gosho1992/near-flow-intelligence
+cd near-flow-intelligence
+make data    # rebuild every number offline from data/raw
+make test    # 10 checks, incl. the match with Bitwise's figures
+make serve   # this page on http://127.0.0.1:8000</pre>
+    <p class="note">Method, attribution rules and formulas: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/METHOD.md">METHOD.md</a>. Investment thesis: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Raw outputs: <a href="data/daily.csv">daily.csv</a>, <a href="data/events.csv">events.csv</a>, <a href="data/accounts.csv">accounts.csv</a>.</p>
+  </section>
+</main>
+<footer class="wrap" id="foot">Built at NEAR HACKATHON 2026 (Investment Thesis track). Research, not investment advice. Data from NEAR's public archival RPC and FastNEAR's transaction API.</footer>
+
+<script src="chart.umd.js"></script>
+<script>
+const fmt = (v, d = 0) => v == null || Number.isNaN(v) ? "—" : (Number(v) + 0).toLocaleString("en-US", {maximumFractionDigits: d, minimumFractionDigits: d}).replace(/^-(0(\.0+)?)$/, "$1");
+const M = v => v == null ? "—" : (v / 1e6).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2}) + "M";
+const short = a => a && a.length > 24 ? a.slice(0, 8) + "…" + a.slice(-6) : a;
+const tx = h => `https://nearblocks.io/txns/${h}`;
+const acct = a => `https://nearblocks.io/address/${a}`;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+Chart.defaults.font.family = css("--sans"); Chart.defaults.color = css("--slate");
+
+fetch("data/site_data.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(render).catch(e => {
+  document.getElementById("facts").outerHTML = `<div class="err">The data file could not be loaded (${e.message}). Run <code>make data</code> and serve the site folder, or open the published page.</div>`;
+});
+
+function render(D) {
+  const H = D.headline, rows = D.daily;
+  const nonzero = rows.filter(r => r.nrr_holdings > 1000);
+  document.getElementById("facts").innerHTML = `
+    <div class="fact"><div class="v">${M(H.nrr_holdings_latest)}</div><div class="k">NEAR staked by NRR on ${H.data_through}</div></div>
+    <div class="fact"><div class="v">${H.change_since_peak < 0 ? "−" : "+"}${M(Math.abs(H.change_since_peak))}</div><div class="k">since the ${M(H.nrr_peak)} peak on ${H.nrr_peak_date}</div></div>
+    <div class="fact"><div class="v">within ${fmt(H.max_abs_issuer_gap_pct, 2)}%</div><div class="k">of Bitwise's own figure on every date it published (${Object.keys(H.issuer_gaps_pct).length} dates)</div></div>`;
+
+  // hero chart
+  const labels = rows.map(r => r.date.slice(5));
+  const issuerPts = rows.map(r => r.issuer_near_in_trust ?? null);
+  new Chart(document.getElementById("holdings"), {
+    type: "line",
+    data: {labels, datasets: [
+      {label: "Staked (chain)", data: rows.map(r => r.l1_staked), borderColor: css("--in"), backgroundColor: "rgba(14,124,107,.18)", fill: true, pointRadius: 0, borderWidth: 2, stack: "s"},
+      {label: "In transit in NRR accounts (chain)", data: rows.map(r => (r.l2_unstaked || 0) + (r.l3_basket_liquid || 0)), borderColor: "#9fc9c1", backgroundColor: "rgba(159,201,193,.5)", fill: "-1", pointRadius: 0, borderWidth: 1, stack: "s"},
+      {label: "Bitwise published", data: issuerPts, type: "line", showLine: false, pointRadius: 7, pointHoverRadius: 9, pointBackgroundColor: "#fff", pointBorderColor: css("--issuer"), pointBorderWidth: 3, stack: "issuer"},
+    ]},
+    options: {maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
+      scales: {y: {stacked: true, ticks: {callback: v => (v / 1e6) + "M"}, grid: {color: "#eef1f4"}}, x: {grid: {display: false}, ticks: {maxTicksLimit: 10}}},
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => c.raw == null ? null : `${c.dataset.label}: ${fmt(c.raw)} NEAR`, afterBody: items => {
+        const r = rows[items[0].dataIndex]; return r.issuer_gap_pct != null ? [`Chain vs Bitwise: ${r.issuer_gap_pct > 0 ? "+" : ""}${fmt(r.issuer_gap_pct, 3)}%`] : [];
+      }}}}}
+  });
+
+  // flows chart
+  const fl = rows.slice(1);
+  const series = mode => {
+    const cum = a => { let s = 0; return a.map(v => (s += (v || 0))); };
+    const ins = fl.map(r => r.creations), outs = fl.map(r => -r.redemptions), mint = fl.map(r => r.gross_issuance), bb = fl.map(r => r.buyback_fund_change);
+    return mode === "cum" ? [cum(ins), cum(outs), cum(mint), cum(bb)] : [ins, outs, mint, bb];
+  };
+  const [a, b, c, d] = series("daily");
+  const flows = new Chart(document.getElementById("flows"), {
+    type: "bar",
+    data: {labels: fl.map(r => r.date.slice(5)), datasets: [
+      {label: "Into NRR custody", data: a, backgroundColor: css("--in"), stack: "nrr"},
+      {label: "Out of NRR custody", data: b, backgroundColor: css("--out"), stack: "nrr"},
+      {label: "NEAR minted", data: c, backgroundColor: css("--supply"), stack: "mint"},
+      {label: "Buyback-fund change", data: d, backgroundColor: css("--buyback"), stack: "bb"},
+    ]},
+    options: {maintainAspectRatio: false, scales: {y: {ticks: {callback: v => (v / 1e6) + "M"}, grid: {color: "#eef1f4"}}, x: {grid: {display: false}, ticks: {maxTicksLimit: 10}}},
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => `${c.dataset.label}: ${fmt(c.raw)} NEAR`}}}}
+  });
+  document.querySelectorAll(".toggle button").forEach(btn => btn.addEventListener("click", () => {
+    document.querySelectorAll(".toggle button").forEach(x => x.setAttribute("aria-pressed", x === btn));
+    const s = series(btn.dataset.mode); flows.data.datasets.forEach((ds, i) => ds.data = s[i]); flows.update();
+  }));
+  document.getElementById("ratio").textContent =
+    `Since ${H.window_start}, ${M(H.abs_custody_moves)} NEAR moved into or out of NRR custody. Over the same days the protocol minted ${M(H.gross_issuance_total)} NEAR and the buyback fund's balance changed by ${M(H.buyback_fund_change_total)} — the custody moves were about ${fmt(H.ratio_abs_custody_to_abs_buyback, 0)} times the buyback fund's movement.`;
+
+  // traces
+  const pick = document.getElementById("tracePick");
+  const tr = D.traces.filter(t => t.steps.length > 1);
+  const reds = tr.filter(t => t.kind === "redemption"), cres = tr.filter(t => t.kind === "creation");
+  const opt = (t, i) => `<option value="${i}">${t.kind === "redemption" ? "Redemption" : "Creation"}: ${fmt(t.near)} NEAR, ${t.time.slice(0, 10)}</option>`;
+  const all = [...reds, ...cres];
+  pick.innerHTML = `<optgroup label="Out of custody">${reds.map((t) => opt(t, all.indexOf(t))).join("")}</optgroup><optgroup label="Into custody">${cres.slice(0, 15).map(t => opt(t, all.indexOf(t))).join("")}</optgroup>`;
+  const names = {funded_by_hub: "Custody hub funds a basket account", creation_stake: "Basket account stakes into the pool", unstake: "Basket account unstakes", redemption_withdraw: "Basket account withdraws from the pool", return_to_hub: "NEAR goes back to the custody hub", transfer_out: "Basket account sends NEAR on", hub_to_next: "Custody hub sends NEAR on", hub_next_unmatched: "Custody hub's next outflow (amount does not match: the hub pools NEAR, so this link is context, not a trace)", onward: "Next account forwards it"};
+  const show = i => {
+    const t = all[i];
+    document.getElementById("path").innerHTML = t.steps.map(s => `<li><div>
+      <div class="hop-title">${names[s.type] || s.type} <span class="amt">${fmt(s.near, 2)} NEAR</span></div>
+      <div class="hop-meta">${s.time} · <a href="${tx(s.hash)}" target="_blank" rel="noopener">transaction ${short(s.hash)}</a></div>
+      <div class="hop-meta">From <a href="${acct(s.account)}" target="_blank" rel="noopener">${short(s.account)}</a> <span class="conf">${s.account_label || ""}</span></div>
+      ${s.combined_with && s.combined_with.length ? `<div class="hop-meta">Amount matches this redemption plus ${s.combined_with.length} other same-day return(s) to the hub</div>` : ""}
+      ${s.to ? `<div class="hop-meta">To <a href="${acct(s.to)}" target="_blank" rel="noopener">${short(s.to)}</a> <span class="conf">${s.to_label || ""}</span></div>` : ""}
+    </div></li>`).join("");
+    document.getElementById("tracectx").innerHTML = t.hub_inflows_before ? "Before this, the custody hub had received: " + t.hub_inflows_before.map(c => `${fmt(c.near)} NEAR from <a href="${acct(c.from)}" target="_blank" rel="noopener">${short(c.from)}</a> (${c.from_label}) on ${c.time.slice(0, 10)}`).join("; ") + ". NEAR is fungible, so this shows sources, not a one-to-one match." : "";
+  };
+  pick.addEventListener("change", e => show(+e.target.value)); if (all.length) show(+pick.value);
+
+  // table
+  const evBy = {}; D.events.forEach(e => (evBy[e.window] = evBy[e.window] || []).push(e));
+  const tbody = document.getElementById("rows");
+  tbody.innerHTML = rows.slice().reverse().filter(r => r.nrr_holdings > 1000 || r.creations).map(r => `
+    <tr tabindex="0" data-d="${r.date}" class="${r.issuer_near_in_trust ? "issuerrow" : ""}">
+      <td>${r.date}</td><td class="in">${r.creations ? "+" + fmt(r.creations) : ""}</td><td class="out">${r.redemptions ? "−" + fmt(r.redemptions) : ""}</td>
+      <td>${r.nrr_rewards == null ? "—" : fmt(r.nrr_rewards)}</td><td>${r.unexplained == null ? "—" : fmt(r.unexplained)}</td>
+      <td>${fmt(r.nrr_holdings)}</td><td>${r.issuer_near_in_trust ? fmt(r.issuer_near_in_trust) : ""}</td><td>${r.issuer_gap_pct == null ? "" : (r.issuer_gap_pct > 0 ? "+" : "") + fmt(r.issuer_gap_pct, 3) + "%"}</td></tr>`).join("");
+  const toggleRow = tr => {
+    const nx = tr.nextElementSibling;
+    if (nx && nx.classList.contains("detail")) { nx.remove(); return; }
+    const ev = (evBy[tr.dataset.d] || []).filter(e => e.type !== "funded_by_hub");
+    const html = ev.length ? ev.map(e => `<span class="evt">${names[e.type] || e.type}: ${fmt(e.near, 2)} NEAR · <a href="${tx(e.hash)}" target="_blank" rel="noopener">${short(e.hash)}</a> · ${short(e.account)}</span>`).join("") : "No NRR transactions in this day's window; the change is staking rewards.";
+    tr.insertAdjacentHTML("afterend", `<tr class="detail"><td colspan="8">${html}</td></tr>`);
+  };
+  tbody.addEventListener("click", e => { const tr = e.target.closest("tr[data-d]"); if (tr && !e.target.closest("a")) toggleRow(tr); });
+  tbody.addEventListener("keydown", e => { const tr = e.target.closest("tr[data-d]"); if (tr && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleRow(tr); } });
+
+  // fund
+  const last = D.issuer.filter(i => i.near_per_share).slice(-1)[0];
+  if (last) {
+    const shares = last.near_in_trust / last.near_per_share;
+    const prem = last.market_price_usd && last.nav_usd ? 100 * (last.market_price_usd / last.nav_usd - 1) : null;
+    document.getElementById("fundgrid").innerHTML = [
+      ["NEAR in Trust", fmt(+last.near_in_trust)], ["NEAR per share", (+last.near_per_share).toFixed(6)], ["Shares outstanding (implied)", fmt(shares)],
+      ["NAV", last.nav_usd ? "$" + (+last.nav_usd).toFixed(2) : "—"], ["Market price", last.market_price_usd ? "$" + (+last.market_price_usd).toFixed(2) : "—"],
+      ["Premium / discount", prem == null ? "—" : (prem > 0 ? "+" : "") + prem.toFixed(2) + "%"],
+    ].map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+    document.getElementById("fundnote").innerHTML = `Holdings as of ${last.date}; NAV and price as of ${last.nav_date || "—"}. Staked: ${last.pct_staked || "—"}%. Source: <a href="${last.source_url}">${last.source_url}</a>, retrieved ${last.retrieved_at_utc}. NRR's staked share of all staked NEAR on ${H.data_through}: ${fmt(H.nrr_share_staked_pct_latest, 2)}%.`;
+  }
+  document.getElementById("foot").insertAdjacentHTML("beforeend", ` Data through ${H.data_through}.`);
+}
+</script>
+</body>
+</html>
