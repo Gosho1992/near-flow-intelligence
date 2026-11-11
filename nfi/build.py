@@ -262,7 +262,8 @@ def build():
         prev = r
 
     traces = build_traces(A, events, counts)
-    head = headline(rows, events, issuer, A, traces, C)
+    head = rnd(headline(rows, events, issuer, A, traces, C))
+    rows, events, traces = rnd(rows), rnd(events), rnd(traces)
     OUT.mkdir(parents=True, exist_ok=True)
     write_csv(OUT / "daily.csv", rows)
     write_csv(OUT / "events.csv", [{k: e.get(k) for k in
@@ -275,6 +276,17 @@ def build():
                                                     "headline": head, "issuer": list(issuer.values()),
                                                     "accounts": A["accounts"]}, sort_keys=True))
     return rows, head
+
+
+def rnd(x):
+    """Round floats to 6 decimals so outputs are identical across Python versions and platforms."""
+    if isinstance(x, float):
+        return round(x, 6)
+    if isinstance(x, dict):
+        return {k: rnd(v) for k, v in x.items()}
+    if isinstance(x, list):
+        return [rnd(v) for v in x]
+    return x
 
 
 def write_csv(path, rows):
