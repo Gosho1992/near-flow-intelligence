@@ -1,6 +1,6 @@
 name: pages
 on:
-  push: {branches: [main]}
+  # Manual until GitHub Pages is enabled (Settings -> Pages -> Source: GitHub Actions); then add: push: {branches: [main]}
   workflow_dispatch: {}
 permissions: {contents: read, pages: write, id-token: write}
 concurrency: {group: pages, cancel-in-progress: true}
