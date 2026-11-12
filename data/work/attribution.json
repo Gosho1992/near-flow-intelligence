@@ -8264,6 +8264,26 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
     "ts": 1793299022454624002
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "unstake_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "Fx5J7AJQnNbLt6zW3Rs1YSzETwyEqbosmLkAqEe5ays3",
+    "height": 224115517,
+    "logs": [
+     "@6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2 unstaking 2003441713643558498761324018. Spent 1983779374171173711056954836 staking shares. Total 2003441713643558498761324019 unstaked balance and 0 staking shares",
+     "Contract total staked balance is 15763225411102549270831099867841. Total number of shares 15608520691168798425754618484056"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "ts": 1794429961807035126
    }
   ],
   "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049": [
@@ -9594,6 +9614,26 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
     "ts": 1792426627563859874
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "unstake_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "5QWUVpfZ8wehokCwcQ2wG9SXZwfhb9qnSsXJf4EeFTvX",
+    "height": 224115617,
+    "logs": [
+     "@bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc unstaking 261946857481911148739227650962. Spent 259376037477286806082822282099 staking shares. Total 261946857481911148739227650963 unstaked balance and 0 staking shares",
+     "Contract total staked balance is 15501278553620638122091872216880. Total number of shares 15349144653691511619671796201957"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
+    "ts": 1794430021821899281
    }
   ],
   "c10bae04ffbad00ac6098464c05e1c7fa5069af8a9282099860cdd5fbd56bd26": [
@@ -9796,6 +9836,26 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
     "ts": 1791566823042394652
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "unstake_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "G2GDVa8GJ3B7Uh5fdvGEFspkgojBstCE5F3n32xAdJpZ",
+    "height": 224116131,
+    "logs": [
+     "@c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5 unstaking 104876351247432258878411402235. Spent 103847065290766309621637504334 staking shares. Total 104876351247432258878411402236 unstaked balance and 0 staking shares",
+     "Contract total staked balance is 15396402202373205863213460814646. Total number of shares 15245297588400745310050158697623"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
+    "ts": 1794430321989073346
    }
   ],
   "cd12e2bb67025e6cfb3e937a3f63f32f51f8dd68845590c90f8a12fdf82404c2": [
@@ -12710,7 +12770,8 @@
    221120680,
    221875580,
    221890107,
-   222924957
+   222924957,
+   224099262
   ],
   "35bffb936464a494130a24d33df4f6f70b4c98102b56ec3d7afe9a1729a00619": [
    217986001
@@ -12753,7 +12814,8 @@
    218093822
   ],
   "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2": [
-   222161407
+   222161407,
+   224115517
   ],
   "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049": [
    217984473
@@ -12847,7 +12909,8 @@
    217984270
   ],
   "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc": [
-   220680034
+   220680034,
+   224115617
   ],
   "c10bae04ffbad00ac6098464c05e1c7fa5069af8a9282099860cdd5fbd56bd26": [
    220837912
@@ -12862,7 +12925,8 @@
    217985692
   ],
   "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5": [
-   219260778
+   219260778,
+   224116131
   ],
   "cd12e2bb67025e6cfb3e937a3f63f32f51f8dd68845590c90f8a12fdf82404c2": [
    217984675
@@ -13168,10 +13232,14 @@
    223923476,
    223966443,
    224009629,
-   224052793
+   224052793,
+   224096174,
+   224139320,
+   224182694
   ],
   "patoutou.near": [
-   223674407
+   223674407,
+   224132846
   ],
   "probe.ref-dev-team.near": [
    219753856
@@ -13607,7 +13675,17 @@
    223962914,
    223963117,
    223963320,
-   223963521
+   223963521,
+   224109579,
+   224109773,
+   224109961,
+   224110152,
+   224110342,
+   224110536,
+   224110729,
+   224110921,
+   224111113,
+   224111297
   ]
  },
  "sources": {
