@@ -8284,6 +8284,31 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
     "ts": 1794429961807035126
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "withdraw_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "12w1CqTEXewJTsYiArRk34aaFKK6Dd1vg9sAQ1sthunU",
+    "height": 224268479,
+    "logs": [
+     "@6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2 withdrawing 2003441713643558498761324019. New unstaked balance is 0"
+    ],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "bitwise_2.poolv1.near",
+      "near": 2003.4417136435584,
+      "to": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2"
+     }
+    ],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "ts": 1794518524566958818
    }
   ],
   "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049": [
@@ -9634,6 +9659,33 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
     "ts": 1794430021821899281
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "withdraw_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "7qB8poeEDjjKifUEcUKHnHcz58fcSVz3Hdmy4vQaFR7d",
+    "height": 224268157,
+    "logs": [
+     "Epoch 4964: Contract received total rewards of 633264376648956448538986022 tokens. New total staked balance is 15398910238811940494328836241668. Total number of shares 15245362475094918326292965223234",
+     "Total rewards fee is 18808496474468499241009599 stake shares.",
+     "@bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc withdrawing 261946857481911148739227650963. New unstaked balance is 0"
+    ],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "bitwise_2.poolv1.near",
+      "near": 261946.85748191114,
+      "to": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc"
+     }
+    ],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
+    "ts": 1794518342395029941
    }
   ],
   "c10bae04ffbad00ac6098464c05e1c7fa5069af8a9282099860cdd5fbd56bd26": [
@@ -9856,6 +9908,31 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
     "ts": 1794430321989073346
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "withdraw_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "DnEkuKezRhrVkxdhdnXZhu8Y3FMDvKYgP4exEmLvCbjt",
+    "height": 224268477,
+    "logs": [
+     "@c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5 withdrawing 104876351247432258878411402236. New unstaked balance is 0"
+    ],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "bitwise_2.poolv1.near",
+      "near": 104876.35124743226,
+      "to": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5"
+     }
+    ],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
+    "ts": 1794518523449510776
    }
   ],
   "cd12e2bb67025e6cfb3e937a3f63f32f51f8dd68845590c90f8a12fdf82404c2": [
@@ -12815,7 +12892,8 @@
   ],
   "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2": [
    222161407,
-   224115517
+   224115517,
+   224268479
   ],
   "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049": [
    217984473
@@ -12910,7 +12988,8 @@
   ],
   "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc": [
    220680034,
-   224115617
+   224115617,
+   224268157
   ],
   "c10bae04ffbad00ac6098464c05e1c7fa5069af8a9282099860cdd5fbd56bd26": [
    220837912
@@ -12926,7 +13005,8 @@
   ],
   "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5": [
    219260778,
-   224116131
+   224116131,
+   224268477
   ],
   "cd12e2bb67025e6cfb3e937a3f63f32f51f8dd68845590c90f8a12fdf82404c2": [
    217984675
@@ -13235,7 +13315,10 @@
    224052793,
    224096174,
    224139320,
-   224182694
+   224182694,
+   224225784,
+   224268916,
+   224311966
   ],
   "patoutou.near": [
    223674407,
@@ -13685,7 +13768,17 @@
    224110729,
    224110921,
    224111113,
-   224111297
+   224111297,
+   224258242,
+   224258452,
+   224258666,
+   224258880,
+   224259091,
+   224259300,
+   224259510,
+   224259724,
+   224259933,
+   224260141
   ]
  },
  "sources": {

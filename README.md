@@ -6,13 +6,13 @@ NEAR supply models track issuance and the protocol's buyback fund. This project 
 
 Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](THESIS.md). Method: [METHOD.md](METHOD.md).
 
-## What it found (data through <!--n:data_through:-->2026-11-12<!--/n-->)
+## What it found (data through <!--n:data_through:-->2026-11-13<!--/n-->)
 
-- NRR's staking accounts held <!--n:nrr_holdings_latest:int-->15,676,924<!--/n--> NEAR, after a peak of <!--n:nrr_peak:int-->17,537,598<!--/n--> NEAR on <!--n:nrr_peak_date:-->2026-10-28<!--/n--> (<!--n:change_since_peak_pct:spct-->-10.61%<!--/n--> since).
+- NRR's staking accounts held <!--n:nrr_holdings_latest:int-->15,310,526<!--/n--> NEAR, after a peak of <!--n:nrr_peak:int-->17,537,598<!--/n--> NEAR on <!--n:nrr_peak_date:-->2026-10-28<!--/n--> (<!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> since).
 - The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.45%<!--/n--> of Bitwise's published "NEAR in Trust" on every date we have.
-- Since <!--n:window_start:-->2026-09-28<!--/n-->: <!--n:creations_total:int-->17,544,103<!--/n--> NEAR moved into NRR's staking custody and <!--n:redemptions_total:int-->1,949,964<!--/n--> NEAR moved out. Each move is a validated sequence of transactions: <!--n:creations_confirmed_count:int-->74<!--/n--> of <!--n:creations_count:int-->74<!--/n--> creations (hub funding → stake) and <!--n:redemptions_confirmed_count:int-->7<!--/n--> of <!--n:redemptions_count:int-->7<!--/n--> redemptions (unstake → withdraw → back to the custody hub) are confirmed, across <!--n:attributed_accounts:int-->73<!--/n--> accounts.
-- Over the same days the protocol minted <!--n:gross_issuance_total:int-->4,040,173<!--/n--> NEAR and the buyback fund's balance changed by <!--n:buyback_fund_change_total:int-->436,885<!--/n--> NEAR. NRR's custody moves were about <!--n:ratio_abs_custody_to_abs_buyback:x-->45×<!--/n--> the buyback fund's movement — a size comparison, not a claim of market buying or selling.
-- NRR holds <!--n:nrr_share_staked_pct_latest:pct-->2.62%<!--/n--> of all staked NEAR.
+- Since <!--n:window_start:-->2026-09-28<!--/n-->: <!--n:creations_total:int-->17,544,103<!--/n--> NEAR moved into NRR's staking custody and <!--n:redemptions_total:int-->2,318,791<!--/n--> NEAR moved out. Each move is a validated sequence of transactions: <!--n:creations_confirmed_count:int-->74<!--/n--> of <!--n:creations_count:int-->74<!--/n--> creations (hub funding → stake) and <!--n:redemptions_confirmed_count:int-->7<!--/n--> of <!--n:redemptions_count:int-->10<!--/n--> redemptions (unstake → withdraw → back to the custody hub) are confirmed, across <!--n:attributed_accounts:int-->73<!--/n--> accounts.
+- Over the same days the protocol minted <!--n:gross_issuance_total:int-->4,116,853<!--/n--> NEAR and the buyback fund's balance changed by <!--n:buyback_fund_change_total:int-->457,016<!--/n--> NEAR. NRR's custody moves were about <!--n:ratio_abs_custody_to_abs_buyback:x-->43×<!--/n--> the buyback fund's movement — a size comparison, not a claim of market buying or selling.
+- NRR holds <!--n:nrr_share_staked_pct_latest:pct-->2.59%<!--/n--> of all staked NEAR.
 
 ## Try it in 60 seconds
 
