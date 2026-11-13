@@ -556,6 +556,25 @@ def headline(rows, events, issuer, A, traces, C, issuance, refresh):
         "creation_traces": sum(1 for t in traces if t["kind"] == "creation"),
         "events": len(events), "epochs": len(C["epochs"]),
     }
+    # figures for the long-term case (THESIS.md); scale comparisons only
+    iss = s("gross_issuance")
+    annual = iss / len(win) * 365 if win else None
+    l30_net = s("creations", last30) - s("redemptions", last30)
+    h.update({
+        "annual_issuance_estimate": annual,
+        "nrr_holdings_pct_of_annual_issuance": 100 * last["l1_staked"] / annual if annual and last["l1_staked"] else None,
+        "buyback_change_pct_of_issuance": 100 * s("buyback_fund_change") / iss if iss else None,
+        "nrr_net_to_net_supply_x": (h["holdings_net_change"] / s("net_supply_change")
+                                    if h["holdings_net_change"] is not None and s("net_supply_change") else None),
+        "last30_nrr_net": l30_net,
+        "last30_nrr_net_pct_of_issuance": 100 * l30_net / s("gross_issuance", last30) if s("gross_issuance", last30) else None,
+        "last30_buyback_pct_of_issuance": (100 * s("buyback_fund_change", last30) / s("gross_issuance", last30)
+                                           if s("gross_issuance", last30) else None),
+        "last30_abs_custody_to_abs_buyback": ((s("creations", last30) + s("redemptions", last30)) /
+                                              sum(abs(r["buyback_fund_change"]) for r in last30 if r["buyback_fund_change"] is not None)
+                                              if any(r["buyback_fund_change"] for r in last30) else None),
+        "products_attributed_onchain": 1,
+    })
     E, gp = C["epochs"], []
     for i, e in enumerate(E[:-1]):
         for r in rows:

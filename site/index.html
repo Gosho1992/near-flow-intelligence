@@ -63,6 +63,8 @@ ol.path li::before{content:counter(hop);width:32px;height:32px;border-radius:50%
 .conf.ok{border-color:var(--in);color:var(--in)}
 .trace-sum{font-size:15px;margin:0 0 6px}
 .metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.conds td:first-child,.conds th:first-child{text-align:left;white-space:normal}
+.conds td:nth-child(2),.conds th:nth-child(2){text-align:left;white-space:normal}
 .metrics table{font-size:15px;min-width:0}
 .metrics td .conf{display:block;margin:2px 0 0;width:max-content;margin-left:auto}
 .metrics td:first-child,.metrics th:first-child{text-align:left;white-space:normal}
@@ -124,6 +126,13 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
       </div>
     </div>
   </div>
+
+  <section id="thesis">
+    <h2>The long-term case</h2>
+    <p class="sub" id="thesis-lede"></p>
+    <div class="tablewrap"><table class="conds"><thead><tr><th>What has to be true</th><th>Reading now</th><th></th></tr></thead><tbody id="conds"></tbody></table></div>
+    <p class="context">Verdict: <strong>constructive, not proven.</strong> The full thesis, with the evidence against it and a pre-registered prediction that can prove it wrong, is in <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Research, not financial advice.</p>
+  </section>
 
   <section id="compare">
     <h2>How big are these moves?</h2>
@@ -205,7 +214,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
 <pre>git clone https://github.com/Gosho1992/near-flow-intelligence
 cd near-flow-intelligence
 make data    # rebuild every number offline from data/raw
-make test    # 18 checks, incl. the match with Bitwise's figures
+make test    # 19 checks, incl. the match with Bitwise's figures
 make serve   # this page on http://127.0.0.1:8000</pre>
     <p class="note">Method, attribution rules and formulas: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/METHOD.md">METHOD.md</a>. Investment thesis: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. </p>
     <h3>Download the evidence</h3>
@@ -245,6 +254,16 @@ function render(D) {
     <div class="fact"><div class="v">${fmt(H.nrr_share_staked_pct_latest, 2)}%</div><div class="k">of all staked NEAR, in one validator pool</div></div>`;
 
   document.getElementById("lede").innerHTML = `Our on-chain total lands within <strong>${fmt(H.max_abs_issuer_gap_pct, 2)}%</strong> of Bitwise's own published figure on every date it has published. Since launch, NRR moved about <strong>${fmt(H.ratio_abs_custody_to_abs_buyback, 0)}×</strong> more NEAR into and out of custody than NEAR's buyback fund's balance moved. That is a size comparison, not a claim of buying or selling.`;
+  document.getElementById("thesis-lede").textContent =
+    `NEAR mints about ${M(H.annual_issuance_estimate)} NEAR a year. The protocol's buyback fund grew by only ${fmt(H.buyback_change_pct_of_issuance, 1)}% of what was minted since launch. NRR alone holds the equivalent of ${fmt(H.nrr_holdings_pct_of_annual_issuance, 0)}% of a year's new NEAR in staked custody. So the long-term case rests on whether this demand, which anyone can check on-chain, stays and spreads.`;
+  const cond = (q, now, st) => `<tr><td>${q}</td><td>${now}</td><td><span class="conf ${st === "holds" ? "ok" : st === "open" ? "" : "probable"}">${st}</span></td></tr>`;
+  document.getElementById("conds").innerHTML = [
+    cond("Fund demand is sticky, not a launch effect", `Net ${H.last30_nrr_net >= 0 ? "+" : "−"}${fmt(Math.abs(H.last30_nrr_net))} NEAR over 30 days; holdings ${fmt(H.change_since_peak_pct, 1)}% from peak`, "undecided"),
+    cond("Fund flows stay larger than buyback flows", `${fmt(H.last30_abs_custody_to_abs_buyback, 0)}× over 30 days; tested by a frozen prediction, 14 Nov – 13 Dec`, H.last30_abs_custody_to_abs_buyback > 1 ? "holds" : "fails"),
+    cond("More products become visible on-chain", `${H.products_attributed_onchain} attributed (NRR)`, "open"),
+    cond("Redeemed NEAR does not go straight to market", `${H.redemption_traces_probable} of ${H.redemption_traces} traceable, to exchange-style wallets`, "open"),
+    cond("The protocol's own offset grows", `${fmt(H.last30_buyback_pct_of_issuance, 1)}% of new supply over 30 days`, "open"),
+  ].join("");
   // freshness and data health
   const age = (Date.now() - Date.parse(H.data_through + "T00:00:00Z")) / 36e5;
   const refreshed = H.last_refresh_utc ? H.last_refresh_utc.replace("T", " ").slice(0, 16) + " UTC" : "not recorded (offline rebuild)";

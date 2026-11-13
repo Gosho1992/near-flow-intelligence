@@ -266,6 +266,24 @@ class T(unittest.TestCase):
         with self.assertRaises(ValueError):
             evaluate([mk(0), mk(0)])
 
+    # 19 completeness: an independent BigQuery query (data/bigquery/completeness.sql) found exactly the same pool
+    #    transactions, method by method, as this pipeline (compared by SHA-256 of the sorted hash lists)
+    def test_bigquery_completeness(self):
+        import hashlib
+        B = json.loads((ROOT / "data" / "bigquery" / "completeness_result.json").read_text())
+        mine = {a["account"] for a in self.accounts}
+        by = {}
+        for h in self.work["histories"].values():
+            for t in h:
+                if t["receiver"] == "bitwise_2.poolv1.near" and t["signer"] in mine and t["height"] < B["max_block_height_exclusive"]:
+                    for a in t["actions"]:
+                        by.setdefault(a.get("method"), set()).add(t["hash"])
+        self.assertEqual(set(by), set(B["by_method"]))
+        for m, v in B["by_method"].items():
+            hs = sorted(by[m])
+            self.assertEqual(len(hs), v["transactions"], m)
+            self.assertEqual(hashlib.sha256("\n".join(hs).encode()).hexdigest(), v["sha256_sorted_hashes"], m)
+
 
 if __name__ == "__main__":
     unittest.main()

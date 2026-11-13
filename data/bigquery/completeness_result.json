@@ -1,0 +1,9 @@
+{
+ "ran_at_utc": "2026-11-13T16:05:00Z",
+ "dataset": "bigquery-public-data.crypto_near_mainnet_us",
+ "query": "data/bigquery/completeness.sql",
+ "bytes_processed_estimate": "161.92 GB",
+ "max_block_height_exclusive": 224285093,
+ "note": "Per method: count, accounts, and SHA-256 of the newline-joined sorted transaction hashes BigQuery returned (computed from the result in the browser). Re-run the SQL to get the full lists.",
+ "by_method": {"deposit_and_stake":{"status":"SUCCESS_RECEIPT_ID","transactions":74,"accounts":73,"sha256_sorted_hashes":"f3fcc76c067dfd58e9a8b564af5aa50ceae36e26910c44179e8f334f72187241","first":"14aYByd8AA1vJXx5RuL1T1PEiM1Pz2Q7TP42gBwTqTDE","last":"sngWPhoEfH9N63NqLL7rTd6b8nppPwYBqfAH9Q1Wh7M"},"unstake_all":{"status":"SUCCESS_RECEIPT_ID","transactions":10,"accounts":10,"sha256_sorted_hashes":"60f1858c8be00529528149ae91f3bf997cb93e188452d250372890f4e56a22de","first":"2iCGaH9cWz7dS3gZr9nBPjs9uLsh2oh5iWCB5rm6oJkL","last":"H3kruX9S6aDBVKpSAieVkUDXAtvdByzbn8EKni7SG5KH"},"withdraw_all":{"status":"SUCCESS_RECEIPT_ID","transactions":10,"accounts":10,"sha256_sorted_hashes":"b0d5c678d8487a871b50fe2b6a519b2049902e5dbb11b6852ae2672a3a74f113","first":"12w1CqTEXewJTsYiArRk34aaFKK6Dd1vg9sAQ1sthunU","last":"Hd6AQp1Cop1t6voZtnDb5ykuB4MwPCaBanAqfk8UFw7K"}}
+}

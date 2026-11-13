@@ -8,6 +8,10 @@ NEAR supply models track issuance and the protocol's buyback fund. This project 
 
 Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](THESIS.md). Method: [METHOD.md](METHOD.md).
 
+## The long-term thesis
+
+NEAR's supply grows about 2.5% a year, and the protocol's buyback fund offsets only <!--n:buyback_change_pct_of_issuance:pct-->11.10%<!--/n--> of it. Regulated fund demand is now the larger counterweight: NRR holds the equivalent of <!--n:nrr_holdings_pct_of_annual_issuance:pct-->46.87%<!--/n--> of a year's new NEAR in staked custody, and anyone can audit it from the chain. The long-term case depends on whether that demand stays and spreads to more products. **Verdict: constructive, not proven** (holdings are <!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> from their peak). Five conditions, each with a daily reading, are in [THESIS.md](THESIS.md).
+
 ## What it found (data through <!--n:data_through:-->2026-11-13<!--/n-->)
 
 - NRR's staking accounts held <!--n:nrr_holdings_latest:int-->15,310,526<!--/n--> NEAR, after a peak of <!--n:nrr_peak:int-->17,537,598<!--/n--> NEAR on <!--n:nrr_peak_date:-->2026-10-28<!--/n--> (<!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> since).
@@ -23,7 +27,7 @@ Python 3.10+ only. No API key, wallet, paid service or mainnet transaction.
 ```bash
 git clone https://github.com/Gosho1992/near-flow-intelligence && cd near-flow-intelligence
 make data     # rebuild every number offline from the committed chain cache
-make test     # 18 independent checks
+make test     # 19 independent checks
 make serve    # dashboard at http://127.0.0.1:8000
 ```
 
@@ -67,7 +71,7 @@ data/raw/     cached RPC and transaction-API responses (offline rebuild)
 data/work/    collected chain series
 data/out/     published outputs: daily.csv, events.csv, accounts.csv, traces.json, headline.json
 site/         static dashboard (Chart.js bundled)
-tests/        18 checks
+tests/        19 checks
 ```
 
 ## Disclosure
