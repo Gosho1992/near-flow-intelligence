@@ -2,7 +2,7 @@
 import csv
 from .net import ROOT
 
-START, END = "2026-11-13", "2026-12-12"     # window-end dates covering 2026-11-12 00:00 .. 2026-12-11 23:59 UTC
+START, END = "2026-11-15", "2026-12-14"     # window-end dates covering 2026-11-14 00:00 .. 2026-12-13 23:59 UTC
 WINDOWS = 30
 MAX_EXCLUDED = 5
 

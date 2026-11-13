@@ -8,7 +8,7 @@ missing core value is published with data_status "incomplete: <fields>" and no d
 """
 import csv, json, statistics
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from .net import ROOT
 from .attribution import HUB, FEE_PAYER
@@ -416,10 +416,14 @@ def build():
                                            if r["nrr_holdings"] is not None and r["total_supply"] else None)
         r["nrr_share_staked_pct"] = (100 * r["l1_staked"] / r["total_staked"]
                                      if r["l1_staked"] is not None and r["total_staked"] else None)
-        iss = issuer.get(d)
+        # Bitwise's "NEAR in Trust as of T" is the end of day T (our row T+1 at 00:00 UTC) and already excludes
+        # NEAR unstaked for redemptions, so it is compared with L1 (staked) of row T+1.
+        prev_day = (datetime.fromisoformat(d) - timedelta(days=1)).date().isoformat()
+        iss = issuer.get(prev_day)
+        r["issuer_date"] = prev_day if iss else None
         r["issuer_near_in_trust"] = float(iss["near_in_trust"]) if iss else None
-        r["issuer_gap_pct"] = (100 * (r["nrr_holdings"] - r["issuer_near_in_trust"]) / r["issuer_near_in_trust"]
-                               if iss and r["nrr_holdings"] is not None else None)
+        r["issuer_gap_pct"] = (100 * (r["l1_staked"] - r["issuer_near_in_trust"]) / r["issuer_near_in_trust"]
+                               if iss and r["l1_staked"] is not None else None)
         rows.append(r)
         prev = r
 
@@ -489,7 +493,8 @@ def headline(rows, events, issuer, A, traces, C, issuance, refresh):
     last30 = rows[-30:]
     abs_custody = sum(abs(r["creations"]) + abs(r["redemptions"]) for r in win)
     abs_buyback = sum(abs(r["buyback_fund_change"]) for r in win if r["buyback_fund_change"] is not None)
-    gaps = {r["date"]: r["issuer_gap_pct"] for r in rows if r["date"] in issuer}
+    gaps = {d: None for d in issuer}            # None = the end-of-day chain row is not collected yet
+    gaps.update({r["issuer_date"]: r["issuer_gap_pct"] for r in rows if r["issuer_date"]})
     rr = [r["reward_rate"] for r in win if r["reward_rate"] is not None]
     probes = [r["reward_probes"] for r in win if r["reward_probes"]]
     ratios = sorted(i["ratio"] for i in issuance)
@@ -544,6 +549,7 @@ def headline(rows, events, issuer, A, traces, C, issuance, refresh):
         "issuer_gaps_pct": gaps,
         "max_abs_issuer_gap_pct": max(abs(v) for v in gaps.values() if v is not None) if gaps else None,
         "issuer_latest_date": max(issuer) if issuer else None,
+        "issuer_gaps_count": sum(1 for v in gaps.values() if v is not None),
         "redemption_traces": sum(1 for t in traces if t["kind"] == "redemption"),
         "redemption_trace_confidence": conf,
         "redemption_traces_probable": sum(v for k, v in conf.items() if k.startswith("probable")),

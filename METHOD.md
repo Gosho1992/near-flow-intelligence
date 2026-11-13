@@ -18,7 +18,7 @@ For each day from 25 Sep 2026, the first block at or after 00:00 UTC (`nfi/chain
 - **Evidence per account** (`data/out/accounts.csv`): funding transaction, height and amount; staking transaction, height and amount; delay in hours; amount difference. **Confidence** is "high" when the stake follows within 7 days and is within 1 NEAR of the funding, otherwise "medium". Result: <!--n:attributed_accounts:int-->73<!--/n--> accounts, <!--n:attributed_high_confidence:int-->72<!--/n--> high. The medium one received more than it staked (the rest was forwarded).
 - **Other Bitwise products excluded:** delegators of `bitwise_1.poolv1.near` and `svrn_bitwise.poolv1.near` at the latest height are read and checked: none is an attributed account (test 14).
 - Other delegators of the NRR pool (e.g. `meta-pool.near`) are excluded and reported separately (`pool_other_delegators`).
-- Check: the reconstruction is compared with Bitwise's "NEAR in Trust" on each published date (test 1, tolerance 1%; largest gap <!--n:max_abs_issuer_gap_pct:pct-->0.45%<!--/n-->).
+- Check: Bitwise's "NEAR in Trust as of T" is compared with the NEAR staked by attributed accounts at 00:00 UTC on T+1, i.e. at the end of day T (test 1, tolerance 0.5%; largest gap <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n-->, on <!--n:issuer_gaps_count:int-->3<!--/n--> dates). Two facts set this rule, and the third issuer date confirmed them: Bitwise reports end-of-day holdings, and it removes NEAR from "NEAR in Trust" when it is unstaked for a redemption, before the withdrawal reaches the chain. On 11 Nov 2026 Bitwise reported 15,331,373 NEAR while 368,827 NEAR was still unstaked in the pool, waiting to be withdrawn; staked NEAR alone matches. An earlier version compared same-day staked + unstaked NEAR; it gave gaps of 0.45% and 0.18% on the first two dates and 2.2% on the third.
 
 Sources: the hub's full transaction history and the pool's full transaction history (every stake, unstake and withdraw is a transaction to the pool; every funding and return passes through the hub), plus the histories of the two accounts seen downstream of the hub.
 
@@ -31,7 +31,7 @@ Sources: the hub's full transaction history and the pool's full transaction hist
 | L3 basket liquid | NEAR sitting in attributed accounts outside the pool | `view_account` |
 | L4 hub liquid | NEAR in the custody hub | `view_account` |
 
-`nrr_holdings` = L1 + L2: the figure compared with the issuer, and the solid line on the dashboard. `nrr_custody_extended` = L1 + L2 + L3 (dashed line). `nrr_custody_total` adds L4, the hub's liquid NEAR, which is published but not presented as fund-owned.
+L1 is the figure compared with the issuer and the solid line on the dashboard. `nrr_holdings` = L1 + L2 (NRR's NEAR in the pool, including NEAR unstaked for redemptions until it is withdrawn). `nrr_custody_extended` = L1 + L2 + L3 (dashed line). `nrr_custody_total` adds L4, the hub's liquid NEAR, which is published but not presented as fund-owned.
 
 ## 4. Events and sequences
 

@@ -118,10 +118,9 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
     <div class="panel">
       <div class="chart"><canvas id="holdings" role="img" aria-label="NRR holdings rebuilt from the chain, with Bitwise's published figures"></canvas></div>
       <div class="legend">
-        <span><span class="sw" style="background:var(--ink);height:3px"></span>NRR holdings, chain: staked + unstaked in the pool (the figure compared with Bitwise)</span>
-        <span><span class="sw" style="background:rgba(14,124,107,.35)"></span>of which staked</span>
-        <span><span class="sw" style="background:transparent;border-top:2px dashed var(--in);height:0"></span>Extended custody: adds liquid NEAR waiting in NRR's accounts</span>
-        <span><span class="sw" style="background:var(--issuer);border-radius:50%"></span>Bitwise's published "NEAR in Trust"</span>
+        <span><span class="sw" style="background:var(--ink);height:3px"></span>NEAR staked by NRR, read from the chain (the figure Bitwise reports)</span>
+        <span><span class="sw" style="background:transparent;border-top:2px dashed var(--in);height:0"></span>Plus NEAR unstaked for redemptions and liquid NEAR in NRR's accounts, until it leaves</span>
+        <span><span class="sw" style="background:var(--issuer);border-radius:50%"></span>Bitwise's published "NEAR in Trust", at the end of its as-of date</span>
       </div>
     </div>
   </div>
@@ -161,7 +160,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
     <p class="sub">One row per day at 00:00 UTC. Select a row to see the transactions behind it and whether each one completed its sequence. Rewards are measured from delegators who made no pool transaction that day; whatever is left is shown as unexplained, never hidden. A value we could not read is shown as "missing", never as zero.</p>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Date</th><th>Into custody</th><th>Out of custody</th><th>Staking rewards</th><th>Unexplained</th><th>Holdings</th><th>Bitwise figure</th><th>Gap</th><th>Data</th></tr></thead>
+        <thead><tr><th>Date</th><th>Into custody</th><th>Out of custody</th><th>Staking rewards</th><th>Unexplained</th><th>Staked by NRR</th><th>Bitwise, prior day</th><th>Gap</th><th>Data</th></tr></thead>
         <tbody id="rows"></tbody>
       </table>
     </div>
@@ -245,6 +244,7 @@ function render(D) {
     <div class="fact"><div class="v">within ${fmt(H.max_abs_issuer_gap_pct, 2)}%</div><div class="k">of Bitwise's own figure on every date it published (${Object.keys(H.issuer_gaps_pct).length} dates)</div></div>
     <div class="fact"><div class="v">${fmt(H.nrr_share_staked_pct_latest, 2)}%</div><div class="k">of all staked NEAR, in one validator pool</div></div>`;
 
+  document.getElementById("lede").innerHTML = `Our on-chain total lands within <strong>${fmt(H.max_abs_issuer_gap_pct, 2)}%</strong> of Bitwise's own published figure on every date it has published. Since launch, NRR moved about <strong>${fmt(H.ratio_abs_custody_to_abs_buyback, 0)}×</strong> more NEAR into and out of custody than NEAR's buyback fund's balance moved. That is a size comparison, not a claim of buying or selling.`;
   // freshness and data health
   const age = (Date.now() - Date.parse(H.data_through + "T00:00:00Z")) / 36e5;
   const refreshed = H.last_refresh_utc ? H.last_refresh_utc.replace("T", " ").slice(0, 16) + " UTC" : "not recorded (offline rebuild)";
@@ -261,9 +261,8 @@ function render(D) {
   new Chart(document.getElementById("holdings"), {
     type: "line",
     data: {labels, datasets: [
-      {label: "NRR holdings (staked + unstaked)", data: rows.map(r => r.nrr_holdings), borderColor: css("--ink"), backgroundColor: "transparent", fill: false, pointRadius: 0, borderWidth: 2.5, order: 1},
-      {label: "of which staked", data: rows.map(r => r.l1_staked), borderColor: "transparent", backgroundColor: "rgba(14,124,107,.22)", fill: "origin", pointRadius: 0, borderWidth: 0, order: 3},
-      {label: "Extended custody (+ liquid in NRR accounts)", data: rows.map(r => r.nrr_custody_extended), borderColor: css("--in"), borderDash: [5, 4], backgroundColor: "transparent", fill: false, pointRadius: 0, borderWidth: 1.5, order: 2},
+      {label: "Staked by NRR (chain)", data: rows.map(r => r.l1_staked), borderColor: css("--ink"), backgroundColor: "rgba(14,124,107,.12)", fill: "origin", pointRadius: 0, borderWidth: 2.5, order: 1},
+      {label: "Incl. unstaked and liquid, until it leaves", data: rows.map(r => r.nrr_custody_extended), borderColor: css("--in"), borderDash: [5, 4], backgroundColor: "transparent", fill: false, pointRadius: 0, borderWidth: 1.5, order: 2},
       {label: "Bitwise published", data: issuerPts, showLine: false, pointRadius: 7, pointHoverRadius: 9, pointBackgroundColor: "#fff", pointBorderColor: css("--issuer"), pointBorderWidth: 3, order: 0},
     ]},
     options: {maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
@@ -271,7 +270,7 @@ function render(D) {
       plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => c.raw == null ? null : `${c.dataset.label}: ${fmt(c.raw)} NEAR`, afterBody: items => {
         const r = rows[items[0].dataIndex]; const out = [];
         if (r.data_status !== "complete") out.push(`Data ${r.data_status}`);
-        if (r.issuer_gap_pct != null) out.push(`Holdings vs Bitwise: ${r.issuer_gap_pct > 0 ? "+" : ""}${fmt(r.issuer_gap_pct, 3)}%`);
+        if (r.issuer_gap_pct != null) out.push(`Bitwise as of ${r.issuer_date} (end of day) vs chain: ${r.issuer_gap_pct > 0 ? "+" : ""}${fmt(r.issuer_gap_pct, 3)}%`);
         return out;
       }}}}}
   });
@@ -351,7 +350,7 @@ function render(D) {
     <tr tabindex="0" data-d="${r.date}" class="${r.issuer_near_in_trust ? "issuerrow" : ""}">
       <td>${r.date}</td><td class="in">${r.creations ? "+" + fmt(r.creations) : ""}</td><td class="out">${r.redemptions ? "−" + fmt(r.redemptions) : ""}</td>
       <td>${r.nrr_rewards == null ? "—" : fmt(r.nrr_rewards)}</td><td>${r.unexplained == null ? "—" : fmt(r.unexplained)}</td>
-      <td>${r.nrr_holdings == null ? "missing" : fmt(r.nrr_holdings)}</td><td>${r.issuer_near_in_trust ? fmt(r.issuer_near_in_trust) : ""}</td><td>${r.issuer_gap_pct == null ? "" : (r.issuer_gap_pct > 0 ? "+" : "") + fmt(r.issuer_gap_pct, 3) + "%"}</td>
+      <td>${r.l1_staked == null ? "missing" : fmt(r.l1_staked)}</td><td>${r.issuer_near_in_trust ? fmt(r.issuer_near_in_trust) : ""}</td><td>${r.issuer_gap_pct == null ? "" : (r.issuer_gap_pct > 0 ? "+" : "") + fmt(r.issuer_gap_pct, 3) + "%"}</td>
       <td>${r.data_status === "complete" ? "complete" : `<span class="conf weak">${r.data_status}</span>`}</td></tr>`).join("");
   const toggleRow = tr => {
     const nx = tr.nextElementSibling;

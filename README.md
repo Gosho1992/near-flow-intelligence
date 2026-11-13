@@ -2,6 +2,8 @@
 
 **Bitwise's NEAR ETF (NRR), rebuilt from the chain, and set against NEAR's supply.**
 
+Our on-chain total lands within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's own published figure on every date it has published (<!--n:issuer_gaps_count:int-->3<!--/n--> dates). Since launch, NRR moved about <!--n:ratio_abs_custody_to_abs_buyback:x-->43×<!--/n--> more NEAR into and out of its custody than NEAR's buyback fund's balance moved — a size comparison, not a claim of buying or selling.
+
 NEAR supply models track issuance and the protocol's buyback fund. This project adds what those models leave out: the NEAR held by a regulated investment product. We rebuild Bitwise NRR's holdings every day from NEAR staking accounts, check them against Bitwise's own published figures, follow every creation and redemption transaction by transaction, and compare the size of those moves with NEAR's new supply and buyback fund over the same days.
 
 Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](THESIS.md). Method: [METHOD.md](METHOD.md).
@@ -9,7 +11,7 @@ Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](TH
 ## What it found (data through <!--n:data_through:-->2026-11-13<!--/n-->)
 
 - NRR's staking accounts held <!--n:nrr_holdings_latest:int-->15,310,526<!--/n--> NEAR, after a peak of <!--n:nrr_peak:int-->17,537,598<!--/n--> NEAR on <!--n:nrr_peak_date:-->2026-10-28<!--/n--> (<!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> since).
-- The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.45%<!--/n--> of Bitwise's published "NEAR in Trust" on every date we have.
+- The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's published "NEAR in Trust" on every date we have.
 - Since <!--n:window_start:-->2026-09-28<!--/n-->: <!--n:creations_total:int-->17,544,103<!--/n--> NEAR moved into NRR's staking custody and <!--n:redemptions_total:int-->2,318,791<!--/n--> NEAR moved out. Each move is a validated sequence of transactions: <!--n:creations_confirmed_count:int-->74<!--/n--> of <!--n:creations_count:int-->74<!--/n--> creations (hub funding → stake) and <!--n:redemptions_confirmed_count:int-->7<!--/n--> of <!--n:redemptions_count:int-->10<!--/n--> redemptions (unstake → withdraw → back to the custody hub) are confirmed, across <!--n:attributed_accounts:int-->73<!--/n--> accounts.
 - Over the same days the protocol minted <!--n:gross_issuance_total:int-->4,116,853<!--/n--> NEAR and the buyback fund's balance changed by <!--n:buyback_fund_change_total:int-->457,016<!--/n--> NEAR. NRR's custody moves were about <!--n:ratio_abs_custody_to_abs_buyback:x-->43×<!--/n--> the buyback fund's movement — a size comparison, not a claim of market buying or selling.
 - NRR holds <!--n:nrr_share_staked_pct_latest:pct-->2.59%<!--/n--> of all staked NEAR.
@@ -27,7 +29,7 @@ make serve    # dashboard at http://127.0.0.1:8000
 
 What to look at, in order:
 
-1. **Do the chain numbers match Bitwise?** Open the dashboard: the dots on the holdings chart are Bitwise's published figures; the line is our reconstruction. `make test` fails if any gap exceeds 1%.
+1. **Do the chain numbers match Bitwise?** Open the dashboard: the dots on the holdings chart are Bitwise's published figures; the solid line is the NEAR staked by NRR's accounts, read from the chain. `make test` fails if any gap exceeds 0.5%.
 2. **Where did the NEAR go?** In "Follow the NEAR", pick a redemption: unstake → withdraw → custody hub → next accounts, each with a NearBlocks link, the rule that labels the account, and how sure the link is (observed, probable, ambiguous or unmatched).
 3. **How big is it?** "How big are these moves?" shows NRR's custody moves next to NEAR minted and the buyback-fund change, daily or cumulative.
 4. **What can't the chain prove?** The dashboard and THESIS.md list it: market trades inside exchanges, cash vs in-kind creations, legal ownership.

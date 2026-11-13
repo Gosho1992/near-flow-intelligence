@@ -34,12 +34,20 @@ class T(unittest.TestCase):
     def test_issuer_reconciliation(self):
         with open(ROOT / "data" / "issuer_snapshots.csv") as f:
             issuer = list(csv.DictReader(f))
-        self.assertGreaterEqual(len(issuer), 2)
+        self.assertGreaterEqual(len(issuer), 3)
         by = {r["date"]: r for r in self.rows}
+        import datetime as dt
+        checked = 0
         for s in issuer:
-            chain = num(by[s["date"]]["nrr_holdings"])
+            # "as of T" = end of day T = our row T+1; NEAR unstaked for redemptions is already excluded -> staked (L1)
+            nxt = (dt.date.fromisoformat(s["date"]) + dt.timedelta(days=1)).isoformat()
+            if nxt not in by:
+                continue
+            chain = num(by[nxt]["l1_staked"])
             gap = abs(chain - float(s["near_in_trust"])) / float(s["near_in_trust"])
-            self.assertLess(gap, 0.01, f"{s['date']}: chain {chain:,.0f} vs issuer {s['near_in_trust']}")
+            self.assertLess(gap, 0.005, f"{s['date']}: chain {chain:,.0f} vs issuer {s['near_in_trust']}")
+            checked += 1
+        self.assertGreaterEqual(checked, 3)
 
     # 2 per-account history re-read straight from the cached RPC responses (independent of build.py)
     def test_account_balances_match_rpc(self):

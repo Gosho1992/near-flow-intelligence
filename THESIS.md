@@ -16,7 +16,7 @@ This is a claim about **size and reversibility of custody movements**, not about
 
 ## Evidence
 
-1. **The reconstruction matches the issuer.** Largest gap to Bitwise's "NEAR in Trust" on the dates it published: <!--n:max_abs_issuer_gap_pct:pct-->0.45%<!--/n-->.
+1. **The reconstruction matches the issuer.** Largest gap to Bitwise's "NEAR in Trust" on the dates it published: <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n-->.
 2. **Every account is attributed by a rule with evidence.** <!--n:attributed_accounts:int-->73<!--/n--> accounts received principal from one custody hub and then called `deposit_and_stake` (funding and staking transactions stored per account in `data/out/accounts.csv`). Basket sizes repeat, consistent with ETF creation units.
 3. **Every movement is a transaction, checked as a sequence.** <!--n:events:int-->184<!--/n--> classified events (stake, unstake, withdraw, return to hub) with hashes and amounts read from actions, receipts and pool logs.
 4. **Rewards are measured, not assumed.** Median growth of delegators with no transactions each day gives a staking rate of <!--n:reward_rate_annualised_pct:pct-->4.62%<!--/n--> a year; NRR rewards over the window total <!--n:rewards_total:int-->84,844<!--/n--> NEAR; the unexplained residual is <!--n:unexplained_total:int-->369<!--/n--> NEAR.

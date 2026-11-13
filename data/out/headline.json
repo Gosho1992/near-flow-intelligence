@@ -26,17 +26,19 @@
  "issuance_ratio_max_pct": 99.945279,
  "issuance_ratio_median_pct": 99.849525,
  "issuance_ratio_min_pct": 95.017899,
+ "issuer_gaps_count": 3,
  "issuer_gaps_pct": {
-  "2026-10-29": -0.451984,
-  "2026-11-09": -0.175796
+  "2026-10-29": -0.120169,
+  "2026-11-09": -0.138817,
+  "2026-11-11": -0.151822
  },
- "issuer_latest_date": "2026-11-09",
+ "issuer_latest_date": "2026-11-11",
  "last30_buyback_fund_change": 302825.898554,
  "last30_creations": 2616500.490597,
  "last30_gross_issuance": 2686070.182219,
  "last30_redemptions": 2318790.682781,
  "last_refresh_utc": "2026-11-13T08:12:54Z",
- "max_abs_issuer_gap_pct": 0.451984,
+ "max_abs_issuer_gap_pct": 0.151822,
  "net_supply_change_total": 4071425.423708,
  "nrr_holdings_latest": 15310525.582772,
  "nrr_peak": 17537598.190404,

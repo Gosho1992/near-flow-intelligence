@@ -1,3 +1,4 @@
 date,near_in_trust,near_per_share,market_value_usd,nav_usd,nav_date,market_price_usd,pct_staked,source_url,retrieved_at_utc,note
 2026-10-29,16830051.85,5.226724,72200922.46,,,,,https://nrretf.com/,2026-11-10T17:00:00Z,"Holdings Data as of 10/29/2026 (page text captured via web search result of nrretf.com)"
 2026-11-09,15695037.71,5.231679,55874334.25,18.98,2026-11-08,18.91,100,https://nrretf.com/,2026-11-11T13:46:27Z,"Holdings Data as of 11/09/2026; NAV/price as of 11/08/2026"
+2026-11-11,15331373.48,5.232551,52586611.06,17.94,2026-11-11,17.98,100,https://nrretf.com/,2026-11-13T15:20:00Z,"Holdings Data as of 11/11/2026; NAV/price as of 11/11/2026; shares outstanding 2,930,000"
