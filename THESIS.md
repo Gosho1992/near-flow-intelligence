@@ -44,7 +44,7 @@ The same demand is reversible on a few days' notice, concentrated in one pool, a
 
 ## Prediction (pre-registered)
 
-See [PREDICTION.md](PREDICTION.md): over the 30 days after submission, NRR's absolute custody moves will exceed the buyback fund's absolute balance moves. It resolves after judging; it is here so the thesis can fail.
+See [PREDICTION.md](PREDICTION.md) (frozen 13 Nov 2026, SHA-256 and OpenTimestamps proof in `PREDICTION.lock`): from 14 Nov to 13 Dec 2026, NRR's absolute custody moves will exceed the buyback fund's absolute balance moves. It resolves after judging; it is here so the thesis can fail.
 
 ## What would change our mind
 

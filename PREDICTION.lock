@@ -1,0 +1,9 @@
+Prediction frozen: 2026-11-13 (before its window opens on 2026-11-14 00:00 UTC)
+File: PREDICTION.md
+SHA-256: 2e8a5ebd6300e0d9d0c930615052eb07c56fe1cf8dd1b61c99149367b47df7b3
+Commit that froze it: 3673e632ff33b3b6e85f3daa84dc50245d3462fb
+OpenTimestamps proof: PREDICTION.md.ots (submitted to public calendars; anchors in Bitcoin within hours)
+
+Check: sha256sum PREDICTION.md      # must print the hash above
+       git show 3673e632:PREDICTION.md | sha256sum
+       ots verify PREDICTION.md.ots   # or https://opentimestamps.org
