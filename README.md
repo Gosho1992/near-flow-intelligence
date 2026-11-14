@@ -6,7 +6,12 @@ The investment question is not whether NRR is "demand" in the market. The chain 
 
 ## The long-term thesis
 
-Once HSP-029 lowers NEAR's inflation cap to 1.6%, new supply is about <!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> ETF baskets a day and the buyback fund adds about <!--n:buyback_baskets_per_day:1-->0.2<!--/n-->. NRR alone has run at <!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> and <!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets a day. So over the next one to three years, NEAR's float will be set more by regulated-product net flow than by issuance or buybacks, and the long-term case is a bet on that flow turning and staying positive. **Position today: not yet** (last 30 days: <!--n:last30_net_baskets_per_day:s1-->+0.2<!--/n--> baskets a day). Bullish if NRR's 30-day net flow stays above +<!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> baskets a day for two windows; bearish if outflows exceed issuance for two windows. Details and the signposts are in [THESIS.md](THESIS.md); two pre-registered predictions are in [PREDICTION.md](PREDICTION.md) and [PREDICTION-2.md](PREDICTION-2.md).
+**Over one to three years, NEAR's supply-side case depends on one measurable condition: whether redeemable regulated wrappers take in more NEAR than the protocol mints.** We call this the **absorption ratio** (wrapper net custody flow ÷ NEAR minted, same window). For NRR it was <!--n:absorption_launch:s2-->+3.70<!--/n--> over its first <!--n:days:int-->46<!--/n--> days, <!--n:absorption_since_peak:s2-->-1.59<!--/n--> since its 28 Oct peak, and <!--n:absorption_last30:s2-->+0.11<!--/n--> over the latest 30. HSP-029 would lower NEAR's issuance cap from 2.5% to 1.6% along a 24-month ramp after a 90-day grace period, so the same flow becomes a growing multiple of new supply. The endpoint is in year 3, February 2029 at the earliest. This is not a claim about NEAR's total float: ordinary staking outside the wrapper moved about <!--n:other_stake_abs_daily_mean:m-->2.80M<!--/n--> NEAR a day, far more. **Position today: the bullish condition is not met** (signposts: <!--n:signposts_state:-->NOT YET TESTABLE<!--/n-->).
+
+- [THESIS.md](THESIS.md): the claim, the evidence for and against, and the scenarios.
+- [SIGNPOSTS.md](SIGNPOSTS.md): bullish, bearish and structurally-wrong rules on non-overlapping 30-day windows from 15 Nov 2026. Frozen with a SHA-256 and an OpenTimestamps proof.
+- [LONG_TERM_PLAN.md](LONG_TERM_PLAN.md): the test calendar to 2029, indicators, review routine and build order.
+- Two pre-registered predictions: [PREDICTION.md](PREDICTION.md) and [PREDICTION-2.md](PREDICTION-2.md).
 
 ## The finding
 
@@ -38,12 +43,13 @@ The project records:
 | Current-period issuance average | <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day · <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets/day |
 | Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->9,935<!--/n--> NEAR/day · <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> baskets/day |
 | Buyback-fund balance change as a share of measured issuance, launch to date | <!--n:buyback_change_pct_of_issuance:pct-->11.10%<!--/n--> |
+| **Absorption ratio** (NRR net flow ÷ NEAR minted): launch · since peak · latest 30 days | <!--n:absorption_launch:s2-->+3.70<!--/n--> · <!--n:absorption_since_peak:s2-->-1.59<!--/n--> · <!--n:absorption_last30:s2-->+0.11<!--/n--> |
 
 The buyback series is a balance change, not a record of executed market purchases. The table compares measured on-chain quantities and their scale; it does not imply that NRR custody movements and buyback-fund balance changes have the same economic meaning.
 
-### Issuance scenario
+### Issuance path
 
-The current measured issuance rate averages <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day (about <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> NRR-sized baskets). If the proposed HSP-029 1.6% annual inflation target were fully reached, a simple proportional scenario at the same supply base would be about <!--n:issuance_hsp029_target_per_day:int-->57,278<!--/n--> NEAR/day (<!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> baskets). The official forum record lists HSP-029 as Succeeded, but the 1.6% rate is not active in the observed protocol configuration; remaining governance/implementation steps, a grace period and validator adoption are required. This is a full-target scenario, not a current-rate claim.
+Issuance is scheduled to fall, not falling. Today's 2.5% cap mints about <!--n:hsp029_m0_baskets_per_day:2-->1.71<!--/n--> NRR-sized baskets a day. If HSP-029 takes effect, a ~90-day grace period is followed by a linear 24-month ramp: about <!--n:hsp029_m6_baskets_per_day:2-->1.56<!--/n--> baskets a day at ramp month 6, <!--n:hsp029_m12_baskets_per_day:2-->1.40<!--/n--> at 12, <!--n:hsp029_m18_baskets_per_day:2-->1.25<!--/n--> at 18 and <!--n:hsp029_m24_baskets_per_day:2-->1.09<!--/n--> at 24. Ratification and a validator-adopted upgrade come first. The pipeline reads the cap from the chain every day (<!--n:protocol_cap_pct_latest:pct-->2.50%<!--/n--> at the cut), so the start is observed, not assumed. `data/out/scenarios.csv` projects 36 months under absorption ratios of +1, 0 and −1. These are mechanical consequences, not forecasts.
 
 ## Run it
 
@@ -64,8 +70,9 @@ For a faster rebuild from already collected `data/work/` snapshots, run `make da
 
 1. **Holdings and issuer checks.** The solid line is the reconstructed staked balance. The issuer dots are dated Bitwise observations. The archived comparison dates and differences are visible in the evidence data.
 2. **Net flow against supply.** The dashboard plots signed NRR custody flow, NEAR issuance and the buyback-fund balance change in a common unit and a common date range. Cumulative lines are rebased at the selected range start.
-3. **Sources and destinations.** The trace panel links observed transactions. A step beyond the custody hub is at best probable because NEAR is fungible and the hub pools balances.
-4. **Re-run the evidence.** `make rebuild` reconstructs outputs from cached raw RPC and transaction-API responses. `make test` checks the pipeline invariants and offline reproducibility.
+3. **The long-term test.** The signpost panel shows each 30-day window's absorption ratio against the frozen rules, and the issuance path under HSP-029.
+4. **Sources and destinations.** The trace panel links observed transactions. A step beyond the custody hub is at best probable because NEAR is fungible and the hub pools balances.
+5. **Re-run the evidence.** `make rebuild` reconstructs outputs from cached raw RPC and transaction-API responses. `make test` checks the pipeline invariants and offline reproducibility.
 
 ## What this does not prove
 
@@ -78,7 +85,7 @@ For a faster rebuild from already collected `data/work/` snapshots, run `make da
 
 ## Current attribution boundary
 
-The primary NRR series uses **Rule A**: an account is counted when the inferred custody hub funded it and it subsequently called `deposit_and_stake` on `bitwise_2.poolv1.near`. The project has identified a one-hop downstream candidate that Rule A does not include. It remains disclosed separately until its funding history, timing and pool transaction are reproduced and tested. The BigQuery check currently covers direct hub recipients only; it is not a global proof that no downstream account was missed.
+The primary NRR series uses **Rule A**: an account is counted when the inferred custody hub funded it and it subsequently called `deposit_and_stake` on `bitwise_2.poolv1.near`. One account outside Rule A, funded by a Rule A account and then staked in the NRR pool, is verified from the raw cache and shown as a sensitivity only (<!--n:one_hop_staked_latest:int-->52,502<!--/n--> NEAR; adding it would move the issuer gaps to about <!--n:one_hop_gap_max_pct:spct-->+0.20%<!--/n-->). The BigQuery check currently covers direct hub recipients only; it is not a global proof that no downstream account was missed.
 
 SVRN is a separate contextual observation: a company-reported treasury figure and a partial on-chain view of one Bitwise-operated pool. The two are not reconciled, not summed, and not treated as new purchases.
 
@@ -94,6 +101,8 @@ SVRN is a separate contextual observation: a company-reported treasury figure an
 | `site/` | Static dashboard and copied data |
 | `tests/` | Offline unit and invariant checks |
 | `THESIS.md` | Investment thesis, evidence for/against and falsifiers |
+| `LONG_TERM_PLAN.md` | Test calendar to 2029, scenarios, indicators, review routine, build order |
+| `SIGNPOSTS.md`, `SIGNPOSTS.lock` | Frozen long-term rules and their hash |
 | `METHOD.md` | Attribution, formulas, data states and limitations |
 | `SOURCES.md` | Dated source register |
 

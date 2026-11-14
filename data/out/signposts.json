@@ -1,0 +1,259 @@
+{
+ "complete": 0,
+ "fired": [],
+ "state": "NOT YET TESTABLE",
+ "windows": [
+  {
+   "end": "2026-12-15",
+   "rows": 0,
+   "start": "2026-11-16",
+   "status": "PENDING",
+   "window": 1
+  },
+  {
+   "end": "2027-01-14",
+   "rows": 0,
+   "start": "2026-12-16",
+   "status": "PENDING",
+   "window": 2
+  },
+  {
+   "end": "2027-02-13",
+   "rows": 0,
+   "start": "2027-01-15",
+   "status": "PENDING",
+   "window": 3
+  },
+  {
+   "end": "2027-03-15",
+   "rows": 0,
+   "start": "2027-02-14",
+   "status": "PENDING",
+   "window": 4
+  },
+  {
+   "end": "2027-04-14",
+   "rows": 0,
+   "start": "2027-03-16",
+   "status": "PENDING",
+   "window": 5
+  },
+  {
+   "end": "2027-05-14",
+   "rows": 0,
+   "start": "2027-04-15",
+   "status": "PENDING",
+   "window": 6
+  },
+  {
+   "end": "2027-06-13",
+   "rows": 0,
+   "start": "2027-05-15",
+   "status": "PENDING",
+   "window": 7
+  },
+  {
+   "end": "2027-07-13",
+   "rows": 0,
+   "start": "2027-06-14",
+   "status": "PENDING",
+   "window": 8
+  },
+  {
+   "end": "2027-08-12",
+   "rows": 0,
+   "start": "2027-07-14",
+   "status": "PENDING",
+   "window": 9
+  },
+  {
+   "end": "2027-09-11",
+   "rows": 0,
+   "start": "2027-08-13",
+   "status": "PENDING",
+   "window": 10
+  },
+  {
+   "end": "2027-10-11",
+   "rows": 0,
+   "start": "2027-09-12",
+   "status": "PENDING",
+   "window": 11
+  },
+  {
+   "end": "2027-11-10",
+   "rows": 0,
+   "start": "2027-10-12",
+   "status": "PENDING",
+   "window": 12
+  },
+  {
+   "end": "2027-12-10",
+   "rows": 0,
+   "start": "2027-11-11",
+   "status": "PENDING",
+   "window": 13
+  },
+  {
+   "end": "2028-01-09",
+   "rows": 0,
+   "start": "2027-12-11",
+   "status": "PENDING",
+   "window": 14
+  },
+  {
+   "end": "2028-02-08",
+   "rows": 0,
+   "start": "2028-01-10",
+   "status": "PENDING",
+   "window": 15
+  },
+  {
+   "end": "2028-03-09",
+   "rows": 0,
+   "start": "2028-02-09",
+   "status": "PENDING",
+   "window": 16
+  },
+  {
+   "end": "2028-04-08",
+   "rows": 0,
+   "start": "2028-03-10",
+   "status": "PENDING",
+   "window": 17
+  },
+  {
+   "end": "2028-05-08",
+   "rows": 0,
+   "start": "2028-04-09",
+   "status": "PENDING",
+   "window": 18
+  },
+  {
+   "end": "2028-06-07",
+   "rows": 0,
+   "start": "2028-05-09",
+   "status": "PENDING",
+   "window": 19
+  },
+  {
+   "end": "2028-07-07",
+   "rows": 0,
+   "start": "2028-06-08",
+   "status": "PENDING",
+   "window": 20
+  },
+  {
+   "end": "2028-08-06",
+   "rows": 0,
+   "start": "2028-07-08",
+   "status": "PENDING",
+   "window": 21
+  },
+  {
+   "end": "2028-09-05",
+   "rows": 0,
+   "start": "2028-08-07",
+   "status": "PENDING",
+   "window": 22
+  },
+  {
+   "end": "2028-10-05",
+   "rows": 0,
+   "start": "2028-09-06",
+   "status": "PENDING",
+   "window": 23
+  },
+  {
+   "end": "2028-11-04",
+   "rows": 0,
+   "start": "2028-10-06",
+   "status": "PENDING",
+   "window": 24
+  },
+  {
+   "end": "2028-12-04",
+   "rows": 0,
+   "start": "2028-11-05",
+   "status": "PENDING",
+   "window": 25
+  },
+  {
+   "end": "2029-01-03",
+   "rows": 0,
+   "start": "2028-12-05",
+   "status": "PENDING",
+   "window": 26
+  },
+  {
+   "end": "2029-02-02",
+   "rows": 0,
+   "start": "2029-01-04",
+   "status": "PENDING",
+   "window": 27
+  },
+  {
+   "end": "2029-03-04",
+   "rows": 0,
+   "start": "2029-02-03",
+   "status": "PENDING",
+   "window": 28
+  },
+  {
+   "end": "2029-04-03",
+   "rows": 0,
+   "start": "2029-03-05",
+   "status": "PENDING",
+   "window": 29
+  },
+  {
+   "end": "2029-05-03",
+   "rows": 0,
+   "start": "2029-04-04",
+   "status": "PENDING",
+   "window": 30
+  },
+  {
+   "end": "2029-06-02",
+   "rows": 0,
+   "start": "2029-05-04",
+   "status": "PENDING",
+   "window": 31
+  },
+  {
+   "end": "2029-07-02",
+   "rows": 0,
+   "start": "2029-06-03",
+   "status": "PENDING",
+   "window": 32
+  },
+  {
+   "end": "2029-08-01",
+   "rows": 0,
+   "start": "2029-07-03",
+   "status": "PENDING",
+   "window": 33
+  },
+  {
+   "end": "2029-08-31",
+   "rows": 0,
+   "start": "2029-08-02",
+   "status": "PENDING",
+   "window": 34
+  },
+  {
+   "end": "2029-09-30",
+   "rows": 0,
+   "start": "2029-09-01",
+   "status": "PENDING",
+   "window": 35
+  },
+  {
+   "end": "2029-10-30",
+   "rows": 0,
+   "start": "2029-10-01",
+   "status": "PENDING",
+   "window": 36
+  }
+ ]
+}
