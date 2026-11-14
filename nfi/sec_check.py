@@ -67,6 +67,12 @@ def run():
         "receivable_diff_usd": undelivered * F["price_nav"] - F["receivable_creations"],
         "receivable_diff_pct": 100 * (undelivered * F["price_nav"] - F["receivable_creations"]) / F["receivable_creations"],
         "fund_inflows_onchain": in_kind + purchased_onchain,
+        # precision of the published inputs: prices are given to the cent, the staked value to $100
+        "receivable_band_usd": undelivered * 0.005,
+        "receivable_implied_price": F["receivable_creations"] / undelivered,
+        "payable_implied_price": F["payable_purchased"] / undelivered,
+        "staked_band_near": [ (F["staked_usd"] - 50) / (F["price_principal"] + 0.005),
+                              (F["staked_usd"] + 50) / (F["price_principal"] - 0.005) ],
     }
     return out
 

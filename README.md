@@ -43,7 +43,7 @@ The project records:
 | Current-period issuance average | <!--n:issuance_per_day:int-->89,233<!--/n--> NEAR/day · <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets/day |
 | Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->9,933<!--/n--> NEAR/day · <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> baskets/day |
 | Buyback-fund balance change as a share of measured issuance, launch to date | <!--n:buyback_change_pct_of_issuance:pct-->11.13%<!--/n--> |
-| Bitwise SEC 10-Q at launch (30 Sep 2026, 4 p.m. ET) vs chain: in-kind creations · staked value · undelivered purchases | <!--n:sec_in_kind_diff:d4-->0.0001<!--/n--> NEAR · <!--n:sec_staked_diff_pct:spct-->+0.01%<!--/n--> · $<!--n:sec_receivable_diff_usd:int-->31<!--/n--> |
+| Bitwise SEC 10-Q at launch (30 Sep 2026, 4 p.m. ET) vs chain: in-kind creations · staked value · undelivered purchases | to four decimals · inside the filing's rounding band (only Rule A seed + one-hop account fit) · consistent at published price precision |
 | **Absorption ratio** (NRR net flow ÷ NEAR minted): launch · since peak · latest 30 days | <!--n:absorption_launch:s2-->+3.63<!--/n--> · <!--n:absorption_since_peak:s2-->-1.50<!--/n--> · <!--n:absorption_last30:s2-->-0.18<!--/n--> |
 
 The buyback series is a balance change, not a record of executed market purchases. The table compares measured on-chain quantities and their scale; it does not imply that NRR custody movements and buyback-fund balance changes have the same economic meaning.

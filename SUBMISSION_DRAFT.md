@@ -21,10 +21,10 @@ Code, evidence, long-term plan: https://github.com/Gosho1992/near-flow-intellige
 |---|---|---|
 | 0–14 s | Hero question and the long-term thesis box | "This is NEAR Flow Intelligence. Our thesis is one condition. Over the next one to three years, do regulated wrappers like Bitwise's NEAR ETF take in more NEAR than the protocol mints? NEAR held in the ETF leaves only when shares are redeemed, so this decides who holds the new supply." |
 | 14–28 s | The four tiles: +3.63, −1.50, −0.18, 15.32M | "We call it the absorption ratio: ETF net flow divided by NEAR minted. Over its first 47 days NRR absorbed 3.6 times the new supply. Since its 28 October peak it released 1.5 times. The latest 30 days just turned negative, as our thesis said it would. Today the bullish condition is not met." |
-| 28–42 s | Holdings chart with the four Bitwise dots | "The numbers are rebuilt account by account from mainnet. They match Bitwise's own published holdings within 0.15% on four dates, one of them out of sample. And at launch they match Bitwise's SEC filing: the in-kind delivery to four decimal places, the staked NEAR to a hundredth of a percent." |
+| 28–42 s | Holdings chart with the four Bitwise dots | "The numbers are rebuilt account by account from mainnet. They match Bitwise's own published holdings within 0.15% on four dates, one of them out of sample. And at launch they match Bitwise's SEC filing: the in-kind delivery to four decimal places, and the staked NEAR within the filing's rounding." |
 | 42–58 s | Long-term test: state box, rules, window table | "This is the long-term test. The rules were frozen before the first window opened on 15 November, with a hash and an OpenTimestamps proof anchored in Bitcoin. Two windows at or above plus one is bullish, two at or below minus one is bearish. If the ETF stops out-moving even the buyback fund, the thesis is structurally wrong. A new window closes every 30 days until 2029." |
 | 58–74 s | Issuance-path chart | "Issuance is scheduled to fall, not falling. HSP-029 ramps the cap from 2.5 to 1.6 percent over 24 months after a grace period, so the endpoint is in 2029. We read the cap from the chain every day, so the start will be observed, not assumed. Our model's avoided issuance matches the proposal's own 11.8 million." |
-| 74–86 s | Scenario chart, then the boundary sentence | "These are mechanical scenarios, not forecasts. And the boundary: ordinary staking moves about 2.8 million NEAR a day, far more than the ETF. So we claim something narrower: among the supply terms, the ETF is the largest and the only one that reverses." |
+| 74–86 s | Scenario chart, then the boundary sentence | "These are mechanical scenarios, not forecasts. And the boundary: ordinary staking moves about 2.7 million NEAR a day, far more than the ETF. So we claim something narrower: among the supply terms, the ETF is the largest and the only one that reverses." |
 | 86–96 s | Follow the NEAR: 4 Nov redemption | "Every movement traces to transactions. Past the custody hub NEAR is pooled, so those links are only probable, and we never claim a sale." |
 | 96–110 s | Terminal: make rebuild, make test; LONG_TERM_PLAN.md | "Everything rebuilds offline from cached public data and runs 48 tests. The long-term plan sets out the calendar, the indicators and what would change our mind. The thesis can be wrong, and it's built to show that." |
 
@@ -32,7 +32,7 @@ Code, evidence, long-term plan: https://github.com/Gosho1992/near-flow-intellige
 
 NEAR Flow Intelligence tests a long-term supply thesis for NEAR. The claim: over one to three years, NEAR's supply-side case depends on whether redeemable regulated wrappers absorb more NEAR than the protocol mints. We measure this with an absorption ratio (wrapper net custody flow ÷ NEAR minted, same window).
 
-We rebuilt the staking custody of Bitwise's NEAR ETF (NRR) from mainnet, account by account. 73 accounts are identified by a transparent rule. The result matches Bitwise's published holdings within 0.15% on four dates, one of them out of sample, and its first SEC 10-Q at the filing's 4 p.m. valuation: in-kind creations to four decimals, staked NEAR within 0.01%. NRR's absorption ratio was +3.63 since launch, −1.50 since its 28 Oct peak and −0.18 over the latest 30 days (data through 14 Nov). HSP-029 is modelled as its real 24-month ramp, and the protocol cap is read daily. Ordinary staking, which moves far more NEAR, is stated as the boundary of the claim.
+We rebuilt the staking custody of Bitwise's NEAR ETF (NRR) from mainnet, account by account. 73 accounts are identified by a transparent rule. The result matches Bitwise's published holdings within 0.15% on four dates, one of them out of sample, and its first SEC 10-Q at the filing's 4 p.m. valuation: in-kind creations to four decimals, staked NEAR within the filing's rounding. NRR's absorption ratio was +3.63 since launch, −1.50 since its 28 Oct peak and −0.18 over the latest 30 days (data through 14 Nov). HSP-029 is modelled as its real 24-month ramp, and the protocol cap is read daily. Ordinary staking, which moves far more NEAR, is stated as the boundary of the claim.
 
 The long-term test is frozen with SHA-256 and OpenTimestamps: absorption ≥ +1 in two consecutive 30-day windows is bullish, ≤ −1 bearish, and below the buyback-fund ratio means structurally wrong. Windows run from 15 Nov 2026 to 2029. LONG_TERM_PLAN.md gives the calendar, scenarios, indicators and build order. Two pre-registered 30-day predictions are also locked.
 
@@ -53,7 +53,7 @@ Evidence: source-wallet analysis (more than a quarter of inflow in one transfer;
 
 ## 5. Pre-submit checklist
 
-- [ ] Make the repository public.
+- [x] Repository is public.
 - [ ] Enable GitHub Pages and confirm the deployed URL loads in an incognito browser.
 - [ ] Run make rebuild, make test and make verify-prediction from a clean checkout.
 - [ ] Confirm the dashboard's data-through date and the signpost state.

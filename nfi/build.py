@@ -490,6 +490,11 @@ def build():
                          "sec_undelivered_value_at_nav": sec["undelivered_value_at_nav"],
                          "sec_receivable_creations": sec["filing"]["receivable_creations"],
                          "sec_receivable_diff_usd": sec["receivable_diff_usd"],
+                         "sec_receivable_band_usd": sec["receivable_band_usd"],
+                         "sec_payable_purchased": sec["filing"]["payable_purchased"],
+                         "sec_receivable_implied_price": sec["receivable_implied_price"],
+                         "sec_payable_implied_price": sec["payable_implied_price"],
+                         "sec_staked_band_low": sec["staked_band_near"][0], "sec_staked_band_high": sec["staked_band_near"][1],
                          "sec_total_filing": sec["filing"]["total"], "sec_fund_inflows_onchain": sec["fund_inflows_onchain"],
                          "sec_rewards_accrued_two_accounts": sec["staked_seed_plus_one_hop"] - 104384.163097}))
     sp = signposts.evaluate(rows)

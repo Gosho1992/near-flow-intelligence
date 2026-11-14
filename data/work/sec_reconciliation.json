@@ -26,11 +26,18 @@
   }
  ],
  "next_block_time": "2026-09-30T20:00:00.654034+00:00",
+ "payable_implied_price": 5.381979,
  "pool_accounts_at_valuation": 7,
  "purchased_onchain": 2192018.1336,
  "purchased_undelivered": 2609503.3367,
+ "receivable_band_usd": 13047.516684,
  "receivable_diff_pct": 0.00022,
  "receivable_diff_usd": 30.951446,
+ "receivable_implied_price": 5.379988,
+ "staked_band_near": [
+  104288.407163,
+  104504.249292
+ ],
  "staked_diff": 12.464017,
  "staked_diff_pct": 0.011939,
  "staked_implied": 104396.226415,

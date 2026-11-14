@@ -519,8 +519,7 @@ function render(D) {
     updateFlows();
   if (H.sec_staked_diff_pct != null) document.getElementById("sec-note").textContent =
     "Regulator check at launch: Bitwise's 10-Q values the fund at 4 p.m. ET on 30 Sep 2026. At that block, in-kind creations match to " +
-    "four decimals, staked NEAR matches to " + fmt(Math.abs(H.sec_staked_diff_pct), 3) + "% (only the Rule A seed account plus the one-hop account fit), and NEAR bought but not yet delivered matches the creations receivable to $" +
-    fmt(Math.abs(H.sec_receivable_diff_usd)) + ". Source: data/work/sec_reconciliation.json, nfi/sec_check.py.";
+    "four decimals; staked NEAR falls inside the filing's rounding band (only the Rule A seed account plus the one-hop account fit; Rule A alone is half, the whole pool 17% too much); and NEAR bought but not yet delivered is consistent with the creations receivable at the published $5.38 price. The filing names no addresses, so this corroborates aggregates, not ownership. Source: data/work/sec_reconciliation.json, nfi/sec_check.py.";
   }));
   unitButtons.forEach(btn => btn.addEventListener("click", () => {
     if (btn.dataset.unit === "usd" && nearUsd == null) return;
