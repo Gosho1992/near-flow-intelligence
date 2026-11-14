@@ -71,8 +71,18 @@ def run():
     return out
 
 
+def _rnd(x):
+    if isinstance(x, float):
+        return round(x, 6) + 0.0
+    if isinstance(x, dict):
+        return {k: _rnd(v) for k, v in x.items()}
+    if isinstance(x, list):
+        return [_rnd(v) for v in x]
+    return x
+
+
 if __name__ == "__main__":
-    r = run()
+    r = _rnd(run())
     (W / "sec_reconciliation.json").write_text(json.dumps(r, indent=1, sort_keys=True))
     print(f"in-kind diff {r['in_kind_diff']:+.6f} NEAR · staked diff {r['staked_diff']:+.2f} NEAR "
           f"({r['staked_diff_pct']:+.4f}%) · receivable diff ${r['receivable_diff_usd']:+,.0f}")
