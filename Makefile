@@ -34,3 +34,4 @@ serve: site
 
 verify-prediction:
 	NFI_OFFLINE=1 $(PY) -m nfi.prediction
+	NFI_OFFLINE=1 $(PY) -m nfi.prediction2
