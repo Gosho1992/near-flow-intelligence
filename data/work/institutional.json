@@ -1,0 +1,37 @@
+{
+ "accounts": {
+  "0ac0e2221c046344ef23abbbde492e0b91229c80b22995d26ca6412b5b33b263": {
+   "staked": 10358689.0,
+   "unstaked": 0.0
+  },
+  "apy-tracer.eco.linear-protocol.near": {
+   "staked": 0.001,
+   "unstaked": 0.0
+  },
+  "cc87b485b5e7a5ddc5a090aefbb4466ae895322bdd97bd29289bf13f4ef4681c": {
+   "staked": 43.02866358971053,
+   "unstaked": 0.0
+  },
+  "fd742f4246ab4ec27ff544849f6cdbfcb167fe440709052485660ff038fef6f4": {
+   "staked": 50.0,
+   "unstaked": 0.0
+  },
+  "probe.ref-dev-team.near": {
+   "staked": 1.0,
+   "unstaked": 0.0
+  },
+  "svrn_bitwise.near": {
+   "staked": 0.0,
+   "unstaked": 63044.74321944605
+  }
+ },
+ "date": "2026-11-13",
+ "height": 224285093,
+ "holder": "SVRN, Inc. (Nasdaq: SVRN)",
+ "holder_type": "listed treasury company",
+ "observed_pool": "svrn_bitwise.poolv1.near",
+ "reported_as_of": "2026-08-27",
+ "reported_holdings_near": 55500000,
+ "reported_holdings_text": "more than 55.5 million NEAR",
+ "reported_source": "https://www.sec.gov/Archives/edgar/data/1869467/000091957426005810/p15060228_ex99-1.htm"
+}

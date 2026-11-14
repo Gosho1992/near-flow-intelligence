@@ -63,6 +63,12 @@ ol.path li::before{content:counter(hop);width:32px;height:32px;border-radius:50%
 .conf.ok{border-color:var(--in);color:var(--in)}
 .trace-sum{font-size:15px;margin:0 0 6px}
 .metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.holders{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:10px 0 6px}
+.holder{background:#fff;border:1px solid #dbe1e8;border-radius:8px;padding:16px 18px}
+.holder .v{font-family:Spectral,serif;font-size:30px;color:var(--ink);font-variant-numeric:tabular-nums}
+.holder .who{font-weight:600;margin:2px 0 6px}
+.holder .meta{font-size:14px;color:var(--slate);line-height:1.45}
+@media (max-width:720px){.holders{grid-template-columns:1fr}}
 .conds td:first-child,.conds th:first-child{text-align:left;white-space:normal}
 .conds td:nth-child(2),.conds th:nth-child(2){text-align:left;white-space:normal}
 .metrics table{font-size:15px;min-width:0}
@@ -132,6 +138,9 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
     <h2>The long-term case</h2>
     <p class="sub" id="thesis-lede"></p>
     <div class="tablewrap"><table class="conds"><thead><tr><th>What has to be true</th><th>Reading now</th><th></th></tr></thead><tbody id="conds"></tbody></table></div>
+    <h3>Institutional holders: evidence status</h3>
+    <div class="holders" id="holders"></div>
+    <p class="context" id="holders-note"></p>
     <p class="context">Verdict: <strong>constructive, not proven.</strong> The full thesis, with the evidence against it and a pre-registered prediction that can prove it wrong, is in <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Research, not financial advice.</p>
   </section>
 
@@ -261,11 +270,21 @@ function render(D) {
   document.getElementById("conds").innerHTML = [
     cond("Fund demand is sticky, not a launch effect", `Net ${H.last30_nrr_net >= 0 ? "+" : "−"}${fmt(Math.abs(H.last30_nrr_net))} NEAR over 30 days; holdings ${fmt(H.change_since_peak_pct, 1)}% from peak`, "undecided"),
     cond("Fund flows stay larger than buyback flows", `${fmt(H.last30_abs_custody_to_abs_buyback, 0)}× over 30 days (sum of absolute daily moves). Frozen prediction for 14 Nov – 13 Dec: pending`, H.last30_abs_custody_to_abs_buyback > 1 ? "currently holds" : "currently fails"),
-    cond("Institutional demand spreads beyond one product", `Rebuilt and reconciled: ${H.products_attributed_onchain} (NRR). Partly visible: SVRN, a listed company reporting 55.5M+ NEAR`, "open"),
-    cond("Redeemed NEAR is not routed straight to exchanges", `${H.redemption_traces_probable} of ${H.redemption_traces} traced past the hub, to exchange-style wallets; a sale itself is not visible on-chain`, "open"),
+    cond("Institutional demand spreads beyond one product", `Rebuilt and reconciled: ${H.products_attributed_onchain} (NRR). Partly visible, not counted as a second reconciled product: SVRN (see below)`, "open"),
+    cond("Where does redeemed NEAR go after leaving custody?", `${H.redemption_traces_probable} of ${H.redemption_traces} redemption traces have probable onward matches to exchange-style wallets. This does not show whether the NEAR was sold`, "watching"),
     cond("The protocol's own offset grows", `${fmt(H.last30_buyback_pct_of_issuance, 1)}% of new supply over 30 days`, "open"),
   ].join("");
   document.getElementById("issuer-note").textContent = `Bitwise has published ${H.issuer_gaps_count} holdings figures we could check (the dots). Every other day on the line is rebuilt from the chain alone, not confirmed by Bitwise.`;
+  const I = D.institutional || [];
+  document.getElementById("holders").innerHTML = I.map((h, i) => `<div class="holder">
+      <div class="v">${M(h.observed_staked_near)}</div>
+      <div class="who">${i === 0 ? "NRR" : "SVRN's Bitwise pool"} <span class="conf ${i === 0 ? "ok" : "probable"}">${i === 0 ? "rebuilt + reconciled" : "partially observed"}</span></div>
+      <div class="meta">${i === 0
+        ? `Staked by ${h.accounts_observed} attributed accounts on ${h.observed_date} (block ${fmt(h.observed_height)}). Checked against Bitwise: ${h.issuer_reconciled}.`
+        : `Staked in <code>svrn_bitwise.poolv1.near</code> by ${h.accounts_observed} accounts on ${h.observed_date} (block ${fmt(h.observed_height)}); one account holds almost all of it. One pool only; not reconciled with SVRN.`}</div>
+    </div>`).join("");
+  const sv = I[1];
+  document.getElementById("holders-note").innerHTML = sv ? `SVRN reports ${sv.reported_holdings_near ? "more than " + M(sv.reported_holdings_near) : "—"} NEAR in its treasury as of ${sv.reported_as_of} (<a href="${sv.reported_source}">company release, SEC exhibit</a>). The ${M(sv.observed_staked_near)} pool observation is not a reconstruction of that total, may be part of it, and is never added to it or to NRR's figures. SVRN's reported total and the pool reading come from different sources and dates.` : "";
   // freshness and data health
   const age = (Date.now() - Date.parse(H.data_through + "T00:00:00Z")) / 36e5;
   const refreshed = H.last_refresh_utc ? H.last_refresh_utc.replace("T", " ").slice(0, 16) + " UTC" : "not recorded (offline rebuild)";

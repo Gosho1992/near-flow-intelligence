@@ -284,6 +284,19 @@ class T(unittest.TestCase):
             self.assertEqual(len(hs), v["transactions"], m)
             self.assertEqual(hashlib.sha256("\n".join(hs).encode()).hexdigest(), v["sha256_sorted_hashes"], m)
 
+    # 20 SVRN is a separate, partial observation: never in NRR's accounts or totals, never reconciled,
+    #    and its observed pool stake is recorded account by account
+    def test_institutional_holders_separate(self):
+        inst = json.loads((ROOT / "data" / "work" / "institutional.json").read_text())
+        mine = {a["account"] for a in self.accounts}
+        self.assertFalse(mine & set(inst["accounts"]))
+        rows_ = list(csv.DictReader(open(OUT / "institutional_holders.csv")))
+        nrr, svrn = rows_[0], rows_[1]
+        self.assertEqual(svrn["counted_in_nrr_totals"], "no")
+        self.assertTrue(svrn["issuer_reconciled"].startswith("no"))
+        self.assertAlmostEqual(float(svrn["observed_staked_near"]), sum(v["staked"] for v in inst["accounts"].values()), delta=0.01)
+        self.assertAlmostEqual(float(nrr["observed_staked_near"]), num(self.rows[-1]["l1_staked"]), delta=0.01)
+
 
 if __name__ == "__main__":
     unittest.main()

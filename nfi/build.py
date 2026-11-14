@@ -428,8 +428,11 @@ def build():
         prev = r
 
     traces = build_traces(A, events, counts)
+    inst = load("institutional.json", {})
     issuance = issuance_check(epochs)
     head = rnd(headline(rows, events, issuer, A, traces, C, issuance, refresh))
+    holders = institutional_rows(rows, inst, attributed, head)
+    head.update(rnd(institutional_headline(inst)))
     rows, events, traces, ledger, issuance = rnd(rows), rnd(events), rnd(traces), rnd(ledger), rnd(issuance)
     OUT.mkdir(parents=True, exist_ok=True)
     write_csv(OUT / "daily.csv", rows)
@@ -439,12 +442,57 @@ def build():
     write_csv(OUT / "accounts.csv", A["accounts"])
     write_csv(OUT / "buyback_ledger.csv", ledger)
     write_csv(OUT / "issuance_check.csv", issuance)
+    write_csv(OUT / "institutional_holders.csv", rnd(holders))
     (OUT / "traces.json").write_text(json.dumps(traces, indent=1, sort_keys=True))
     (OUT / "headline.json").write_text(json.dumps(head, indent=1, sort_keys=True))
     (OUT / "site_data.json").write_text(json.dumps({"daily": rows, "events": events, "traces": traces,
                                                     "headline": head, "issuer": list(issuer.values()),
-                                                    "accounts": A["accounts"]}, sort_keys=True))
+                                                    "accounts": A["accounts"], "institutional": rnd(holders)},
+                                                   sort_keys=True))
     return rows, head
+
+
+def institutional_rows(rows, inst, attributed, head):
+    """Evidence-status table: NRR (rebuilt and reconciled) and SVRN (partial observation, context only).
+    The two rows have different measurement bases and dates and are never added together."""
+    last = rows[-1]
+    out = [{"holder": "Bitwise NEAR ETF (NRR)", "holder_type": "regulated fund (ETF)",
+            "evidence_status": "rebuilt from the chain and reconciled with the issuer",
+            "reported_holdings_near": None, "reported_as_of": None, "reported_source": "https://nrretf.com/",
+            "observed_where": "bitwise_2.poolv1.near, 73 attributed accounts (rule A)",
+            "observed_staked_near": last["l1_staked"], "observed_date": last["date"], "observed_height": last["height"],
+            "accounts_observed": head["attributed_accounts"], "largest_account": None, "largest_account_staked_near": None,
+            "issuer_reconciled": f"yes, {head['issuer_gaps_count']} dates, max gap {head['max_abs_issuer_gap_pct']:.2f}%",
+            "counted_in_nrr_totals": "yes"}]
+    acc = inst.get("accounts")
+    if inst:
+        top = max(acc.items(), key=lambda kv: kv[1]["staked"]) if acc else (None, {"staked": None})
+        overlap = sorted(set(acc or {}) & attributed)
+        out.append({"holder": inst["holder"], "holder_type": inst["holder_type"],
+                    "evidence_status": "partial on-chain observation; company-reported total is context only",
+                    "reported_holdings_near": inst["reported_holdings_near"], "reported_as_of": inst["reported_as_of"],
+                    "reported_source": inst["reported_source"],
+                    "observed_where": f"{inst['observed_pool']} (all delegators)",
+                    "observed_staked_near": None if acc is None else sum(v["staked"] for v in acc.values()),
+                    "observed_date": inst["date"], "observed_height": inst["height"],
+                    "accounts_observed": None if acc is None else len(acc),
+                    "largest_account": top[0], "largest_account_staked_near": top[1]["staked"],
+                    "issuer_reconciled": "no (one pool only; may be part of the reported total, never added to it)",
+                    "counted_in_nrr_totals": "no" if not overlap else "ERROR: overlaps NRR accounts"})
+    return out
+
+
+def institutional_headline(inst):
+    acc = inst.get("accounts") if inst else None
+    if not acc:
+        return {}
+    tot = sum(v["staked"] for v in acc.values())
+    top = max(acc.items(), key=lambda kv: kv[1]["staked"])
+    return {"svrn_observed_staked": tot, "svrn_observed_date": inst["date"], "svrn_observed_height": inst["height"],
+            "svrn_accounts_observed": len(acc), "svrn_largest_account": top[0],
+            "svrn_largest_account_share_pct": 100 * top[1]["staked"] / tot if tot else None,
+            "svrn_largest_account_staked": top[1]["staked"],
+            "svrn_reported_holdings": inst["reported_holdings_near"], "svrn_reported_as_of": inst["reported_as_of"]}
 
 
 def issuance_check(epochs):

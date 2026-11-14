@@ -5,7 +5,7 @@ Writes data/work/refresh.json (time of the last successful refresh) only when ev
 import json, sys, time
 from datetime import datetime, timezone
 from .net import ROOT, rpc
-from . import chain, collect_chain, attribution, collect_custody, build
+from . import chain, collect_chain, attribution, collect_custody, build, institutional
 
 W = ROOT / "data" / "work"
 
@@ -29,6 +29,7 @@ def main():
     log(f"attribution: {len(A['accounts'])} accounts")
     (W / "custody_liquid.json").write_text(json.dumps(collect_custody.collect(), sort_keys=True))
     (W / "exclusion.json").write_text(json.dumps(collect_custody.exclusion_check(), sort_keys=True))
+    (W / "institutional.json").write_text(json.dumps(institutional.collect(), indent=1, sort_keys=True))
     counts = collect_custody.tx_counts(build.trace_accounts(A))
     (W / "tx_counts.json").write_text(json.dumps(counts, sort_keys=True))
     (W / "refresh.json").write_text(json.dumps({"refreshed_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

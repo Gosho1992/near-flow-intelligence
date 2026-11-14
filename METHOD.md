@@ -22,6 +22,8 @@ For each day from 25 Sep 2026, the first block at or after 00:00 UTC (`nfi/chain
 
 Sources: the hub's full transaction history and the pool's full transaction history (every stake, unstake and withdraw is a transaction to the pool; every funding and return passes through the hub), plus the histories of the two accounts seen downstream of the hub.
 
+**Other institutional holders (context, separate from NRR).** SVRN, Inc. reports its NEAR treasury itself (more than 55.5 million NEAR on 27 Aug 2026). The only part with a known on-chain link is Bitwise's `svrn_bitwise.poolv1.near` pool, whose delegators we read at the latest daily height (`nfi/institutional.py`; now <!--n:svrn_observed_staked:int-->10,358,783<!--/n--> NEAR across <!--n:svrn_accounts_observed:int-->6<!--/n--> accounts at block <!--n:svrn_observed_height:int-->224,285,093<!--/n-->). It is published in `data/out/institutional_holders.csv` with its own date, height and status ("partial observation"). It is never included in NRR's totals (test 20 checks there is no account overlap), never reconciled with SVRN's figure, and never added to it, since it may be part of it. The NRR exclusion check above still reads this pool, only to keep its delegators out of NRR.
+
 ## 3. Custody layers (never double counted)
 
 | Layer | Definition | Read with |
@@ -88,4 +90,4 @@ Every lookup has a state. An account that did not exist yet at a height is a tru
 
 ## 11. Tests (`make test`)
 
-1 issuer reconciliation · 2 balances re-read from raw RPC responses · 3 no duplicate accounts · 4 every event backed by its transaction and amount · 5 reward rate 3–7%/yr and residual small · 6 block-header match and no negative burn residual · 7 total stake vs validators RPC · 8 missing ≠ zero in outputs · 9 offline rebuild is byte-identical · 10 every number in the docs comes from the data · 11 attribution rejects staking before funding · 12 minting vs the protocol formula · 13 failed lookups become missing, not zero · 14 other Bitwise pools excluded · 15 sequence statuses and links · 16 buyback ledger adds up · 17 reward probes agree · 18 prediction evaluator (pending, void, duplicates) · 19 BigQuery completeness check.
+1 issuer reconciliation · 2 balances re-read from raw RPC responses · 3 no duplicate accounts · 4 every event backed by its transaction and amount · 5 reward rate 3–7%/yr and residual small · 6 block-header match and no negative burn residual · 7 total stake vs validators RPC · 8 missing ≠ zero in outputs · 9 offline rebuild is byte-identical · 10 every number in the docs comes from the data · 11 attribution rejects staking before funding · 12 minting vs the protocol formula · 13 failed lookups become missing, not zero · 14 other Bitwise pools excluded · 15 sequence statuses and links · 16 buyback ledger adds up · 17 reward probes agree · 18 prediction evaluator (pending, void, duplicates) · 19 BigQuery completeness check · 20 SVRN observation kept separate from NRR.

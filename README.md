@@ -4,7 +4,7 @@
 
 Our on-chain total lands within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's own published figure on every date it has published (<!--n:issuer_gaps_count:int-->3<!--/n--> dates). Since launch, NRR moved about <!--n:ratio_abs_custody_to_abs_buyback:x-->43×<!--/n--> more NEAR into and out of its custody than NEAR's buyback fund's balance moved — a size comparison, not a claim of buying or selling.
 
-NEAR supply models track issuance and the protocol's buyback fund. This project adds what those models leave out: the NEAR held by a regulated investment product. We rebuild Bitwise NRR's holdings every day from NEAR staking accounts, check them against Bitwise's own published figures, follow every creation and redemption transaction by transaction, and compare the size of those moves with NEAR's new supply and buyback fund over the same days.
+NEAR supply models track issuance and the protocol's buyback fund. This project adds what those models leave out: the NEAR held by a regulated investment product. We rebuild Bitwise NRR's holdings every day from NEAR staking accounts, check them against Bitwise's own published figures, follow every creation and redemption transaction by transaction, and compare the size of those moves with NEAR's new supply and buyback fund over the same days. We also record other institutional holders where only partial on-chain evidence exists, such as SVRN, a listed company that reports its NEAR treasury; those observations are shown separately and never added to NRR's figures.
 
 Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](THESIS.md). Method: [METHOD.md](METHOD.md). Sources: [SOURCES.md](SOURCES.md).
 
