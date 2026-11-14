@@ -4,6 +4,10 @@
 
 The investment question is not whether NRR is "demand" in the market. The chain cannot prove that. The question is how much NEAR moves into and out of this redeemable product's staked custody, how that flow compares with protocol issuance, and how quickly the direction can reverse.
 
+## The long-term thesis
+
+Once HSP-029 lowers NEAR's inflation cap to 1.6%, new supply is about <!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> ETF baskets a day and the buyback fund adds about <!--n:buyback_baskets_per_day:1-->0.2<!--/n-->. NRR alone has run at <!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> and <!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets a day. So over the next one to three years, NEAR's float will be set more by regulated-product net flow than by issuance or buybacks, and the long-term case is a bet on that flow turning and staying positive. **Position today: not yet** (last 30 days: <!--n:last30_net_baskets_per_day:s1-->+0.2<!--/n--> baskets a day). Bullish if NRR's 30-day net flow stays above +<!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> baskets a day for two windows; bearish if outflows exceed issuance for two windows. Details and the signposts are in [THESIS.md](THESIS.md); two pre-registered predictions are in [PREDICTION.md](PREDICTION.md) and [PREDICTION-2.md](PREDICTION-2.md).
+
 ## The finding
 
 In the 46 measured daily windows from 2026-09-29 through 2026-11-13, NRR's signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+330,985<!--/n--> NEAR per day** (<!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> approximate 10,000-share baskets per day). Since the 2026-10-28 holdings peak, across 16 daily windows, the average was **<!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> NEAR per day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets per day).

@@ -6,6 +6,27 @@
 
 Bitwise's NEAR ETF (NRR) has become a measurable, reversible source of NEAR moving into and out of staked custody. Across the <!--n:days:int-->46<!--/n--> daily windows observed since its first staking activity, its signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+330,985<!--/n--> NEAR/day** (<!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> approximate 10,000-share baskets/day). Since its holdings peak on <!--n:nrr_peak_date:-->2026-10-28<!--/n-->, across <!--n:since_peak_net_flow_days:int-->16<!--/n--> daily windows, the average reversed to **<!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> NEAR/day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets/day). This is the finding: a single redeemable product can move NEAR into custody at scale and can later release it at scale. It does **not** establish market purchases, sales, legal ownership or price impact. The long-term question is whether NRR's net flow stabilises, continues to reverse, or is joined by other independently attributable products.
 
+## The long-term thesis (1 to 3 years)
+
+**NEAR's float will be set more by regulated-product net flow than by issuance or buybacks, so the long-term case for NEAR is a bet on that flow turning, and staying, positive.** This is a claim about what will move NEAR's supply picture and what to watch, not a price forecast.
+
+Why, in one unit (one basket = 10,000 NRR shares, about <!--n:basket_near:int-->52,331<!--/n--> NEAR):
+
+1. **Issuance is falling.** NEAR mints about <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets' worth a day under today's 2.5% cap. HSP-029, approved on 2 Nov 2026 but not yet active, lowers the cap to 1.6%: about <!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> a day at full target.
+2. **The protocol's own offset is small.** The buyback fund's balance grows by about <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> baskets a day.
+3. **One redeemable fund already moves several times more, both ways.** NRR averaged <!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> baskets a day over its first <!--n:days:int-->46<!--/n--> days and <!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> a day since its 28 Oct peak.
+4. **That flow can be watched daily, from the chain, account by account,** instead of waiting for issuer files or press coverage, and it already matches Bitwise's own figures (including one published after our method was frozen).
+
+So, once issuance falls to about one basket a day, whether NEAR's liquid float grows or shrinks at the margin will depend mostly on the sign of regulated-product net flow. Today that rests on one product.
+
+**Position today: not yet.** The bull case needs sustained net inflow. Over the last 30 days NRR averaged <!--n:last30_net_baskets_per_day:s1-->+0.2<!--/n--> baskets a day, against the <!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> a day that would absorb all post-HSP-029 issuance, and the flow has been negative since 28 Oct.
+
+| Signpost | Threshold, written in advance | Reading now |
+|---|---|---|
+| Turns bullish | NRR's 30-day net flow above +<!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> baskets a day (it would absorb all post-HSP-029 issuance) for two consecutive 30-day windows, or a second product that can be rebuilt and reconciled | <!--n:last30_net_baskets_per_day:s1-->+0.2<!--/n--> baskets a day; <!--n:products_attributed_onchain:int-->1<!--/n--> product |
+| Turns bearish | NRR's 30-day net outflow larger than issuance (below −<!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets a day) for two consecutive windows | <!--n:last30_net_baskets_per_day:s1-->+0.2<!--/n--> baskets a day |
+| Thesis wrong | NRR's absolute 30-day net flow smaller than the buyback fund's growth for two consecutive months: the ETF is no longer the swing. Prediction 2 tests the first month | 30-day net flow <!--n:last30_nrr_net:sint-->+297,710<!--/n--> NEAR against buyback growth <!--n:last30_buyback_fund_change:sint-->+302,826<!--/n--> NEAR |
+
 ## Verdict at the current data cut
 
 **A large, observable position is established; persistent incremental buying is not.** NRR's attributed staking accounts held <!--n:nrr_holdings_latest:m-->15.31M<!--/n--> NEAR on <!--n:data_through:-->2026-11-13<!--/n-->, <!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> below the <!--n:nrr_peak_date:-->2026-10-28<!--/n--> peak. The latest 30 daily windows show net custody flow of <!--n:last30_nrr_net:sint-->+297,710<!--/n--> NEAR in total, while the post-peak period is materially negative. A 46-day history of one product is not enough to establish a long-term pattern.
@@ -46,6 +67,10 @@ On the <!--n:issuer_gaps_count:int-->4<!--/n--> issuer dates currently archived,
 
 Since the 28 Oct peak, across <!--n:since_peak_net_flow_days:int-->16<!--/n--> daily windows, the pipeline recorded <!--n:since_peak_creations_total:int-->57,281<!--/n--> NEAR in creations and <!--n:since_peak_redemptions_total:int-->2,318,791<!--/n--> NEAR in redemptions, for a cumulative signed net custody flow of <!--n:since_peak_net_flow_total:sint-->-2,261,510<!--/n--> NEAR. Dividing that total by the 16 windows gives the average daily rate shown above.
 
+### Where NRR's NEAR came from
+
+Of the <!--n:sources_external_total:m-->18.37M<!--/n--> NEAR sent to the custody hub from outside, <!--n:sources_exchange_style_pct:pct-->48.32%<!--/n--> came from exchange-style wallets and <!--n:sources_other_pct:pct-->51.68%<!--/n--> from <!--n:sources_other_wallets:int-->4<!--/n--> other wallets, including a single transfer of <!--n:sources_largest_transfer:int-->5,010,330<!--/n--> NEAR (`data/out/source_mix.csv`, every wallet and its largest transaction). Redeemed NEAR that we could trace past the hub went to <!--n:sources_onward_wallets:int-->2<!--/n--> wallets that had themselves delivered <!--n:sources_onward_wallets_also_delivered:m-->3.26M<!--/n--> NEAR of creations. That pattern fits authorised participants moving NEAR in and out in kind; it says nothing about market buying or selling, and wallet labels are a heuristic.
+
 ### 3. Attribution and the completeness boundary
 
 The primary set contains <!--n:attributed_accounts:int-->73<!--/n--> accounts identified by Rule A: the inferred custody hub funds an account, and that account subsequently calls `deposit_and_stake` on `bitwise_2.poolv1.near`. This is a repeatable on-chain attribution rule, not a legal ownership assertion.
@@ -68,7 +93,7 @@ The trace panel follows observed unstake, withdrawal and return steps, then sear
 
 | Condition | Measurement | Current interpretation |
 |---|---|---|
-| Does net custody flow remain positive after launch? | Signed NRR net custody flow over rolling 30-day windows; also compare with its post-peak direction | Latest 30-day total: <!--n:last30_nrr_net:sint-->+297,710<!--/n--> NEAR. The 28 Oct-to-cut period is materially negative. Positive recent net flow alone does not prove persistence. |
+| Does net custody flow remain positive after launch? | Signed NRR net custody flow over rolling 30-day windows; also compare with its post-peak direction | Latest 30-day total: <!--n:last30_nrr_net:sint-->+297,710<!--/n--> NEAR. The 28 Oct-to-cut period is materially negative. A single 30-day reading, in either direction, does not prove persistence. |
 | How large is the flow against protocol supply? | Signed NRR flow and gross issuance, expressed in NEAR/day and basket equivalents | NRR has averaged <!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> NEAR/day since the peak; measured issuance averaged <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day over the launch window. |
 | Is the flow concentrated in one product? | Independently reconstructed and issuer-reconciled products; partial pool observations kept separate | One reconstructed and issuer-reconciled product (NRR). SVRN has a partial, un-reconciled one-pool observation only. |
 | Where does redeemed NEAR go? | Onward matches after return to the custody hub | <!--n:redemption_traces_probable:int-->3<!--/n--> of <!--n:redemption_traces:int-->10<!--/n--> traces have probable onward matches. No claim of selling. |
@@ -92,9 +117,12 @@ NRR's net custody flow stabilises or returns to sustained positive levels after 
 
 The early inflow was a launch event. Redemptions continue, the fund becomes a net source of NEAR from staked custody, and no second independently attributable product appears. In that case, the position remains large but reversible; custody should not be described as persistent market demand.
 
-## Pre-registered prediction (unchanged)
+## Pre-registered predictions
 
 See [PREDICTION.md](PREDICTION.md), frozen on 13 Nov 2026 and protected by [PREDICTION.lock](PREDICTION.lock). Its 14 Nov–13 Dec test compares the **sum of absolute daily NRR custody movements** (creations plus redemptions) with the **sum of absolute daily buyback-fund balance changes**. It tests relative movement scale after the launch period. It does **not** test the sign of NRR's net flow, prove market buying or selling, or establish price impact. The original frozen file and lock are unchanged.
+
+[PREDICTION-2.md](PREDICTION-2.md), frozen on 14 Nov 2026 before its window and protected by [PREDICTION-2.lock](PREDICTION-2.lock), is the sharper test: from 15 Nov to 14 Dec, the **absolute value of NRR's net custody flow** will exceed the **absolute value of the buyback fund's net balance change**. Over the 30 days before it was frozen the two were almost equal, so it can fail. It is the first test of the "thesis wrong" signpost above. Both are evaluated by `make verify-prediction`.
+
 
 ## What would change our mind
 

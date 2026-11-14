@@ -281,12 +281,45 @@ def label(a, attr, counts):
     return "unlabelled account"
 
 
+def source_mix(attr, counts):
+    """Where the NEAR that funded NRR's custody hub came from, by sending wallet.
+    External senders only: attributed basket accounts, the two downstream accounts we follow, the fee payer and
+    round trips (wallets that had first received the same NEAR from the hub) are excluded. Labels are the
+    exchange-style heuristic; a delivery from a wallet is not evidence of a market purchase."""
+    accts = {x["account"] for x in attr["accounts"]}
+    skip = accts | set(attr["sources"].get("extra_accounts", [])) | {FEE_PAYER, HUB}
+    first_out = {}
+    for o in attr["hub_out"]:
+        if o["near"] >= 1000:                         # a 1-NEAR test payment is not a round trip
+            first_out[o["to"]] = min(first_out.get(o["to"], o["height"]), o["height"])
+    rows = {}
+    for i in attr["hub_in"]:
+        a = i["from"]
+        if a in skip:
+            continue
+        if a in first_out and first_out[a] < i["height"]:
+            continue                                  # round trip: hub -> a -> hub
+        r = rows.setdefault(a, {"wallet": a, "near": 0.0, "transfers": 0, "largest_transfer": 0.0, "largest_tx": None})
+        r["near"] += i["near"]
+        r["transfers"] += 1
+        if i["near"] > r["largest_transfer"]:
+            r["largest_transfer"], r["largest_tx"] = i["near"], i["hash"]
+    total = sum(r["near"] for r in rows.values())
+    out = []
+    for r in sorted(rows.values(), key=lambda r: -r["near"]):
+        lab = label(r["wallet"], attr, counts)
+        out.append({**r, "share_pct": 100 * r["near"] / total if total else None,
+                    "exchange_style": lab.startswith("exchange-style"), "label": lab})
+    return out
+
+
 def trace_accounts(attr, top_in=10):
     """Counterparties whose transaction counts feed the exchange-style label (kept small: one API call each)."""
     accts = {x["account"] for x in attr["accounts"]}
     out = {o["to"] for o in attr["hub_out"] if o["near"] >= 1000}
     ins = sorted(attr["hub_in"], key=lambda i: -i["near"])
     out |= {i["from"] for i in ins[:top_in]}
+    out |= {i["from"] for i in attr["hub_in"] if i["from"] not in accts}   # every external sender (source mix)
     for a, hist in attr["histories"].items():
         if a not in accts and a != HUB:
             out.add(a)
@@ -433,6 +466,24 @@ def build():
     head = rnd(headline(rows, events, issuer, A, traces, C, issuance, refresh))
     holders = institutional_rows(rows, inst, attributed, head)
     head.update(rnd(institutional_headline(inst)))
+    mix = source_mix(A, counts)
+    tot = sum(m["near"] for m in mix)
+    ex = sum(m["near"] for m in mix if m["exchange_style"])
+    big = max(mix, key=lambda m: m["largest_transfer"]) if mix else None
+    dest = {o["to"] for o in A["hub_out"] if o["to"] not in attributed}
+    onward = set()
+    for t in traces:
+        for st in t["steps"]:
+            if st["type"] == "onward" and st.get("to"):
+                onward.add(st["to"])
+    back = sum(m["near"] for m in mix if m["wallet"] in onward)
+    head.update(rnd({"sources_external_total": tot, "sources_wallets": len(mix),
+                     "sources_exchange_style_pct": 100 * ex / tot if tot else None,
+                     "sources_other_pct": 100 * (tot - ex) / tot if tot else None,
+                     "sources_other_wallets": sum(1 for m in mix if not m["exchange_style"]),
+                     "sources_largest_transfer": big["largest_transfer"] if big else None,
+                     "sources_onward_wallets_also_delivered": back,
+                     "sources_onward_wallets": len(onward)}))
     rows, events, traces, ledger, issuance = rnd(rows), rnd(events), rnd(traces), rnd(ledger), rnd(issuance)
     OUT.mkdir(parents=True, exist_ok=True)
     write_csv(OUT / "daily.csv", rows)
@@ -443,6 +494,7 @@ def build():
     write_csv(OUT / "buyback_ledger.csv", ledger)
     write_csv(OUT / "issuance_check.csv", issuance)
     write_csv(OUT / "institutional_holders.csv", rnd(holders))
+    write_csv(OUT / "source_mix.csv", rnd(mix))
     (OUT / "traces.json").write_text(json.dumps(traces, indent=1, sort_keys=True))
     (OUT / "headline.json").write_text(json.dumps(head, indent=1, sort_keys=True))
     (OUT / "site_data.json").write_text(json.dumps({"daily": rows, "events": events, "traces": traces,

@@ -297,6 +297,17 @@ class T(unittest.TestCase):
         self.assertAlmostEqual(float(svrn["observed_staked_near"]), sum(v["staked"] for v in inst["accounts"].values()), delta=0.01)
         self.assertAlmostEqual(float(nrr["observed_staked_near"]), num(self.rows[-1]["l1_staked"]), delta=0.01)
 
+    # 21 source mix: shares add up to the external inflow total, labels follow the stated heuristic
+    def test_source_mix(self):
+        mix = list(csv.DictReader(open(OUT / "source_mix.csv")))
+        tot = sum(float(m["near"]) for m in mix)
+        self.assertAlmostEqual(tot, self.head["sources_external_total"], delta=1)
+        self.assertAlmostEqual(sum(float(m["share_pct"]) for m in mix), 100.0, delta=0.01)
+        ex = sum(float(m["near"]) for m in mix if m["exchange_style"] == "True")
+        self.assertAlmostEqual(100 * ex / tot, self.head["sources_exchange_style_pct"], delta=0.01)
+        for m in mix:
+            self.assertEqual(m["exchange_style"] == "True", m["label"].startswith("exchange-style"))
+
 
 if __name__ == "__main__":
     unittest.main()

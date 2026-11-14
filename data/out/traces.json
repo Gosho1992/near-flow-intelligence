@@ -1003,7 +1003,7 @@
    },
    {
     "from": "ab0ccd54641a3df0a807be6595e6396ce20c806678a5028dac4a820474737850",
-    "from_label": "unlabelled account",
+    "from_label": "unlabelled account (14 transactions)",
     "hash": "GwBLSLubGeAtgnmb26QsYdoeGPjcXttwDviprnVa6h7U",
     "height": 218070651,
     "near": 500000.0,
@@ -1676,7 +1676,7 @@
    },
    {
     "from": "ab0ccd54641a3df0a807be6595e6396ce20c806678a5028dac4a820474737850",
-    "from_label": "unlabelled account",
+    "from_label": "unlabelled account (14 transactions)",
     "hash": "zd74yuhHGcb7LK8eGgtnpLWkeSe4WM9DbC7Y22ecPWC",
     "height": 218664357,
     "near": 52186.661901,
@@ -1893,7 +1893,7 @@
    },
    {
     "from": "ab0ccd54641a3df0a807be6595e6396ce20c806678a5028dac4a820474737850",
-    "from_label": "unlabelled account",
+    "from_label": "unlabelled account (14 transactions)",
     "hash": "FjKqAdR1LWuPXmaKXnAWKAVy8edj7uH8cZzBsJEbcz9p",
     "height": 220234607,
     "near": 60000.0,
@@ -3700,7 +3700,7 @@
    },
    {
     "from": "717f12dd9354b83dac4c80b60dbc15712baac97834d63ccf545c53db57d9eeb3",
-    "from_label": "unlabelled account",
+    "from_label": "high-activity account (11,589 transactions; counterparty test not met or not run)",
     "hash": "C6CCVp1LDS1Kh3Du2W4gWneb1rqHNNwzGLXntEj41v2T",
     "height": 217684073,
     "near": 1.2e-05,

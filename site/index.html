@@ -24,7 +24,7 @@ header.top{padding:28px 24px 0}
 .brand{font-weight:600;font-size:15px;color:var(--slate)}
 .brand strong{color:var(--ink)}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.01em;margin:18px 0 12px;max-width:16ch}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.01em;margin:18px 0 12px;max-width:24ch}
 .lede{font-size:19px;max-width:62ch;color:#2b3a50;margin:0 0 26px}
 h2{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.15;margin:0 0 6px}
 .sub{color:var(--slate);max-width:68ch;margin:0 0 18px}
@@ -72,6 +72,8 @@ ol.path li::before{content:counter(hop);width:32px;height:32px;border-radius:50%
 @media (max-width:720px){.holders{grid-template-columns:1fr}}
 .conds td:first-child,.conds th:first-child{text-align:left;white-space:normal}
 .conds td:nth-child(2),.conds th:nth-child(2){text-align:left;white-space:normal}
+.longterm{background:#fff;border:1px solid #dbe1e8;border-left:4px solid var(--ink);border-radius:8px;padding:14px 18px;margin:14px 0 4px;font-size:16px;line-height:1.5;max-width:860px}
+.longterm strong{color:var(--ink)}
 .metrics table{font-size:15px;min-width:0}
 .metrics td .conf{display:block;margin:2px 0 0;width:max-content;margin-left:auto}
 .metrics td:first-child,.metrics th:first-child{text-align:left;white-space:normal}
@@ -122,6 +124,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
   <div class="brand"><strong>NEAR Flow Intelligence</strong> — NRR custody flows, NEAR supply and issuer reconciliation</div>
   <h1>One redeemable ETF can move NEAR's float in both directions.</h1>
   <p class="lede" id="lede">We reconstruct NRR's observed staking custody from NEAR transactions, reconcile it with dated issuer snapshots, and measure its signed net flow against protocol issuance. Custody movement is not proof of market buying or selling.</p>
+  <div class="longterm" id="longterm"></div>
 </header>
 
 <main class="wrap">
@@ -344,6 +347,8 @@ function render(D) {
       "% of measured issuance over 30 days; " + bbStatus + ". Executed purchases are not measured.",
       bbStatus, H.last30_buyback_fund_change >= 0 ? "ok" : "weak")
   ].join("");
+  const sb = v => (v >= 0 ? "+" : "−") + fmt(Math.abs(v), 1);
+  document.getElementById("longterm").innerHTML = `<strong>Long-term thesis (1–3 years):</strong> once HSP-029 lowers inflation to 1.6%, new supply is about ${fmt(H.issuance_hsp029_baskets_per_day, 1)} baskets a day and the buyback fund adds ${fmt(H.buyback_baskets_per_day, 1)}. NRR has run at ${sb(H.launch_net_baskets_per_day)} and ${sb(H.since_peak_net_baskets_per_day)}. So NEAR's float will be set more by regulated-product net flow than by issuance or buybacks. <strong>Position today: not yet</strong>, ${sb(H.last30_net_baskets_per_day)} baskets a day over 30 days. Bullish if it stays above +${fmt(H.issuance_hsp029_baskets_per_day, 1)} for two 30-day windows; bearish if outflows exceed issuance (${fmt(H.issuance_baskets_per_day, 1)} a day) for two.`;
   document.getElementById("issuer-note").textContent =
     "The issuer dots are dated Bitwise snapshots, not daily confirmations. The archived set contains " +
     H.issuer_gaps_count + " dates; intervening holdings are reconstructed from the chain. The comparison rule was fixed on 13 Nov after the first three; " +
