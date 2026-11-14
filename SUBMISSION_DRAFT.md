@@ -12,7 +12,7 @@ Over 1–3 years, NEAR's supply-side case comes down to one number: do regulated
 
 NRR is rebuilt account by account from mainnet and matches Bitwise within 0.15% on four dates, one out of sample. Absorption ≥ +1 for two 30-day windows is bullish, ≤ −1 bearish. Rules hashed and timestamped. Today: not met.
 
-Dashboard: [ADD PUBLIC GITHUB PAGES URL]
+Dashboard: https://gosho1992.github.io/near-flow-intelligence/
 Code, evidence, long-term plan: https://github.com/Gosho1992/near-flow-intelligence
 
 ## 2. Demo video script (about 100–110 seconds)
@@ -48,13 +48,13 @@ Evidence: source-wallet analysis (more than a quarter of inflow in one transfer;
 - Mainnet NEAR payout account: gosho1992.near (exists on mainnet, checked 14 Nov 2026)
 - Project URL: https://github.com/Gosho1992/near-flow-intelligence (must be public when you submit)
 - Demo URL: [ADD THE PUBLIC X POST URL]
-- Dashboard URL: [ADD PUBLIC GITHUB PAGES URL]
+- Dashboard URL: https://gosho1992.github.io/near-flow-intelligence/
 - Consent: the user must review and accept the organizer's wording.
 
 ## 5. Pre-submit checklist
 
 - [x] Repository is public.
-- [ ] Enable GitHub Pages and confirm the deployed URL loads in an incognito browser.
+- [x] GitHub Pages live: https://gosho1992.github.io/near-flow-intelligence/ (checked 14 Nov).
 - [ ] Run make rebuild, make test and make verify-prediction from a clean checkout.
 - [ ] Confirm the dashboard's data-through date and the signpost state.
 - [ ] Record and upload the demo video showing the long-term test section and a real transaction trace.
