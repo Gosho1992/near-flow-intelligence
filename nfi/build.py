@@ -531,6 +531,23 @@ def write_csv(path, rows):
             w.writerow({k: ("" if r.get(k) is None else r[k]) for k in keys})
 
 
+
+def flow_summary(rows, basket_near=None):
+    """Signed NRR custody flow per complete daily window, with optional basket equivalents.
+
+    A basket is 10,000 shares converted at the latest issuer-published NEAR per share.
+    This is a scale conversion, not a claim that each observed flow was a market purchase.
+    """
+    valid = [r for r in rows
+             if r.get("data_status", "complete") == "complete"
+             and r.get("creations") is not None and r.get("redemptions") is not None]
+    if not valid:
+        return {"net_total": None, "days": 0, "net_per_day": None, "baskets_per_day": None}
+    net = sum(float(r["creations"]) - float(r["redemptions"]) for r in valid)
+    per_day = net / len(valid)
+    return {"net_total": net, "days": len(valid), "net_per_day": per_day,
+            "baskets_per_day": per_day / basket_near if basket_near else None}
+
 def headline(rows, events, issuer, A, traces, C, issuance, refresh):
     start = next(r for r in rows if (r["nrr_holdings"] or 0) > 1000)        # first day with NRR stake
     base = rows[rows.index(start) - 1]
@@ -622,6 +639,56 @@ def headline(rows, events, issuer, A, traces, C, issuance, refresh):
                                               sum(abs(r["buyback_fund_change"]) for r in last30 if r["buyback_fund_change"] is not None)
                                               if any(r["buyback_fund_change"] for r in last30) else None),
         "products_attributed_onchain": 1,
+    })
+    # Convert flows to one comparable unit: the latest issuer-published 10,000-share basket.
+    latest_issuer = issuer[max(issuer)] if issuer else {}
+    try:
+        basket_near = float(latest_issuer.get("near_per_share") or 0) * 10000
+    except (TypeError, ValueError):
+        basket_near = 0.0
+    try:
+        basket_usd = float(latest_issuer.get("nav_usd") or 0) * 10000
+    except (TypeError, ValueError):
+        basket_usd = 0.0
+    try:
+        near_price_usd = (float(latest_issuer.get("nav_usd") or 0) /
+                          float(latest_issuer.get("near_per_share") or 0))
+    except (TypeError, ValueError, ZeroDivisionError):
+        near_price_usd = None
+
+    launch_flow = flow_summary(win, basket_near)
+    recent_flow = flow_summary(last30, basket_near)
+    post_peak_rows = [r for r in rows if r["date"] > peak["date"]]
+    post_peak_flow = flow_summary(post_peak_rows, basket_near)
+    issuance_per_day = iss / len(win) if win else None
+    buyback_per_day = s("buyback_fund_change") / len(win) if win else None
+    last30_buyback_per_day = (s("buyback_fund_change", last30) / len(last30)
+                              if last30 else None)
+    h.update({
+        "basket_near": basket_near or None,
+        "basket_usd": basket_usd or None,
+        "near_price_usd": near_price_usd,
+        "issuer_market_value_usd": float(latest_issuer.get("market_value_usd") or 0) or None,
+        "issuer_value_date": latest_issuer.get("date"),
+        "launch_net_flow_total": launch_flow["net_total"],
+        "launch_net_flow_days": launch_flow["days"],
+        "launch_net_flow_per_day": launch_flow["net_per_day"],
+        "launch_net_baskets_per_day": launch_flow["baskets_per_day"],
+        "since_peak_net_flow_total": post_peak_flow["net_total"],
+        "since_peak_net_flow_days": post_peak_flow["days"],
+        "since_peak_net_flow_per_day": post_peak_flow["net_per_day"],
+        "since_peak_net_baskets_per_day": post_peak_flow["baskets_per_day"],
+        "last30_net_flow_days": recent_flow["days"],
+        "last30_net_flow_per_day": recent_flow["net_per_day"],
+        "last30_net_baskets_per_day": recent_flow["baskets_per_day"],
+        "issuance_per_day": issuance_per_day,
+        "issuance_baskets_per_day": issuance_per_day / basket_near if issuance_per_day is not None and basket_near else None,
+        "issuance_hsp029_target_per_day": issuance_per_day * 1.6 / 2.5 if issuance_per_day is not None else None,
+        "issuance_hsp029_baskets_per_day": (issuance_per_day * 1.6 / 2.5 / basket_near
+                                            if issuance_per_day is not None and basket_near else None),
+        "buyback_net_change_per_day": buyback_per_day,
+        "buyback_baskets_per_day": buyback_per_day / basket_near if buyback_per_day is not None and basket_near else None,
+        "last30_buyback_change_per_day": last30_buyback_per_day,
     })
     E, gp = C["epochs"], []
     for i, e in enumerate(E[:-1]):
