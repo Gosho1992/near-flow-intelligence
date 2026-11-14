@@ -25,7 +25,7 @@ One basket is 10,000 NRR shares. Its NEAR equivalent is calculated from the late
 
 The periods differ by design: launch period is 46 daily windows, post-peak is 16 daily windows after 28 Oct, and latest 30 days is 30 daily windows. The table shows averages per complete daily window. Cumulative totals are reported separately below and on the dashboard.
 
-The 1.6% line is a scenario based on the HSP-029 proposal's target and a proportional scaling of the measured 2.5% issuance rate. It is not presented as an already-active rate; the proposal describes a transition rather than an instantaneous change. The scenario is included to show how the ETF flow compares with a lower future issuance baseline, not to forecast either one.
+The 1.6% line is a full-target scenario based on HSP-029 and a proportional scaling of the measured 2.5% issuance rate. The official forum record lists the proposal as Succeeded, but the 1.6% rate is not yet active in the observed protocol configuration: the change still requires the remaining governance/implementation steps, a grace period and validator adoption. The scenario is included to show how the ETF flow compares with a lower future issuance baseline, not to forecast either one.
 
 ## What we measure
 
