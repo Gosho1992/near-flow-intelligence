@@ -254,44 +254,92 @@ fetch("data/site_data.json").then(r => { if (!r.ok) throw new Error(r.status); r
 
 function render(D) {
   const H = D.headline, rows = D.daily;
-  const nonzero = rows.filter(r => r.nrr_holdings > 1000);
-  document.getElementById("facts").innerHTML = `
-    <div class="fact"><div class="v">${M(H.nrr_holdings_latest)}</div><div class="k">NEAR held by NRR in its staking pool on ${H.data_through}</div></div>
-    <div class="fact"><div class="v">${H.change_since_peak < 0 ? "−" : "+"}${M(Math.abs(H.change_since_peak))}</div><div class="k">since the ${M(H.nrr_peak)} peak on ${H.nrr_peak_date}</div></div>
-    <div class="fact"><div class="v">within ${fmt(H.max_abs_issuer_gap_pct, 2)}%</div><div class="k">of Bitwise's own figure on every date it published (${Object.keys(H.issuer_gaps_pct).length} dates)</div></div>
-    <div class="fact"><div class="v">${fmt(H.nrr_share_staked_pct_latest, 2)}%</div><div class="k">of all staked NEAR, in one validator pool</div></div>`;
+  const signed = v => v == null ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v));
+  const baskets = v => v == null ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v), 1);
+  document.getElementById("facts").innerHTML =
+    '<div class="fact"><div class="v">' + baskets(H.launch_net_baskets_per_day) + '</div><div class="k">' + signed(H.launch_net_flow_per_day) + ' NEAR/day average since launch</div></div>' +
+    '<div class="fact"><div class="v">' + baskets(H.since_peak_net_baskets_per_day) + '</div><div class="k">' + signed(H.since_peak_net_flow_per_day) + ' NEAR/day average since 28 Oct peak</div></div>' +
+    '<div class="fact"><div class="v">' + fmt(H.issuance_baskets_per_day, 1) + '</div><div class="k">basket-equivalents of issuance per day; ' + fmt(H.issuance_hsp029_baskets_per_day, 1) + ' at proposed 1.6% target</div></div>' +
+    '<div class="fact"><div class="v">' + M(H.nrr_holdings_latest) + '</div><div class="k">NEAR staked by NRR on ' + H.data_through + '; ' + fmt(H.change_since_peak_pct, 1) + '% from peak</div></div>';
 
-  document.getElementById("lede").innerHTML = `Our on-chain total lands within <strong>${fmt(H.max_abs_issuer_gap_pct, 2)}%</strong> of Bitwise's own published figure on every date it has published. Since launch, NRR moved about <strong>${fmt(H.ratio_abs_custody_to_abs_buyback, 0)}×</strong> more NEAR into and out of custody than NEAR's buyback fund's balance moved. That is a size comparison, not a claim of buying or selling.`;
+  document.getElementById("lede").innerHTML =
+    "Since launch, NRR's signed net custody flow averaged <strong>" + signed(H.launch_net_flow_per_day) +
+    " NEAR/day</strong>. Since its 28 Oct peak, the average reversed to <strong>" +
+    signed(H.since_peak_net_flow_per_day) + " NEAR/day</strong>. The measured position is real; persistence and market buying are not established.";
   document.getElementById("thesis-lede").textContent =
-    `NEAR mints about ${M(H.annual_issuance_estimate)} NEAR a year. The protocol's buyback fund grew by only ${fmt(H.buyback_change_pct_of_issuance, 1)}% of what was minted since launch. NRR alone holds the equivalent of ${fmt(H.nrr_holdings_pct_of_annual_issuance, 0)}% of a year's new NEAR in staked custody. So the long-term case rests on whether this demand, which anyone can check on-chain, stays and spreads.`;
-  const cond = (q, now, st) => `<tr><td>${q}</td><td>${now}</td><td><span class="conf ${st === "currently holds" ? "ok" : st === "open" ? "" : "probable"}">${st}</span></td></tr>`;
+    "NRR's position is " + M(H.nrr_holdings_latest) + " NEAR, checked against " + H.issuer_gaps_count +
+    " dated Bitwise snapshots with a maximum gap of " + fmt(H.max_abs_issuer_gap_pct, 2) +
+    "%. Its net custody flow has averaged " + signed(H.launch_net_flow_per_day) +
+    " NEAR/day since launch and " + signed(H.since_peak_net_flow_per_day) +
+    " NEAR/day since the peak. These are custody movements, not proof of purchases or sales. A " +
+    H.days + "-day record for one product cannot establish a long-term pattern.";
+
+  const cond = (q, now, status, tone) =>
+    '<tr><td>' + q + '</td><td>' + now + '</td><td><span class="conf ' + (tone || '') + '">' + status + '</span></td></tr>';
+  const flowStatus = H.last30_nrr_net > 0 ? "positive net flow" : H.last30_nrr_net < 0 ? "negative net flow" : "flat net flow";
+  const issuance30 = H.last30_gross_issuance / H.last30_net_flow_days;
+  const bbStatus = H.last30_buyback_fund_change >= 0 ? "balance increased" : "balance decreased";
   document.getElementById("conds").innerHTML = [
-    cond("Fund demand is sticky, not a launch effect", `Net ${H.last30_nrr_net >= 0 ? "+" : "−"}${fmt(Math.abs(H.last30_nrr_net))} NEAR over 30 days; holdings ${fmt(H.change_since_peak_pct, 1)}% from peak`, "undecided"),
-    cond("Fund flows stay larger than buyback flows", `${fmt(H.last30_abs_custody_to_abs_buyback, 0)}× over 30 days (sum of absolute daily moves). Frozen prediction for 14 Nov – 13 Dec: pending`, H.last30_abs_custody_to_abs_buyback > 1 ? "currently holds" : "currently fails"),
-    cond("Institutional demand spreads beyond one product", `Rebuilt and reconciled: ${H.products_attributed_onchain} (NRR). Partly visible, not counted as a second reconciled product: SVRN (see below)`, "open"),
-    cond("Where does redeemed NEAR go after leaving custody?", `${H.redemption_traces_probable} of ${H.redemption_traces} redemption traces have probable onward matches to exchange-style wallets. This does not show whether the NEAR was sold`, "watching"),
-    cond("The protocol's own offset grows", `${fmt(H.last30_buyback_pct_of_issuance, 1)}% of new supply over 30 days`, "open"),
+    cond("Does net custody flow persist after launch?",
+      flowStatus + ": " + signed(H.last30_nrr_net) + " NEAR over 30 days; " +
+      signed(H.last30_net_flow_per_day) + " NEAR/day average. Holdings remain " +
+      fmt(H.change_since_peak_pct, 1) + "% below peak.",
+      flowStatus, H.last30_nrr_net > 0 ? "ok" : "weak"),
+    cond("How does the net flow compare with issuance?",
+      "Last 30d NRR average " + signed(H.last30_net_flow_per_day) +
+      " NEAR/day; issuance average " + fmt(issuance30, 0) +
+      " NEAR/day. This is a same-period flow comparison, not price impact.",
+      "measured", ""),
+    cond("Does the evidence extend beyond one product?",
+      H.products_attributed_onchain + " fully reconstructed and issuer-reconciled product; SVRN remains a one-pool partial observation.",
+      "one reconciled product", "probable"),
+    cond("Where does redeemed NEAR go after custody?",
+      H.redemption_traces_probable + " of " + H.redemption_traces +
+      " have probable onward matches to exchange-style wallets. A match does not establish a sale.",
+      "partial traces", "probable"),
+    cond("What is happening to the protocol buyback-fund balance?",
+      fmt(H.last30_buyback_pct_of_issuance, 1) +
+      "% of measured issuance over 30 days; " + bbStatus + ". Executed purchases are not measured.",
+      bbStatus, H.last30_buyback_fund_change >= 0 ? "ok" : "weak")
   ].join("");
-  document.getElementById("issuer-note").textContent = `Bitwise has published ${H.issuer_gaps_count} holdings figures we could check (the dots). Every other day on the line is rebuilt from the chain alone, not confirmed by Bitwise.`;
+  document.getElementById("issuer-note").textContent =
+    "The issuer dots are dated Bitwise snapshots, not daily confirmations. The archived set contains " +
+    H.issuer_gaps_count + " dates; intervening holdings are reconstructed from the chain.";
+
   const I = D.institutional || [];
-  document.getElementById("holders").innerHTML = I.map((h, i) => `<div class="holder">
-      <div class="v">${M(h.observed_staked_near)}</div>
-      <div class="who">${i === 0 ? "NRR" : "SVRN's Bitwise pool"} <span class="conf ${i === 0 ? "ok" : "probable"}">${i === 0 ? "rebuilt + reconciled" : "partially observed"}</span></div>
-      <div class="meta">${i === 0
-        ? `Staked by ${h.accounts_observed} attributed accounts on ${h.observed_date} (block ${fmt(h.observed_height)}). Checked against Bitwise: ${h.issuer_reconciled}.`
-        : `Staked in <code>svrn_bitwise.poolv1.near</code> by ${h.accounts_observed} accounts on ${h.observed_date} (block ${fmt(h.observed_height)}); one account holds almost all of it. One pool only; not reconciled with SVRN.`}</div>
-    </div>`).join("");
+  document.getElementById("holders").innerHTML = I.map((h, i) =>
+    '<div class="holder"><div class="v">' + M(h.observed_staked_near) + '</div><div class="who">' +
+    (i === 0 ? "NRR" : "SVRN's Bitwise pool") + ' <span class="conf ' +
+    (i === 0 ? "ok" : "probable") + '">' + (i === 0 ? "rebuilt + reconciled" : "partially observed") +
+    '</span></div><div class="meta">' +
+    (i === 0
+      ? "Staked by " + h.accounts_observed + " Rule A accounts on " + h.observed_date +
+        " (block " + fmt(h.observed_height) + "). Checked against Bitwise: " + h.issuer_reconciled + "."
+      : "Staked in <code>svrn_bitwise.poolv1.near</code> by " + h.accounts_observed +
+        " accounts on " + h.observed_date + " (block " + fmt(h.observed_height) +
+        "); one account holds almost all of it. One pool only; not reconciled with SVRN.") +
+    '</div></div>').join("");
   const sv = I[1];
-  document.getElementById("holders-note").innerHTML = sv ? `SVRN reports ${sv.reported_holdings_near ? "more than " + M(sv.reported_holdings_near) : "—"} NEAR in its treasury as of ${sv.reported_as_of} (<a href="${sv.reported_source}">company release, SEC exhibit</a>). The ${M(sv.observed_staked_near)} pool observation is not a reconstruction of that total, may be part of it, and is never added to it or to NRR's figures. SVRN's reported total and the pool reading come from different sources and dates.` : "";
-  // freshness and data health
+  document.getElementById("holders-note").innerHTML = sv
+    ? "SVRN reports more than " + M(sv.reported_holdings_near) +
+      " NEAR in its treasury as of " + sv.reported_as_of +
+      ' (<a href="' + sv.reported_source + '">company release, SEC exhibit</a>). The ' +
+      M(sv.observed_staked_near) + " pool observation is not a reconstruction of that total, may be part of it, " +
+      "and is never added to it or to NRR's figures. The two observations have different dates."
+    : "";
+
   const age = (Date.now() - Date.parse(H.data_through + "T00:00:00Z")) / 36e5;
-  const refreshed = H.last_refresh_utc ? H.last_refresh_utc.replace("T", " ").slice(0, 16) + " UTC" : "not recorded (offline rebuild)";
-  document.getElementById("status").innerHTML = `
-    <span>Data through <strong>${H.data_through}</strong> 00:00 UTC</span>
-    <span>Last refresh: <strong>${refreshed}</strong></span>
-    <span>Days with missing data: <strong>${H.incomplete_days}</strong></span>
-    <span>Bitwise figure last published: <strong>${H.issuer_latest_date}</strong></span>`;
-  if (age > 48) document.getElementById("stale").innerHTML = `<div class="stale" role="status">This data is ${Math.floor(age / 24)} days old. The daily refresh has not run since ${H.data_through}; treat the figures as a snapshot.</div>`;
+  const refreshed = H.last_refresh_utc
+    ? H.last_refresh_utc.replace("T", " ").slice(0, 16) + " UTC"
+    : "not recorded (offline rebuild)";
+  document.getElementById("status").innerHTML =
+    '<span>Data through <strong>' + H.data_through + '</strong> 00:00 UTC</span>' +
+    '<span>Last refresh: <strong>' + refreshed + '</strong></span>' +
+    '<span>Incomplete days: <strong>' + H.incomplete_days + '</strong></span>' +
+    '<span>Last Bitwise snapshot: <strong>' + H.issuer_latest_date + '</strong></span>';
+  if (age > 48) document.getElementById("stale").innerHTML =
+    '<div class="stale" role="status">This data is ' + Math.floor(age / 24) +
+    ' days old. Treat the dashboard as a dated snapshot, not a live reading.</div>';
 
   // hero chart
   const labels = rows.map(r => r.date.slice(5));
