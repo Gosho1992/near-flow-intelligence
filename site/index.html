@@ -221,8 +221,8 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
     <p class="sub">Everything on this page is rebuilt from cached public chain data by one command. No API key, wallet or paid service.</p>
 <pre>git clone https://github.com/Gosho1992/near-flow-intelligence
 cd near-flow-intelligence
-make data    # rebuild every number offline from data/raw
-make test    # 19 checks, incl. the match with Bitwise's figures
+make rebuild # raw cached responses -> work datasets -> outputs and site
+make test    # offline invariant and reproducibility checks
 make serve   # this page on http://127.0.0.1:8000</pre>
     <p class="note">Method, attribution rules and formulas: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/METHOD.md">METHOD.md</a>. Investment thesis: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. </p>
     <h3>Download the evidence</h3>
@@ -361,48 +361,100 @@ function render(D) {
       }}}}}
   });
 
-  // flows chart
-  const fl = rows.slice(1);
-  const series = mode => {
-    const cum = a => { let s = 0; return a.map(v => (s += (v || 0))); };
-    const ins = fl.map(r => r.creations), outs = fl.map(r => -r.redemptions), mint = fl.map(r => r.gross_issuance), bb = fl.map(r => r.buyback_fund_change);
-    return mode === "cum" ? [cum(ins), cum(outs), cum(mint), cum(bb)] : [ins, outs, mint, bb];
+  // Cumulative signed net flow chart. Every selected range begins at zero.
+  const flowRows = rows.filter(r => r.date > H.window_start && r.data_status === "complete"
+    && r.creations != null && r.redemptions != null && r.gross_issuance != null && r.buyback_fund_change != null);
+  const rangeButtons = Array.from(document.querySelectorAll("[data-range]"));
+  const unitButtons = Array.from(document.querySelectorAll("[data-unit]"));
+  let selectedRange = "launch", selectedUnit = "near";
+  const nearUsd = H.near_price_usd || null; // dated issuer NAV divided by NEAR per share
+  const cumulative = (values, factor) => {
+    let total = 0;
+    return [0].concat(values.map(v => (total += Number(v)) * factor));
   };
-  const [a, b, c, d] = series("daily");
+  const getSeries = () => {
+    const use = selectedRange === "30d" ? flowRows.slice(-30) : flowRows;
+    const factor = selectedUnit === "usd" ? nearUsd : 1;
+    const net = use.map(r => Number(r.creations) - Number(r.redemptions));
+    const mint = use.map(r => Number(r.gross_issuance));
+    const buyback = use.map(r => Number(r.buyback_fund_change));
+    return {
+      labels: use.length ? [use[0].date.slice(5) + " start"].concat(use.map(r => r.date.slice(5))) : [],
+      net: cumulative(net, factor),
+      mint: cumulative(mint, factor),
+      buyback: cumulative(buyback, factor)
+    };
+  };
+  const initial = getSeries();
   const flows = new Chart(document.getElementById("flows"), {
-    type: "bar",
-    data: {labels: fl.map(r => r.date.slice(5)), datasets: [
-      {label: "Into NRR custody", data: a, backgroundColor: css("--in"), stack: "nrr"},
-      {label: "Out of NRR custody", data: b, backgroundColor: css("--out"), stack: "nrr"},
-      {label: "NEAR minted", data: c, backgroundColor: css("--supply"), stack: "mint"},
-      {label: "Buyback-fund change", data: d, backgroundColor: css("--buyback"), stack: "bb"},
+    type: "line",
+    data: {labels: initial.labels, datasets: [
+      {label: "NRR cumulative net custody flow", data: initial.net, borderColor: css("--ink"), backgroundColor: "transparent", fill: false, pointRadius: 0, borderWidth: 2.5, tension: 0.12},
+      {label: "Cumulative NEAR minted", data: initial.mint, borderColor: css("--supply"), backgroundColor: "transparent", fill: false, pointRadius: 0, borderWidth: 2, tension: 0.12},
+      {label: "Cumulative buyback-fund balance change", data: initial.buyback, borderColor: css("--buyback"), backgroundColor: "transparent", fill: false, pointRadius: 0, borderWidth: 2, tension: 0.12}
     ]},
-    options: {maintainAspectRatio: false, scales: {y: {ticks: {callback: v => (v / 1e6) + "M"}, grid: {color: "#eef1f4"}}, x: {grid: {display: false}, ticks: {maxTicksLimit: 10}}},
-      plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => `${c.dataset.label}: ${fmt(c.raw)} NEAR`}}}}
+    options: {maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
+      scales: {
+        y: {ticks: {callback: v => selectedUnit === "usd" ? "$" + (v / 1e6).toFixed(2) + "M" : (v / 1e6).toFixed(2) + "M"}, grid: {color: "#eef1f4"}},
+        x: {grid: {display: false}, ticks: {maxTicksLimit: 10}}
+      },
+      plugins: {legend: {display: false}, tooltip: {callbacks: {
+        label: item => item.raw == null ? null : item.dataset.label + ": " +
+          (selectedUnit === "usd" ? "$" + fmt(item.raw, 0) : fmt(item.raw, 0) + " NEAR")
+      }}}
+    }
   });
-  document.querySelectorAll(".toggle button").forEach(btn => btn.addEventListener("click", () => {
-    document.querySelectorAll(".toggle button").forEach(x => x.setAttribute("aria-pressed", x === btn));
-    const s = series(btn.dataset.mode); flows.data.datasets.forEach((ds, i) => ds.data = s[i]); flows.update();
+  const updateFlows = () => {
+    const s = getSeries();
+    flows.data.labels = s.labels;
+    flows.data.datasets[0].data = s.net;
+    flows.data.datasets[1].data = s.mint;
+    flows.data.datasets[2].data = s.buyback;
+    flows.update();
+    const rangeText = selectedRange === "30d" ? "latest 30 complete daily windows" : "since first NRR activity";
+    document.getElementById("flow-compute").textContent = selectedUnit === "usd"
+      ? "USD equivalents use " + (nearUsd == null ? "no available issuer NAV price" : "$" + nearUsd.toFixed(4) + " per NEAR") +
+        " from the latest archived Bitwise snapshot dated " + H.issuer_value_date +
+        "; this is not a live spot price. " +
+        "Net NRR flow = creations − redemptions (staking rewards excluded); issuance = gross_issuance; " +
+        "buyback = change in the defined fund balance. All lines are cumulative and rebased to zero. Range: " + rangeText + "."
+      : "Source: data/out/daily.csv, generated by nfi/build.py. Net NRR flow = creations − redemptions " +
+        "(staking rewards excluded); issuance = gross_issuance; buyback = daily change in the defined fund balance. " +
+        "All lines are cumulative and rebased to zero. Range: " + rangeText + ".";
+  };
+  rangeButtons.forEach(btn => btn.addEventListener("click", () => {
+    selectedRange = btn.dataset.range;
+    rangeButtons.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+    updateFlows();
   }));
-  document.getElementById("ratio").textContent =
-    `Since ${H.window_start}, ${M(H.abs_custody_moves)} NEAR moved into or out of NRR's staked custody. Over the same days the buyback fund's balance moved by ${M(H.abs_buyback_fund_moves)} NEAR in total (sum of absolute daily changes; its net change was ${M(H.buyback_fund_change_total)}). ${M(H.abs_custody_moves)} ÷ ${M(H.abs_buyback_fund_moves)} ≈ ${fmt(H.ratio_abs_custody_to_abs_buyback, 0)}×. This compares the size of two kinds of balance movement; it is not a comparison of buying.`;
-  const tr_ = (k, v, n) => `<tr><td>${k}</td><td>${v}</td></tr>`;
-  document.getElementById("metrics").innerHTML = `
-    <div class="tablewrap"><table><thead><tr><th>NRR custody (NEAR)</th><th></th></tr></thead><tbody>
-      ${tr_("Into staked custody, gross", "+" + fmt(H.creations_total) + ` <span class="conf ok">${H.creations_confirmed_count}/${H.creations_count} confirmed sequences</span>`)}
-      ${tr_("Out of staked custody, gross", "−" + fmt(H.redemptions_total) + ` <span class="conf ok">${H.redemptions_confirmed_count}/${H.redemptions_count} confirmed sequences</span>`)}
-      ${tr_("Staking rewards earned", "+" + fmt(H.rewards_total))}
-      ${tr_("Unexplained", fmt(H.unexplained_total))}
-      ${tr_("Net change in holdings", (H.holdings_net_change >= 0 ? "+" : "") + fmt(H.holdings_net_change))}
-    </tbody></table></div>
-    <div class="tablewrap"><table><thead><tr><th>NEAR supply and buyback fund (NEAR)</th><th></th></tr></thead><tbody>
-      ${tr_("Minted by the protocol (gross issuance)", "+" + fmt(H.gross_issuance_total))}
-      ${tr_("Burned (residual: minted − net change)", "−" + fmt(H.burn_residual_total))}
-      ${tr_("Net change in total supply", "+" + fmt(H.net_supply_change_total))}
-      ${tr_("Buyback fund: net balance change", (H.buyback_fund_change_total >= 0 ? "+" : "") + fmt(H.buyback_fund_change_total))}
-      ${tr_("Buyback fund: sum of daily absolute changes", fmt(H.abs_buyback_fund_moves))}
-      ${tr_("Buyback purchases traced to transactions", "not measured")}
-    </tbody></table></div>`;
+  unitButtons.forEach(btn => btn.addEventListener("click", () => {
+    if (btn.dataset.unit === "usd" && nearUsd == null) return;
+    selectedUnit = btn.dataset.unit;
+    unitButtons.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+    updateFlows();
+  }));
+  if (nearUsd == null) {
+    const usdButton = unitButtons.find(b => b.dataset.unit === "usd");
+    if (usdButton) usdButton.disabled = true;
+  }
+  updateFlows();
+
+  const tr_ = (k, v) => "<tr><td>" + k + "</td><td>" + v + "</td></tr>";
+  document.getElementById("metrics").innerHTML =
+    '<div class="tablewrap"><table><thead><tr><th>Signed NRR custody flow</th><th>Reading</th></tr></thead><tbody>' +
+      tr_("Launch-period cumulative net flow", signed(H.launch_net_flow_total) + " NEAR") +
+      tr_("Launch-period average per day", signed(H.launch_net_flow_per_day) + " NEAR · " + baskets(H.launch_net_baskets_per_day) + " baskets") +
+      tr_("Since 28 Oct cumulative net flow", signed(H.since_peak_net_flow_total) + " NEAR") +
+      tr_("Since 28 Oct average per day", signed(H.since_peak_net_flow_per_day) + " NEAR · " + baskets(H.since_peak_net_baskets_per_day) + " baskets") +
+      tr_("Latest 30-day cumulative net flow", signed(H.last30_nrr_net) + " NEAR") +
+    '</tbody></table></div>' +
+    '<div class="tablewrap"><table><thead><tr><th>Supply and balance context</th><th>Reading</th></tr></thead><tbody>' +
+      tr_("Issuance average per day", fmt(H.issuance_per_day) + " NEAR · " + fmt(H.issuance_baskets_per_day, 1) + " baskets") +
+      tr_("Proposed 1.6% target scenario", fmt(H.issuance_hsp029_target_per_day) + " NEAR/day · " + fmt(H.issuance_hsp029_baskets_per_day, 1) + " baskets") +
+      tr_("Buyback-fund net balance change, average/day", fmt(H.buyback_net_change_per_day) + " NEAR") +
+      tr_("Buyback-fund net balance change, total", fmt(H.buyback_fund_change_total) + " NEAR") +
+      tr_("Executed buyback purchases", "not measured") +
+    '</tbody></table></div>';
 
   // traces
   const pick = document.getElementById("tracePick");
@@ -412,6 +464,8 @@ function render(D) {
   const cls = st => /^(observed|confirmed)/.test(st) ? "ok" : /^probable/.test(st) ? "probable" : /^(supporting|other)/.test(st) ? "" : "weak";
   const all = [...reds, ...cres];
   pick.innerHTML = `<optgroup label="Out of custody">${reds.map((t) => opt(t, all.indexOf(t))).join("")}</optgroup><optgroup label="Into custody">${cres.slice(0, 15).map(t => opt(t, all.indexOf(t))).join("")}</optgroup>`;
+  const preferred = all.findIndex(t => t.kind === "redemption" && t.time.startsWith("2026-11-04") && Math.abs(t.near - 785418.308576) < 1);
+  if (preferred >= 0) pick.value = String(preferred);
   const names = {funded_by_hub: "Custody hub funds a basket account", creation_stake: "Basket account stakes into the pool", unstake: "Basket account unstakes", redemption_withdraw: "Basket account withdraws from the pool", return_to_hub: "NEAR goes back to the custody hub", transfer_out: "Basket account sends NEAR on", hub_to_next: "Custody hub sends NEAR on", hub_next_unmatched: "Custody hub's next outflow (context only, not a trace)", onward: "Next account forwards it"};
   const show = i => {
     const t = all[i];
