@@ -195,3 +195,7 @@ date,height,account,token,opening,closing,change,status
 2026-11-13,224285093,1csfundsadmin.sputnik-dao.near,wNEAR in intents.near,0.001,0.001,0.0,observed
 2026-11-13,224285093,buybacks.multisignature.near,NEAR (native),2249868.714909,2269999.449005,20130.734096,observed
 2026-11-13,224285093,buybacks.multisignature.near,wNEAR in intents.near,0.0,0.0,0.0,observed
+2026-11-14,224435951,1csfundsadmin.sputnik-dao.near,NEAR (native),270.875891,270.875891,0.0,observed
+2026-11-14,224435951,1csfundsadmin.sputnik-dao.near,wNEAR in intents.near,0.001,0.001,0.0,observed
+2026-11-14,224435951,buybacks.multisignature.near,NEAR (native),2269999.449005,2279854.459857,9855.010852,observed
+2026-11-14,224435951,buybacks.multisignature.near,wNEAR in intents.near,0.0,0.0,0.0,observed

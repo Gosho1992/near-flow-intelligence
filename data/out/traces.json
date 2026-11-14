@@ -1111,10 +1111,10 @@
  },
  {
   "account": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
-  "confidence": "observed to withdrawal",
+  "confidence": "probable beyond the custody hub",
   "kind": "redemption",
   "near": 261946.857482,
-  "status": "partially observed",
+  "status": "confirmed sequence",
   "steps": [
    {
     "account": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
@@ -1137,6 +1137,51 @@
     "time": "2026-11-12 21:19 UTC",
     "ts": 1794518342395029941,
     "type": "redemption_withdraw"
+   },
+   {
+    "account": "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "66JDf9MihtbzewEjcLD6NXC6VPQYWjxJEF3cwoAQmRPa",
+    "height": 224372581,
+    "near": 261947.294959,
+    "status": "observed",
+    "time": "2026-11-13 13:57 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "ts": 1794578222075701422,
+    "type": "return_to_hub"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "combined_with": [
+     "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+     "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5"
+    ],
+    "hash": "5kAh6UtLGb1zRiVBC1g89gtKKEddZ1sG44iBTKExsZ4L",
+    "height": 224387855,
+    "near": 366127.550899,
+    "reason": "probable: the only hub outflow within 72 h matching this return plus 2 other same-day return(s) (\u00b12%)",
+    "status": "probable",
+    "time": "2026-11-13 16:22 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "ts": 1794586921999246427,
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "3BWzz9gZMTj8BbMsPp9yHAkb9nKQ4b1XAVeq9dL9Rd3P",
+    "height": 224387958,
+    "near": 366127.550064,
+    "reason": "forwards the same amount",
+    "status": "observed",
+    "time": "2026-11-13 16:23 UTC",
+    "to": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "to_label": "exchange-style wallet (heuristic: 79,032 transactions, 103 distinct counterparties in its 200 most recent)",
+    "ts": 1794586980590112055,
+    "type": "onward"
    }
   ],
   "time": "2026-11-12 21:19 UTC"
@@ -2801,10 +2846,10 @@
  },
  {
   "account": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
-  "confidence": "observed to withdrawal",
+  "confidence": "probable beyond the custody hub",
   "kind": "redemption",
   "near": 104876.351247,
-  "status": "partially observed",
+  "status": "confirmed sequence",
   "steps": [
    {
     "account": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
@@ -2827,6 +2872,51 @@
     "time": "2026-11-12 21:22 UTC",
     "ts": 1794518523449510776,
     "type": "redemption_withdraw"
+   },
+   {
+    "account": "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "8eaamfbH3FKrHVYStDxFJVmvtsKDQsbHDHnzcDLnrcLg",
+    "height": 224371947,
+    "near": 104876.789073,
+    "status": "observed",
+    "time": "2026-11-13 13:51 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "ts": 1794577862672707652,
+    "type": "return_to_hub"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "combined_with": [
+     "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+     "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc"
+    ],
+    "hash": "5kAh6UtLGb1zRiVBC1g89gtKKEddZ1sG44iBTKExsZ4L",
+    "height": 224387855,
+    "near": 366127.550899,
+    "reason": "probable: the only hub outflow within 72 h matching this return plus 2 other same-day return(s) (\u00b12%)",
+    "status": "probable",
+    "time": "2026-11-13 16:22 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "ts": 1794586921999246427,
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "3BWzz9gZMTj8BbMsPp9yHAkb9nKQ4b1XAVeq9dL9Rd3P",
+    "height": 224387958,
+    "near": 366127.550064,
+    "reason": "forwards the same amount",
+    "status": "observed",
+    "time": "2026-11-13 16:23 UTC",
+    "to": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "to_label": "exchange-style wallet (heuristic: 79,032 transactions, 103 distinct counterparties in its 200 most recent)",
+    "ts": 1794586980590112055,
+    "type": "onward"
    }
   ],
   "time": "2026-11-12 21:22 UTC"
@@ -5096,10 +5186,75 @@
  },
  {
   "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
-  "confidence": "observed to withdrawal",
+  "confidence": "confirmed sequence",
+  "hub_inflows_before": [
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "CyXirFSUzaXPAeTNTtCgGsJxGq8UH1Cdxw5jHb6y9Jqg",
+    "height": 224403554,
+    "near": 0.0425,
+    "time": "2026-11-13 18:52 UTC",
+    "ts": 1794595942497524038
+   },
+   {
+    "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "from_label": "fee payer (sends 0.15 NEAR for gas)",
+    "hash": "9ULkbhhfQu5gpq6fnX6kk2hUep9yU8MbXMmY4Ry15ime",
+    "height": 224387039,
+    "near": 0.0425,
+    "time": "2026-11-13 16:14 UTC",
+    "ts": 1794586462307198877
+   },
+   {
+    "from": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "from_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "6hLcGkJFtDXumSRB9LbtymJ19DBgrtfcULZBNGfVNi7k",
+    "height": 224372582,
+    "near": 2003.879542,
+    "time": "2026-11-13 13:57 UTC",
+    "ts": 1794578222673350745
+   }
+  ],
+  "kind": "creation",
+  "near": 2700.54767,
+  "status": "confirmed sequence",
+  "steps": [
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "hash": "58bvHzizHvkSu5KNUmDUQkb3dijDCEEgutw2AQSZetXo",
+    "height": 224403726,
+    "near": 2700.496005,
+    "status": "observed",
+    "time": "2026-11-13 18:54 UTC",
+    "to": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "to_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "ts": 1794596042431483852,
+    "type": "funded_by_hub"
+   },
+   {
+    "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "BokA9hcDkHtySqHk21C8BvZVEcYxntsHQXDXBC3zbGBi",
+    "height": 224405482,
+    "near": 2700.54767,
+    "status": "observed",
+    "time": "2026-11-13 19:11 UTC",
+    "to": "bitwise_2.poolv1.near",
+    "to_label": "staking pool",
+    "ts": 1794597061821076231,
+    "type": "creation_stake"
+   }
+  ],
+  "time": "2026-11-13 19:11 UTC"
+ },
+ {
+  "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+  "confidence": "probable beyond the custody hub",
   "kind": "redemption",
   "near": 2003.441714,
-  "status": "partially observed",
+  "status": "confirmed sequence",
   "steps": [
    {
     "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
@@ -5122,6 +5277,51 @@
     "time": "2026-11-12 21:22 UTC",
     "ts": 1794518524566958818,
     "type": "redemption_withdraw"
+   },
+   {
+    "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "6hLcGkJFtDXumSRB9LbtymJ19DBgrtfcULZBNGfVNi7k",
+    "height": 224372582,
+    "near": 2003.879542,
+    "status": "observed",
+    "time": "2026-11-13 13:57 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "ts": 1794578222673350745,
+    "type": "return_to_hub"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "combined_with": [
+     "bc97c260d5a5e4b114e12765c222a71b1feac353ea99b7002cfde4109dadb5cc",
+     "c8afd0368624730fb806dcb199b51a01fcbc70380cdcccd976a9597736a629a5"
+    ],
+    "hash": "5kAh6UtLGb1zRiVBC1g89gtKKEddZ1sG44iBTKExsZ4L",
+    "height": 224387855,
+    "near": 366127.550899,
+    "reason": "probable: the only hub outflow within 72 h matching this return plus 2 other same-day return(s) (\u00b12%)",
+    "status": "probable",
+    "time": "2026-11-13 16:22 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "ts": 1794586921999246427,
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "3BWzz9gZMTj8BbMsPp9yHAkb9nKQ4b1XAVeq9dL9Rd3P",
+    "height": 224387958,
+    "near": 366127.550064,
+    "reason": "forwards the same amount",
+    "status": "observed",
+    "time": "2026-11-13 16:23 UTC",
+    "to": "f1bb20659f00960c4a54077f00ad4316b01eddc13d2050f6ebc190bb64492e6a",
+    "to_label": "exchange-style wallet (heuristic: 79,032 transactions, 103 distinct counterparties in its 200 most recent)",
+    "ts": 1794586980590112055,
+    "type": "onward"
    }
   ],
   "time": "2026-11-12 21:22 UTC"

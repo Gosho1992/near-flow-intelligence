@@ -398,5 +398,13 @@
    40
   ],
   "protocol_version": 88
+ },
+ "2026-11-14": {
+  "max_inflation_pct": 2.5,
+  "max_inflation_rate": [
+   1,
+   40
+  ],
+  "protocol_version": 88
  }
 }
