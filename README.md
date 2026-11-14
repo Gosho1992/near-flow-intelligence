@@ -1,16 +1,16 @@
 # NEAR Flow Intelligence
 
-**Bitwise's NEAR ETF (NRR), rebuilt from the chain, and set against NEAR's supply.**
+**Bitwise's NEAR ETF (NRR), rebuilt independently from the chain, and set against NEAR's supply.** Issuer-data trackers report NRR's flows from Bitwise's own files; this project rebuilds the holdings account by account from NEAR's chain and checks them against those files.
 
 Our on-chain total lands within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's own published figure on every date it has published (<!--n:issuer_gaps_count:int-->3<!--/n--> dates). Since launch, NRR moved about <!--n:ratio_abs_custody_to_abs_buyback:x-->43×<!--/n--> more NEAR into and out of its custody than NEAR's buyback fund's balance moved — a size comparison, not a claim of buying or selling.
 
 NEAR supply models track issuance and the protocol's buyback fund. This project adds what those models leave out: the NEAR held by a regulated investment product. We rebuild Bitwise NRR's holdings every day from NEAR staking accounts, check them against Bitwise's own published figures, follow every creation and redemption transaction by transaction, and compare the size of those moves with NEAR's new supply and buyback fund over the same days.
 
-Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](THESIS.md). Method: [METHOD.md](METHOD.md).
+Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](THESIS.md). Method: [METHOD.md](METHOD.md). Sources: [SOURCES.md](SOURCES.md).
 
 ## The long-term thesis
 
-NEAR's supply grows about 2.5% a year, and the protocol's buyback fund offsets only <!--n:buyback_change_pct_of_issuance:pct-->11.10%<!--/n--> of it. Regulated fund demand is now the larger counterweight: NRR holds the equivalent of <!--n:nrr_holdings_pct_of_annual_issuance:pct-->46.87%<!--/n--> of a year's new NEAR in staked custody, and anyone can audit it from the chain. The long-term case depends on whether that demand stays and spreads to more products. **Verdict: constructive, not proven** (holdings are <!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> from their peak). Five conditions, each with a daily reading, are in [THESIS.md](THESIS.md).
+NEAR's supply grows about 2.5% a year, and the protocol's buyback fund offsets only <!--n:buyback_change_pct_of_issuance:pct-->11.10%<!--/n--> of it. Institutional demand is now the larger counterweight: NRR holds the equivalent of <!--n:nrr_holdings_pct_of_annual_issuance:pct-->46.87%<!--/n--> of a year's new NEAR in staked custody, and anyone can audit it from the chain. The long-term case depends on whether that demand stays and spreads to more products. **Verdict: constructive, not proven** (holdings are <!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> from their peak). Five conditions, each with a daily reading, are in [THESIS.md](THESIS.md).
 
 ## What it found (data through <!--n:data_through:-->2026-11-13<!--/n-->)
 

@@ -124,6 +124,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
         <span><span class="sw" style="background:transparent;border-top:2px dashed var(--in);height:0"></span>Plus NEAR unstaked for redemptions and liquid NEAR in NRR's accounts, until it leaves</span>
         <span><span class="sw" style="background:var(--issuer);border-radius:50%"></span>Bitwise's published "NEAR in Trust", at the end of its as-of date</span>
       </div>
+      <p class="context" id="issuer-note"></p>
     </div>
   </div>
 
@@ -256,14 +257,15 @@ function render(D) {
   document.getElementById("lede").innerHTML = `Our on-chain total lands within <strong>${fmt(H.max_abs_issuer_gap_pct, 2)}%</strong> of Bitwise's own published figure on every date it has published. Since launch, NRR moved about <strong>${fmt(H.ratio_abs_custody_to_abs_buyback, 0)}×</strong> more NEAR into and out of custody than NEAR's buyback fund's balance moved. That is a size comparison, not a claim of buying or selling.`;
   document.getElementById("thesis-lede").textContent =
     `NEAR mints about ${M(H.annual_issuance_estimate)} NEAR a year. The protocol's buyback fund grew by only ${fmt(H.buyback_change_pct_of_issuance, 1)}% of what was minted since launch. NRR alone holds the equivalent of ${fmt(H.nrr_holdings_pct_of_annual_issuance, 0)}% of a year's new NEAR in staked custody. So the long-term case rests on whether this demand, which anyone can check on-chain, stays and spreads.`;
-  const cond = (q, now, st) => `<tr><td>${q}</td><td>${now}</td><td><span class="conf ${st === "holds" ? "ok" : st === "open" ? "" : "probable"}">${st}</span></td></tr>`;
+  const cond = (q, now, st) => `<tr><td>${q}</td><td>${now}</td><td><span class="conf ${st === "currently holds" ? "ok" : st === "open" ? "" : "probable"}">${st}</span></td></tr>`;
   document.getElementById("conds").innerHTML = [
     cond("Fund demand is sticky, not a launch effect", `Net ${H.last30_nrr_net >= 0 ? "+" : "−"}${fmt(Math.abs(H.last30_nrr_net))} NEAR over 30 days; holdings ${fmt(H.change_since_peak_pct, 1)}% from peak`, "undecided"),
-    cond("Fund flows stay larger than buyback flows", `${fmt(H.last30_abs_custody_to_abs_buyback, 0)}× over 30 days; tested by a frozen prediction, 14 Nov – 13 Dec`, H.last30_abs_custody_to_abs_buyback > 1 ? "holds" : "fails"),
-    cond("More products become visible on-chain", `${H.products_attributed_onchain} attributed (NRR)`, "open"),
-    cond("Redeemed NEAR does not go straight to market", `${H.redemption_traces_probable} of ${H.redemption_traces} traceable, to exchange-style wallets`, "open"),
+    cond("Fund flows stay larger than buyback flows", `${fmt(H.last30_abs_custody_to_abs_buyback, 0)}× over 30 days (sum of absolute daily moves). Frozen prediction for 14 Nov – 13 Dec: pending`, H.last30_abs_custody_to_abs_buyback > 1 ? "currently holds" : "currently fails"),
+    cond("Institutional demand spreads beyond one product", `Rebuilt and reconciled: ${H.products_attributed_onchain} (NRR). Partly visible: SVRN, a listed company reporting 55.5M+ NEAR`, "open"),
+    cond("Redeemed NEAR is not routed straight to exchanges", `${H.redemption_traces_probable} of ${H.redemption_traces} traced past the hub, to exchange-style wallets; a sale itself is not visible on-chain`, "open"),
     cond("The protocol's own offset grows", `${fmt(H.last30_buyback_pct_of_issuance, 1)}% of new supply over 30 days`, "open"),
   ].join("");
+  document.getElementById("issuer-note").textContent = `Bitwise has published ${H.issuer_gaps_count} holdings figures we could check (the dots). Every other day on the line is rebuilt from the chain alone, not confirmed by Bitwise.`;
   // freshness and data health
   const age = (Date.now() - Date.parse(H.data_through + "T00:00:00Z")) / 36e5;
   const refreshed = H.last_refresh_utc ? H.last_refresh_utc.replace("T", " ").slice(0, 16) + " UTC" : "not recorded (offline rebuild)";
@@ -318,7 +320,7 @@ function render(D) {
     const s = series(btn.dataset.mode); flows.data.datasets.forEach((ds, i) => ds.data = s[i]); flows.update();
   }));
   document.getElementById("ratio").textContent =
-    `Since ${H.window_start}, ${M(H.abs_custody_moves)} NEAR moved into or out of NRR's staked custody. Over the same days the buyback fund's balance moved by ${M(H.abs_buyback_fund_moves)} NEAR in total — about ${fmt(H.ratio_abs_custody_to_abs_buyback, 0)} times less. This compares the size of two kinds of balance movement; it is not a comparison of buying.`;
+    `Since ${H.window_start}, ${M(H.abs_custody_moves)} NEAR moved into or out of NRR's staked custody. Over the same days the buyback fund's balance moved by ${M(H.abs_buyback_fund_moves)} NEAR in total (sum of absolute daily changes; its net change was ${M(H.buyback_fund_change_total)}). ${M(H.abs_custody_moves)} ÷ ${M(H.abs_buyback_fund_moves)} ≈ ${fmt(H.ratio_abs_custody_to_abs_buyback, 0)}×. This compares the size of two kinds of balance movement; it is not a comparison of buying.`;
   const tr_ = (k, v, n) => `<tr><td>${k}</td><td>${v}</td></tr>`;
   document.getElementById("metrics").innerHTML = `
     <div class="tablewrap"><table><thead><tr><th>NRR custody (NEAR)</th><th></th></tr></thead><tbody>
