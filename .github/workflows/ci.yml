@@ -9,4 +9,5 @@ jobs:
         with: {python-version: "3.11"}
       - run: make rebuild
       - run: make test
+      - run: make verify-prediction
       - run: git diff --exit-code data README.md THESIS.md METHOD.md   # raw/work/out and rendered docs must match
