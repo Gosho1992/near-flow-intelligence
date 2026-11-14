@@ -676,6 +676,8 @@ def headline(rows, events, issuer, A, traces, C, issuance, refresh):
         "launch_net_baskets_per_day": launch_flow["baskets_per_day"],
         "since_peak_net_flow_total": post_peak_flow["net_total"],
         "since_peak_net_flow_days": post_peak_flow["days"],
+        "since_peak_creations_total": sum(float(r["creations"]) for r in post_peak_rows if r["creations"] is not None),
+        "since_peak_redemptions_total": sum(float(r["redemptions"]) for r in post_peak_rows if r["redemptions"] is not None),
         "since_peak_net_flow_per_day": post_peak_flow["net_per_day"],
         "since_peak_net_baskets_per_day": post_peak_flow["baskets_per_day"],
         "last30_net_flow_days": recent_flow["days"],
