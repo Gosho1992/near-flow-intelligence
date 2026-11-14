@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NEAR Flow Intelligence — Bitwise's NEAR ETF, rebuilt from the chain</title>
-<meta name="description" content="Daily NEAR held by Bitwise's NRR ETF, reconstructed from NEAR staking accounts, checked against Bitwise's own figures and compared with NEAR's new supply and buyback fund.">
+<title>NEAR Flow Intelligence — NRR net custody flow vs NEAR supply</title>
+<meta name="description" content="Independent reconstruction of Bitwise NRR staking custody, signed net flows, NEAR issuance, buyback-fund balance changes and dated issuer reconciliation.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -113,11 +113,13 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
   .chart{height:300px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+@media(max-width:680px){.conds thead{display:none}.conds,.conds tbody,.conds tr,.conds td{display:block;width:100%}.conds tr{padding:10px 12px;border-bottom:1px solid var(--line)}.conds td{border:0!important;padding:2px 0}.conds td:first-child{font-weight:600}.facts{grid-template-columns:repeat(2,1fr)}.fact:nth-child(2){border-right:0}.holders,.metrics{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header class="top wrap">
-  <div class="brand"><strong>NEAR Flow Intelligence</strong> — institutional holdings, on-chain flows and token supply for NEAR</div>
+  <div class="brand"><strong>NEAR Flow Intelligence</strong> — NRR custody flows, NEAR supply and issuer reconciliation</div>
   <h1>One redeemable ETF can move NEAR's float in both directions.</h1>
   <p class="lede" id="lede">We reconstruct NRR's observed staking custody from NEAR transactions, reconcile it with dated issuer snapshots, and measure its signed net flow against protocol issuance. Custody movement is not proof of market buying or selling.</p>
 </header>
@@ -139,13 +141,13 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
   </div>
 
   <section id="thesis">
-    <h2>The long-term case</h2>
+    <h2>What the flow tells us</h2>
     <p class="sub" id="thesis-lede"></p>
     <div class="tablewrap"><table class="conds"><thead><tr><th>What has to be true</th><th>Reading now</th><th></th></tr></thead><tbody id="conds"></tbody></table></div>
     <h3>Institutional holders: evidence status</h3>
     <div class="holders" id="holders"></div>
     <p class="context" id="holders-note"></p>
-    <p class="context">Verdict: <strong>constructive, not proven.</strong> The full thesis, with the evidence against it and a pre-registered prediction that can prove it wrong, is in <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Research, not financial advice.</p>
+    <p class="context">Verdict: <strong>large position established; persistent incremental buying not proven.</strong> The full thesis, with the evidence against it and a pre-registered prediction that can prove it wrong, is in <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Research, not financial advice.</p>
   </section>
 
   <section id="compare">
@@ -160,7 +162,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
       <p class="compute" id="flow-compute"></p>
     </div>
     <div class="metrics" id="metrics"></div>
-  </section></section>
+  </section>
 
   <section id="trace">
     <h2>Follow the NEAR</h2>
@@ -196,7 +198,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
       <div class="panel">
         <h3>Shown directly by the chain</h3>
         <ul>
-          <li>The NEAR staked by the accounts our rule attributes to NRR, every day.</li>
+          <li>The NEAR staked by Rule A accounts attributed to NRR, every day.</li>
           <li>Every creation and redemption transaction, with amounts.</li>
           <li>Where redeemed NEAR went next, hop by hop.</li>
           <li>NEAR's total supply, the NEAR minted each epoch, and total stake.</li>
@@ -210,7 +212,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
           <li>Whether redeemed NEAR was sold. Trades inside an exchange are not on-chain.</li>
           <li>Legal ownership of the accounts. Our attribution is rule-based and checked against Bitwise's figures.</li>
           <li>Executed buyback purchases or burns. We show the buyback fund's balance only.</li>
-          <li>Other NEAR investment products, which are not yet attributed on-chain.</li>
+          <li>Other products are not fully reconstructed; SVRN is shown only as a partial one-pool observation.</li>
         </ul>
       </div>
     </div>
@@ -218,7 +220,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
 
   <section id="verify">
     <h2>Check it yourself</h2>
-    <p class="sub">Everything on this page is rebuilt from cached public chain data by one command. No API key, wallet or paid service.</p>
+    <p class="sub">Everything on this page is rebuilt from cached public-chain data. The full raw-to-output rebuild is offline. No API key, wallet or paid service.</p>
 <pre>git clone https://github.com/Gosho1992/near-flow-intelligence
 cd near-flow-intelligence
 make rebuild # raw cached responses -> work datasets -> outputs and site
