@@ -7,7 +7,8 @@ is 15 Nov 00:00 to 14 Dec 23:59 UTC, the same convention as both predictions). F
 Rules (two consecutive complete windows each):
   BULLISH            a >= +1 in both
   BEARISH            a <= -1 in both
-  STRUCTURALLY WRONG |a| < b in both, or any issuer figure in the window differs from L1 by more than 0.5%
+  STRUCTURALLY WRONG |a| < b in both, or any issuer figure in EITHER window differs from L1 by more than 0.5%
+The most recently fired rule sets the state, which persists until another rule fires (frozen text).
   BASE (confirmed)   six complete windows with no bullish or bearish pair
 A window with more than 5 rows missing or incomplete is VOID and breaks a consecutive pair.
 """
@@ -58,14 +59,17 @@ def evaluate(rows):
         a, b = net / iss, bb / iss
         out.append({**w, "status": "COMPLETE", "net_flow": net, "issuance": iss, "buyback_change": bb,
                     "absorption": a, "buyback_ratio": b, "max_issuer_gap_pct": max(gaps) if gaps else None,
-                    "bull": a >= 1, "bear": a <= -1,
-                    "wrong": abs(a) < b or (bool(gaps) and max(gaps) > 0.5)})
+                    "bull": a >= 1, "bear": a <= -1, "below_buyback": abs(a) < b,
+                    "issuer_off": bool(gaps) and max(gaps) > 0.5})
     state, fired = "NOT YET TESTABLE", []
     comp = [w for w in out if w["status"] in ("COMPLETE", "VOID")]
     for x, y in zip(comp, comp[1:]):
         if x["status"] == y["status"] == "COMPLETE":
-            for k in ("bull", "bear", "wrong"):
-                if x[k] and y[k]:
+            hits = {"bull": x["bull"] and y["bull"], "bear": x["bear"] and y["bear"],
+                    # frozen rule: |a| < b in both windows, OR an issuer figure off by > 0.5% in EITHER window
+                    "wrong": (x["below_buyback"] and y["below_buyback"]) or x["issuer_off"] or y["issuer_off"]}
+            for k, hit in hits.items():
+                if hit:
                     fired.append({"rule": k, "windows": [x["window"], y["window"]], "end": y["end"]})
     done = [w for w in out if w["status"] == "COMPLETE"]
     if fired:

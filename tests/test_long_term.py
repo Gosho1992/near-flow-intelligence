@@ -44,6 +44,22 @@ class Signposts(unittest.TestCase):
         # |a| = 0.05 < buyback ratio 0.1 in two windows
         self.assertEqual(signposts.evaluate(synth([0.05, -0.05]))["state"], "STRUCTURALLY WRONG")
 
+    def test_issuer_gap_in_one_window_is_enough(self):
+        rows = synth([0.5, 0.5])
+        rows[40]["issuer_gap_pct"] = 0.9          # one figure, second window only
+        self.assertEqual(signposts.evaluate(rows)["state"], "STRUCTURALLY WRONG")
+        rows = synth([0.5, 0.5])
+        rows[5]["issuer_gap_pct"] = -0.6          # first window only, negative sign
+        self.assertEqual(signposts.evaluate(rows)["state"], "STRUCTURALLY WRONG")
+        rows = synth([0.5, 0.5])
+        rows[5]["issuer_gap_pct"] = 0.4           # inside tolerance
+        self.assertEqual(signposts.evaluate(rows)["state"], "MONITORING")
+
+    def test_state_persists_until_another_rule_fires(self):
+        # frozen text: the most recently fired rule sets the state
+        self.assertEqual(signposts.evaluate(synth([1.5, 1.5, -0.5]))["state"], "BULLISH")
+        self.assertEqual(signposts.evaluate(synth([1.5, 1.5, -1.5, -1.2]))["state"], "BEARISH")
+
     def test_base_after_six_quiet_windows(self):
         self.assertEqual(signposts.evaluate(synth([0.5, -0.5, 0.3, 1.5, -0.4, 0.6]))["state"], "BASE")
 

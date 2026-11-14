@@ -2,7 +2,7 @@ Prediction 2 frozen: 2026-11-14 (before its window opens on 2026-11-15 00:00 UTC
 File: PREDICTION-2.md
 SHA-256: 95b1ba83ad2ae067e46740a0397b8c7aed25f13fc2da63c5fd7f4a27f8ff20dd
 Commit that froze it: 9550e3c961eeac6abaa61f8883126cc8fe033c13
-OpenTimestamps proof: PREDICTION-2.md.ots (submitted to public calendars; anchors in Bitcoin within hours)
+OpenTimestamps proof: PREDICTION-2.md.ots (Bitcoin-attested: block 975,784; upgraded 14 Nov 2026)
 
 Check: sha256sum PREDICTION-2.md      # must print the hash above
        git show 9550e3c9:PREDICTION-2.md | sha256sum

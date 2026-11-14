@@ -534,11 +534,12 @@ function render(D) {
   const dayBefore = d => { const t = new Date(d + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() - 1); return t.toISOString().slice(0, 10); };
   const nice = d => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", {day: "numeric", month: "short", year: "numeric", timeZone: "UTC"});
   document.getElementById("sp-state").innerHTML = 'State now: <span class="state">' + (SP.state || "—") + '</span> &nbsp;' +
-    SP.complete + ' of 36 windows complete. Rules need two consecutive complete windows.';
+    SP.complete + ' of 36 windows complete. Rules need two consecutive complete windows; a state persists until another rule fires.' +
+    (function () { const c = SP.windows.filter(w => w.status === "COMPLETE"); return c.length ? ' Latest complete window: ' + s2(c[c.length - 1].absorption) + '.' : ''; })();
   document.getElementById("sp-rows").innerHTML = SP.windows.slice(0, 12).map(w =>
     "<tr><td>" + w.window + "</td><td>" + nice(dayBefore(w.start)) + " – " + nice(dayBefore(w.end)) + "</td><td>" +
     (w.status === "PENDING" ? "pending" : w.status === "VOID" ? "void (too many missing days)" :
-      (w.bull ? "≥ +1" : w.bear ? "≤ −1" : w.wrong ? "below buyback ratio" : "between −1 and +1")) + "</td><td>" +
+      (w.bull ? "≥ +1" : w.bear ? "≤ −1" : w.issuer_off ? "issuer gap > 0.5%" : w.below_buyback ? "below buyback ratio" : "between −1 and +1")) + "</td><td>" +
     (w.absorption == null ? "—" : s2(w.absorption)) + "</td><td>" + (w.buyback_ratio == null ? "—" : fmt(w.buyback_ratio, 2)) + "</td></tr>").join("") +
     '<tr><td colspan="5" style="text-align:left;color:var(--slate)">… windows 13 to 36, every 30 days, through ' + nice(dayBefore(SP.windows[SP.windows.length - 1].end)) + '</td></tr>';
   document.getElementById("sp-base").textContent = "Baseline, not signpost windows: absorption " + s2(H.absorption_launch) +

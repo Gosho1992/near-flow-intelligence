@@ -4,7 +4,7 @@
 
 ## The thesis
 
-**Over the next one to three years, the NEAR held in redeemable regulated wrappers will be decided by a flow that is already larger than new issuance and can run in either direction.** We measure that condition with the **absorption ratio**: wrapper net custody flow divided by NEAR minted in the same window. For Bitwise's NEAR ETF (NRR) it was <!--n:absorption_launch:s2-->+3.70<!--/n--> over its first <!--n:days:int-->46<!--/n--> daily windows, <!--n:absorption_since_peak:s2-->-1.59<!--/n--> in the <!--n:since_peak_net_flow_days:int-->16<!--/n--> windows since its <!--n:nrr_peak_date:-->2026-10-28<!--/n--> peak, and <!--n:absorption_last30:s2-->+0.11<!--/n--> over the latest 30. HSP-029, approved on 2 Nov 2026 and not yet active, would lower NEAR's maximum issuance from 2.5% to 1.6% along a 24-month ramp after a 90-day grace period, so the same wrapper flow becomes a larger multiple of new supply each month.
+**Over one to three years, NEAR's supply-side case depends on one measurable condition: whether redeemable regulated wrappers take in more NEAR than the protocol mints.** We measure that condition with the **absorption ratio**: wrapper net custody flow divided by NEAR minted in the same window. For Bitwise's NEAR ETF (NRR) it was <!--n:absorption_launch:s2-->+3.70<!--/n--> over its first <!--n:days:int-->46<!--/n--> daily windows, <!--n:absorption_since_peak:s2-->-1.59<!--/n--> in the <!--n:since_peak_net_flow_days:int-->16<!--/n--> windows since its <!--n:nrr_peak_date:-->2026-10-28<!--/n--> peak, and <!--n:absorption_last30:s2-->+0.11<!--/n--> over the latest 30. HSP-029, approved on 2 Nov 2026 and not yet active, would lower NEAR's maximum issuance from 2.5% to 1.6% along a 24-month ramp after a 90-day grace period, so the same wrapper flow becomes a larger multiple of new supply each month.
 
 NEAR's supply-side case is therefore conditional. It strengthens if wrapper net creations stay above issuance, and weakens if wrappers keep returning NEAR faster than the protocol mints it. This is a hypothesis about what to watch, measured daily from the chain and judged by rules frozen before the first test window ([SIGNPOSTS.md](SIGNPOSTS.md)). It is not a price forecast and not a claim about NEAR's total float: stake held outside the wrapper moved about <!--n:other_stake_abs_daily_mean:m-->2.80M<!--/n--> NEAR on an average day in this period, far more than the wrapper did.
 
@@ -44,20 +44,20 @@ So the claim is narrower than "the ETF sets NEAR's float." Among the terms a sup
 
 ## Scenarios
 
-`nfi/model.py` projects 36 months from the baseline, using measured mint efficiency, the measured burn share and the HSP-029 ramp starting at the earliest date. Each scenario holds one absorption ratio constant. These are arithmetic consequences of stated inputs, not forecasts or probabilities.
+`nfi/model.py` projects 36 months from the baseline, using measured mint efficiency, the measured burn share and the HSP-029 ramp starting at the earliest date. Each scenario holds one absorption ratio constant. Wrapper rewards compound at the pool's measured rate, ignoring the fund's sponsor fee and staking-expense share, so the base case is slightly high. These are arithmetic consequences of stated inputs, not forecasts or probabilities.
 
 | | Bull: a = +1 | Base: a = 0 | Bear: a = −1 |
 |---|---|---|---|
 | Mechanism | Wrappers take in more NEAR than the falling issuance path creates | Wrapper flow oscillates around zero; the ramp is the main supply change | Launch demand was a one-off; wrappers return NEAR; or the ramp is delayed |
 | Wrapper-held share of supply, month 12 / 24 / 36 | <!--n:scen_m12_bull_share_pct:pct-->3.59%<!--/n--> / <!--n:scen_m24_bull_share_pct:pct-->5.62%<!--/n--> / <!--n:scen_m36_bull_share_pct:pct-->7.32%<!--/n--> | <!--n:scen_m12_base_share_pct:pct-->1.19%<!--/n--> / <!--n:scen_m24_base_share_pct:pct-->1.21%<!--/n--> / <!--n:scen_m36_base_share_pct:pct-->1.23%<!--/n--> | Today's position gone by month <!--n:scen_bear_empty_month:int-->6<!--/n--> |
 | Confirmed by | BULLISH signpost: a ≥ +1 in two consecutive windows | BASE signpost: six windows with no bull or bear pair | BEARISH signpost: a ≤ −1 in two consecutive windows |
-| Invalidated by | A complete window below zero | Two consecutive windows beyond ±1 | A complete window above zero with shares outstanding rising |
+| Would weaken it (not a frozen rule) | A complete window below zero | Two consecutive windows beyond ±1 | A complete window above zero with shares outstanding rising |
 
 **The strongest competing reading is the bear case:** NRR is a small product that launched and faded. Authorised participants delivered existing inventory, including one 5.01M NEAR block, the fund peaked within a month, and it has been redeeming since. On this reading the dashboard accurately records a non-event for NEAR's supply. Our data cannot rule this out yet. The signposts are built to separate it from the other two cases within months, not years.
 
 ## Signposts (frozen)
 
-Rules are frozen in [SIGNPOSTS.md](SIGNPOSTS.md) (SHA-256 in [SIGNPOSTS.lock](SIGNPOSTS.lock), OpenTimestamps proof). They are evaluated on **non-overlapping 30-day windows starting 15 Nov 2026 00:00 UTC**, so no launch-period window can trigger a rule. Flow and issuance are measured over the same window.
+Rules are frozen in [SIGNPOSTS.md](SIGNPOSTS.md) (SHA-256 in [SIGNPOSTS.lock](SIGNPOSTS.lock), OpenTimestamps proof attested in Bitcoin block 975,791). They are evaluated on **non-overlapping 30-day windows starting 15 Nov 2026 00:00 UTC**, so no launch-period window can trigger a rule. Flow and issuance are measured over the same window.
 
 | State | Rule (two consecutive complete windows) | Reading at the data cut |
 |---|---|---|
@@ -65,6 +65,8 @@ Rules are frozen in [SIGNPOSTS.md](SIGNPOSTS.md) (SHA-256 in [SIGNPOSTS.lock](SI
 | Bearish | Absorption ratio ≤ −1 | Not testable yet; <!--n:absorption_since_peak:s2-->-1.59<!--/n--> since the peak |
 | Structurally wrong | \|absorption\| below the buyback ratio; or an issuer figure off the frozen rule by more than 0.5%; or Rule A accounts shown to serve another product | The latest-30 reading is marginally below: <!--n:absorption_last30:2-->0.11<!--/n--> against <!--n:buyback_ratio_last30:2-->0.11<!--/n--> (0.111 vs 0.113). It overlaps the launch, so it is not a signpost window, but it shows the rule can fire |
 | Coverage, reported separately | Number of wrappers rebuilt from the chain and reconciled to an issuer | <!--n:products_attributed_onchain:int-->1<!--/n--> |
+
+**A state persists until another rule fires** (frozen text: the most recently fired rule sets the state), so the latest window's ratio is always shown beside it on the dashboard and in `data/out/signposts.json`.
 
 **Coverage is not a bullish signal.** A second reconstructed product raises confidence in the measurement. It is bullish only if the combined absorption ratio across covered products meets the bullish rule.
 
@@ -119,7 +121,7 @@ The trace panel follows unstake, withdrawal and return steps to the hub, then lo
 
 [PREDICTION.md](PREDICTION.md) (frozen 13 Nov 2026, [lock](PREDICTION.lock), Bitcoin-attested proof). From 14 Nov to 13 Dec, gross NRR custody moves will exceed gross buyback-fund moves. It tests whether NRR stays active. It does not test direction.
 
-[PREDICTION-2.md](PREDICTION-2.md) (frozen 14 Nov 2026 before its window, [lock](PREDICTION-2.lock)). From 15 Nov to 14 Dec, the absolute value of NRR's net custody flow will exceed the absolute value of the buyback fund's net change. Over the 30 days before it was frozen the two were almost equal, so it can fail. **How to read it:** a pass caused by net redemptions supports the claim that the wrapper is the swing factor, and is negative for the bull case. A pass by net creations supports both. Neither prediction tests the wrapper against issuance. The signposts do, from the same start date. All three are evaluated by `make verify-prediction`. The frozen files are never edited.
+[PREDICTION-2.md](PREDICTION-2.md) (frozen 14 Nov 2026 before its window, [lock](PREDICTION-2.lock), Bitcoin-attested proof). From 15 Nov to 14 Dec, the absolute value of NRR's net custody flow will exceed the absolute value of the buyback fund's net change. Over the 30 days before it was frozen the two were almost equal, so it can fail. **How to read it:** a pass caused by net redemptions supports the claim that the wrapper is the swing factor, and is negative for the bull case. A pass by net creations supports both. Neither prediction tests the wrapper against issuance. The signposts do, from the same start date. All three are evaluated by `make verify-prediction`. The frozen files are never edited.
 
 ## What would change our mind
 

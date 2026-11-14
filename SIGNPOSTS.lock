@@ -2,7 +2,7 @@ Signposts frozen: 2026-11-14 (before window 1 opens on 2026-11-15 00:00 UTC)
 File: SIGNPOSTS.md
 SHA-256: 7c15d1da12bc5b4c965f06b2acd541e329f8ed840a8109d73a4b5ba8135aeac0
 Commit that froze it: 2e7649e575907917b122553eedec5705d0ce96ae
-OpenTimestamps proof: SIGNPOSTS.md.ots (submitted to public calendars; anchors in Bitcoin within hours)
+OpenTimestamps proof: SIGNPOSTS.md.ots (Bitcoin-attested: block 975,791; upgraded 14 Nov 2026)
 
 Check: sha256sum SIGNPOSTS.md      # must print the hash above
        git show 2e7649e5:SIGNPOSTS.md | sha256sum

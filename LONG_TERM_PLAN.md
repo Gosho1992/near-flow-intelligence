@@ -39,7 +39,7 @@ HSP-029 passed the House of Stake vote on 2 Nov 2026. Three steps remain before 
 | 18 | <!--n:hsp029_m18_cap_pct:pct3-->1.825%<!--/n--> | <!--n:hsp029_m18_per_day:int-->65,333<!--/n--> | <!--n:hsp029_m18_baskets_per_day:2-->1.25<!--/n--> | Aug 2028 |
 | 24 | <!--n:hsp029_m24_cap_pct:pct3-->1.6%<!--/n--> | <!--n:hsp029_m24_per_day:int-->57,278<!--/n--> | <!--n:hsp029_m24_baskets_per_day:2-->1.09<!--/n--> | Feb 2029 |
 
-\*If ratification and the upgrade were immediate, so the 90-day grace period ran from mid-November 2026. The real start is later by however long those steps take. For comparison, NEAR's previous cut (5% to 2.5%) took about four months from proposal to activation in 2025. **The plan does not depend on this date.** `nfi/protocol.py` reads the cap at every daily height (<!--n:protocol_days_read:int-->50<!--/n--> heights so far, <!--n:protocol_versions_seen:int-->3<!--/n--> protocol versions, cap unchanged), so month 0 will be observed, not guessed. Ramp started at the latest reading: <!--n:hsp029_ramp_started:yn-->no<!--/n-->.
+\*If ratification and the upgrade were immediate, so the 90-day grace period ran from mid-November 2026. The real start is later by however long those steps take. **The plan does not depend on this date.** `nfi/protocol.py` reads the cap at every daily height (<!--n:protocol_days_read:int-->50<!--/n--> heights so far, <!--n:protocol_versions_seen:int-->3<!--/n--> protocol versions, cap unchanged), so month 0 will be observed, not guessed. Ramp started at the latest reading: <!--n:hsp029_ramp_started:yn-->no<!--/n-->.
 
 Two checks tie our model to the proposal: our month-24 mint matches its 57,300 NEAR a day, and the issuance avoided by month 27 in our model (<!--n:scen_avoided_issuance_m27:m-->11.87M<!--/n--> NEAR) matches its 11.8M over two years (tests in `tests/test_long_term.py`).
 
@@ -65,8 +65,10 @@ So the plan never claims that the wrapper sets NEAR's float. It claims something
 | At month 36 | <!--n:scen_m36_bull_near:m-->101.86M<!--/n--> (<!--n:scen_m36_bull_share_pct:pct-->7.32%<!--/n-->) | <!--n:scen_m36_base_near:m-->17.09M<!--/n--> (<!--n:scen_m36_base_share_pct:pct-->1.23%<!--/n-->) | <!--n:scen_m36_bear_near:m-->0.00M<!--/n--> |
 | What it would look like | a ≥ +1 in consecutive windows; shares outstanding rising on the issuer's page | \|a\| < 1 in most windows; holdings roughly flat | a ≤ −1 in consecutive windows; shares outstanding falling. At a = −1, today's position would be gone by month <!--n:scen_bear_empty_month:int-->6<!--/n--> |
 | Confirms | BULLISH signpost (two windows) after launch effects have left the windows | BASE signpost (six windows) | BEARISH signpost (two windows) |
-| Invalidates | A complete window below zero | Two consecutive windows beyond ±1 | A complete window above zero with shares outstanding rising |
+| Would weaken it (not a frozen rule) | A complete window below zero | Two consecutive windows beyond ±1 | A complete window above zero with shares outstanding rising |
 | Indicators | Net creations, shares outstanding, premium to NAV, measured mint | Same, plus the cap | Net redemptions, discount to NAV, HSP-029 status |
+
+A signpost state persists until another rule fires (the most recently fired rule sets the state), so the latest window's ratio is always published beside it. Wrapper rewards in the model compound at the pool's measured rate and ignore the fund's sponsor fee and staking-expense share, so the base case is slightly high.
 
 The bull column shows the scale required: absorbing all new issuance means taking in about 2.4M NEAR a month. NRR's rolling 30-day net flow has been below that level since 9 Nov. The bear column shows that the position NRR has built is small next to the mint, and could be released in about half a year.
 
