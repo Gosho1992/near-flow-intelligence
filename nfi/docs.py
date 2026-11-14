@@ -1,6 +1,7 @@
 """Fill number markers in the docs from data/out/headline.json.
 
-Marker: <!--n:key:fmt-->anything<!--/n-->  fmt = int | pct | x (ratio) | 1 (one decimal) | m (millions)
+Marker: <!--n:key:fmt-->anything<!--/n-->
+Formats: int | sint | pct | spct | x | 1 | s1 | m.
 """
 import json, re, sys
 from .net import ROOT
@@ -13,6 +14,8 @@ def fmt(v, f):
         return "n/a"
     if f == "int":
         return f"{v:,.0f}"
+    if f == "sint":
+        return f"{v:+,.0f}"
     if f == "pct":
         return f"{v:.2f}%"
     if f == "spct":
@@ -23,6 +26,8 @@ def fmt(v, f):
         return f"{v / 1e6:,.2f}M"
     if f == "1":
         return f"{v:.1f}"
+    if f == "s1":
+        return f"{v:+.1f}"
     return str(v)
 
 
