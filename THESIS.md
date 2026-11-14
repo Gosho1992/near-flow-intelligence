@@ -33,7 +33,7 @@ This project reconstructs NRR's **observed NEAR staking custody**, account by ac
 
 ### 1. The issuer comparison
 
-On the <!--n:issuer_gaps_count:int-->3<!--/n--> issuer dates currently archived, reconstructed NRR staked balances differ from Bitwise's published "NEAR in Trust" by no more than <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n-->. The source dates and retrieval timestamps are recorded in `data/issuer_snapshots.csv`. This is a dated comparison, not a claim that Bitwise independently verifies each unreported day.
+On the <!--n:issuer_gaps_count:int-->4<!--/n--> issuer dates currently archived, reconstructed NRR staked balances differ from Bitwise's published "NEAR in Trust" by no more than <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n-->. The source dates and retrieval timestamps are recorded in `data/issuer_snapshots.csv`. This is a dated comparison, not a claim that Bitwise independently verifies each unreported day.
 
 ### 2. The observed custody position and flows
 

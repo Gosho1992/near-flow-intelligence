@@ -346,7 +346,8 @@ function render(D) {
   ].join("");
   document.getElementById("issuer-note").textContent =
     "The issuer dots are dated Bitwise snapshots, not daily confirmations. The archived set contains " +
-    H.issuer_gaps_count + " dates; intervening holdings are reconstructed from the chain.";
+    H.issuer_gaps_count + " dates; intervening holdings are reconstructed from the chain. The comparison rule was fixed on 13 Nov after the first three; " +
+    (H.issuer_oos_count ? H.issuer_oos_count + " later figure(s) tested it out of sample (gap " + (H.issuer_gap_oos_pct > 0 ? "+" : "") + fmt(H.issuer_gap_oos_pct, 3) + "%)." : "no later figure yet.");
 
   const I = D.institutional || [];
   document.getElementById("holders").innerHTML = I.map((h, i) =>

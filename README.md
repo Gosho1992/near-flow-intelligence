@@ -14,7 +14,7 @@ A basket conversion uses the latest included Bitwise snapshot's NEAR-per-share f
 
 ## Why this is different
 
-The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's published "NEAR in Trust" on the <!--n:issuer_gaps_count:int-->3<!--/n--> issuer dates currently archived in the repository. Every snapshot is dated and retains its retrieval time. This is a historical comparison on those dates; it does not confirm every intervening daily value.
+The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's published "NEAR in Trust" on the <!--n:issuer_gaps_count:int-->4<!--/n--> issuer dates currently archived in the repository. Every snapshot is dated and retains its retrieval time. This is a historical comparison on those dates; it does not confirm every intervening daily value.
 
 The project records:
 - The attributed NRR staking accounts and the evidence used to identify them.

@@ -615,6 +615,9 @@ def headline(rows, events, issuer, A, traces, C, issuance, refresh):
         "max_abs_issuer_gap_pct": max(abs(v) for v in gaps.values() if v is not None) if gaps else None,
         "issuer_latest_date": max(issuer) if issuer else None,
         "issuer_gaps_count": sum(1 for v in gaps.values() if v is not None),
+        # issuer figures published after the rule was frozen (13 Nov 2026) are out-of-sample tests
+        "issuer_gap_oos_pct": next((gaps[d] for d in sorted(gaps) if d >= "2026-11-12" and gaps[d] is not None), None),
+        "issuer_oos_count": sum(1 for d, v in gaps.items() if d >= "2026-11-12" and v is not None),
         "redemption_traces": sum(1 for t in traces if t["kind"] == "redemption"),
         "redemption_trace_confidence": conf,
         "redemption_traces_probable": sum(v for k, v in conf.items() if k.startswith("probable")),

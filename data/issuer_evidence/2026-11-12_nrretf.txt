@@ -1,0 +1,8 @@
+Source: https://nrretf.com/ (Bitwise NEAR ETF, NRR)
+Retrieved: 2026-11-14T09:19:23Z, rendered page text captured in a browser
+Purpose: fourth issuer checkpoint, the first published after the reconciliation rule was fixed on 2026-11-13 (out of sample)
+
+Holdings | Data as of 11/12/2026 | Name | NEAR in Trust | Market Value | NEAR per Share | Weight (%) | NEAR | 15,332,990.59 | $54,125,456.81 | 5.233103 | 100% | Holdings are subject to change. Current and future holdings are subject to risk.
+Market Price | Data as of 11/11/2026 | NAV: $17.94 | MARKET PRICE: $17.98 | NAV CHANGE: -$1.46 / -7.53% | MARKET PRICE CHANGE: -$1.46 / -7.53% | MEDIAN BID-ASK SPREAD (30-DAY): 0.63%
+Shares Outstanding | 2,930,000 | Net Assets (AUM) | $54,106,149 | Sponsor Fee | 0.75% | Inception Date | September 28, 2026
+Gross Staking Reward Rate* 5.01% As of 11/12/2026 | Target % of Assets Staked 100%
