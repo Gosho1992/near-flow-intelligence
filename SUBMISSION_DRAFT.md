@@ -45,7 +45,7 @@ Evidence: source-wallet analysis (more than a quarter of inflow in one transfer;
 - Email: [USER TO ENTER]
 - Team size: 1
 - Track: Investment Thesis
-- Mainnet NEAR payout account: [USER TO CREATE/ENTER — do not invent]
+- Mainnet NEAR payout account: gosho1992.near (exists on mainnet, checked 14 Nov 2026)
 - Project URL: https://github.com/Gosho1992/near-flow-intelligence (only after making the repository public)
 - Demo URL: [ADD THE PUBLIC X POST URL]
 - Dashboard URL: [ADD PUBLIC GITHUB PAGES URL]
@@ -59,5 +59,5 @@ Evidence: source-wallet analysis (more than a quarter of inflow in one transfer;
 - [ ] Confirm the dashboard's data-through date and the signpost state.
 - [ ] Record and upload the demo video showing the long-term test section and a real transaction trace.
 - [ ] Publish the X post with the video, @NEARProtocol and #NEARHackathon; insert the post URL.
-- [ ] Use your own mainnet NEAR payout account in the official form.
+- [x] Payout account created: gosho1992.near. [ ] Seed phrase saved on paper.
 - [ ] Submit once, after all links and fields are checked.
