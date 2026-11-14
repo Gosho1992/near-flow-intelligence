@@ -1,79 +1,98 @@
 # NEAR Flow Intelligence
 
-**Bitwise's NEAR ETF (NRR), rebuilt independently from the chain, and set against NEAR's supply.** Issuer-data trackers report NRR's flows from Bitwise's own files; this project rebuilds the holdings account by account from NEAR's chain and checks them against those files.
+**A daily reconstruction of Bitwise's NEAR ETF (NRR), measured against NEAR issuance and the protocol buyback-fund balance.** Issuer-data trackers publish NRR flows from Bitwise's own files. This project rebuilds its observed staking custody account by account from NEAR mainnet, checks the reconstruction against issuer snapshots, and makes the direction and size of its net custody flow visible.
 
-Our on-chain total lands within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's own published figure on every date it has published (<!--n:issuer_gaps_count:int-->3<!--/n--> dates). Since launch, NRR moved about <!--n:ratio_abs_custody_to_abs_buyback:x-->43×<!--/n--> more NEAR into and out of its custody than NEAR's buyback fund's balance moved — a size comparison, not a claim of buying or selling.
+The investment question is not whether NRR is "demand" in the market. The chain cannot prove that. The question is how much NEAR moves into and out of this redeemable product's staked custody, how that flow compares with protocol issuance, and how quickly the direction can reverse.
 
-NEAR supply models track issuance and the protocol's buyback fund. This project adds what those models leave out: the NEAR held by a regulated investment product. We rebuild Bitwise NRR's holdings every day from NEAR staking accounts, check them against Bitwise's own published figures, follow every creation and redemption transaction by transaction, and compare the size of those moves with NEAR's new supply and buyback fund over the same days. We also record other institutional holders where only partial on-chain evidence exists, such as SVRN, a listed company that reports its NEAR treasury; those observations are shown separately and never added to NRR's figures.
+## The finding
 
-Built at NEAR HACKATHON 2026 — Investment Thesis track. Thesis: [THESIS.md](THESIS.md). Method: [METHOD.md](METHOD.md). Sources: [SOURCES.md](SOURCES.md).
+In the 46 measured daily windows from 2026-09-29 through 2026-11-13, NRR's signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+330,985<!--/n--> NEAR per day** (<!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> approximate 10,000-share baskets per day). Since the 2026-10-28 holdings peak, across 16 daily windows, the average was **<!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> NEAR per day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets per day).
 
-## The long-term thesis
+Those are signed averages across different periods, not cumulative totals and not forecasts. NRR's latest reconstructed staked position is <!--n:nrr_holdings_latest:m-->15.31M<!--/n--> NEAR as of <!--n:data_through:-->2026-11-13<!--/n-->, <!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> below its peak. The position is large; its persistence is not established.
 
-NEAR's supply grows about 2.5% a year, and the protocol's buyback fund offsets only <!--n:buyback_change_pct_of_issuance:pct-->11.10%<!--/n--> of it. Institutional demand is now the larger counterweight: NRR holds the equivalent of <!--n:nrr_holdings_pct_of_annual_issuance:pct-->46.87%<!--/n--> of a year's new NEAR in staked custody, and anyone can audit it from the chain. The long-term case depends on whether that demand stays and spreads to more products. **Verdict: constructive, not proven** (holdings are <!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> from their peak). Five conditions, each with a daily reading, are in [THESIS.md](THESIS.md).
+A basket conversion uses the latest included Bitwise snapshot's NEAR-per-share figure multiplied by 10,000 shares. It is a comparison unit, not evidence that a creation or redemption was a market purchase or sale.
 
-## What it found (data through <!--n:data_through:-->2026-11-13<!--/n-->)
+## Why this is different
 
-- NRR's staking accounts held <!--n:nrr_holdings_latest:int-->15,310,526<!--/n--> NEAR, after a peak of <!--n:nrr_peak:int-->17,537,598<!--/n--> NEAR on <!--n:nrr_peak_date:-->2026-10-28<!--/n--> (<!--n:change_since_peak_pct:spct-->-12.70%<!--/n--> since).
-- The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's published "NEAR in Trust" on every date we have.
-- Since <!--n:window_start:-->2026-09-28<!--/n-->: <!--n:creations_total:int-->17,544,103<!--/n--> NEAR moved into NRR's staking custody and <!--n:redemptions_total:int-->2,318,791<!--/n--> NEAR moved out. Each move is a validated sequence of transactions: <!--n:creations_confirmed_count:int-->74<!--/n--> of <!--n:creations_count:int-->74<!--/n--> creations (hub funding → stake) and <!--n:redemptions_confirmed_count:int-->7<!--/n--> of <!--n:redemptions_count:int-->10<!--/n--> redemptions (unstake → withdraw → back to the custody hub) are confirmed, across <!--n:attributed_accounts:int-->73<!--/n--> accounts.
-- Over the same days the protocol minted <!--n:gross_issuance_total:int-->4,116,853<!--/n--> NEAR and the buyback fund's balance changed by <!--n:buyback_fund_change_total:int-->457,016<!--/n--> NEAR. NRR's custody moves were about <!--n:ratio_abs_custody_to_abs_buyback:x-->43×<!--/n--> the buyback fund's movement — a size comparison, not a claim of market buying or selling.
-- NRR holds <!--n:nrr_share_staked_pct_latest:pct-->2.59%<!--/n--> of all staked NEAR.
+The chain reconstruction is within <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n--> of Bitwise's published "NEAR in Trust" on the <!--n:issuer_gaps_count:int-->3<!--/n--> issuer dates currently archived in the repository. Every snapshot is dated and retains its retrieval time. This is a historical comparison on those dates; it does not confirm every intervening daily value.
 
-## Try it in 60 seconds
+The project records:
+- The attributed NRR staking accounts and the evidence used to identify them.
+- Staked, unstaked and liquid custody layers without adding the same NEAR twice.
+- Creation and redemption sequences with transaction links and confidence labels.
+- NEAR issuance, total supply, validator stake and measured staking rewards.
+- Changes in the protocol buyback-fund balance, separately from executed purchases (which are not measured).
+- A separate, partial observation of SVRN's Bitwise pool, never included in NRR totals.
 
-Python 3.10+ only. No API key, wallet, paid service or mainnet transaction.
+## Comparable flow readings (data through <!--n:data_through:-->2026-11-13<!--/n-->)
+
+| Measure | Reading |
+|---|---:|
+| NRR signed net custody flow, launch-period average | <!--n:launch_net_flow_per_day:sint-->+330,985<!--/n--> NEAR/day · <!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> baskets/day |
+| NRR signed net custody flow, since 28 Oct peak average | <!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> NEAR/day · <!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets/day |
+| NRR signed net custody flow, latest 30-day total | <!--n:last30_nrr_net:sint-->+297,710<!--/n--> NEAR across <!--n:last30_net_flow_days:int-->30<!--/n--> windows |
+| Current-period issuance average | <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day · <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets/day |
+| Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->9,935<!--/n--> NEAR/day · <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> baskets/day |
+| Buyback-fund balance change as a share of measured issuance, launch to date | <!--n:buyback_change_pct_of_issuance:pct-->11.10%<!--/n--> |
+
+The buyback series is a balance change, not a record of executed market purchases. The table compares measured on-chain quantities and their scale; it does not imply that NRR custody movements and buyback-fund balance changes have the same economic meaning.
+
+### Issuance scenario
+
+The current measured issuance rate averages <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day (about <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> NRR-sized baskets). If the proposed HSP-029 1.6% annual inflation target were fully reached, a simple proportional scenario at the same supply base would be about <!--n:issuance_hsp029_target_per_day:int-->57,300<!--/n--> NEAR/day (<!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> baskets). This is a scenario, not a claim that the target is already active or that the proposal's full ramp has occurred.
+
+## Run it
+
+Python 3.10+ is required. No wallet, mainnet transaction, or paid API key is required for the committed offline rebuild.
 
 ```bash
-git clone https://github.com/Gosho1992/near-flow-intelligence && cd near-flow-intelligence
-make data     # rebuild every number offline from the committed chain cache
-make test     # 19 independent checks
+git clone https://github.com/Gosho1992/near-flow-intelligence
+cd near-flow-intelligence
+
+make rebuild  # raw cached responses -> work datasets -> outputs, docs and site
+make test     # offline checks
 make serve    # dashboard at http://127.0.0.1:8000
 ```
 
-What to look at, in order:
+For a faster rebuild from already collected `data/work/` snapshots, run `make data`. To fetch new chain data, `make refresh` requires network access and is subject to the FastNEAR API's rate limits.
 
-1. **Do the chain numbers match Bitwise?** Open the dashboard: the dots on the holdings chart are Bitwise's published figures; the solid line is the NEAR staked by NRR's accounts, read from the chain. `make test` fails if any gap exceeds 0.5%.
-2. **Where did the NEAR go?** In "Follow the NEAR", pick a redemption: unstake → withdraw → custody hub → next accounts, each with a NearBlocks link, the rule that labels the account, and how sure the link is (observed, probable, ambiguous or unmatched).
-3. **How big is it?** "How big are these moves?" shows NRR's custody moves next to NEAR minted and the buyback-fund change, daily or cumulative.
-4. **What can't the chain prove?** The dashboard and THESIS.md list it: market trades inside exchanges, cash vs in-kind creations, legal ownership.
+## What to inspect
 
-`make refresh` re-reads the chain up to today (network needed; ~1 hour because FastNEAR's transaction API is rate-limited). A GitHub Action does this daily and redeploys the dashboard only if all checks pass.
+1. **Holdings and issuer checks.** The solid line is the reconstructed staked balance. The issuer dots are dated Bitwise observations. The archived comparison dates and differences are visible in the evidence data.
+2. **Net flow against supply.** The dashboard plots signed NRR custody flow, NEAR issuance and the buyback-fund balance change in a common unit and a common date range. Cumulative lines are rebased at the selected range start.
+3. **Sources and destinations.** The trace panel links observed transactions. A step beyond the custody hub is at best probable because NEAR is fungible and the hub pools balances.
+4. **Re-run the evidence.** `make rebuild` reconstructs outputs from cached raw RPC and transaction-API responses. `make test` checks the pipeline invariants and offline reproducibility.
 
-## How it works
+## What this does not prove
 
-| Step | Source | Output |
-|---|---|---|
-| Daily 00:00 UTC block heights | NEAR archival RPC `block` | `data/work/heights.json` |
-| NRR accounts (rule: funded by the custody hub, then `deposit_and_stake`) | FastNEAR transaction API: hub + pool histories | `data/out/accounts.csv` (evidence per account) |
-| Custody layers: staked, unstaked, liquid in basket accounts, liquid in hub | RPC `get_accounts`, `view_account` | `data/out/daily.csv` |
-| Creations / redemptions from actual transactions | transaction actions, receipts, pool logs | `data/out/events.csv` |
-| Staking rewards, measured | median growth of delegators with no transactions that day | `daily.csv` (`nrr_rewards`, `unexplained`) |
-| Supply: minted per epoch, burn, net change; total stake | block-header `total_supply` at epoch boundaries; validator `locked` balances | `daily.csv` |
-| Buyback fund | `buybacks.multisignature.near` + `1csfundsadmin.sputnik-dao.near`, native + wNEAR in `intents.near` | `daily.csv` |
-| Redemption paths | hub and pass-through histories | `data/out/traces.json` |
+- A movement into NRR custody was bought on an exchange.
+- A redemption was sold on an exchange.
+- A holder is the legal or beneficial owner of an account.
+- A buyback-fund balance increase was an executed market purchase.
+- A partially observed pool represents an issuer's entire treasury.
+- Custody flows caused NEAR's price to rise or fall.
 
-Every number in this README, THESIS.md and the dashboard is generated into `data/out/headline.json`; a test fails if any document disagrees with the data.
+## Current attribution boundary
 
-## Limits
+The primary NRR series uses **Rule A**: an account is counted when the inferred custody hub funded it and it subsequently called `deposit_and_stake` on `bitwise_2.poolv1.near`. The project has identified a one-hop downstream candidate that Rule A does not include. It remains disclosed separately until its funding history, timing and pool transaction are reproduced and tested. The BigQuery check currently covers direct hub recipients only; it is not a global proof that no downstream account was missed.
 
-- The NRR attribution is rule-based and checked against Bitwise's figures; it is not a legal ownership proof.
-- A move into custody is not proof of a market purchase; a move out is not proof of a sale. Trades inside exchanges are not on-chain.
-- "Exchange-style wallet" is a published heuristic (≥10,000 transactions), not an identified exchange.
-- The buyback series is the buyback fund's balance, not executed purchases or burns.
-- One product so far. Other NEAR products (21Shares, Grayscale) are listed in THESIS.md with dated issuer figures, not attributed on-chain.
+SVRN is a separate contextual observation: a company-reported treasury figure and a partial on-chain view of one Bitwise-operated pool. The two are not reconciled, not summed, and not treated as new purchases.
 
-## Repository
+## Repository guide
 
-```
-nfi/          pipeline (Python standard library only)
-data/raw/     cached RPC and transaction-API responses (offline rebuild)
-data/work/    collected chain series
-data/out/     published outputs: daily.csv, events.csv, accounts.csv, traces.json, headline.json
-site/         static dashboard (Chart.js bundled)
-tests/        19 checks
-```
+| Path | Purpose |
+|---|---|
+| `nfi/` | Python pipeline and offline collectors |
+| `data/raw/` | Cached NEAR RPC and FastNEAR transaction responses |
+| `data/work/` | Collected daily and attribution datasets |
+| `data/out/` | Published CSV/JSON outputs |
+| `data/bigquery/` | Independent completeness-check SQL and captured result |
+| `site/` | Static dashboard and copied data |
+| `tests/` | Offline unit and invariant checks |
+| `THESIS.md` | Investment thesis, evidence for/against and falsifiers |
+| `METHOD.md` | Attribution, formulas, data states and limitations |
+| `SOURCES.md` | Dated source register |
 
 ## Disclosure
 
-Built by Zain Zia with AI coding assistance (Claude). Data: NEAR archival RPC (FastNEAR), FastNEAR transaction API, Bitwise's NRR page. The buyback-fund definition follows [nikolaskahris-png/near-thesis-data](https://github.com/nikolaskahris-png/near-thesis-data). Research, not investment advice. MIT licence.
+Built by Zain Zia with AI coding assistance (Claude). Data sources include NEAR archival RPC (FastNEAR), the FastNEAR transaction API, Bitwise's NRR page, the Bitwise prospectus and NEAR's public BigQuery dataset. The buyback-fund account definition follows [nikolaskahris-png/near-thesis-data](https://github.com/nikolaskahris-png/near-thesis-data). Research, not investment advice. MIT licence.
