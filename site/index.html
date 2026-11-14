@@ -254,6 +254,46 @@ fetch("data/site_data.json").then(r => { if (!r.ok) throw new Error(r.status); r
 
 function render(D) {
   const H = D.headline, rows = D.daily;
+  // Derive new dashboard fields from the committed daily data as a compatibility fallback.
+  // A subsequent make rebuild writes the same fields into headline.json.
+  const val = v => v == null || v === "" ? 0 : Number(v);
+  const flowStats = list => {
+    const usable = list.filter(r => r.data_status === "complete");
+    const net = usable.reduce((s, r) => s + val(r.creations) - val(r.redemptions), 0);
+    return {total: net, days: usable.length, perDay: usable.length ? net / usable.length : null};
+  };
+  const firstNrr = rows.findIndex(r => val(r.nrr_holdings) > 1000);
+  const launchBaseDate = rows[Math.max(0, firstNrr - 1)]?.date;
+  const launchRows = rows.filter(r => r.date > launchBaseDate);
+  const postPeakRows = rows.filter(r => r.date > H.nrr_peak_date);
+  const launchFlow = flowStats(launchRows);
+  const postPeakFlow = flowStats(postPeakRows);
+  const last30Flow = flowStats(rows.slice(-30));
+  const issuerLatest = (D.issuer || []).slice().sort((a,b) => a.date.localeCompare(b.date)).slice(-1)[0] || {};
+  const basketNear = val(issuerLatest.near_per_share) * 10000;
+  H.launch_net_flow_total ??= launchFlow.total;
+  H.launch_net_flow_days ??= launchFlow.days;
+  H.launch_net_flow_per_day ??= launchFlow.perDay;
+  H.launch_net_baskets_per_day ??= basketNear ? launchFlow.perDay / basketNear : null;
+  H.since_peak_net_flow_total ??= postPeakFlow.total;
+  H.since_peak_net_flow_days ??= postPeakFlow.days;
+  H.since_peak_creations_total ??= postPeakRows.reduce((s,r) => s + val(r.creations), 0);
+  H.since_peak_redemptions_total ??= postPeakRows.reduce((s,r) => s + val(r.redemptions), 0);
+  H.since_peak_net_flow_per_day ??= postPeakFlow.perDay;
+  H.since_peak_net_baskets_per_day ??= basketNear ? postPeakFlow.perDay / basketNear : null;
+  H.last30_net_flow_days ??= last30Flow.days;
+  H.last30_net_flow_per_day ??= last30Flow.perDay;
+  H.last30_net_baskets_per_day ??= basketNear ? last30Flow.perDay / basketNear : null;
+  H.last30_nrr_net ??= last30Flow.total;
+  H.issuance_per_day ??= H.days ? H.gross_issuance_total / H.days : null;
+  H.issuance_baskets_per_day ??= basketNear ? H.issuance_per_day / basketNear : null;
+  H.issuance_hsp029_target_per_day ??= H.issuance_per_day * 1.6 / 2.5;
+  H.issuance_hsp029_baskets_per_day ??= basketNear ? H.issuance_hsp029_target_per_day / basketNear : null;
+  H.buyback_net_change_per_day ??= H.days ? H.buyback_fund_change_total / H.days : null;
+  H.buyback_baskets_per_day ??= basketNear ? H.buyback_net_change_per_day / basketNear : null;
+  H.near_price_usd ??= (val(issuerLatest.nav_usd) && val(issuerLatest.near_per_share))
+    ? val(issuerLatest.nav_usd) / val(issuerLatest.near_per_share) : null;
+  H.issuer_value_date ??= issuerLatest.date;
   const signed = v => v == null ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v));
   const baskets = v => v == null ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v), 1);
   document.getElementById("facts").innerHTML =
