@@ -48,8 +48,10 @@ def run():
     ins = [i for i in A["hub_in"] if i["height"] <= VALUATION_HEIGHT]
     in_kind = sum(i["near"] for i in ins if i["from"] == IN_KIND_WALLET)
     fund_in = [i for i in ins if i["near"] >= FUND_MIN]
-    purchased_onchain = sum(i["near"] for i in fund_in if i["from"] != IN_KIND_WALLET)
-    undelivered = F["purchases"] - purchased_onchain
+    # round sums before deriving from them: summation order differs across platforms in the last float digits
+    in_kind = round(in_kind, 8)
+    purchased_onchain = round(sum(i["near"] for i in fund_in if i["from"] != IN_KIND_WALLET), 4)
+    undelivered = round(F["purchases"] - purchased_onchain, 4)
     out = {
         "valuation_height": VALUATION_HEIGHT, "valuation_block_time": t_val.isoformat(),
         "next_block_time": t_next.isoformat(), "filing": F,
@@ -68,7 +70,7 @@ def run():
         "receivable_diff_pct": 100 * (undelivered * F["price_nav"] - F["receivable_creations"]) / F["receivable_creations"],
         "fund_inflows_onchain": in_kind + purchased_onchain,
         # precision of the published inputs: prices are given to the cent, the staked value to $100
-        "receivable_band_usd": undelivered * 0.005,
+        "receivable_band_usd": round(undelivered * 0.005, 2),
         "receivable_implied_price": F["receivable_creations"] / undelivered,
         "payable_implied_price": F["payable_purchased"] / undelivered,
         "staked_band_near": [ (F["staked_usd"] - 50) / (F["price_principal"] + 0.005),
