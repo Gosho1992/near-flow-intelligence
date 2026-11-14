@@ -631,6 +631,9 @@ def long_term(rows, events, h, C, issuance, proto):
                          h["reward_rate_annualised_pct"], b, ramp_start=9)
     for row in scen:
         row["cap_pct_if_ramp_starts_month_9"] = late[row["month"]]["cap_pct"]
+    # compounding over 36 months differs in the last float digits across platforms: publish at stable precision
+    scen = [{k: (round(v, 4) if ("pct" in k or "baskets" in k) else round(v, 1)) if isinstance(v, float) else v
+             for k, v in row.items()} for row in scen]
     for m in (12, 24, 36):
         s = scen[m]
         for k in model.ABSORPTION:
