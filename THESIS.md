@@ -4,7 +4,7 @@
 
 ## The claim in one paragraph
 
-Bitwise's NEAR ETF (NRR) has become a measurable, reversible source of NEAR moving into and out of staked custody. Across the 46 daily windows observed since its first staking activity, its signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+330,985<!--/n--> NEAR/day** (<!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> approximate 10,000-share baskets/day). Since its holdings peak on 28 Oct 2026, across 16 daily windows, the average reversed to **<!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> NEAR/day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets/day). This is the finding: a single redeemable product can move NEAR into custody at scale and can later release it at scale. It does **not** establish market purchases, sales, legal ownership or price impact. The long-term question is whether NRR's net flow stabilises, continues to reverse, or is joined by other independently attributable products.
+Bitwise's NEAR ETF (NRR) has become a measurable, reversible source of NEAR moving into and out of staked custody. Across the 46 daily windows observed since its first staking activity, its signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+330,985<!--/n--> NEAR/day** (<!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> approximate 10,000-share baskets/day). Since its holdings peak on <!--n:nrr_peak_date:-->2026-10-28<!--/n-->, across 16 daily windows, the average reversed to **<!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> NEAR/day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> baskets/day). This is the finding: a single redeemable product can move NEAR into custody at scale and can later release it at scale. It does **not** establish market purchases, sales, legal ownership or price impact. The long-term question is whether NRR's net flow stabilises, continues to reverse, or is joined by other independently attributable products.
 
 ## Verdict at the current data cut
 
@@ -17,7 +17,7 @@ One basket is 10,000 NRR shares. Its NEAR equivalent is calculated from the late
 | Flow measure | NEAR/day | Approx. baskets/day |
 |---|---:|---:|
 | NRR signed net custody flow, launch period average | <!--n:launch_net_flow_per_day:sint-->+330,985<!--/n--> | <!--n:launch_net_baskets_per_day:s1-->+6.3<!--/n--> |
-| NRR signed net custody flow, after 28 Oct peak average | <!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> | <!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> |
+| NRR signed net custody flow, after <!--n:nrr_peak_date:-->2026-10-28<!--/n--> peak average | <!--n:since_peak_net_flow_per_day:sint-->-141,344<!--/n--> | <!--n:since_peak_net_baskets_per_day:s1-->-2.7<!--/n--> |
 | NRR signed net custody flow, latest 30-day average | <!--n:last30_net_flow_per_day:sint-->+9,924<!--/n--> | <!--n:last30_net_baskets_per_day:s1-->+0.2<!--/n--> |
 | NEAR issuance, measured launch-period average | <!--n:issuance_per_day:int-->89,497<!--/n--> | <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> |
 | Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->9,935<!--/n--> | <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> |
@@ -106,7 +106,7 @@ See [PREDICTION.md](PREDICTION.md), frozen on 13 Nov 2026 and protected by [PRED
 
 ## Other NEAR holders: context only
 
-SVRN, Inc. reported a treasury of more than 55.5 million NEAR on 27 Aug 2026. On 13 Nov 2026, the `svrn_bitwise.poolv1.near` pool showed <!--n:svrn_observed_staked:m-->10.36M<!--/n--> NEAR across <!--n:svrn_accounts_observed:int-->6<!--/n--> delegator accounts. This is a partial observation of one pool, not a reconstruction of SVRN's full treasury. The reported figure and pool observation are from different dates, may overlap, and are never added together or to NRR totals.
+SVRN, Inc. reported a treasury of more than <!--n:svrn_reported_holdings:m-->55.50M<!--/n--> NEAR on <!--n:svrn_reported_as_of:-->2026-08-27<!--/n-->. On 13 Nov 2026, the `svrn_bitwise.poolv1.near` pool showed <!--n:svrn_observed_staked:m-->10.36M<!--/n--> NEAR across <!--n:svrn_accounts_observed:int-->6<!--/n--> delegator accounts. This is a partial observation of one pool, not a reconstruction of SVRN's full treasury. The reported figure and pool observation are from different dates, may overlap, and are never added together or to NRR totals.
 
 21Shares and Grayscale remain contextual references only; no account-level reconstruction is claimed for either.
 
