@@ -39,7 +39,7 @@ The buyback series is a balance change, not a record of executed market purchase
 
 ### Issuance scenario
 
-The current measured issuance rate averages <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day (about <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> NRR-sized baskets). If the proposed HSP-029 1.6% annual inflation target were fully reached, a simple proportional scenario at the same supply base would be about <!--n:issuance_hsp029_target_per_day:int-->57,300<!--/n--> NEAR/day (<!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> baskets). The official forum record lists HSP-029 as Succeeded, but the 1.6% rate is not active in the observed protocol configuration; remaining governance/implementation steps, a grace period and validator adoption are required. This is a full-target scenario, not a current-rate claim.
+The current measured issuance rate averages <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day (about <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> NRR-sized baskets). If the proposed HSP-029 1.6% annual inflation target were fully reached, a simple proportional scenario at the same supply base would be about <!--n:issuance_hsp029_target_per_day:int-->57,278<!--/n--> NEAR/day (<!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> baskets). The official forum record lists HSP-029 as Succeeded, but the 1.6% rate is not active in the observed protocol configuration; remaining governance/implementation steps, a grace period and validator adoption are required. This is a full-target scenario, not a current-rate claim.
 
 ## Run it
 
