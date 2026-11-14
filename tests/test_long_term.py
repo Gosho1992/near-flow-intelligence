@@ -190,5 +190,13 @@ class SecFiling(unittest.TestCase):
     def test_headline_carries_the_check(self):
         self.assertAlmostEqual(H["sec_staked_diff_pct"], self.r["staked_diff_pct"], places=4)
 
+
+class Dashboard(unittest.TestCase):
+    def test_no_duplicate_element_ids(self):
+        import re, collections
+        html = (ROOT / "site" / "index.html").read_text()
+        dup = [k for k, n in collections.Counter(re.findall(r'id="([^"]+)"', html)).items() if n > 1]
+        self.assertEqual(dup, [], "duplicate ids break getElementById (the trace list once rendered into a chart)")
+
 if __name__ == "__main__":
     unittest.main()

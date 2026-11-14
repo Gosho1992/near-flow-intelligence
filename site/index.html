@@ -193,7 +193,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
       <p class="compute" id="sp-base"></p></div>
     <h3>Issuance is scheduled to fall, not falling</h3>
     <p class="sub" id="hsp-lede"></p>
-    <div class="panel"><div class="chart short"><canvas id="path" role="img" aria-label="NEAR minted per day over 36 months, with and without HSP-029, and the break-even wrapper flow"></canvas></div>
+    <div class="panel"><div class="chart short"><canvas id="issuepath" role="img" aria-label="NEAR minted per day over 36 months, with and without HSP-029, and the break-even wrapper flow"></canvas></div>
       <div class="legend"><span><span class="sw" style="background:var(--ink)"></span>Mint per day with HSP-029, ramp from month 3 (earliest)</span><span><span class="sw" style="background:transparent;border-top:2px dashed var(--ink);height:0"></span>Ramp from month 9</span><span><span class="sw" style="background:var(--supply)"></span>Without HSP-029</span></div>
       <p class="compute" id="path-compute"></p></div>
     <h3>What each scenario would mean for the wrapper's share of supply</h3>
@@ -556,7 +556,7 @@ function render(D) {
     fmt(H.protocol_cap_pct_latest, 2) + "% on protocol v" + H.protocol_version_latest + "), so the ramp's start will be observed, not assumed.";
   const S = D.scenarios || [];
   const mlab = S.map(r => "m" + r.month);
-  new Chart(document.getElementById("path"), {
+  new Chart(document.getElementById("issuepath"), {
     type: "line",
     data: {labels: mlab, datasets: [
       {label: "With HSP-029, ramp from month 3", data: S.map(r => r.mint_per_day), borderColor: css("--ink"), pointRadius: 0, borderWidth: 2.5, fill: false},
