@@ -12,6 +12,7 @@ from datetime import datetime, timedelta, timezone
 
 from .net import ROOT
 from .attribution import HUB, FEE_PAYER
+from . import model, signposts
 
 W = ROOT / "data" / "work"
 OUT = ROOT / "data" / "out"
@@ -259,7 +260,7 @@ def build_traces(attr, events, counts):
 def label(a, attr, counts):
     accts = {x["account"] for x in attr["accounts"]}
     if a == HUB:
-        return "custody hub (inferred: funds every basket account, receives every redemption)"
+        return "custody hub (inferred: funds every rule A account, receives every redemption)"
     if a == FEE_PAYER:
         return "fee payer (sends 0.15 NEAR for gas)"
     if a in accts:
@@ -274,11 +275,21 @@ def label(a, attr, counts):
     if n is not None and n >= EXCHANGE_STYLE_MIN_TXS and cp is not None and cp >= EXCHANGE_STYLE_MIN_CP:
         return (f"exchange-style wallet (heuristic: {n:,} transactions, {cp} distinct counterparties "
                 f"in its {c.get('sample')} most recent)")
+    if n is not None and n >= EXCHANGE_STYLE_MIN_TXS and cp is not None:
+        return (f"high-activity account ({n:,} transactions; counterparty test not met: {cp} distinct "
+                f"counterparties in its {c.get('sample')} most recent)")
     if n is not None and n >= EXCHANGE_STYLE_MIN_TXS:
-        return f"high-activity account ({n:,} transactions; counterparty test not met or not run)"
+        return f"high-activity account ({n:,} transactions; counterparty test not run)"
     if n is not None:
         return f"unlabelled account ({n:,} transactions)"
     return "unlabelled account"
+
+
+def _near_threshold(c):
+    """True if a wallet passes the exchange-style test by less than 5% on either threshold."""
+    if not isinstance(c, dict) or c.get("txs") is None or c.get("counterparties") is None:
+        return False
+    return c["txs"] < EXCHANGE_STYLE_MIN_TXS * 1.05 or c["counterparties"] < EXCHANGE_STYLE_MIN_CP * 1.05
 
 
 def source_mix(attr, counts):
@@ -464,6 +475,12 @@ def build():
     inst = load("institutional.json", {})
     issuance = issuance_check(epochs)
     head = rnd(headline(rows, events, issuer, A, traces, C, issuance, refresh))
+    proto = load("protocol.json", {})
+    lt, scen = long_term(rows, events, head, C, issuance, proto)
+    head.update(rnd(lt))
+    sp = signposts.evaluate(rows)
+    head.update(rnd({"signposts_state": sp["state"], "signposts_windows_complete": sp["complete"],
+                     "signposts_first_window_end": sp["windows"][0]["end"]}))
     holders = institutional_rows(rows, inst, attributed, head)
     head.update(rnd(institutional_headline(inst)))
     mix = source_mix(A, counts)
@@ -484,6 +501,10 @@ def build():
                      "sources_largest_transfer": big["largest_transfer"] if big else None,
                      "sources_onward_wallets_also_delivered": back,
                      "sources_onward_wallets": len(onward)}))
+    # sensitivity of the exchange-style share to the heuristic's thresholds: wallets within 5% of a threshold
+    edge = [m for m in mix if m["exchange_style"] and _near_threshold(counts.get(m["wallet"]))]
+    head.update(rnd({"sources_exchange_style_low_pct": 100 * (ex - sum(m["near"] for m in edge)) / tot if tot else None,
+                     "sources_edge_wallets": len(edge), "sources_edge_near": sum(m["near"] for m in edge)}))
     rows, events, traces, ledger, issuance = rnd(rows), rnd(events), rnd(traces), rnd(ledger), rnd(issuance)
     OUT.mkdir(parents=True, exist_ok=True)
     write_csv(OUT / "daily.csv", rows)
@@ -495,13 +516,122 @@ def build():
     write_csv(OUT / "issuance_check.csv", issuance)
     write_csv(OUT / "institutional_holders.csv", rnd(holders))
     write_csv(OUT / "source_mix.csv", rnd(mix))
+    write_csv(OUT / "scenarios.csv", rnd(scen))
+    (OUT / "signposts.json").write_text(json.dumps(rnd(sp), indent=1, sort_keys=True))
     (OUT / "traces.json").write_text(json.dumps(traces, indent=1, sort_keys=True))
     (OUT / "headline.json").write_text(json.dumps(head, indent=1, sort_keys=True))
     (OUT / "site_data.json").write_text(json.dumps({"daily": rows, "events": events, "traces": traces,
                                                     "headline": head, "issuer": list(issuer.values()),
+                                                    "scenarios": rnd(scen), "signposts": rnd(sp),
                                                     "accounts": A["accounts"], "institutional": rnd(holders)},
                                                    sort_keys=True))
     return rows, head
+
+
+# ---------------------------------------------------------------- long-term figures (THESIS.md, LONG_TERM_PLAN.md)
+ONE_HOP = "9a00031933695207a60a3af95cfaaadcea863812ecbc30400c109417dadf21b3"   # funded by a rule A account
+HSP029_MONTHS = (0, 6, 12, 18, 24)
+
+
+def long_term(rows, events, h, C, issuance, proto):
+    """Absorption ratios, the HSP-029 path, staking context, basket-multiple check, one-hop sensitivity and the
+    36-month scenario table. Absorption ratio = NRR net custody flow / NEAR minted, same window."""
+    base = next(r for r in rows if r["date"] == h["window_start"])
+    win = [r for r in rows if r["date"] > base["date"]]
+    post = [r for r in rows if r["date"] > h["nrr_peak_date"]]
+    last30 = rows[-30:]
+    net = lambda rr: sum((r["creations"] or 0) - (r["redemptions"] or 0) for r in rr)
+    mint = lambda rr: sum(r["gross_issuance"] or 0 for r in rr)
+    bb = lambda rr: sum(r["buyback_fund_change"] or 0 for r in rr)
+    o = {}
+    for k, rr in (("launch", win), ("since_peak", post), ("last30", last30)):
+        o[f"absorption_{k}"] = net(rr) / mint(rr) if mint(rr) else None
+        o[f"buyback_ratio_{k}"] = bb(rr) / mint(rr) if mint(rr) else None
+        o[f"mint_{k}"] = mint(rr)
+    # rolling 30-row absorption at every row with 30 rows behind it (for the dashboard and the signpost history)
+    roll = []
+    for i in range(29, len(rows)):
+        rr = rows[i - 29:i + 1]
+        if rr[0]["date"] > base["date"] and mint(rr):
+            roll.append((rows[i]["date"], net(rr) / mint(rr)))
+    o["absorption_rolling_max"] = max(v for _, v in roll) if roll else None
+    o["absorption_rolling_max_date"] = max(roll, key=lambda x: x[1])[0] if roll else None
+    # staking outside the wrapper: the larger mover (bounds the claim; "float" is not what we measure)
+    d_other, d_nrr = [], []
+    prev = base
+    for r in win:
+        if None not in (r["total_staked"], r["l1_staked"], prev["total_staked"], prev["l1_staked"]):
+            d_other.append((r["total_staked"] - r["l1_staked"]) - (prev["total_staked"] - prev["l1_staked"]))
+            d_nrr.append(r["l1_staked"] - prev["l1_staked"])
+        prev = r
+    o.update({"other_stake_abs_daily_mean": statistics.mean(abs(x) for x in d_other),
+              "other_stake_abs_daily_median": statistics.median(abs(x) for x in d_other),
+              "nrr_stake_abs_daily_mean": statistics.mean(abs(x) for x in d_nrr),
+              "other_stake_bigger_days": sum(abs(a) > abs(b) for a, b in zip(d_other, d_nrr)),
+              "other_stake_days": len(d_other),
+              "other_stake_net_change": sum(d_other), "other_stake_last30_change": sum(d_other[-30:]),
+              "nrr_stake_last30_change": sum(d_nrr[-30:]),
+              "total_staked_latest": rows[-1]["total_staked"],
+              "staked_pct_of_supply": 100 * rows[-1]["total_staked"] / rows[-1]["total_supply"]})
+    # basket multiples: events that are not whole 10,000-share baskets are operational, not investor creations
+    b = h["basket_near"]
+    def odd(x):
+        k = round(x / b)
+        return k == 0 or abs(x / b - k) > 0.02 * k
+    for typ, key in (("creation_stake", "creations"), ("redemption_withdraw", "redemptions")):
+        xs = [e["near"] for e in events if e["type"] == typ and e.get("near") is not None]
+        bad = [x for x in xs if odd(x)]
+        o[f"{key}_non_basket_count"] = len(bad)
+        o[f"{key}_non_basket_near"] = sum(bad)
+    # one-hop sensitivity: the account is outside rule A; we show what adding it would do, never add it
+    oh = {d: (x["pool_accounts"].get(ONE_HOP) or [None])[0] for d, x in C["days"].items()}
+    gaps = []
+    for r in rows:
+        if r["issuer_date"] and oh.get(r["date"]) is not None:
+            gaps.append(100 * (r["l1_staked"] + oh[r["date"]] - r["issuer_near_in_trust"]) / r["issuer_near_in_trust"])
+    o.update({"one_hop_staked_latest": oh.get(rows[-1]["date"]), "one_hop_first_staked": oh.get("2026-09-29"),
+              "one_hop_gap_min_pct": min(gaps) if gaps else None, "one_hop_gap_max_pct": max(gaps) if gaps else None})
+    # protocol inflation setting, read daily: has HSP-029's ramp started?
+    seen = {d: v for d, v in proto.items() if v}
+    caps = sorted({v["max_inflation_pct"] for v in seen.values()})
+    started = sorted(d for d, v in seen.items() if v["max_inflation_pct"] < model.CAP_NOW)
+    o.update({"protocol_cap_pct_latest": seen[max(seen)]["max_inflation_pct"] if seen else None,
+              "protocol_version_latest": seen[max(seen)]["protocol_version"] if seen else None,
+              "protocol_versions_seen": len({v["protocol_version"] for v in seen.values()}),
+              "protocol_days_read": len(seen), "hsp029_ramp_started": bool(started),
+              "hsp029_ramp_first_day": started[0] if started else None, "protocol_caps_seen": len(caps)})
+    # HSP-029 path at the proposal's own checkpoints, on today's supply
+    ipd = h["issuance_per_day"]
+    for m in HSP029_MONTHS:
+        cap = model.cap_pct(m, 0)
+        o[f"hsp029_m{m}_cap_pct"] = cap
+        o[f"hsp029_m{m}_per_day"] = ipd * cap / model.CAP_NOW
+        o[f"hsp029_m{m}_baskets_per_day"] = ipd * cap / model.CAP_NOW / b
+    # 36-month mechanical scenarios; earliest ramp start = 3 months after baseline (the ~90-day grace period)
+    ratios = sorted(i["ratio"] for i in issuance)
+    eff = statistics.median(ratios)
+    burn = h["burn_residual_total"] / h["gross_issuance_total"] if h["gross_issuance_total"] else 0.0
+    scen = model.project(rows[-1]["total_supply"], rows[-1]["l1_staked"], eff, burn,
+                         h["reward_rate_annualised_pct"], b, ramp_start=3)
+    late = model.project(rows[-1]["total_supply"], rows[-1]["l1_staked"], eff, burn,
+                         h["reward_rate_annualised_pct"], b, ramp_start=9)
+    for row in scen:
+        row["cap_pct_if_ramp_starts_month_9"] = late[row["month"]]["cap_pct"]
+    for m in (12, 24, 36):
+        s = scen[m]
+        for k in model.ABSORPTION:
+            o[f"scen_m{m}_{k}_share_pct"] = s[f"wrapper_share_{k}_pct"]
+            o[f"scen_m{m}_{k}_near"] = s[f"wrapper_{k}"]
+        o[f"scen_m{m}_cap_pct"] = s["cap_pct"]
+        o[f"scen_m{m}_mint_per_day"] = s["mint_per_day"]
+    o["scen_avoided_issuance_m27"] = scen[27]["cumulative_mint_without_hsp029"] - scen[27]["cumulative_mint"]
+    o["scen_avoided_issuance_m36"] = scen[36]["cumulative_mint_without_hsp029"] - scen[36]["cumulative_mint"]
+    o["scen_cum_mint_m36"] = scen[36]["cumulative_mint"]
+    o["scen_bear_empty_month"] = next((r["month"] for r in scen if r["wrapper_bear"] == 0), None)
+    o["scen_ramp_start_month"] = 3
+    o["scen_mint_efficiency_pct"] = 100 * eff
+    o["scen_burn_share_pct"] = 100 * burn
+    return o, scen
 
 
 def institutional_rows(rows, inst, attributed, head):

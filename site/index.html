@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NEAR Flow Intelligence — NRR net custody flow vs NEAR supply</title>
+<title>NEAR Flow Intelligence — do regulated wrappers absorb more NEAR than the protocol mints?</title>
 <meta name="description" content="Independent reconstruction of Bitwise NRR staking custody, signed net flows, NEAR issuance, buyback-fund balance changes and dated issuer reconciliation.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
@@ -74,6 +74,17 @@ ol.path li::before{content:counter(hop);width:32px;height:32px;border-radius:50%
 .conds td:nth-child(2),.conds th:nth-child(2){text-align:left;white-space:normal}
 .longterm{background:#fff;border:1px solid #dbe1e8;border-left:4px solid var(--ink);border-radius:8px;padding:14px 18px;margin:14px 0 4px;font-size:16px;line-height:1.5;max-width:860px}
 .longterm strong{color:var(--ink)}
+.ratio-big{font-family:var(--serif);font-weight:600}
+.windows{width:100%;border-collapse:collapse;font-size:14px}
+.windows th,.windows td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.windows th:first-child,.windows td:first-child,.windows th:nth-child(2),.windows td:nth-child(2){text-align:left}
+.state{display:inline-block;font-weight:700;letter-spacing:.01em;padding:3px 10px;border-radius:4px;border:2px solid var(--ink)}
+.rulegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:6px;background:var(--panel);margin:14px 0}
+.rulegrid div{padding:14px 16px;border-right:1px solid var(--line)}
+.rulegrid div:last-child{border-right:0}
+.rulegrid b{display:block;font-family:var(--serif);font-size:19px;margin-bottom:4px}
+.rulegrid span{color:var(--slate);font-size:14px}
+@media (max-width:760px){.rulegrid{grid-template-columns:1fr}.rulegrid div{border-right:0;border-bottom:1px solid var(--line)}}
 .metrics table{font-size:15px;min-width:0}
 .metrics td .conf{display:block;margin:2px 0 0;width:max-content;margin-left:auto}
 .metrics td:first-child,.metrics th:first-child{text-align:left;white-space:normal}
@@ -122,7 +133,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
 <body>
 <header class="top wrap">
   <div class="brand"><strong>NEAR Flow Intelligence</strong> — NRR custody flows, NEAR supply and issuer reconciliation</div>
-  <h1>One redeemable ETF can move NEAR's float in both directions.</h1>
+  <h1>Do regulated wrappers absorb more NEAR than the protocol mints?</h1>
   <p class="lede" id="lede">We reconstruct NRR's observed staking custody from NEAR transactions, reconcile it with dated issuer snapshots, and measure its signed net flow against protocol issuance. Custody movement is not proof of market buying or selling.</p>
   <div class="longterm" id="longterm"></div>
 </header>
@@ -139,6 +150,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
         <span><span class="sw" style="background:transparent;border-top:2px dashed var(--in);height:0"></span>Plus NEAR unstaked for redemptions and liquid NEAR in NRR's accounts, until it leaves</span>
         <span><span class="sw" style="background:var(--issuer);border-radius:50%"></span>Bitwise's published "NEAR in Trust", at the end of its as-of date</span>
       </div>
+      <p class="compute">Source: data/out/daily.csv, column l1_staked: the staked balance (pool get_accounts) of the 73 Rule A accounts at the first block after 00:00 UTC each day. Dots: data/issuer_snapshots.csv, compared with the next day's 00:00 row. Built by nfi/build.py.</p>
       <p class="context" id="issuer-note"></p>
     </div>
   </div>
@@ -150,7 +162,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
     <h3>Product and holder evidence status</h3>
     <div class="holders" id="holders"></div>
     <p class="context" id="holders-note"></p>
-    <p class="context">Verdict: <strong>large position established; persistent incremental buying not proven.</strong> The full thesis, with the evidence against it and a pre-registered prediction that can prove it wrong, is in <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Research, not financial advice.</p>
+    <p class="context">Verdict: <strong>large position established; persistent incremental buying not proven.</strong> The full thesis, with the evidence against it, two pre-registered predictions and frozen signposts that can prove it wrong, is in <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Research, not financial advice.</p>
   </section>
 
   <section id="compare">
@@ -165,6 +177,30 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
       <p class="compute" id="flow-compute"></p>
     </div>
     <div class="metrics" id="metrics"></div>
+  </section>
+
+  <section id="longrun">
+    <h2>The long-term test, 2026 to 2029</h2>
+    <p class="sub">One number decides it: the <strong>absorption ratio</strong>, wrapper net custody flow divided by NEAR minted in the same 30-day window. +1 means the wrapper took in all new NEAR; −1 means it released as much again. Rules were frozen on 14 Nov 2026, before the first window (<a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/SIGNPOSTS.md">SIGNPOSTS.md</a>, SHA-256 and timestamp proof).</p>
+    <p id="sp-state"></p>
+    <div class="rulegrid">
+      <div><b>Bullish</b><span>Absorption ≥ +1 in two consecutive windows</span></div>
+      <div><b>Bearish</b><span>Absorption ≤ −1 in two consecutive windows</span></div>
+      <div><b>Structurally wrong</b><span>|Absorption| below the buyback ratio in two consecutive windows, or an issuer figure more than 0.5% off the frozen rule</span></div>
+    </div>
+    <div class="panel"><div class="tablewrap"><table class="windows"><thead><tr><th>Window</th><th>Activity covered (UTC)</th><th>Status</th><th>Absorption</th><th>Buyback ratio</th></tr></thead><tbody id="sp-rows"></tbody></table></div>
+      <p class="compute" id="sp-base"></p></div>
+    <h3>Issuance is scheduled to fall, not falling</h3>
+    <p class="sub" id="hsp-lede"></p>
+    <div class="panel"><div class="chart short"><canvas id="path" role="img" aria-label="NEAR minted per day over 36 months, with and without HSP-029, and the break-even wrapper flow"></canvas></div>
+      <div class="legend"><span><span class="sw" style="background:var(--ink)"></span>Mint per day with HSP-029, ramp from month 3 (earliest)</span><span><span class="sw" style="background:transparent;border-top:2px dashed var(--ink);height:0"></span>Ramp from month 9</span><span><span class="sw" style="background:var(--supply)"></span>Without HSP-029</span></div>
+      <p class="compute" id="path-compute"></p></div>
+    <h3>What each scenario would mean for the wrapper's share of supply</h3>
+    <div class="panel"><div class="chart short"><canvas id="scen" role="img" aria-label="Wrapper-held share of NEAR supply over 36 months at absorption ratios of +1, 0 and -1"></canvas></div>
+      <div class="legend"><span><span class="sw" style="background:var(--in)"></span>Bull: absorption +1</span><span><span class="sw" style="background:var(--supply)"></span>Base: 0</span><span><span class="sw" style="background:var(--out)"></span>Bear: −1</span></div>
+      <p class="compute" id="scen-compute"></p></div>
+    <p class="context" id="stake-context"></p>
+    <p class="context">Test calendar, indicators, review routine and build order: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/LONG_TERM_PLAN.md">LONG_TERM_PLAN.md</a>.</p>
   </section>
 
   <section id="trace">
@@ -203,7 +239,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
         <ul>
           <li>The NEAR staked by Rule A accounts attributed to NRR, every day.</li>
           <li>Every creation and redemption transaction, with amounts.</li>
-          <li>Where redeemed NEAR went next, hop by hop.</li>
+          <li>Each step a redeemed amount took, as far as the custody hub.</li>
           <li>NEAR's total supply, the NEAR minted each epoch, and total stake.</li>
           <li>The buyback fund's balance, including its wNEAR inside NEAR Intents.</li>
         </ul>
@@ -212,7 +248,9 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
         <h3>Not shown by the chain</h3>
         <ul>
           <li>Whether NEAR moving into custody was bought on the market, or delivered from existing holdings.</li>
+          <li>Where NEAR went after the custody hub: the hub pools balances, so those links are at best probable.</li>
           <li>Whether redeemed NEAR was sold. Trades inside an exchange are not on-chain.</li>
+          <li>NEAR's total float. Ordinary staking outside the wrapper moves several times more NEAR a day.</li>
           <li>Legal ownership of the accounts. Our attribution is rule-based and checked against Bitwise's figures.</li>
           <li>Executed buyback purchases or burns. We show the buyback fund's balance only.</li>
           <li>Other products are not fully reconstructed; SVRN is shown only as a partial one-pool observation.</li>
@@ -229,7 +267,7 @@ cd near-flow-intelligence
 make rebuild # raw cached responses -> work datasets -> outputs and site
 make test    # offline invariant and reproducibility checks
 make serve   # this page on http://127.0.0.1:8000</pre>
-    <p class="note">Method, attribution rules and formulas: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/METHOD.md">METHOD.md</a>. Investment thesis: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. </p>
+    <p class="note">Method, attribution rules and formulas: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/METHOD.md">METHOD.md</a>. Investment thesis: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/THESIS.md">THESIS.md</a>. Long-term plan: <a href="https://github.com/Gosho1992/near-flow-intelligence/blob/main/LONG_TERM_PLAN.md">LONG_TERM_PLAN.md</a>.</p>
     <h3>Download the evidence</h3>
     <div class="downloads">
       <a href="data/daily.csv" download>daily.csv: every day, every layer</a>
@@ -238,6 +276,9 @@ make serve   # this page on http://127.0.0.1:8000</pre>
       <a href="data/traces.json" download>traces.json: redemption and creation paths</a>
       <a href="data/buyback_ledger.csv" download>buyback_ledger.csv: buyback fund by account and token</a>
       <a href="data/issuance_check.csv" download>issuance_check.csv: minting vs the protocol formula</a>
+      <a href="data/signposts.json" download>signposts.json: every 30-day window against the frozen rules</a>
+      <a href="data/scenarios.csv" download>scenarios.csv: 36-month issuance path and scenarios</a>
+      <a href="data/source_mix.csv" download>source_mix.csv: who delivered NRR's NEAR</a>
     </div>
   </section>
 </main>
@@ -301,11 +342,12 @@ function render(D) {
   H.issuer_value_date ??= issuerLatest.date;
   const signed = v => v == null ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v));
   const baskets = v => v == null ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v), 1);
+  const s2 = v => v == null ? "—" : (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v), 2);
   document.getElementById("facts").innerHTML =
-    '<div class="fact"><div class="v">' + baskets(H.launch_net_baskets_per_day) + '</div><div class="k">' + signed(H.launch_net_flow_per_day) + ' NEAR/day average since launch</div></div>' +
-    '<div class="fact"><div class="v">' + baskets(H.since_peak_net_baskets_per_day) + '</div><div class="k">' + signed(H.since_peak_net_flow_per_day) + ' NEAR/day average since 28 Oct peak</div></div>' +
-    '<div class="fact"><div class="v">' + fmt(H.issuance_baskets_per_day, 1) + '</div><div class="k">basket-equivalents of issuance per day; ' + fmt(H.issuance_hsp029_baskets_per_day, 1) + ' at proposed 1.6% target</div></div>' +
-    '<div class="fact"><div class="v">' + M(H.nrr_holdings_latest) + '</div><div class="k">NEAR staked by NRR on ' + H.data_through + '; ' + fmt(H.change_since_peak_pct, 1) + '% from peak</div></div>';
+    '<div class="fact"><div class="v">' + s2(H.absorption_launch) + '</div><div class="k">absorption ratio since launch: NRR took in ' + fmt(H.absorption_launch, 1) + '× the NEAR minted (' + H.days + ' days)</div></div>' +
+    '<div class="fact"><div class="v">' + s2(H.absorption_since_peak) + '</div><div class="k">since the 28 Oct peak: it released ' + fmt(Math.abs(H.absorption_since_peak), 1) + '× the NEAR minted (' + H.since_peak_net_flow_days + ' days)</div></div>' +
+    '<div class="fact"><div class="v">' + s2(H.absorption_last30) + '</div><div class="k">latest 30 days; buyback fund ' + fmt(H.buyback_ratio_last30, 2) + ' of mint. Bullish needs ≥ +1 twice</div></div>' +
+    '<div class="fact"><div class="v">' + M(H.nrr_holdings_latest) + '</div><div class="k">NEAR staked by NRR on ' + H.data_through + '; ' + fmt(H.change_since_peak_pct, 1) + '% from peak; ' + fmt(H.nrr_share_total_pct_latest, 2) + '% of supply</div></div>';
 
   document.getElementById("lede").innerHTML =
     "Since launch, NRR's signed net custody flow averaged <strong>" + signed(H.launch_net_flow_per_day) +
@@ -348,7 +390,7 @@ function render(D) {
       bbStatus, H.last30_buyback_fund_change >= 0 ? "ok" : "weak")
   ].join("");
   const sb = v => (v >= 0 ? "+" : "−") + fmt(Math.abs(v), 1);
-  document.getElementById("longterm").innerHTML = `<strong>Long-term thesis (1–3 years):</strong> once HSP-029 lowers inflation to 1.6%, new supply is about ${fmt(H.issuance_hsp029_baskets_per_day, 1)} baskets a day and the buyback fund adds ${fmt(H.buyback_baskets_per_day, 1)}. NRR has run at ${sb(H.launch_net_baskets_per_day)} and ${sb(H.since_peak_net_baskets_per_day)}. So NEAR's float will be set more by regulated-product net flow than by issuance or buybacks. <strong>Position today: not yet</strong>, ${sb(H.last30_net_baskets_per_day)} baskets a day over 30 days. Bullish if it stays above +${fmt(H.issuance_hsp029_baskets_per_day, 1)} for two 30-day windows; bearish if outflows exceed issuance (${fmt(H.issuance_baskets_per_day, 1)} a day) for two.`;
+  document.getElementById("longterm").innerHTML = `<strong>Long-term thesis (1–3 years):</strong> NEAR's supply-side case depends on whether redeemable regulated wrappers take in more NEAR than the protocol mints. NRR's absorption ratio was ${s2(H.absorption_launch)} over its first ${H.days} days, ${s2(H.absorption_since_peak)} since its peak and ${s2(H.absorption_last30)} over the latest 30. HSP-029 would cut the issuance cap from 2.5% to 1.6% along a 24-month ramp after a ~90-day grace period, so the same flow becomes a growing multiple of new supply. This is not a claim about NEAR's total float: ordinary staking moved about ${M(H.other_stake_abs_daily_mean)} NEAR a day. <strong>Position today: the bullish condition is not met.</strong> Signposts: ${H.signposts_state.toLowerCase()}; the first window closes on ${H.signposts_first_window_end}.`;
   document.getElementById("issuer-note").textContent =
     "The issuer dots are dated Bitwise snapshots, not daily confirmations. The archived set contains " +
     H.issuer_gaps_count + " dates; intervening holdings are reconstructed from the chain. The comparison rule was fixed on 13 Nov after the first three; " +
@@ -487,6 +529,62 @@ function render(D) {
   }
   updateFlows();
 
+  // Long-term test: frozen signposts, HSP-029 path, mechanical scenarios
+  const SP = D.signposts || {windows: []};
+  const dayBefore = d => { const t = new Date(d + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() - 1); return t.toISOString().slice(0, 10); };
+  const nice = d => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", {day: "numeric", month: "short", year: "numeric", timeZone: "UTC"});
+  document.getElementById("sp-state").innerHTML = 'State now: <span class="state">' + (SP.state || "—") + '</span> &nbsp;' +
+    SP.complete + ' of 36 windows complete. Rules need two consecutive complete windows.';
+  document.getElementById("sp-rows").innerHTML = SP.windows.slice(0, 12).map(w =>
+    "<tr><td>" + w.window + "</td><td>" + nice(dayBefore(w.start)) + " – " + nice(dayBefore(w.end)) + "</td><td>" +
+    (w.status === "PENDING" ? "pending" : w.status === "VOID" ? "void (too many missing days)" :
+      (w.bull ? "≥ +1" : w.bear ? "≤ −1" : w.wrong ? "below buyback ratio" : "between −1 and +1")) + "</td><td>" +
+    (w.absorption == null ? "—" : s2(w.absorption)) + "</td><td>" + (w.buyback_ratio == null ? "—" : fmt(w.buyback_ratio, 2)) + "</td></tr>").join("") +
+    '<tr><td colspan="5" style="text-align:left;color:var(--slate)">… windows 13 to 36, every 30 days, through ' + nice(dayBefore(SP.windows[SP.windows.length - 1].end)) + '</td></tr>';
+  document.getElementById("sp-base").textContent = "Baseline, not signpost windows: absorption " + s2(H.absorption_launch) +
+    " since launch, " + s2(H.absorption_since_peak) + " since the peak, " + s2(H.absorption_last30) + " over the latest 30 days (buyback ratio " +
+    fmt(H.buyback_ratio_last30, 3) + ", so that reading would sit marginally in the structurally-wrong zone). The rolling 30-day ratio peaked at " +
+    s2(H.absorption_rolling_max) + " on " + H.absorption_rolling_max_date + ". Source: data/out/signposts.json, nfi/signposts.py.";
+  document.getElementById("hsp-lede").textContent = "HSP-029 passed its vote on 2 Nov 2026. Security Council ratification, a protocol upgrade that validators adopt, and a ~90-day grace period come first. Then the cap falls about 3.75 basis points a month for 24 months: " +
+    fmt(H.hsp029_m0_baskets_per_day, 2) + " baskets of new NEAR a day today, " + fmt(H.hsp029_m12_baskets_per_day, 2) + " at ramp month 12, " +
+    fmt(H.hsp029_m24_baskets_per_day, 2) + " at month 24 (February 2029 at the earliest). We read the cap from the chain every day (" +
+    fmt(H.protocol_cap_pct_latest, 2) + "% on protocol v" + H.protocol_version_latest + "), so the ramp's start will be observed, not assumed.";
+  const S = D.scenarios || [];
+  const mlab = S.map(r => "m" + r.month);
+  new Chart(document.getElementById("path"), {
+    type: "line",
+    data: {labels: mlab, datasets: [
+      {label: "With HSP-029, ramp from month 3", data: S.map(r => r.mint_per_day), borderColor: css("--ink"), pointRadius: 0, borderWidth: 2.5, fill: false},
+      {label: "Ramp from month 9", data: S.map(r => r.mint_per_day * r.cap_pct_if_ramp_starts_month_9 / r.cap_pct), borderColor: css("--ink"), borderDash: [5, 4], pointRadius: 0, borderWidth: 1.5, fill: false},
+      {label: "Without HSP-029", data: S.map(r => r.mint_per_day_without_hsp029), borderColor: css("--supply"), pointRadius: 0, borderWidth: 2, fill: false}
+    ]},
+    options: {maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
+      scales: {y: {ticks: {callback: v => fmt(v / 1000) + "k"}, grid: {color: "#eef1f4"}, title: {display: true, text: "NEAR minted per day"}},
+        x: {grid: {display: false}, ticks: {maxTicksLimit: 13}, title: {display: true, text: "months after 13 Nov 2026"}}},
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => c.dataset.label + ": " + fmt(c.raw) + " NEAR/day (" + fmt(c.raw / H.basket_near, 2) + " baskets)"}}}}
+  });
+  document.getElementById("path-compute").textContent = "Mint = supply × cap × measured mint efficiency (" + fmt(H.scen_mint_efficiency_pct, 2) +
+    "%); supply grows by mint less the measured burn share. Each line is also the break-even: the wrapper net flow per day that would give an absorption ratio of +1. Source: data/out/scenarios.csv, nfi/model.py. The model's issuance avoided by month 27 (" +
+    M(H.scen_avoided_issuance_m27) + " NEAR) matches the proposal's 11.8M over two years.";
+  new Chart(document.getElementById("scen"), {
+    type: "line",
+    data: {labels: mlab, datasets: [
+      {label: "Bull (+1)", data: S.map(r => r.wrapper_share_bull_pct), borderColor: css("--in"), pointRadius: 0, borderWidth: 2.5, fill: false},
+      {label: "Base (0)", data: S.map(r => r.wrapper_share_base_pct), borderColor: css("--supply"), pointRadius: 0, borderWidth: 2, fill: false},
+      {label: "Bear (−1)", data: S.map(r => r.wrapper_share_bear_pct), borderColor: css("--out"), pointRadius: 0, borderWidth: 2, fill: false}
+    ]},
+    options: {maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
+      scales: {y: {min: 0, ticks: {callback: v => v + "%"}, grid: {color: "#eef1f4"}, title: {display: true, text: "wrapper-held share of supply"}},
+        x: {grid: {display: false}, ticks: {maxTicksLimit: 13}, title: {display: true, text: "months after 13 Nov 2026"}}},
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: c => c.dataset.label + ": " + fmt(c.raw, 2) + "% of supply"}}}}
+  });
+  document.getElementById("scen-compute").textContent = "Mechanical consequences of holding one absorption ratio for 36 months, not forecasts; no probabilities are given. Bull: " +
+    fmt(H.scen_m36_bull_share_pct, 2) + "% of supply by month 36. Base: " + fmt(H.scen_m36_base_share_pct, 2) + "% (rewards only). Bear: today's position gone by month " +
+    H.scen_bear_empty_month + ". The bear case is the strongest competing reading: a product that launched and faded.";
+  document.getElementById("stake-context").textContent = "Boundary: stake held by everyone other than NRR moved " + M(H.other_stake_abs_daily_mean) +
+    " NEAR on an average day, against " + M(H.nrr_stake_abs_daily_mean) + " for NRR; it was the larger mover on " + H.other_stake_bigger_days + " of " +
+    H.other_stake_days + " days. The thesis is about NEAR held in redeemable wrappers, which leaves only by redemption, not about NEAR's total float.";
+
   const tr_ = (k, v) => "<tr><td>" + k + "</td><td>" + v + "</td></tr>";
   document.getElementById("metrics").innerHTML =
     '<div class="tablewrap"><table><thead><tr><th>Signed NRR custody flow</th><th>Reading</th></tr></thead><tbody>' +
@@ -498,7 +596,7 @@ function render(D) {
     '</tbody></table></div>' +
     '<div class="tablewrap"><table><thead><tr><th>Supply and balance context</th><th>Reading</th></tr></thead><tbody>' +
       tr_("Issuance average per day", fmt(H.issuance_per_day) + " NEAR · " + fmt(H.issuance_baskets_per_day, 1) + " baskets") +
-      tr_("Proposed 1.6% target scenario", fmt(H.issuance_hsp029_target_per_day) + " NEAR/day · " + fmt(H.issuance_hsp029_baskets_per_day, 1) + " baskets") +
+      tr_("HSP-029 endpoint (ramp month 24, Feb 2029 at the earliest)", fmt(H.issuance_hsp029_target_per_day) + " NEAR/day · " + fmt(H.issuance_hsp029_baskets_per_day, 1) + " baskets") +
       tr_("Buyback-fund net balance change, average/day", fmt(H.buyback_net_change_per_day) + " NEAR") +
       tr_("Buyback-fund net balance change, total", fmt(H.buyback_fund_change_total) + " NEAR") +
       tr_("Executed buyback purchases", "not measured") +

@@ -150,7 +150,7 @@ class T(unittest.TestCase):
     def test_docs_numbers_from_data(self):
         sys.path.insert(0, str(ROOT))
         from nfi.docs import render
-        for name in ("README.md", "THESIS.md", "METHOD.md"):
+        for name in ("README.md", "THESIS.md", "METHOD.md", "LONG_TERM_PLAN.md"):
             text = (ROOT / name).read_text()
             self.assertEqual(text, render(text, self.head), f"{name} has stale numbers: run make docs")
 

@@ -37,7 +37,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "FfscLX4SMjVwGD9RBtXvP7mQpkoaVeBdzHmzhC4Ejfyb",
     "height": 219858260,
     "near": 1827321.363274,
@@ -102,7 +102,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "BukRuebjJUoL2vh7dWrADCZZCzQY7HyCUEjhFnxXKWaQ",
     "height": 218107826,
     "near": 1304748.878838,
@@ -167,13 +167,13 @@
     "status": "observed",
     "time": "2026-10-29 12:37 UTC",
     "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1793277422899410466,
     "type": "return_to_hub"
    },
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "HGoVh1YXgwjXYHm9bbtvGts78iVhT9gZKLUrDDpP1YLo",
     "height": 222146377,
     "near": 1045152.0,
@@ -226,13 +226,13 @@
     "status": "observed",
     "time": "2026-11-04 21:15 UTC",
     "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1793826902740959040,
     "type": "return_to_hub"
    },
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "combined_with": [
      "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7"
     ],
@@ -302,7 +302,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "AsuVvDgcYh1jmhxB2X9DiVFn5F4NsStVrvBMpsJEtuaY",
     "height": 219956848,
     "near": 783358.465202,
@@ -367,7 +367,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "2yMsecRcouGW49jn9MQ8WTRqM7gi5s7TcS14Lai1PmMT",
     "height": 218105292,
     "near": 782849.26361,
@@ -432,7 +432,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "8gWLH6qS3XkYDKTLnrmqNki2XhT9aM3winbFAUgNG5sY",
     "height": 220829959,
     "near": 1096854.530475,
@@ -497,7 +497,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "JDZ4rQpYRe9Adoepsym6oGKQmwFqTSUQJnamQUDt4ySR",
     "height": 217981635,
     "near": 521909.947808,
@@ -562,7 +562,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "DmGoU354B1eWbqpp5t4Pxy3GtnRQDuY7BfN1KiR2Tvxf",
     "height": 217980101,
     "near": 521909.947808,
@@ -627,7 +627,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "BrXeM1qKyWz5kTXYgkhw3WjEMaaBKNfr1tMAu3jLNzSq",
     "height": 217982642,
     "near": 521909.947808,
@@ -692,7 +692,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "oZKqAZXG55fG4g51NQ9c2juh92Bu773gRtbJmBwNtSG",
     "height": 217984979,
     "near": 521909.947808,
@@ -757,7 +757,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "5FWKsvcPFW9RNDyRmbCjrD8AAne2vycgT9UkTv61Vdar",
     "height": 217984575,
     "near": 521909.947808,
@@ -822,7 +822,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "EovhYA2tu7kc7faDco94vMARD1ZUkjiFFbvKRmM3pXvW",
     "height": 217984168,
     "near": 521909.947808,
@@ -887,7 +887,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "8eNxoH3sha9ZkN3sTqqiQ17M8rbhPpUpd6JTSk4XfYg5",
     "height": 217982036,
     "near": 521909.947808,
@@ -952,7 +952,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "Cscd5J2ZHyktS3VZ1vzwweKPyPrRXaznLjERKX5ykqxD",
     "height": 217980611,
     "near": 521909.947808,
@@ -1017,7 +1017,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "6tPmPZopBoV8ptTmkLVmpNFZUuwHSdQXKkYo1n4VqkjL",
     "height": 218092105,
     "near": 521899.509073,
@@ -1082,7 +1082,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "EgXPCksBuqnD8uqcqc6K6Z21MVxJPdP3WXpySthKM8bU",
     "height": 218238871,
     "near": 521889.477286,
@@ -1179,7 +1179,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "59KAGM5QsAfAWtyxXKtnSwpaJXxeSUFcArpwyBuyik3B",
     "height": 220678322,
     "near": 261146.469935,
@@ -1244,7 +1244,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3qTXawX8T86jz8BuBDRgXBz8NVPuA8rwXgVo4VzcN232",
     "height": 220677316,
     "near": 261146.399165,
@@ -1309,7 +1309,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "7Y141CpTNqoKdLKr1Lbif6M8BeMpcVyq7vXRVtt3xEkg",
     "height": 219251108,
     "near": 261042.870356,
@@ -1374,7 +1374,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "9YU5MLsR2BJh6CNy9CV9pcojXNWQkkk5iUsRY6o6SqAY",
     "height": 219249355,
     "near": 261042.870356,
@@ -1439,7 +1439,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "Ee7Vjn9QceFBeZ9RNnz2Yb8hysYP9kmPC6DpTwmJgXFR",
     "height": 219250080,
     "near": 261042.870356,
@@ -1504,7 +1504,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3bbBLUNbzkGRC5NTkt4n65LjrAvZ4S3rWCbef68bTHqa",
     "height": 217985692,
     "near": 260954.973904,
@@ -1569,7 +1569,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "FMYyQbWiwuUfgibAcBAcxUshVzPNQARdLVeKM2yB6t4w",
     "height": 218234284,
     "near": 260944.644796,
@@ -1634,7 +1634,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "2MCrFJjXVKbQJCJe2ogTZ2cbTStnwiNDDUeZp1PGvjwq",
     "height": 218233263,
     "near": 260944.644796,
@@ -1699,7 +1699,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3jtwTpZFuj6ak3QurnMCyGz1o1DYCN1Y69S7tJvgF3VJ",
     "height": 218669283,
     "near": 260942.353122,
@@ -1777,13 +1777,13 @@
     "status": "observed",
     "time": "2026-11-09 14:27 UTC",
     "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1794234421414098837,
     "type": "return_to_hub"
    },
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "combined_with": [],
     "hash": "Fzuryt1enZuUwKx4eoQnijWci93DLZ5FNaneTNBv65gx",
     "height": 223786513,
@@ -1851,7 +1851,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "GkUm5844DABi2ENv6BDs3kSJSdraP8ndQBbFUdbxSTau",
     "height": 221717992,
     "near": 208989.809316,
@@ -1916,7 +1916,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "A6n5JPvfoFEC5Dt7hbKqHFgxKuUTJabvsGx4hbc4wARj",
     "height": 220258334,
     "near": 208908.173962,
@@ -1981,7 +1981,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "4KcvNHJHcPqppGAq8ove7iwbmFaNGPXkp8fbjwsACyHV",
     "height": 219115694,
     "near": 208820.652758,
@@ -2046,7 +2046,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "MqRPeS5GQFVuBLTqFJo8ax4J6YuXp5zrr5QVog9UEf2",
     "height": 219113233,
     "near": 208820.534043,
@@ -2111,7 +2111,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "BqF44vrYBH5e8zsmSuEt2DaoeDvRhGwsn9exU8MVnrgy",
     "height": 219101205,
     "near": 208820.534043,
@@ -2176,7 +2176,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "9cCEpP3B4zbTQEoetSdEktaES5XUuZYPUhMQR9j8Y1of",
     "height": 218230606,
     "near": 208755.715836,
@@ -2241,7 +2241,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "A7ZuF9q163vj1QtYNntyFbdCFfo9oCv9Cp3U84WaqYY8",
     "height": 218231115,
     "near": 208755.715836,
@@ -2306,13 +2306,13 @@
     "status": "observed",
     "time": "2026-11-04 21:11 UTC",
     "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1793826661396047682,
     "type": "return_to_hub"
    },
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "combined_with": [
      "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672"
     ],
@@ -2382,7 +2382,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "FKWzzHrBHuYbgbgiFLwmkbVtvUZv2nBD29nr8NGTrZbH",
     "height": 221119548,
     "near": 156730.863717,
@@ -2447,7 +2447,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "DgUxW9zDtnWx97V3auWkG2GtbusqzzzX55SFv26WguA9",
     "height": 217987740,
     "near": 156574.376918,
@@ -2512,7 +2512,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "HUrStWJXp2FrV86uqVxKdQztV37qbeiqPS7ynwvq3mQD",
     "height": 217977566,
     "near": 156572.984342,
@@ -2577,7 +2577,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "9n5usFJGwApiZQcisUZQw5A1WKGsCUyPEDqkoMwqXmin",
     "height": 217975417,
     "near": 156572.984342,
@@ -2642,7 +2642,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "ABWWvy2pvHgEhScPmtXNeiaWuknHAa5NLjJbfjuV9EEL",
     "height": 217979075,
     "near": 156572.984342,
@@ -2707,7 +2707,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "Fh4YpPvm5AqcT3mFFxmSxVAEDXSq5gcngUiWdzA8iJg2",
     "height": 217977050,
     "near": 156572.984342,
@@ -2772,7 +2772,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "6HxkEGeCRw8iRwG5wfNEpgEEjMMje92vkTofWuJyCv9P",
     "height": 217977962,
     "near": 156572.984342,
@@ -2869,7 +2869,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "AqwVuk7VWgikkJNk4VabLmicjFY5NmWaZHQoXimK7vSU",
     "height": 221261802,
     "near": 104496.070171,
@@ -2934,7 +2934,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "GpsjfYtcddHunjef1BNk6nxerLZfSYmGkBvDLZhfbbyj",
     "height": 219252025,
     "near": 104417.289683,
@@ -2999,7 +2999,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "2KRUh9aewzniDGhVZ8jjP5AKjc595ZFgGb2pFCencNgH",
     "height": 217970836,
     "near": 104381.989562,
@@ -3064,7 +3064,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "Z7HHjomRMLTgid5YqEXCxcNJgCPtf7kaVPg9327GBE3",
     "height": 217971243,
     "near": 104381.989562,
@@ -3129,7 +3129,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3RjdVtiQThmY75WDUpU24o5LfNo5Jv84yvQeGR6Bt5LJ",
     "height": 217970422,
     "near": 104381.989562,
@@ -3194,7 +3194,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3Hsh4TUwZeXbbyxi3nr2xCqs2A2iCnCJ7sWTSUKdH5YW",
     "height": 217973986,
     "near": 104381.989562,
@@ -3259,7 +3259,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "EvifKFZKpeRDq6xJSk9jVyxguibxCPAvFcN8aJroMYke",
     "height": 217973372,
     "near": 104381.989562,
@@ -3324,7 +3324,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3SWdejgWgiviqbYnZL65ehcaXVrYoMvtooXRCZrr3Ln8",
     "height": 217971948,
     "near": 104381.989562,
@@ -3389,7 +3389,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3XbNDxfxkbxvM7Bwrp7rrV3DAeJxRsC71BBiehcdvHje",
     "height": 217975012,
     "near": 104381.989562,
@@ -3454,7 +3454,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "9b1KTWEKHGZkv2j2zxVEFsBajw2eDJrGz3nhZSg6nZ99",
     "height": 217968795,
     "near": 104381.989562,
@@ -3519,7 +3519,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "AYqZNSdCaFQG37JVdy8cjX9z8sLLNr4L8CUSVBVZ1Td7",
     "height": 217968384,
     "near": 104381.989562,
@@ -3584,7 +3584,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "G8SBr3HHPdzCnzeCXBENvwqGF3QBBhC9xSFmLSTyYKR8",
     "height": 217972967,
     "near": 104381.989562,
@@ -3649,7 +3649,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "8yQFUCCe6vGkSkeA3gFVSsQWGJKrQzS3JGs8WeZY8P6g",
     "height": 218823485,
     "near": 104377.320419,
@@ -3700,7 +3700,7 @@
    },
    {
     "from": "717f12dd9354b83dac4c80b60dbc15712baac97834d63ccf545c53db57d9eeb3",
-    "from_label": "high-activity account (11,589 transactions; counterparty test not met or not run)",
+    "from_label": "high-activity account (11,589 transactions; counterparty test not met: 18 distinct counterparties in its 200 most recent)",
     "hash": "C6CCVp1LDS1Kh3Du2W4gWneb1rqHNNwzGLXntEj41v2T",
     "height": 217684073,
     "near": 1.2e-05,
@@ -3714,7 +3714,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "5nybpL6DYs1ENwbJvpEYRudPS9N9XDm9kCRnUaL7pBC2",
     "height": 217686600,
     "near": 52192.160906,
@@ -3779,7 +3779,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "AF2MA8tknqhcPVZqcqSasxAwxT1cfDmCbtg9E2if7uaT",
     "height": 217959641,
     "near": 52190.994781,
@@ -3844,7 +3844,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "ZPjDy9aKirr9kVvuiwrYXZc7KzFRKupV9NSTvnZPKzQ",
     "height": 217962805,
     "near": 52190.994781,
@@ -3909,7 +3909,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "Edvn4647Mz8hwT1RvJYsQKTyGfsgQqNTY7bGKaYT7J2V",
     "height": 217959232,
     "near": 52190.994781,
@@ -3974,7 +3974,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "46wdcHtebmnJkj1g7GyYss8Yo1ug8zSq5YRVDtw1TgZ6",
     "height": 217963827,
     "near": 52190.994781,
@@ -4039,7 +4039,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "F9EPQ9pkTATkh2E6bHoTA6HwwNAxXVovpcypDnPWo4xV",
     "height": 217966875,
     "near": 52190.994781,
@@ -4104,7 +4104,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "E4D6KAM3Ci94dqwoEgdmwAVg596q6iAbkvrJkoYMpvz4",
     "height": 217962188,
     "near": 52190.994781,
@@ -4169,7 +4169,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "JBMNgSqW41GEsFcUVagcZwRc8hMRXhVFY1mGHDfJbnWz",
     "height": 217961777,
     "near": 52190.994781,
@@ -4234,7 +4234,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "F9N2gqRr8eHnrMQSRxYw9v3JyP5TAKwM21NtTw9S77mv",
     "height": 217966367,
     "near": 52190.994781,
@@ -4299,7 +4299,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3C7tb4JTJZESEg2pELDNg5izA3osxwRLejY6MZn7AG8y",
     "height": 217965257,
     "near": 52190.994781,
@@ -4364,7 +4364,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "DAJGJQQjLuVaqVeozHjJAG6JMffHrntZDWw9YYLNLifN",
     "height": 217964849,
     "near": 52190.994781,
@@ -4429,7 +4429,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "2nawRgopzHgTWiKxWyhuPqdzgFydXFq26zMteSHmC2Z2",
     "height": 217960765,
     "near": 52190.994781,
@@ -4494,7 +4494,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "9AuPGM7pzU46etAPukaNKb19kHtx7LgnoBy8743W493t",
     "height": 217958225,
     "near": 52190.994781,
@@ -4559,7 +4559,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "DZNyyPmXSn39fwhsV78wFNABCxyaEeam3MAWkZ8oy5oL",
     "height": 217958627,
     "near": 52190.994781,
@@ -4624,7 +4624,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "Cd1R8hLS2bykNgu8TAL6qcgxPoY7k6A35NvEnigDEoVf",
     "height": 222155999,
     "near": 17312.395429,
@@ -4689,7 +4689,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "5iBwVFA6mTiGYBGYeJJUvDGtRovL2z8wpTamXYixvwtK",
     "height": 222154396,
     "near": 10300.0,
@@ -4754,7 +4754,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "6SfTD3umtApx1v2HniDd23GBKvLGwSBasGxZeRtN6Pjf",
     "height": 222153688,
     "near": 10300.0,
@@ -4819,13 +4819,13 @@
     "status": "observed",
     "time": "2026-11-02 13:52 UTC",
     "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1793627522466441424,
     "type": "return_to_hub"
    },
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3kpedG6q2NT28z1VjCvZBw4B5nqyUoZXtS1A9o3oAtuS",
     "height": 222903073,
     "near": 10862.592075,
@@ -4878,13 +4878,13 @@
     "status": "observed",
     "time": "2026-11-02 13:52 UTC",
     "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1793627524151692876,
     "type": "return_to_hub"
    },
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3kpedG6q2NT28z1VjCvZBw4B5nqyUoZXtS1A9o3oAtuS",
     "height": 222903073,
     "near": 10862.592075,
@@ -4937,7 +4937,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "4q74JnJcC9rgjZRPaiP2aP3wZGBGXWBz2m2iVVycL1EP",
     "height": 222152876,
     "near": 5000.0,
@@ -5002,7 +5002,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "2AkwgR3DU1NxNcp9FpwTUazJeLvXGN2gVagBpTFBdrVU",
     "height": 222153281,
     "near": 5000.0,
@@ -5067,7 +5067,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "8J7cYwy2EDEH25qaFVpQrBctS3wZ7ZCTSqdo6HJPep9j",
     "height": 223790164,
     "near": 3368.730624,
@@ -5164,13 +5164,13 @@
     "status": "observed",
     "time": "2026-11-02 13:57 UTC",
     "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "to_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1793627822994362703,
     "type": "return_to_hub"
    },
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "3kpedG6q2NT28z1VjCvZBw4B5nqyUoZXtS1A9o3oAtuS",
     "height": 222903073,
     "near": 10862.592075,
@@ -5223,7 +5223,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "7SWXCRpjWetnYd4UpKKfFtMciS7qVoHmaFdpXRbXLtJx",
     "height": 222150677,
     "near": 2000.0,
@@ -5288,7 +5288,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "He5SWW7Ut5UbriD6cJrLZHcUA1MKrnxXbrFY3SNY62bJ",
     "height": 222151074,
     "near": 2000.0,
@@ -5353,7 +5353,7 @@
   "steps": [
    {
     "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
-    "account_label": "custody hub (inferred: funds every basket account, receives every redemption)",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "hash": "HUuxgmfmoPY44oYiL2iw2JBM6GgCutygC8YSUUaKn2b6",
     "height": 222151874,
     "near": 2000.0,

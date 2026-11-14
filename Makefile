@@ -14,6 +14,7 @@ rebuild:         ## rebuild all datasets offline from data/raw
 	NFI_OFFLINE=1 $(PY) -m nfi.collect_chain
 	NFI_OFFLINE=1 $(PY) -m nfi.collect_custody
 	NFI_OFFLINE=1 $(PY) -m nfi.institutional
+	NFI_OFFLINE=1 $(PY) -m nfi.protocol
 	$(MAKE) data
 
 refresh:         ## re-fetch chain data up to today (network), then rebuild
@@ -35,3 +36,4 @@ serve: site
 verify-prediction:
 	NFI_OFFLINE=1 $(PY) -m nfi.prediction
 	NFI_OFFLINE=1 $(PY) -m nfi.prediction2
+	NFI_OFFLINE=1 $(PY) -m nfi.signposts
