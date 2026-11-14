@@ -1,6 +1,6 @@
 # Method
 
-All data comes from NEAR mainnet through two public sources, cached (gzipped) in `data/raw/` so that `make data` rebuilds everything offline:
+Chain data comes from NEAR mainnet through two public sources, cached (gzipped) in `data/raw/`. `make rebuild` reconstructs raw responses into `data/work/`, then builds the published outputs, documents and site offline. `make data` is the faster derived-data build from existing `data/work/` snapshots:
 
 - NEAR archival RPC (`https://archival-rpc.mainnet.fastnear.com`): blocks, view calls, `view_account`, `validators`, `EXPERIMENTAL_protocol_config`.
 - FastNEAR transaction API (`https://tx.main.fastnear.com/v0`): account transaction lists and transaction details with receipts and logs.
@@ -49,7 +49,7 @@ Each creation and redemption is then validated as a sequence (`validate_sequence
 
 `creations` / `redemptions` in `daily.csv` are all pool movements of attributed accounts (needed to reconcile holdings); `creations_confirmed` / `redemptions_confirmed` are the confirmed subset. Now: <!--n:creations_confirmed_count:int-->74<!--/n--> of <!--n:creations_count:int-->74<!--/n--> creations and <!--n:redemptions_confirmed_count:int-->7<!--/n--> of <!--n:redemptions_count:int-->10<!--/n--> redemptions are confirmed sequences.
 
-**Direct-recipient completeness check, run outside this pipeline:** the saved Google BigQuery query (`data/bigquery/completeness.sql`) starts from direct recipients of the inferred custody hub and lists their transactions to the NRR pool before 13 Nov 2026 00:00 UTC. The captured result contains the same 94 pool transactions as the pipeline for that direct-recipient population (74 `deposit_and_stake`, 10 `unstake_all`, 10 `withdraw_all`, all successful), with matching hash lists by method (`data/bigquery/completeness_result.json`). Test 19 checks the captured result against the expected hashes; it does not execute BigQuery. This check supports completeness **within the direct-recipient population only**. It does not examine one-hop descendants and cannot support a claim that no downstream account was missed.
+**Direct-recipient completeness check, run outside this pipeline:** the saved Google BigQuery query (`data/bigquery/completeness.sql`) starts from direct recipients of the inferred custody hub and lists their transactions to the NRR pool before 13 Nov 2026 00:00 UTC. The captured result contains the same pool-transaction hash set as the pipeline for that direct-recipient population, with matching hashes by method (`data/bigquery/completeness_result.json`). Test 19 checks the captured result against the expected hashes; it does not execute BigQuery. This check supports completeness **within the direct-recipient population only**. It does not examine one-hop descendants and cannot support a claim that no downstream account was missed.
 
 ## 5. Staking rewards (measured independently)
 
@@ -90,6 +90,19 @@ Every lookup has a state. An account that did not exist yet at a height is a tru
 
 `make refresh` extends the daily heights to today and re-collects. Cached responses are reused; the last, partial page of each transaction history is always re-fetched so new transactions are seen. The refresh time is written to `data/work/refresh.json` and shown on the dashboard, which warns when data is more than two days old.
 
-## 11. Tests (`make test`)
+## 11. Signed net flow, periods and comparison units
 
-1 issuer reconciliation · 2 balances re-read from raw RPC responses · 3 no duplicate accounts · 4 every event backed by its transaction and amount · 5 reward rate 3–7%/yr and residual small · 6 block-header match and no negative burn residual · 7 total stake vs validators RPC · 8 missing ≠ zero in outputs · 9 offline rebuild is byte-identical · 10 every number in the docs comes from the data · 11 attribution rejects staking before funding · 12 minting vs the protocol formula · 13 failed lookups become missing, not zero · 14 other Bitwise pools excluded · 15 sequence statuses and links · 16 buyback ledger adds up · 17 reward probes agree · 18 prediction evaluator (pending, void, duplicates) · 19 BigQuery completeness check · 20 SVRN observation kept separate from NRR.
+- **Daily signed NRR net custody flow:** `creations - redemptions` for each daily window. It excludes staking rewards and does not infer a market purchase or sale.
+- **Cumulative net custody flow:** sum of signed daily NRR net custody flow within the selected period.
+- **Average per day:** cumulative signed net custody flow divided by the count of complete daily windows in that period. The launch-period, post-peak and latest-30-day windows are calculated separately; their cumulative totals must not be labelled as per-day rates.
+- **Post-peak period:** starts with the first daily window after the recorded holdings peak date. The peak-date row itself is not counted as a post-peak flow window.
+- **Basket equivalent:** one basket is 10,000 shares per the prospectus. The NEAR conversion is `10,000 × NEAR_per_share` from the latest included Bitwise issuer snapshot. NEAR/day divided by this amount gives approximate baskets/day; it is a scale unit only.
+- **Issuance comparison:** gross issuance is measured per daily window at epoch boundaries. It is compared with NRR net custody flow using the same NEAR/day unit and same selected window.
+- **Buyback comparison:** the balance change in native NEAR and wNEAR held in the defined buyback-fund accounts. It is not executed purchases or market demand. The balance-change series is plotted as its own measurement, not described as a purchase flow.
+- **HSP-029 scenario:** the full 1.6% target is modelled by scaling the measured 2.5% issuance rate by `1.6 / 2.5`. It is a full-target scenario, not the active protocol rate in the current observations; implementation requires remaining governance/implementation steps, the grace period and validator adoption.
+- **USD display:** cumulative NEAR series are multiplied by the latest archived issuer NAV divided by NEAR per share. This is a dated USD-equivalent conversion, not a live spot-price series.
+- **Missing windows:** the chart excludes incomplete rows from all three series and labels the selected range. The published pipeline currently reports zero incomplete days.
+
+## 12. Tests (`make test`)
+
+1 issuer reconciliation · 2 balances re-read from raw RPC responses · 3 no duplicate accounts · 4 every event backed by its transaction and amount · 5 reward rate 3–7%/yr and residual small · 6 block-header match and no negative burn residual · 7 total stake vs validators RPC · 8 missing ≠ zero in outputs · 9 offline rebuild is byte-identical · 10 every number in the docs comes from the data · 11 attribution rejects staking before funding · 12 minting vs the protocol formula · 13 failed lookups become missing, not zero · 14 other Bitwise pools excluded · 15 sequence statuses and links · 16 buyback ledger adds up · 17 reward probes agree · 18 prediction evaluator (pending, void, duplicates) · 19 direct-recipient BigQuery hash comparison (against the captured result) · 20 SVRN observation kept separate from NRR.
