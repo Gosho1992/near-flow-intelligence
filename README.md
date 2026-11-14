@@ -15,7 +15,7 @@ The investment question is not whether NRR is "demand" in the market. The chain 
 
 ## The finding
 
-In the 46 measured daily windows from 2026-09-29 through 2026-11-13, NRR's signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+324,000<!--/n--> NEAR per day** (<!--n:launch_net_baskets_per_day:s1-->+6.2<!--/n--> approximate 10,000-share baskets per day). Since the 2026-10-28 holdings peak, across 16 daily windows, the average was **<!--n:since_peak_net_flow_per_day:sint-->-132,871<!--/n--> NEAR per day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.5<!--/n--> baskets per day).
+In the <!--n:days:int-->47<!--/n--> measured daily windows from 2026-09-29 through <!--n:data_through:-->2026-11-14<!--/n-->, NRR's signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+324,000<!--/n--> NEAR per day** (<!--n:launch_net_baskets_per_day:s1-->+6.2<!--/n--> approximate 10,000-share baskets per day). Since the 2026-10-28 holdings peak, across <!--n:since_peak_net_flow_days:int-->17<!--/n--> daily windows, the average was **<!--n:since_peak_net_flow_per_day:sint-->-132,871<!--/n--> NEAR per day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.5<!--/n--> baskets per day).
 
 Those are signed averages across different periods, not cumulative totals and not forecasts. NRR's latest reconstructed staked position is <!--n:nrr_holdings_latest:m-->15.32M<!--/n--> NEAR as of <!--n:data_through:-->2026-11-14<!--/n-->, <!--n:change_since_peak_pct:spct-->-12.67%<!--/n--> below its peak. The position is large; its persistence is not established.
 
@@ -43,6 +43,7 @@ The project records:
 | Current-period issuance average | <!--n:issuance_per_day:int-->89,233<!--/n--> NEAR/day · <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets/day |
 | Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->9,933<!--/n--> NEAR/day · <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> baskets/day |
 | Buyback-fund balance change as a share of measured issuance, launch to date | <!--n:buyback_change_pct_of_issuance:pct-->11.13%<!--/n--> |
+| Bitwise SEC 10-Q at launch (30 Sep 2026, 4 p.m. ET) vs chain: in-kind creations · staked value · undelivered purchases | <!--n:sec_in_kind_diff:d4-->0.0001<!--/n--> NEAR · <!--n:sec_staked_diff_pct:spct-->+0.01%<!--/n--> · $<!--n:sec_receivable_diff_usd:int-->31<!--/n--> |
 | **Absorption ratio** (NRR net flow ÷ NEAR minted): launch · since peak · latest 30 days | <!--n:absorption_launch:s2-->+3.63<!--/n--> · <!--n:absorption_since_peak:s2-->-1.50<!--/n--> · <!--n:absorption_last30:s2-->-0.18<!--/n--> |
 
 The buyback series is a balance change, not a record of executed market purchases. The table compares measured on-chain quantities and their scale; it does not imply that NRR custody movements and buyback-fund balance changes have the same economic meaning.

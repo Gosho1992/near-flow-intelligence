@@ -18,6 +18,8 @@ def fmt(v, f):
         return f"{v:+,.0f}"
     if f == "pct":
         return f"{v:.2f}%"
+    if f == "d4":
+        return f"{v:,.4f}"
     if f == "yn":
         return "yes" if v else "no"
     if f == "pct3":

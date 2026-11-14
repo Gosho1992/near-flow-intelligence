@@ -15,6 +15,7 @@ rebuild:         ## rebuild all datasets offline from data/raw
 	NFI_OFFLINE=1 $(PY) -m nfi.collect_custody
 	NFI_OFFLINE=1 $(PY) -m nfi.institutional
 	NFI_OFFLINE=1 $(PY) -m nfi.protocol
+	NFI_OFFLINE=1 $(PY) -m nfi.sec_check
 	$(MAKE) data
 
 refresh:         ## re-fetch chain data up to today (network), then rebuild

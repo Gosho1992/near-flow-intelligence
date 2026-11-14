@@ -16,7 +16,7 @@ The full test schedule, scenario model, indicators and build plan to 2029 are in
 
 | | Established at this data cut | Kept as hypothesis |
 |---|---|---|
-| Mechanism | Wrapper NEAR leaves only by redemption; NRR holds <!--n:nrr_holdings_latest:m-->15.32M<!--/n--> NEAR (<!--n:nrr_share_total_pct_latest:pct-->1.17%<!--/n--> of supply), reconciled with Bitwise on <!--n:issuer_gaps_count:int-->4<!--/n--> dates, one of them out of sample | That wrapper flow persists beyond one product's launch |
+| Mechanism | Wrapper NEAR leaves only by redemption; NRR holds <!--n:nrr_holdings_latest:m-->15.32M<!--/n--> NEAR (<!--n:nrr_share_total_pct_latest:pct-->1.17%<!--/n--> of supply), reconciled with Bitwise on <!--n:issuer_gaps_count:int-->4<!--/n--> dates, one of them out of sample, and with Bitwise's SEC 10-Q at launch to within <!--n:sec_staked_diff_pct:spct-->+0.01%<!--/n--> | That wrapper flow persists beyond one product's launch |
 | Scale | NRR has out-moved issuance in both directions (ratios <!--n:absorption_launch:s2-->+3.63<!--/n--> and <!--n:absorption_since_peak:s2-->-1.50<!--/n-->), and the buyback fund grew by only <!--n:buyback_ratio_launch:2-->0.11<!--/n--> of issuance | The direction of future flow, and whether other products follow |
 | Issuance | Measured at <!--n:issuance_per_day:int-->89,233<!--/n--> NEAR/day, <!--n:issuance_ratio_median_pct:pct-->99.85%<!--/n--> of the 2.5% cap | That HSP-029 takes effect, and when |
 | Who delivered the NEAR | Nine wallets, more than a quarter in one transfer; redemptions went back to wallets that had delivered creations | Whether any of it was fresh market buying |
@@ -30,7 +30,7 @@ The full test schedule, scenario model, indicators and build plan to 2029 are in
 | **Absorption ratio** (flow ÷ mint) | **<!--n:absorption_launch:s2-->+3.63<!--/n-->** | **<!--n:absorption_since_peak:s2-->-1.50<!--/n-->** | **<!--n:absorption_last30:s2-->-0.18<!--/n-->** |
 | Buyback ratio (fund growth ÷ mint) | <!--n:buyback_ratio_launch:2-->0.11<!--/n--> | <!--n:buyback_ratio_since_peak:2-->0.12<!--/n--> | <!--n:buyback_ratio_last30:2-->0.11<!--/n--> |
 
-A ratio of +1 means the wrapper absorbed all new NEAR. A ratio of −1 means it released as much again, doubling new supply. Both are economic break-evens, not fitted numbers. The rolling 30-day ratio peaked at <!--n:absorption_rolling_max:s2-->+6.50<!--/n--> on <!--n:absorption_rolling_max_date:-->2026-10-28<!--/n--> and has fallen since. The latest-30 reading is positive only because of creations between 15 and 27 Oct, and it will turn negative as those days leave the window unless new creations arrive. About 64% of all creations happened in the first five daily windows.
+A ratio of +1 means the wrapper absorbed all new NEAR. A ratio of −1 means it released as much again, doubling new supply. Both are economic break-evens, not fitted numbers. The rolling 30-day ratio peaked at <!--n:absorption_rolling_max:s2-->+6.50<!--/n--> on <!--n:absorption_rolling_max_date:-->2026-10-28<!--/n--> and has fallen since. On 13 Nov this thesis noted that the latest-30 reading was positive only because of creations between 15 and 27 Oct, and would turn negative as those days left the window. It turned negative in the next day's data (14 Nov). About 64% of all creations happened in the first five daily windows.
 
 ## Issuance is scheduled to fall, not falling
 
@@ -63,7 +63,7 @@ Rules are frozen in [SIGNPOSTS.md](SIGNPOSTS.md) (SHA-256 in [SIGNPOSTS.lock](SI
 |---|---|---|
 | Bullish | Absorption ratio ≥ +1 | Not testable yet; latest 30 days <!--n:absorption_last30:s2-->-0.18<!--/n--> |
 | Bearish | Absorption ratio ≤ −1 | Not testable yet; <!--n:absorption_since_peak:s2-->-1.50<!--/n--> since the peak |
-| Structurally wrong | \|absorption\| below the buyback ratio; or an issuer figure off the frozen rule by more than 0.5%; or Rule A accounts shown to serve another product | The latest-30 reading is marginally below: <!--n:absorption_last30:2-->-0.18<!--/n--> against <!--n:buyback_ratio_last30:2-->0.11<!--/n--> (0.111 vs 0.113). It overlaps the launch, so it is not a signpost window, but it shows the rule can fire |
+| Structurally wrong | \|absorption\| below the buyback ratio; or an issuer figure off the frozen rule by more than 0.5%; or Rule A accounts shown to serve another product | Latest 30 days: \|<!--n:absorption_last30:s2-->-0.18<!--/n-->\| against <!--n:buyback_ratio_last30:2-->0.11<!--/n-->, not below. On 13 Nov it was marginally below (0.111 vs 0.113), which shows the rule can fire. Neither period is a signpost window |
 | Coverage, reported separately | Number of wrappers rebuilt from the chain and reconciled to an issuer | <!--n:products_attributed_onchain:int-->1<!--/n--> |
 
 **A state persists until another rule fires** (frozen text: the most recently fired rule sets the state), so the latest window's ratio is always shown beside it on the dashboard and in `data/out/signposts.json`.
@@ -72,13 +72,25 @@ Rules are frozen in [SIGNPOSTS.md](SIGNPOSTS.md) (SHA-256 in [SIGNPOSTS.lock](SI
 
 ## Verdict at the current data cut
 
-**A large, observable, reconciled position is established. Persistent net absorption is not.** NRR's attributed staking accounts held <!--n:nrr_holdings_latest:m-->15.32M<!--/n--> NEAR on <!--n:data_through:-->2026-11-14<!--/n-->, <!--n:change_since_peak_pct:spct-->-12.67%<!--/n--> below the <!--n:nrr_peak_date:-->2026-10-28<!--/n--> peak. Forty-six days of one product establish scale and reversibility. They do not establish any rate.
+**A large, observable, reconciled position is established. Persistent net absorption is not.** NRR's attributed staking accounts held <!--n:nrr_holdings_latest:m-->15.32M<!--/n--> NEAR on <!--n:data_through:-->2026-11-14<!--/n-->, <!--n:change_since_peak_pct:spct-->-12.67%<!--/n--> below the <!--n:nrr_peak_date:-->2026-10-28<!--/n--> peak. Seven weeks of one product establish scale and reversibility. They do not establish any rate.
 
 ## Evidence
 
 ### 1. The issuer comparison
 
 On the <!--n:issuer_gaps_count:int-->4<!--/n--> issuer dates archived, reconstructed NRR staked balances differ from Bitwise's published "NEAR in Trust" by no more than <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n-->. The comparison rule was fixed on 13 Nov 2026 after the first three figures. The 12 Nov figure, published afterwards, is the first out-of-sample test: <!--n:issuer_gap_oos_pct:spct-->-0.15%<!--/n-->. All four gaps share a sign. Sources and retrieval timestamps are in `data/issuer_snapshots.csv`. A 0.5% tolerance is about 77,000 NEAR, more than one basket, so a match supports the reconstruction but cannot prove that no account is missing.
+
+### 1b. The regulator's filing at launch
+
+Bitwise's first 10-Q (period ended 30 Sep 2026) values the fund at 4 p.m. Eastern, which is 20:00 UTC. We read the chain at the last block before that moment (block <!--n:sec_valuation_height:int-->217,960,556<!--/n-->). The filing names no addresses, so this tests our reconstruction against aggregates. It does not prove ownership.
+
+| Filing figure | Filing | On-chain at 20:00 UTC | Difference |
+|---|---:|---:|---:|
+| In-kind creations | <!--n:sec_in_kind_filing:d4-->5,010,335.4989<!--/n--> NEAR | two transfers from wallet `60142764…` into the custody hub: <!--n:sec_in_kind_onchain:d4-->5,010,335.4990<!--/n--> NEAR | under 0.0001 NEAR (the filing shows four decimals) |
+| Staked NEAR: $553,300 at the $5.30 principal-market price | <!--n:sec_staked_implied:int-->104,396<!--/n--> NEAR | the Rule A seed account plus the one-hop account: <!--n:sec_staked_two_accounts:int-->104,409<!--/n--> NEAR | <!--n:sec_staked_diff:sint-->+12<!--/n--> NEAR (<!--n:sec_staked_diff_pct:spct-->+0.01%<!--/n-->), about half the <!--n:sec_rewards_accrued_two_accounts:int-->25<!--/n--> NEAR of rewards accrued since staking, which the filing books separately |
+| Receivable for creations: NEAR bought but not yet delivered, at the $5.38 NAV reference | $14,039,097 | purchases in the filing minus purchased NEAR already on-chain: <!--n:sec_purchased_undelivered:int-->2,609,503<!--/n--> NEAR × $5.38 = $<!--n:sec_undelivered_value_at_nav:int-->14,039,128<!--/n--> | $<!--n:sec_receivable_diff_usd:int-->31<!--/n--> |
+
+The staked test is the sharpest. The Rule A account alone gives <!--n:sec_staked_rule_a_only_diff_pct:spct-->-49.99%<!--/n--> and the whole pool <!--n:sec_staked_whole_pool_diff_pct:spct-->+17.48%<!--/n-->. Only the Rule A seed account plus the one-hop account it funded matches the regulator's figure. This is independent evidence that the one-hop account belongs to NRR. We record it here, and the frozen Rule A count stays unchanged until the Rule B decision (LONG_TERM_PLAN.md, section 9). Check: `nfi/sec_check.py`, output `data/work/sec_reconciliation.json`, five tests in `tests/test_long_term.py`; transcribed filing figures in `data/issuer_evidence/2026-09-30_sec_10q.txt`.
 
 ### 2. The custody position and flows
 
@@ -95,7 +107,7 @@ Of the <!--n:sources_external_total:m-->18.37M<!--/n--> NEAR sent to the custody
 
 The primary set is <!--n:attributed_accounts:int-->73<!--/n--> accounts under Rule A: the inferred custody hub funds an account, and that account then calls `deposit_and_stake` on `bitwise_2.poolv1.near`. This is a repeatable on-chain rule, not a finding of legal ownership.
 
-**One account is outside Rule A and verified from our own raw cache.** Rule A account `432766…94e7b4c5` sent 52,192.07 NEAR to `9a000319…dadf21b3` at block 217,688,225. That account staked 52,192.02 NEAR in the NRR pool at block 217,690,243 and held <!--n:one_hop_staked_latest:int-->52,508<!--/n--> NEAR there on the data cut. Test `OneHop` in `tests/test_long_term.py` checks both transactions. We keep it out of the totals so that every published count follows one rule. Adding it would move the four issuer gaps from about −0.15% to between <!--n:one_hop_gap_min_pct:spct-->+0.19%<!--/n--> and <!--n:one_hop_gap_max_pct:spct-->+0.20%<!--/n-->. Either way the gaps stay well inside 0.5%, so the reconciliation cannot decide between 73 and 74 accounts. Whether to adopt a one-hop Rule B is decided in the first six months (LONG_TERM_PLAN.md, section 9).
+**One account is outside Rule A and verified from our own raw cache.** Rule A account `432766…94e7b4c5` sent 52,192.07 NEAR to `9a000319…dadf21b3` at block 217,688,225. That account staked 52,192.02 NEAR in the NRR pool at block 217,690,243 and held <!--n:one_hop_staked_latest:int-->52,508<!--/n--> NEAR there on the data cut. Test `OneHop` in `tests/test_long_term.py` checks both transactions. Bitwise's 30 Sep 10-Q supports it independently: its staked figure matches the seed account plus this account, and neither alone (section 1b). We keep it out of the totals so that every published count follows one rule. Adding it would move the four issuer gaps from about −0.15% to between <!--n:one_hop_gap_min_pct:spct-->+0.19%<!--/n--> and <!--n:one_hop_gap_max_pct:spct-->+0.20%<!--/n-->. Either way the gaps stay well inside 0.5%, so the reconciliation cannot decide between 73 and 74 accounts. Whether to adopt a one-hop Rule B is decided in the first six months (LONG_TERM_PLAN.md, section 9).
 
 The BigQuery comparison starts from direct recipients of the hub and finds the same 94 pool transactions, hash for hash. It checks completeness within that population only.
 
@@ -109,11 +121,11 @@ The trace panel follows unstake, withdrawal and return steps to the hub, then lo
 
 ## Evidence against the thesis
 
-- **Breadth:** one product, 46 daily windows. This cannot be fixed before the first windows complete. It is stated here rather than disguised.
+- **Breadth:** one product, <!--n:days:int-->47<!--/n--> daily windows. This cannot be fixed before the first windows complete. It is stated here rather than disguised.
 - **Launch concentration and reversal:** about 64% of creations fell in the first five days, and holdings are <!--n:change_since_peak_pct:spct-->-12.67%<!--/n--> from the peak.
 - **Ordinary staking is far larger:** about 6 times NRR's average daily move. The thesis is about a narrower, redeemable quantity.
 - **In-kind mechanics:** NEAR can arrive from authorised participants' existing inventory and leave to them without a market trade.
-- **The latest structurally-wrong reading is already marginal** (0.111 against 0.113), outside the signpost windows.
+- **The structurally-wrong rule nearly fired on launch data:** 0.111 against 0.113 on 13 Nov, outside the signpost windows.
 - **Custody is not ownership,** the buyback series is not purchases, and price impact is not estimated.
 - **HSP-029 is not yet binding,** and was proposed by the chief executive of SVRN, a large NEAR holder (see below).
 

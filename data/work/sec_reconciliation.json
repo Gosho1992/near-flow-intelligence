@@ -1,0 +1,45 @@
+{
+ "filing": {
+  "in_kind": 5010335.4989,
+  "payable_purchased": 14044291,
+  "price_nav": 5.38,
+  "price_principal": 5.3,
+  "purchases": 4801521.4703,
+  "receivable_creations": 14039097,
+  "rewards": 13.2579,
+  "staked_usd": 553300,
+  "total": 9811870.2271
+ },
+ "fund_inflows_onchain": 7202353.632555841,
+ "in_kind_diff": 5.584023892879486e-05,
+ "in_kind_onchain": 5010335.49895584,
+ "in_kind_transfers": [
+  {
+   "hash": "ANApoS6zXxK48QTCmg16rLBpmMBLk7Z3EU4MFcWQ3tgM",
+   "height": 217914644,
+   "near": 5.0
+  },
+  {
+   "hash": "CEhhtRzVtmH6Z8Xzky3mvKRghsBJsax5VXhDBAmh71FY",
+   "height": 217933904,
+   "near": 5010330.49895584
+  }
+ ],
+ "next_block_time": "2026-09-30T20:00:00.654034+00:00",
+ "pool_accounts_at_valuation": 7,
+ "purchased_onchain": 2192018.1336,
+ "purchased_undelivered": 2609503.3367000003,
+ "receivable_diff_pct": 0.00022046607415241348,
+ "receivable_diff_usd": 30.951446002349257,
+ "staked_diff": 12.464016719532083,
+ "staked_diff_pct": 0.01193914487864089,
+ "staked_implied": 104396.22641509434,
+ "staked_rule_a_only": 52204.40997364076,
+ "staked_rule_a_only_diff_pct": -49.99396839683787,
+ "staked_seed_plus_one_hop": 104408.69043181387,
+ "staked_whole_pool": 122646.31293193394,
+ "staked_whole_pool_diff_pct": 17.481557661169322,
+ "undelivered_value_at_nav": 14039127.951446002,
+ "valuation_block_time": "2026-09-30T19:59:59.997924+00:00",
+ "valuation_height": 217960556
+}

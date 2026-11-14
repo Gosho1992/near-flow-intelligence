@@ -1,6 +1,6 @@
 # Long-term plan: how this thesis will be tested from November 2026 to 2029
 
-**Horizon:** 1 to 3 years from the baseline (data through <!--n:data_through:-->2026-11-13<!--/n-->). **Status today:** <!--n:signposts_state:-->NOT YET TESTABLE<!--/n-->; the first signpost window closes at row <!--n:signposts_first_window_end:-->2026-12-15<!--/n-->. Research, not investment advice.
+**Horizon:** 1 to 3 years from the baseline (data through <!--n:data_through:-->2026-11-14<!--/n-->). **Status today:** <!--n:signposts_state:-->NOT YET TESTABLE<!--/n-->; the first signpost window closes at row <!--n:signposts_first_window_end:-->2026-12-15<!--/n-->. Research, not investment advice.
 
 This file turns the thesis into a schedule: what is measured, on which dates it is judged, what each outcome means, and what gets built along the way. The rules themselves are frozen in [SIGNPOSTS.md](SIGNPOSTS.md) (hash in [SIGNPOSTS.lock](SIGNPOSTS.lock)), and this plan only refers to them.
 
@@ -16,12 +16,12 @@ This is a thesis about **NEAR's holder base and new supply**. It does not cover 
 
 | Instrument | Definition | Baseline | Where |
 |---|---|---:|---|
-| **Absorption ratio** (the thesis variable) | Wrapper net custody flow ÷ NEAR minted, same window | launch <!--n:absorption_launch:s2-->+3.70<!--/n-->; since peak <!--n:absorption_since_peak:s2-->-1.59<!--/n-->; latest 30 days <!--n:absorption_last30:s2-->+0.11<!--/n--> | `nfi/signposts.py`, `data/out/signposts.json` |
+| **Absorption ratio** (the thesis variable) | Wrapper net custody flow ÷ NEAR minted, same window | launch <!--n:absorption_launch:s2-->+3.63<!--/n-->; since peak <!--n:absorption_since_peak:s2-->-1.50<!--/n-->; latest 30 days <!--n:absorption_last30:s2-->-0.18<!--/n--> | `nfi/signposts.py`, `data/out/signposts.json` |
 | Buyback ratio | Buyback-fund balance change ÷ NEAR minted | <!--n:buyback_ratio_launch:2-->0.11<!--/n--> | same |
 | Inflation cap | `max_inflation_rate` read from the protocol at every daily height | <!--n:protocol_cap_pct_latest:pct-->2.50%<!--/n--> on protocol v<!--n:protocol_version_latest:int-->88<!--/n--> | `nfi/protocol.py`, `data/work/protocol.json` |
-| Measured mint | Supply change at epoch boundaries, checked against the cap | <!--n:issuance_per_day:int-->89,497<!--/n--> NEAR/day; <!--n:issuance_ratio_median_pct:pct-->99.85%<!--/n--> of cap | `data/out/issuance_check.csv` |
+| Measured mint | Supply change at epoch boundaries, checked against the cap | <!--n:issuance_per_day:int-->89,233<!--/n--> NEAR/day; <!--n:issuance_ratio_median_pct:pct-->99.85%<!--/n--> of cap | `data/out/issuance_check.csv` |
 | Wrapper-held share of supply | NRR staked ÷ total supply | <!--n:nrr_share_total_pct_latest:pct-->1.17%<!--/n--> | `data/out/daily.csv` |
-| Staking outside the wrapper | Total stake minus NRR, daily change | mean <!--n:other_stake_abs_daily_mean:m-->2.80M<!--/n--> NEAR/day moved | `data/out/daily.csv` |
+| Staking outside the wrapper | Total stake minus NRR, daily change | mean <!--n:other_stake_abs_daily_mean:m-->2.74M<!--/n--> NEAR/day moved | `data/out/daily.csv` |
 | Issuer reconciliation | Reconstruction vs Bitwise "NEAR in Trust", frozen rule | <!--n:issuer_gaps_count:int-->4<!--/n--> dates, max <!--n:max_abs_issuer_gap_pct:pct-->0.15%<!--/n-->, <!--n:issuer_oos_count:int-->1<!--/n--> out of sample | `data/issuer_snapshots.csv` |
 | Scenario model | 36-month mechanical projection under fixed ratios | see section 5 | `nfi/model.py`, `data/out/scenarios.csv` |
 
@@ -33,13 +33,13 @@ HSP-029 passed the House of Stake vote on 2 Nov 2026. Three steps remain before 
 
 | Ramp month | Cap | Mint, NEAR/day | Baskets/day | Earliest calendar date* |
 |---:|---:|---:|---:|---|
-| 0 | <!--n:hsp029_m0_cap_pct:pct3-->2.5%<!--/n--> | <!--n:hsp029_m0_per_day:int-->89,497<!--/n--> | <!--n:hsp029_m0_baskets_per_day:2-->1.71<!--/n--> | Feb 2027 |
-| 6 | <!--n:hsp029_m6_cap_pct:pct3-->2.275%<!--/n--> | <!--n:hsp029_m6_per_day:int-->81,442<!--/n--> | <!--n:hsp029_m6_baskets_per_day:2-->1.56<!--/n--> | Aug 2027 |
-| 12 | <!--n:hsp029_m12_cap_pct:pct3-->2.05%<!--/n--> | <!--n:hsp029_m12_per_day:int-->73,387<!--/n--> | <!--n:hsp029_m12_baskets_per_day:2-->1.40<!--/n--> | Feb 2028 |
-| 18 | <!--n:hsp029_m18_cap_pct:pct3-->1.825%<!--/n--> | <!--n:hsp029_m18_per_day:int-->65,333<!--/n--> | <!--n:hsp029_m18_baskets_per_day:2-->1.25<!--/n--> | Aug 2028 |
-| 24 | <!--n:hsp029_m24_cap_pct:pct3-->1.6%<!--/n--> | <!--n:hsp029_m24_per_day:int-->57,278<!--/n--> | <!--n:hsp029_m24_baskets_per_day:2-->1.09<!--/n--> | Feb 2029 |
+| 0 | <!--n:hsp029_m0_cap_pct:pct3-->2.5%<!--/n--> | <!--n:hsp029_m0_per_day:int-->89,233<!--/n--> | <!--n:hsp029_m0_baskets_per_day:2-->1.71<!--/n--> | Feb 2027 |
+| 6 | <!--n:hsp029_m6_cap_pct:pct3-->2.275%<!--/n--> | <!--n:hsp029_m6_per_day:int-->81,202<!--/n--> | <!--n:hsp029_m6_baskets_per_day:2-->1.55<!--/n--> | Aug 2027 |
+| 12 | <!--n:hsp029_m12_cap_pct:pct3-->2.05%<!--/n--> | <!--n:hsp029_m12_per_day:int-->73,171<!--/n--> | <!--n:hsp029_m12_baskets_per_day:2-->1.40<!--/n--> | Feb 2028 |
+| 18 | <!--n:hsp029_m18_cap_pct:pct3-->1.825%<!--/n--> | <!--n:hsp029_m18_per_day:int-->65,140<!--/n--> | <!--n:hsp029_m18_baskets_per_day:2-->1.24<!--/n--> | Aug 2028 |
+| 24 | <!--n:hsp029_m24_cap_pct:pct3-->1.6%<!--/n--> | <!--n:hsp029_m24_per_day:int-->57,109<!--/n--> | <!--n:hsp029_m24_baskets_per_day:2-->1.09<!--/n--> | Feb 2029 |
 
-\*If ratification and the upgrade were immediate, so the 90-day grace period ran from mid-November 2026. The real start is later by however long those steps take. **The plan does not depend on this date.** `nfi/protocol.py` reads the cap at every daily height (<!--n:protocol_days_read:int-->50<!--/n--> heights so far, <!--n:protocol_versions_seen:int-->3<!--/n--> protocol versions, cap unchanged), so month 0 will be observed, not guessed. Ramp started at the latest reading: <!--n:hsp029_ramp_started:yn-->no<!--/n-->.
+\*If ratification and the upgrade were immediate, so the 90-day grace period ran from mid-November 2026. The real start is later by however long those steps take. **The plan does not depend on this date.** `nfi/protocol.py` reads the cap at every daily height (<!--n:protocol_days_read:int-->51<!--/n--> heights so far, <!--n:protocol_versions_seen:int-->3<!--/n--> protocol versions, cap unchanged), so month 0 will be observed, not guessed. Ramp started at the latest reading: <!--n:hsp029_ramp_started:yn-->no<!--/n-->.
 
 Two checks tie our model to the proposal: our month-24 mint matches its 57,300 NEAR a day, and the issuance avoided by month 27 in our model (<!--n:scen_avoided_issuance_m27:m-->11.87M<!--/n--> NEAR) matches its 11.8M over two years (tests in `tests/test_long_term.py`).
 
@@ -49,20 +49,20 @@ Disclosure: HSP-029 was proposed by SVRN's chief executive. SVRN reports a NEAR 
 
 ## 4. The boundary: what the wrapper does not set
 
-Stake held by everyone other than NRR moved <!--n:other_stake_abs_daily_mean:m-->2.80M<!--/n--> NEAR on an average day (median <!--n:other_stake_abs_daily_median:m-->1.09M<!--/n-->), against <!--n:nrr_stake_abs_daily_mean:m-->0.43M<!--/n--> for NRR. It was the larger mover on <!--n:other_stake_bigger_days:int-->40<!--/n--> of <!--n:other_stake_days:int-->46<!--/n--> days. Over the latest 30 days it fell by <!--n:other_stake_last30_change:m-->-7.77M<!--/n--> NEAR while NRR's stake rose by <!--n:nrr_stake_last30_change:m-->0.36M<!--/n-->. About <!--n:staked_pct_of_supply:pct-->45.07%<!--/n--> of supply is staked.
+Stake held by everyone other than NRR moved <!--n:other_stake_abs_daily_mean:m-->2.74M<!--/n--> NEAR on an average day (median <!--n:other_stake_abs_daily_median:m-->1.09M<!--/n-->), against <!--n:nrr_stake_abs_daily_mean:m-->0.42M<!--/n--> for NRR. It was the larger mover on <!--n:other_stake_bigger_days:int-->41<!--/n--> of <!--n:other_stake_days:int-->47<!--/n--> days. Over the latest 30 days it fell by <!--n:other_stake_last30_change:m-->-7.74M<!--/n--> NEAR while NRR's stake rose by <!--n:nrr_stake_last30_change:m-->-0.42M<!--/n-->. About <!--n:staked_pct_of_supply:pct-->45.05%<!--/n--> of supply is staked.
 
 So the plan never claims that the wrapper sets NEAR's float. It claims something narrower that can be tested. Among the supply terms a tokenomics model counts (issuance, buyback-fund accumulation and wrapper flow), the wrapper is the largest and the only one that has changed sign. Ordinary staking is far larger but is not a supply term: unstaked NEAR stays with its owner, while wrapper NEAR leaves only through redemption. Staking outside the wrapper stays on the dashboard as context, and the plan reviews it each year (section 7).
 
 ## 5. Three scenarios, made mechanical
 
-`nfi/model.py` projects 36 months from the baseline. Mint = supply × cap × the measured mint efficiency (<!--n:scen_mint_efficiency_pct:pct-->99.85%<!--/n-->), less the measured burn share (<!--n:scen_burn_share_pct:pct-->1.10%<!--/n-->). The ramp starts at month <!--n:scen_ramp_start_month:int-->3<!--/n-->, the earliest possible. Wrapper rewards scale with the cap. Each scenario holds one absorption ratio for the whole period. These are arithmetic consequences of stated inputs, not forecasts, and no probabilities are given: 46 days cannot support them.
+`nfi/model.py` projects 36 months from the baseline. Mint = supply × cap × the measured mint efficiency (<!--n:scen_mint_efficiency_pct:pct-->99.85%<!--/n-->), less the measured burn share (<!--n:scen_burn_share_pct:pct-->1.11%<!--/n-->). The ramp starts at month <!--n:scen_ramp_start_month:int-->3<!--/n-->, the earliest possible. Wrapper rewards scale with the cap. Each scenario holds one absorption ratio for the whole period. These are arithmetic consequences of stated inputs, not forecasts, and no probabilities are given: 46 days cannot support them.
 
 | | Bull: a = +1 | Base: a = 0 | Bear: a = −1 |
 |---|---|---|---|
 | Mechanism | Wrappers absorb all new NEAR along the falling issuance path | Wrapper flow nets to zero; the HSP-029 ramp is the main supply change | Launch demand was a one-off; wrappers return NEAR as fast as it is minted |
 | NRR-type holdings at month 12 | <!--n:scen_m12_bull_near:m-->48.25M<!--/n--> (<!--n:scen_m12_bull_share_pct:pct-->3.59%<!--/n--> of supply) | <!--n:scen_m12_base_near:m-->16.00M<!--/n--> (<!--n:scen_m12_base_share_pct:pct-->1.19%<!--/n-->) | <!--n:scen_m12_bear_near:m-->0.00M<!--/n--> |
-| At month 24 | <!--n:scen_m24_bull_near:m-->76.93M<!--/n--> (<!--n:scen_m24_bull_share_pct:pct-->5.62%<!--/n-->) | <!--n:scen_m24_base_near:m-->16.59M<!--/n--> (<!--n:scen_m24_base_share_pct:pct-->1.21%<!--/n-->) | <!--n:scen_m24_bear_near:m-->0.00M<!--/n--> |
-| At month 36 | <!--n:scen_m36_bull_near:m-->101.86M<!--/n--> (<!--n:scen_m36_bull_share_pct:pct-->7.32%<!--/n-->) | <!--n:scen_m36_base_near:m-->17.09M<!--/n--> (<!--n:scen_m36_base_share_pct:pct-->1.23%<!--/n-->) | <!--n:scen_m36_bear_near:m-->0.00M<!--/n--> |
+| At month 24 | <!--n:scen_m24_bull_near:m-->76.92M<!--/n--> (<!--n:scen_m24_bull_share_pct:pct-->5.62%<!--/n-->) | <!--n:scen_m24_base_near:m-->16.59M<!--/n--> (<!--n:scen_m24_base_share_pct:pct-->1.21%<!--/n-->) | <!--n:scen_m24_bear_near:m-->0.00M<!--/n--> |
+| At month 36 | <!--n:scen_m36_bull_near:m-->101.83M<!--/n--> (<!--n:scen_m36_bull_share_pct:pct-->7.32%<!--/n-->) | <!--n:scen_m36_base_near:m-->17.09M<!--/n--> (<!--n:scen_m36_base_share_pct:pct-->1.23%<!--/n-->) | <!--n:scen_m36_bear_near:m-->0.00M<!--/n--> |
 | What it would look like | a ≥ +1 in consecutive windows; shares outstanding rising on the issuer's page | \|a\| < 1 in most windows; holdings roughly flat | a ≤ −1 in consecutive windows; shares outstanding falling. At a = −1, today's position would be gone by month <!--n:scen_bear_empty_month:int-->6<!--/n--> |
 | Confirms | BULLISH signpost (two windows) after launch effects have left the windows | BASE signpost (six windows) | BEARISH signpost (two windows) |
 | Would weaken it (not a frozen rule) | A complete window below zero | Two consecutive windows beyond ±1 | A complete window above zero with shares outstanding rising |
@@ -113,8 +113,8 @@ Signpost windows are listed in [SIGNPOSTS.md](SIGNPOSTS.md). Window 1 covers 15 
 
 1. **Done (14 Nov 2026):** absorption and buyback ratios; protocol cap read daily; HSP-029 path and 36-month scenario model; frozen signposts with evaluator and tests; one-hop sensitivity shown separately.
 2. **Month 1:** daily capture of shares outstanding and premium/discount from the issuer page, archived as evidence the same way as issuer snapshots.
-3. **Months 2–6:** run `data/bigquery/completeness_onehop_candidates.sql` and decide on Rule B (adopting it changes every count, so it is announced and versioned, never folded in silently). Add a basket-multiple flag to events (<!--n:creations_non_basket_count:int-->9<!--/n--> creations and <!--n:redemptions_non_basket_count:int-->4<!--/n--> redemptions are not whole baskets today).
-4. **Months 7–12:** reconstruct any second NEAR wrapper that can be tied to an issuer figure, using the same method and the same reconciliation test. Report coverage separately from the ratio.
+3. **Months 2–6:** run `data/bigquery/completeness_onehop_candidates.sql` and decide on Rule B. Bitwise's 30 Sep 10-Q already supports the one known one-hop account: its staked figure matches Rule A plus that account to 0.01%, and Rule A alone is half (adopting it changes every count, so it is announced and versioned, never folded in silently). Add a basket-multiple flag to events (<!--n:creations_non_basket_count:int-->10<!--/n--> creations and <!--n:redemptions_non_basket_count:int-->4<!--/n--> redemptions are not whole baskets today).
+4. **Months 7–12:** reconstruct a second NEAR wrapper with the same method and reconciliation test, and report coverage separately from the ratio. Candidates in order: **Bitwise NEAR Staking ETP** (Europe, launched mid-2025; physically backed, with weekly proof-of-holdings reports to reconcile against), then **21Shares NEAR Staking ETP** (launched Nov 2024). The main risk is shared custody: if a product's NEAR sits in a custodian's omnibus wallets with other clients' coins, it cannot be separated on-chain and is reported as not reconstructable. Grayscale's NEAR trust stays context only, because redemptions are not currently authorised. These products' age is not usable data until their accounts are identified and reconciled.
 5. **Year 2:** model the sponsor fee and accrued staking expenses, to explain why every issuer gap so far has the same sign. Add a price series and test the lagging relation, only once a year of ratios exists.
 
 ## 10. Thresholds not yet defensible

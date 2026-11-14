@@ -478,6 +478,20 @@ def build():
     proto = load("protocol.json", {})
     lt, scen = long_term(rows, events, head, C, issuance, proto)
     head.update(rnd(lt))
+    sec = load("sec_reconciliation.json", None)
+    if sec:
+        head.update(rnd({"sec_valuation_height": sec["valuation_height"], "sec_in_kind_filing": sec["filing"]["in_kind"], "sec_in_kind_onchain": sec["in_kind_onchain"],
+                         "sec_in_kind_diff": sec["in_kind_diff"], "sec_staked_implied": sec["staked_implied"],
+                         "sec_staked_two_accounts": sec["staked_seed_plus_one_hop"],
+                         "sec_staked_diff": sec["staked_diff"], "sec_staked_diff_pct": sec["staked_diff_pct"],
+                         "sec_staked_rule_a_only_diff_pct": sec["staked_rule_a_only_diff_pct"],
+                         "sec_staked_whole_pool_diff_pct": sec["staked_whole_pool_diff_pct"],
+                         "sec_purchased_undelivered": sec["purchased_undelivered"],
+                         "sec_undelivered_value_at_nav": sec["undelivered_value_at_nav"],
+                         "sec_receivable_creations": sec["filing"]["receivable_creations"],
+                         "sec_receivable_diff_usd": sec["receivable_diff_usd"],
+                         "sec_total_filing": sec["filing"]["total"], "sec_fund_inflows_onchain": sec["fund_inflows_onchain"],
+                         "sec_rewards_accrued_two_accounts": sec["staked_seed_plus_one_hop"] - 104384.163097}))
     sp = signposts.evaluate(rows)
     head.update(rnd({"signposts_state": sp["state"], "signposts_windows_complete": sp["complete"],
                      "signposts_first_window_end": sp["windows"][0]["end"]}))

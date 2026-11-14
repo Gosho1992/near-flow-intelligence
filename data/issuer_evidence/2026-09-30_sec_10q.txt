@@ -1,0 +1,19 @@
+Bitwise NEAR ETF — Form 10-Q, period ended 30 Sep 2026 (unaudited)
+URL: https://www.sec.gov/Archives/edgar/data/0002067111/000119312526460024/ck0002067111-20260930.htm
+Retrieved: 2026-11-14 (figures transcribed; quoted phrases are from the filing)
+
+Valuation time: "The Pricing Benchmark is calculated as of 4:00 p.m. Eastern time" (30 Sep 2026 16:00 EDT = 20:00 UTC)
+Principal-market price: NEAR (Lukka Prime Rate) on Coinbase, $5.30. NAV pricing reference (NEARUSD_NY): $5.38
+Net closing balance: 9,811,870.2271 NEAR
+Quantity roll-forward, 28-30 Sep 2026:
+  Purchases                 4,801,521.4703 NEAR   ($25,128,824)
+  In-kind creations         5,010,335.4989 NEAR   ($25,402,401)
+  Staking rewards                  13.2579 NEAR   ($70)
+  Dispositions              none
+Staked: "Amount includes $553,300 of staked NEAR as of September 30, 2026."
+Receivable for Creations:      $14,039,097  (NEAR covered by binding orders, not yet transferred to the Trust)
+Payable for NEAR purchased:    $14,044,291
+Receivable for Staking Rewards:       $105
+Shares outstanding: 1,880,000; Principal Market NAV per Share $27.66
+Operations commenced 28 Sep 2026; "the Trust began staking its NEAR" on that date
+Custodian: Coinbase Custody Trust Company, LLC

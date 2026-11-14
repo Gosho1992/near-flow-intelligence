@@ -152,6 +152,7 @@ footer{padding:36px 0 60px;color:var(--slate);font-size:14px;border-top:1px soli
       </div>
       <p class="compute">Source: data/out/daily.csv, column l1_staked: the staked balance (pool get_accounts) of the 73 Rule A accounts at the first block after 00:00 UTC each day. Dots: data/issuer_snapshots.csv, compared with the next day's 00:00 row. Built by nfi/build.py.</p>
       <p class="context" id="issuer-note"></p>
+      <p class="context" id="sec-note"></p>
     </div>
   </div>
 
@@ -516,6 +517,10 @@ function render(D) {
     selectedRange = btn.dataset.range;
     rangeButtons.forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
     updateFlows();
+  if (H.sec_staked_diff_pct != null) document.getElementById("sec-note").textContent =
+    "Regulator check at launch: Bitwise's 10-Q values the fund at 4 p.m. ET on 30 Sep 2026. At that block, in-kind creations match to " +
+    "four decimals, staked NEAR matches to " + fmt(Math.abs(H.sec_staked_diff_pct), 3) + "% (only the Rule A seed account plus the one-hop account fit), and NEAR bought but not yet delivered matches the creations receivable to $" +
+    fmt(Math.abs(H.sec_receivable_diff_usd)) + ". Source: data/work/sec_reconciliation.json, nfi/sec_check.py.";
   }));
   unitButtons.forEach(btn => btn.addEventListener("click", () => {
     if (btn.dataset.unit === "usd" && nearUsd == null) return;
@@ -544,7 +549,7 @@ function render(D) {
     '<tr><td colspan="5" style="text-align:left;color:var(--slate)">… windows 13 to 36, every 30 days, through ' + nice(dayBefore(SP.windows[SP.windows.length - 1].end)) + '</td></tr>';
   document.getElementById("sp-base").textContent = "Baseline, not signpost windows: absorption " + s2(H.absorption_launch) +
     " since launch, " + s2(H.absorption_since_peak) + " since the peak, " + s2(H.absorption_last30) + " over the latest 30 days (buyback ratio " +
-    fmt(H.buyback_ratio_last30, 3) + ", so that reading would sit marginally in the structurally-wrong zone). The rolling 30-day ratio peaked at " +
+    fmt(H.buyback_ratio_last30, 3) + (Math.abs(H.absorption_last30) < H.buyback_ratio_last30 ? ", so that reading would sit in the structurally-wrong zone" : "") + "). The rolling 30-day ratio peaked at " +
     s2(H.absorption_rolling_max) + " on " + H.absorption_rolling_max_date + ". Source: data/out/signposts.json, nfi/signposts.py.";
   document.getElementById("hsp-lede").textContent = "HSP-029 passed its vote on 2 Nov 2026. Security Council ratification, a protocol upgrade that validators adopt, and a ~90-day grace period come first. Then the cap falls about 3.75 basis points a month for 24 months: " +
     fmt(H.hsp029_m0_baskets_per_day, 2) + " baskets of new NEAR a day today, " + fmt(H.hsp029_m12_baskets_per_day, 2) + " at ramp month 12, " +

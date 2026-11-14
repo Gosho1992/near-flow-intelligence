@@ -161,5 +161,34 @@ class Frozen(unittest.TestCase):
             self.assertEqual(hashlib.sha256((ROOT / doc).read_bytes()).hexdigest(), want, doc)
 
 
+
+class SecFiling(unittest.TestCase):
+    """Bitwise NEAR ETF 10-Q (30 Sep 2026) against the chain at 20:00 UTC, the filing's 4 p.m. ET valuation."""
+    def setUp(self):
+        from nfi import sec_check
+        self.r = sec_check.run()
+        self.ev = (ROOT / "data" / "issuer_evidence" / "2026-09-30_sec_10q.txt").read_text()
+
+    def test_valuation_block_is_at_4pm_eastern(self):
+        self.assertTrue(self.r["valuation_block_time"].startswith("2026-09-30T19:59:59"))
+        self.assertTrue(self.r["next_block_time"] >= "2026-09-30T20:00:00")
+
+    def test_in_kind_creation_matches_to_four_decimals(self):
+        self.assertIn("5,010,335.4989", self.ev)
+        self.assertLess(abs(self.r["in_kind_diff"]), 1e-4)
+
+    def test_staked_value_needs_exactly_the_two_accounts(self):
+        self.assertIn("$553,300", self.ev)
+        self.assertLess(abs(self.r["staked_diff_pct"]), 0.02)
+        self.assertLess(self.r["staked_rule_a_only_diff_pct"], -45)    # Rule A alone is half
+        self.assertGreater(self.r["staked_whole_pool_diff_pct"], 15)   # the whole pool is too much
+
+    def test_undelivered_purchases_match_receivable(self):
+        self.assertIn("$14,039,097", self.ev)
+        self.assertLess(abs(self.r["receivable_diff_usd"]), 100)
+
+    def test_headline_carries_the_check(self):
+        self.assertAlmostEqual(H["sec_staked_diff_pct"], self.r["staked_diff_pct"], places=4)
+
 if __name__ == "__main__":
     unittest.main()
