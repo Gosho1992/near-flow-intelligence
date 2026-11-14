@@ -44,7 +44,7 @@ On the <!--n:issuer_gaps_count:int-->3<!--/n--> issuer dates currently archived,
 - Net custody movements over that period: **<!--n:custody_flow_net:sint-->+15,225,313<!--/n--> NEAR**, excluding staking rewards.
 - The holdings balance also accrues staking rewards; cumulative measured rewards are <!--n:rewards_total:int-->84,844<!--/n--> NEAR. The unexplained residual is kept visible, not silently allocated.
 
-Since the 28 Oct peak, measured creations total <!--n:last30_creations:int-->2,616,500<!--/n--> NEAR? No: the cumulative creations figure above covers the full period. For the post-peak window specifically, the dashboard derives its value from the daily rows; the signed net average shown in the table is the primary comparison.
+Since the 28 Oct peak, across <!--n:since_peak_net_flow_days:int-->16<!--/n--> daily windows, the pipeline recorded <!--n:since_peak_creations_total:int-->57,281<!--/n--> NEAR in creations and <!--n:since_peak_redemptions_total:int-->2,318,791<!--/n--> NEAR in redemptions, for a cumulative signed net custody flow of <!--n:since_peak_net_flow_total:sint-->-2,261,510<!--/n--> NEAR. Dividing that total by the 16 windows gives the average daily rate shown above.
 
 ### 3. Attribution and the completeness boundary
 
