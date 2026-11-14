@@ -21,7 +21,7 @@ One basket is 10,000 NRR shares. Its NEAR equivalent is calculated from the late
 | NRR signed net custody flow, latest 30-day average | <!--n:last30_net_flow_per_day:sint-->+9,924<!--/n--> | <!--n:last30_net_baskets_per_day:s1-->+0.2<!--/n--> |
 | NEAR issuance, measured launch-period average | <!--n:issuance_per_day:int-->89,497<!--/n--> | <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> |
 | Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->9,935<!--/n--> | <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> |
-| Issuance scenario if the proposed 1.6% target is fully reached | <!--n:issuance_hsp029_target_per_day:int-->57,300<!--/n--> | <!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> |
+| Issuance scenario if the proposed 1.6% target is fully reached | <!--n:issuance_hsp029_target_per_day:int-->57,278<!--/n--> | <!--n:issuance_hsp029_baskets_per_day:1-->1.1<!--/n--> |
 
 The periods differ by design: launch period is <!--n:days:int-->46<!--/n--> daily windows, post-peak is <!--n:since_peak_net_flow_days:int-->16<!--/n--> daily windows after the peak date, and latest 30 days is 30 daily windows. The table shows averages per complete daily window. Cumulative totals are reported separately below and on the dashboard.
 
