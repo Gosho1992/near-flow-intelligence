@@ -21,12 +21,12 @@
    "unstaked": 0.0
   },
   "svrn_bitwise.near": {
-   "staked": 2906.8650488880776,
+   "staked": 4526.322725777752,
    "unstaked": 63044.74321944605
   }
  },
- "date": "2026-11-15",
- "height": 224586461,
+ "date": "2026-11-16",
+ "height": 224738407,
  "holder": "SVRN, Inc. (Nasdaq: SVRN)",
  "holder_type": "listed treasury company",
  "observed_pool": "svrn_bitwise.poolv1.near",
