@@ -1214,6 +1214,26 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "008651a4845030e71aad6551725e153aeea2c680c6476e8ddc0dae0e4c9b025b",
     "ts": 1790971925840823167
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "unstake_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "G59aVGJ6PRtuRqJe1B1ruQH5Ljs8gmaMUhxBYWK4VL8g",
+    "height": 224862117,
+    "logs": [
+     "@008651a4845030e71aad6551725e153aeea2c680c6476e8ddc0dae0e4c9b025b unstaking 210018841766308795355878063548. Spent 207821362886992517030682323053 staking shares. Total 210018841766308795355878063549 unstaked balance and 0 staking shares",
+     "Contract total staked balance is 15188622017634405202193388342153. Total number of shares 15029699723763226990436183020755"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "008651a4845030e71aad6551725e153aeea2c680c6476e8ddc0dae0e4c9b025b",
+    "ts": 1794859622250618059
    }
   ],
   "0455d9461774a04988e547f5822922062a7d60bf15585d65dceb65e04b94c1d6": [
@@ -10645,6 +10665,26 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "e868667c07d16a3323b06742c9ee45cfe0c2f837a27ec5571237294af11839ba",
     "ts": 1793299022912929194
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "unstake_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "9Z2qqsfBdK99cEQdX7cgAjtwmoQnC4A54PyrAbYuTk8m",
+    "height": 224862118,
+    "logs": [
+     "@e868667c07d16a3323b06742c9ee45cfe0c2f837a27ec5571237294af11839ba unstaking 2004755626157043384223142777. Spent 1983779374171173711056954836 staking shares. Total 2004755626157043384223142778 unstaked balance and 0 staking shares",
+     "Contract total staked balance is 15186617262008248158809165199377. Total number of shares 15027715944389055816725126065919"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "e868667c07d16a3323b06742c9ee45cfe0c2f837a27ec5571237294af11839ba",
+    "ts": 1794859622651221208
    }
   ],
   "e95ab4e7eb61efd0432d7a9a303162afad8f7cfd5bae2a6d79371a9639f846ec": [
@@ -13133,7 +13173,8 @@
  ],
  "pool_activity": {
   "008651a4845030e71aad6551725e153aeea2c680c6476e8ddc0dae0e4c9b025b": [
-   218250109
+   218250109,
+   224862117
   ],
   "0455d9461774a04988e547f5822922062a7d60bf15585d65dceb65e04b94c1d6": [
    219117724
@@ -13204,7 +13245,8 @@
    221875580,
    221890107,
    222924957,
-   224099262
+   224099262,
+   224846029
   ],
   "35bffb936464a494130a24d33df4f6f70b4c98102b56ec3d7afe9a1729a00619": [
    217986001
@@ -13399,7 +13441,8 @@
    217984776
   ],
   "e868667c07d16a3323b06742c9ee45cfe0c2f837a27ec5571237294af11839ba": [
-   222161408
+   222161408,
+   224862118
   ],
   "e95ab4e7eb61efd0432d7a9a303162afad8f7cfd5bae2a6d79371a9639f846ec": [
    217984778
@@ -13689,7 +13732,10 @@
    224657868,
    224700991,
    224744362,
-   224787468
+   224787468,
+   224830497,
+   224873549,
+   224916851
   ],
   "patoutou.near": [
    223674407,
@@ -14180,7 +14226,17 @@
    224712689,
    224712897,
    224713111,
-   224713318
+   224713318,
+   224859825,
+   224860013,
+   224860227,
+   224860434,
+   224860648,
+   224860862,
+   224861073,
+   224861286,
+   224861496,
+   224861705
   ]
  },
  "sources": {
