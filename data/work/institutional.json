@@ -1,7 +1,7 @@
 {
  "accounts": {
   "0ac0e2221c046344ef23abbbde492e0b91229c80b22995d26ca6412b5b33b263": {
-   "staked": 10358689.0,
+   "staked": 10466589.0,
    "unstaked": 0.0
   },
   "apy-tracer.eco.linear-protocol.near": {
@@ -21,12 +21,12 @@
    "unstaked": 0.0
   },
   "svrn_bitwise.near": {
-   "staked": 7415.274162164518,
+   "staked": 8671.17740613587,
    "unstaked": 0.0
   }
  },
- "date": "2026-11-18",
- "height": 225034442,
+ "date": "2026-11-19",
+ "height": 225180670,
  "holder": "SVRN, Inc. (Nasdaq: SVRN)",
  "holder_type": "listed treasury company",
  "observed_pool": "svrn_bitwise.poolv1.near",
