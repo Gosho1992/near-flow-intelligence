@@ -1846,6 +1846,51 @@
   "time": "2026-11-17 18:22 UTC"
  },
  {
+  "account": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+  "confidence": "unmatched beyond the custody hub",
+  "kind": "redemption",
+  "near": 209992.304577,
+  "status": "confirmed sequence",
+  "steps": [
+   {
+    "account": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "3ir58Q3BHtbKoU1ULuMZGN6GxZUPDAfkb5fBVfzt38z5",
+    "height": 225300189,
+    "near": 209992.304577,
+    "status": "observed",
+    "time": "2026-11-19 19:20 UTC",
+    "ts": 1795116002474819510,
+    "type": "unstake"
+   },
+   {
+    "account": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "6jNPhuDRCNdxkipJxFYQdhSYa8nmLKaSndNiKmi3HiM1",
+    "height": 225438451,
+    "near": 209992.304577,
+    "status": "observed",
+    "time": "2026-11-20 17:52 UTC",
+    "ts": 1795197122840251000,
+    "type": "redemption_withdraw"
+   },
+   {
+    "account": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "2V8wHuxpWXT4W3g6MLaW7AvggJPkk5PxZKKaVuA3HfuE",
+    "height": 225446078,
+    "near": 209992.742407,
+    "status": "observed",
+    "time": "2026-11-20 19:07 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "ts": 1795201622446754845,
+    "type": "return_to_hub"
+   }
+  ],
+  "time": "2026-11-20 17:52 UTC"
+ },
+ {
   "account": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
   "confidence": "probable beyond the custody hub",
   "kind": "redemption",
@@ -5281,6 +5326,51 @@
    }
   ],
   "time": "2026-11-18 20:02 UTC"
+ },
+ {
+  "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+  "confidence": "unmatched beyond the custody hub",
+  "kind": "redemption",
+  "near": 2702.629641,
+  "status": "confirmed sequence",
+  "steps": [
+   {
+    "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "2s6JheLEfpoMaj8ENWReDkoo8PDX3spPsqojZmfSvPx4",
+    "height": 225300391,
+    "near": 2702.629641,
+    "status": "observed",
+    "time": "2026-11-19 19:22 UTC",
+    "ts": 1795116122554770887,
+    "type": "unstake"
+   },
+   {
+    "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "8DyRizguNvEpRSayC4UZxzjLEHg1rVgGBV3RMH6BGZcd",
+    "height": 225438451,
+    "near": 2702.629641,
+    "status": "observed",
+    "time": "2026-11-20 17:52 UTC",
+    "ts": 1795197122840251000,
+    "type": "redemption_withdraw"
+   },
+   {
+    "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
+    "account_label": "NRR basket account (rule A: hub funding, then deposit_and_stake)",
+    "hash": "AdMgGexXBgpPnt88YvvYqfnShFsSXiJ6QawbBVag7685",
+    "height": 225446084,
+    "near": 2703.067472,
+    "status": "observed",
+    "time": "2026-11-20 19:07 UTC",
+    "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "ts": 1795201626427832492,
+    "type": "return_to_hub"
+   }
+  ],
+  "time": "2026-11-20 17:52 UTC"
  },
  {
   "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
