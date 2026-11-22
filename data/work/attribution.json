@@ -1682,6 +1682,33 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac",
     "ts": 1795203422502549414
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "withdraw_all",
+      "near": 0.0
+     }
+    ],
+    "hash": "EX3SwcsDiuCK6ga6cVKkngqGSzK9hxjpN5wqRW7HsdtC",
+    "height": 225606264,
+    "logs": [
+     "Epoch 4995: Contract received total rewards of 578326398447484441654778169 tokens. New total staked balance is 14725267791788465966124042615496. Total number of shares 14561004121157205890812532106494",
+     "Total rewards fee is 17156251126102704782436863 stake shares.",
+     "@1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac withdrawing 262271905442541223555165983332. New unstaked balance is 0"
+    ],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "bitwise_2.poolv1.near",
+      "near": 262271.90544254123,
+      "to": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac"
+     }
+    ],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac",
+    "ts": 1795294022336627482
    }
   ],
   "1ae051814cb385f11242b19a29a40c9a7b33ea769589f8d37d551d7a66eb39fb": [
@@ -13726,7 +13753,8 @@
   ],
   "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac": [
    220679528,
-   225449103
+   225449103,
+   225606264
   ],
   "1ae051814cb385f11242b19a29a40c9a7b33ea769589f8d37d551d7a66eb39fb": [
    218249592
@@ -14275,7 +14303,10 @@
    225392310,
    225435512,
    225478315,
-   225521814
+   225521814,
+   225565198,
+   225608267,
+   225651122
   ],
   "patoutou.near": [
    223674407,
@@ -14816,7 +14847,17 @@
    225451148,
    225451350,
    225451556,
-   225451768
+   225451768,
+   225599901,
+   225600103,
+   225600306,
+   225600514,
+   225600717,
+   225600926,
+   225601131,
+   225601332,
+   225601532,
+   225601737
   ]
  },
  "sources": {

@@ -6,7 +6,7 @@ The investment question is not whether NRR is "demand" in the market. The chain 
 
 ## The long-term thesis
 
-**Over one to three years, NEAR's supply-side case depends on one measurable condition: whether redeemable regulated wrappers take in more NEAR than the protocol mints.** We call this the **absorption ratio** (wrapper net custody flow ÷ NEAR minted, same window). For NRR it was <!--n:absorption_launch:s2-->+3.06<!--/n--> over its first <!--n:days:int-->54<!--/n--> days, <!--n:absorption_since_peak:s2-->-1.25<!--/n--> since its 28 Oct peak, and <!--n:absorption_last30:s2-->-0.82<!--/n--> over the latest 30. HSP-029 would lower NEAR's issuance cap from 2.5% to 1.6% along a 24-month ramp after a 90-day grace period, so the same flow becomes a growing multiple of new supply. The endpoint is in year 3, February 2029 at the earliest. This is not a claim about NEAR's total float: ordinary staking outside the wrapper moved about <!--n:other_stake_abs_daily_mean:m-->2.54M<!--/n--> NEAR a day, far more. **Position today: the bullish condition is not met** (signposts: <!--n:signposts_state:-->NOT YET TESTABLE<!--/n-->).
+**Over one to three years, NEAR's supply-side case depends on one measurable condition: whether redeemable regulated wrappers take in more NEAR than the protocol mints.** We call this the **absorption ratio** (wrapper net custody flow ÷ NEAR minted, same window). For NRR it was <!--n:absorption_launch:s2-->+2.95<!--/n--> over its first <!--n:days:int-->55<!--/n--> days, <!--n:absorption_since_peak:s2-->-1.32<!--/n--> since its 28 Oct peak, and <!--n:absorption_last30:s2-->-0.98<!--/n--> over the latest 30. HSP-029 would lower NEAR's issuance cap from 2.5% to 1.6% along a 24-month ramp after a 90-day grace period, so the same flow becomes a growing multiple of new supply. The endpoint is in year 3, February 2029 at the earliest. This is not a claim about NEAR's total float: ordinary staking outside the wrapper moved about <!--n:other_stake_abs_daily_mean:m-->2.50M<!--/n--> NEAR a day, far more. **Position today: the bullish condition is not met** (signposts: <!--n:signposts_state:-->NOT YET TESTABLE<!--/n-->).
 
 - [THESIS.md](THESIS.md): the claim, the evidence for and against, and the scenarios.
 - [SIGNPOSTS.md](SIGNPOSTS.md): bullish, bearish and structurally-wrong rules on non-overlapping 30-day windows from 15 Nov 2026. Frozen with a SHA-256 and an OpenTimestamps proof.
@@ -15,9 +15,9 @@ The investment question is not whether NRR is "demand" in the market. The chain 
 
 ## The finding
 
-In the <!--n:days:int-->54<!--/n--> measured daily windows from 2026-09-29 through <!--n:data_through:-->2026-11-21<!--/n-->, NRR's signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+274,186<!--/n--> NEAR per day** (<!--n:launch_net_baskets_per_day:s1-->+5.2<!--/n--> approximate 10,000-share baskets per day). Since the 2026-10-28 holdings peak, across <!--n:since_peak_net_flow_days:int-->24<!--/n--> daily windows, the average was **<!--n:since_peak_net_flow_per_day:sint-->-111,698<!--/n--> NEAR per day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.1<!--/n--> baskets per day).
+In the <!--n:days:int-->55<!--/n--> measured daily windows from 2026-09-29 through <!--n:data_through:-->2026-11-22<!--/n-->, NRR's signed net custody flow averaged **<!--n:launch_net_flow_per_day:sint-->+264,433<!--/n--> NEAR per day** (<!--n:launch_net_baskets_per_day:s1-->+5.1<!--/n--> approximate 10,000-share baskets per day). Since the 2026-10-28 holdings peak, across <!--n:since_peak_net_flow_days:int-->25<!--/n--> daily windows, the average was **<!--n:since_peak_net_flow_per_day:sint-->-117,721<!--/n--> NEAR per day** (<!--n:since_peak_net_baskets_per_day:s1-->-2.2<!--/n--> baskets per day).
 
-Those are signed averages across different periods, not cumulative totals and not forecasts. NRR's latest reconstructed staked position is <!--n:nrr_holdings_latest:m-->14.91M<!--/n--> NEAR as of <!--n:data_through:-->2026-11-21<!--/n-->, <!--n:change_since_peak_pct:spct-->-15.00%<!--/n--> below its peak. The position is large; its persistence is not established.
+Those are signed averages across different periods, not cumulative totals and not forecasts. NRR's latest reconstructed staked position is <!--n:nrr_holdings_latest:m-->14.65M<!--/n--> NEAR as of <!--n:data_through:-->2026-11-22<!--/n-->, <!--n:change_since_peak_pct:spct-->-16.48%<!--/n--> below its peak. The position is large; its persistence is not established.
 
 A basket conversion uses the latest included Bitwise snapshot's NEAR-per-share figure multiplied by 10,000 shares. It is a comparison unit, not evidence that a creation or redemption was a market purchase or sale.
 
@@ -33,24 +33,24 @@ The project records:
 - Changes in the protocol buyback-fund balance, separately from executed purchases (which are not measured).
 - A separate, partial observation of SVRN's Bitwise pool, never included in NRR totals.
 
-## Comparable flow readings (data through <!--n:data_through:-->2026-11-21<!--/n-->)
+## Comparable flow readings (data through <!--n:data_through:-->2026-11-22<!--/n-->)
 
 | Measure | Reading |
 |---|---:|
-| NRR signed net custody flow, launch-period average | <!--n:launch_net_flow_per_day:sint-->+274,186<!--/n--> NEAR/day · <!--n:launch_net_baskets_per_day:s1-->+5.2<!--/n--> baskets/day |
-| NRR signed net custody flow, since 28 Oct peak average | <!--n:since_peak_net_flow_per_day:sint-->-111,698<!--/n--> NEAR/day · <!--n:since_peak_net_baskets_per_day:s1-->-2.1<!--/n--> baskets/day |
-| NRR signed net custody flow, latest 30-day total | <!--n:last30_nrr_net:sint-->-2,210,536<!--/n--> NEAR across <!--n:last30_net_flow_days:int-->30<!--/n--> windows |
-| Current-period issuance average | <!--n:issuance_per_day:int-->89,712<!--/n--> NEAR/day · <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets/day |
-| Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->10,316<!--/n--> NEAR/day · <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> baskets/day |
-| Buyback-fund balance change as a share of measured issuance, launch to date | <!--n:buyback_change_pct_of_issuance:pct-->11.50%<!--/n--> |
+| NRR signed net custody flow, launch-period average | <!--n:launch_net_flow_per_day:sint-->+264,433<!--/n--> NEAR/day · <!--n:launch_net_baskets_per_day:s1-->+5.1<!--/n--> baskets/day |
+| NRR signed net custody flow, since 28 Oct peak average | <!--n:since_peak_net_flow_per_day:sint-->-117,721<!--/n--> NEAR/day · <!--n:since_peak_net_baskets_per_day:s1-->-2.2<!--/n--> baskets/day |
+| NRR signed net custody flow, latest 30-day total | <!--n:last30_nrr_net:sint-->-2,629,539<!--/n--> NEAR across <!--n:last30_net_flow_days:int-->30<!--/n--> windows |
+| Current-period issuance average | <!--n:issuance_per_day:int-->89,490<!--/n--> NEAR/day · <!--n:issuance_baskets_per_day:1-->1.7<!--/n--> baskets/day |
+| Buyback-fund balance change, launch-period average | <!--n:buyback_net_change_per_day:int-->10,447<!--/n--> NEAR/day · <!--n:buyback_baskets_per_day:1-->0.2<!--/n--> baskets/day |
+| Buyback-fund balance change as a share of measured issuance, launch to date | <!--n:buyback_change_pct_of_issuance:pct-->11.67%<!--/n--> |
 | Bitwise SEC 10-Q at launch (30 Sep 2026, 4 p.m. ET) vs chain: in-kind creations · staked value · undelivered purchases | to four decimals · inside the filing's rounding band (only Rule A seed + one-hop account fit) · consistent at published price precision |
-| **Absorption ratio** (NRR net flow ÷ NEAR minted): launch · since peak · latest 30 days | <!--n:absorption_launch:s2-->+3.06<!--/n--> · <!--n:absorption_since_peak:s2-->-1.25<!--/n--> · <!--n:absorption_last30:s2-->-0.82<!--/n--> |
+| **Absorption ratio** (NRR net flow ÷ NEAR minted): launch · since peak · latest 30 days | <!--n:absorption_launch:s2-->+2.95<!--/n--> · <!--n:absorption_since_peak:s2-->-1.32<!--/n--> · <!--n:absorption_last30:s2-->-0.98<!--/n--> |
 
 The buyback series is a balance change, not a record of executed market purchases. The table compares measured on-chain quantities and their scale; it does not imply that NRR custody movements and buyback-fund balance changes have the same economic meaning.
 
 ### Issuance path
 
-Issuance is scheduled to fall, not falling. Today's 2.5% cap mints about <!--n:hsp029_m0_baskets_per_day:2-->1.71<!--/n--> NRR-sized baskets a day. If HSP-029 takes effect, a ~90-day grace period is followed by a linear 24-month ramp: about <!--n:hsp029_m6_baskets_per_day:2-->1.56<!--/n--> baskets a day at ramp month 6, <!--n:hsp029_m12_baskets_per_day:2-->1.41<!--/n--> at 12, <!--n:hsp029_m18_baskets_per_day:2-->1.25<!--/n--> at 18 and <!--n:hsp029_m24_baskets_per_day:2-->1.10<!--/n--> at 24. Ratification and a validator-adopted upgrade come first. The pipeline reads the cap from the chain every day (<!--n:protocol_cap_pct_latest:pct-->2.50%<!--/n--> at the cut), so the start is observed, not assumed. `data/out/scenarios.csv` projects 36 months under absorption ratios of +1, 0 and −1. These are mechanical consequences, not forecasts.
+Issuance is scheduled to fall, not falling. Today's 2.5% cap mints about <!--n:hsp029_m0_baskets_per_day:2-->1.71<!--/n--> NRR-sized baskets a day. If HSP-029 takes effect, a ~90-day grace period is followed by a linear 24-month ramp: about <!--n:hsp029_m6_baskets_per_day:2-->1.56<!--/n--> baskets a day at ramp month 6, <!--n:hsp029_m12_baskets_per_day:2-->1.40<!--/n--> at 12, <!--n:hsp029_m18_baskets_per_day:2-->1.25<!--/n--> at 18 and <!--n:hsp029_m24_baskets_per_day:2-->1.09<!--/n--> at 24. Ratification and a validator-adopted upgrade come first. The pipeline reads the cap from the chain every day (<!--n:protocol_cap_pct_latest:pct-->2.50%<!--/n--> at the cut), so the start is observed, not assumed. `data/out/scenarios.csv` projects 36 months under absorption ratios of +1, 0 and −1. These are mechanical consequences, not forecasts.
 
 ## Run it
 
@@ -86,7 +86,7 @@ For a faster rebuild from already collected `data/work/` snapshots, run `make da
 
 ## Current attribution boundary
 
-The primary NRR series uses **Rule A**: an account is counted when the inferred custody hub funded it and it subsequently called `deposit_and_stake` on `bitwise_2.poolv1.near`. One account outside Rule A, funded by a Rule A account and then staked in the NRR pool, is verified from the raw cache and shown as a sensitivity only (<!--n:one_hop_staked_latest:int-->52,557<!--/n--> NEAR; adding it would move the issuer gaps to about <!--n:one_hop_gap_max_pct:spct-->+0.20%<!--/n-->). The BigQuery check currently covers direct hub recipients only; it is not a global proof that no downstream account was missed.
+The primary NRR series uses **Rule A**: an account is counted when the inferred custody hub funded it and it subsequently called `deposit_and_stake` on `bitwise_2.poolv1.near`. One account outside Rule A, funded by a Rule A account and then staked in the NRR pool, is verified from the raw cache and shown as a sensitivity only (<!--n:one_hop_staked_latest:int-->52,565<!--/n--> NEAR; adding it would move the issuer gaps to about <!--n:one_hop_gap_max_pct:spct-->+0.20%<!--/n-->). The BigQuery check currently covers direct hub recipients only; it is not a global proof that no downstream account was missed.
 
 SVRN is a separate contextual observation: a company-reported treasury figure and a partial on-chain view of one Bitwise-operated pool. The two are not reconciled, not summed, and not treated as new purchases.
 
