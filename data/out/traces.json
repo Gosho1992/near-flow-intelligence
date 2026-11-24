@@ -1879,7 +1879,7 @@
  },
  {
   "account": "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d",
-  "confidence": "unmatched beyond the custody hub",
+  "confidence": "probable beyond the custody hub",
   "kind": "redemption",
   "near": 209992.304577,
   "status": "confirmed sequence",
@@ -1918,6 +1918,35 @@
     "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1795201622446754845,
     "type": "return_to_hub"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "combined_with": [],
+    "hash": "44LA8JGmEH516z8wZu2ugbiKawMWgxP3iBBaf9KVRmhU",
+    "height": 225882531,
+    "near": 209323.384615,
+    "reason": "probable: the only hub outflow within 72 h matching the amount (\u00b12%)",
+    "status": "probable",
+    "time": "2026-11-23 16:56 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "ts": 1795452961734022579,
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "8d2MkBdPm5MZa3QfR4kYB7UcuXDuFyJFuf7yRicFKAk6",
+    "height": 225882844,
+    "near": 209323.38378,
+    "reason": "forwards the same amount",
+    "status": "observed",
+    "time": "2026-11-23 16:59 UTC",
+    "to": "25ab96ddd0d9a8e0ab48b45c2ef7473a83c4ff7e49239b46613b3d688e024731",
+    "to_label": "exchange-style wallet (heuristic: 224,464 transactions, 157 distinct counterparties in its 200 most recent)",
+    "ts": 1795453141344692657,
+    "type": "onward"
    }
   ],
   "time": "2026-11-20 17:52 UTC"
@@ -5361,7 +5390,7 @@
  },
  {
   "account": "6880f1ed70c08c8816bce32a745babe025b41f463d51ec0fac73fc7780235aa2",
-  "confidence": "unmatched beyond the custody hub",
+  "confidence": "probable beyond the custody hub",
   "kind": "redemption",
   "near": 2702.629641,
   "status": "confirmed sequence",
@@ -5400,6 +5429,37 @@
     "to_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
     "ts": 1795201626427832492,
     "type": "return_to_hub"
+   },
+   {
+    "account": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "account_label": "custody hub (inferred: funds every rule A account, receives every redemption)",
+    "combined_with": [
+     "d835c1c4d20ef0fb06ecb562a0093c64ce752f0573d4c0ec8074ae02f33e149d"
+    ],
+    "hash": "44LA8JGmEH516z8wZu2ugbiKawMWgxP3iBBaf9KVRmhU",
+    "height": 225882531,
+    "near": 209323.384615,
+    "reason": "probable: the only hub outflow within 72 h matching this return plus 1 other same-day return(s) (\u00b12%)",
+    "status": "probable",
+    "time": "2026-11-23 16:56 UTC",
+    "to": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "to_label": "unlabelled account (11 transactions)",
+    "ts": 1795452961734022579,
+    "type": "hub_to_next"
+   },
+   {
+    "account": "fb79675c31abbbb3cc52c47007378305ca2be8a5e2fb68ac1e54fb696ebdcb91",
+    "account_label": "unlabelled account (11 transactions)",
+    "hash": "8d2MkBdPm5MZa3QfR4kYB7UcuXDuFyJFuf7yRicFKAk6",
+    "height": 225882844,
+    "near": 209323.38378,
+    "reason": "forwards the same amount",
+    "status": "observed",
+    "time": "2026-11-23 16:59 UTC",
+    "to": "25ab96ddd0d9a8e0ab48b45c2ef7473a83c4ff7e49239b46613b3d688e024731",
+    "to_label": "exchange-style wallet (heuristic: 224,464 transactions, 157 distinct counterparties in its 200 most recent)",
+    "ts": 1795453141344692657,
+    "type": "onward"
    }
   ],
   "time": "2026-11-20 17:52 UTC"
