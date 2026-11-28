@@ -433,6 +433,22 @@
    "stake_tx": "4Hz5N8W7UvpwZiXt5T4CWMn5ySTW6TWTPe3HeGaXyr6C"
   },
   {
+   "account": "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a",
+   "amount_gap_near": 0.05000000004656613,
+   "confidence": "high",
+   "confidence_reason": "staked 1,047,269.79 NEAR 2.7 h after receiving 1,047,269.84 NEAR from the hub (difference 0.05 NEAR)",
+   "delay_hours": 2.7329172328383335,
+   "first_height": 226504709,
+   "funding_height": 226504709,
+   "funding_near": 1047269.8401408,
+   "funding_tx": "CMhs9p3gfkJn1Z8VEHjfKzJ3pK94mqq1twqjzS7nP391",
+   "pool": "bitwise_2.poolv1.near",
+   "rule": "A",
+   "stake_height": 226521890,
+   "stake_near": 1047269.7901408,
+   "stake_tx": "4UG88N8p2v95RgQBnL6Em1pKpJUfV2NHyT5nt9eGQXw4"
+  },
+  {
    "account": "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049",
    "amount_gap_near": 0.05000000000291038,
    "confidence": "high",
@@ -447,6 +463,22 @@
    "stake_height": 217984473,
    "stake_near": 52190.94478079,
    "stake_tx": "3R6yYDEfibrj2ec83Ew9NZw5eTsAezax9LRGCYw7M91T"
+  },
+  {
+   "account": "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b",
+   "amount_gap_near": 0.05000000004656613,
+   "confidence": "high",
+   "confidence_reason": "staked 785,452.33 NEAR 1.3 h after receiving 785,452.38 NEAR from the hub (difference 0.05 NEAR)",
+   "delay_hours": 1.3336091299297221,
+   "first_height": 226513541,
+   "funding_height": 226513541,
+   "funding_near": 785452.3801056,
+   "funding_tx": "BexNePo17PcrcrYghPyzf8hSdYTyBjyZnAzf8VNVW5Zw",
+   "pool": "bitwise_2.poolv1.near",
+   "rule": "A",
+   "stake_height": 226521892,
+   "stake_near": 785452.3301056,
+   "stake_tx": "9jb7PXgdMT5ykmv89jWfiwj1mN7eokGLHVygAZgj7uE1"
   },
   {
    "account": "704cd9cd0d4d46e5ce099f9ef8d2f2767e5ff5334c3a9a958efa8f77f3195791",
@@ -593,6 +625,22 @@
    "stake_tx": "8tP3KECDpHfJnoAvN3iKY2KH7xf9tspwtjrcHJSAXxsW"
   },
   {
+   "account": "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008",
+   "amount_gap_near": 0.05000000004656613,
+   "confidence": "high",
+   "confidence_reason": "staked 1,047,269.79 NEAR 2.6 h after receiving 1,047,269.84 NEAR from the hub (difference 0.05 NEAR)",
+   "delay_hours": 2.649993220215278,
+   "first_height": 226505747,
+   "funding_height": 226505747,
+   "funding_near": 1047269.8401408,
+   "funding_tx": "9ZamYhPpBp14G5yUd95kh2srp4BMMkRFG8hLz2YCNhHr",
+   "pool": "bitwise_2.poolv1.near",
+   "rule": "A",
+   "stake_height": 226522422,
+   "stake_near": 1047269.7901408,
+   "stake_tx": "BHmfMkHfbnRozdjH77c6JBCCzj6QhpN166KPsfmYGAVZ"
+  },
+  {
    "account": "83e8cbcbb73b57406dfa2287985c9f05f35ebcff3f96d0a7399de385186c57c5",
    "amount_gap_near": 0.05000000000291038,
    "confidence": "high",
@@ -655,6 +703,22 @@
    "stake_height": 217986715,
    "stake_near": 521909.8978079,
    "stake_tx": "8SpzKbWjkZu17ojksScezPx4y3fqDsTAa3EYJiAipuDp"
+  },
+  {
+   "account": "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb",
+   "amount_gap_near": 0.05000000004656613,
+   "confidence": "high",
+   "confidence_reason": "staked 1,047,269.79 NEAR 2.5 h after receiving 1,047,269.84 NEAR from the hub (difference 0.05 NEAR)",
+   "delay_hours": 2.5166274778372224,
+   "first_height": 226506582,
+   "funding_height": 226506582,
+   "funding_near": 1047269.8401408,
+   "funding_tx": "nMWKFaWvHv3rH1FGXGdcFgCNeqvvsdRXqr7FECyVYPB",
+   "pool": "bitwise_2.poolv1.near",
+   "rule": "A",
+   "stake_height": 226522423,
+   "stake_near": 1047269.7901408,
+   "stake_tx": "EiQKRHdSwdo2TzaQuJo9GLp6jLEGG28evTeQr5oYLPyZ"
   },
   {
    "account": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
@@ -927,6 +991,22 @@
    "stake_height": 221725829,
    "stake_near": 208989.75931577047,
    "stake_tx": "C4osJ9sJdvm2vzaLtRj1NaJ343rrAqW6F8x31daCDE5B"
+  },
+  {
+   "account": "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a",
+   "amount_gap_near": 0.05000000004656613,
+   "confidence": "high",
+   "confidence_reason": "staked 1,047,269.79 NEAR 2.5 h after receiving 1,047,269.84 NEAR from the hub (difference 0.05 NEAR)",
+   "delay_hours": 2.4998887980433335,
+   "first_height": 226506167,
+   "funding_height": 226506167,
+   "funding_near": 1047269.8401408,
+   "funding_tx": "4WpQio6oqPLseXKBYEVB6zTeALCUkLLZsKUGjcCeZekJ",
+   "pool": "bitwise_2.poolv1.near",
+   "rule": "A",
+   "stake_height": 226521891,
+   "stake_near": 1047269.7901408,
+   "stake_tx": "6yvNDXrJkLrqP3LvN1qNvQRLF1TvAe4UEgNeDfWNYShm"
   },
   {
    "account": "d18e2eefa397cea5b77b3352e8d5ec1067640459611bbcfe72c53c2bb21cc72a",
@@ -1617,6 +1697,49 @@
     "receiver": "508a5b6d2747f3dee3d38d467fadb6376e43723de4fb42e7cb32d1450d6960bd",
     "signer": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
     "ts": 1794232922213361095
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 209454.0
+     }
+    ],
+    "hash": "H17zyV8HL3tbfGtqiovyEo7AoRCJD3vaEDg3nSoUTCaS",
+    "height": 226514989,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 209454.0,
+      "to": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75"
+     }
+    ],
+    "receiver": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795817161948742136
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "deposit_and_stake",
+      "near": 209454.05166501045
+     }
+    ],
+    "hash": "8nPPb4eBPYB2wZM1op6uTTwLLHLUE7bfTdvUHrRsT18d",
+    "height": 226521786,
+    "logs": [
+     "@17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75 deposited 209454051665010462499998951424. New unstaked balance is 209454051665010462499998951424",
+     "@17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75 staking 209454051665010462499998951423. Received 206952652987265870007456784158 new staking shares. Total 1 unstaked balance and 206952652987265870007456784158 staking shares",
+     "Contract total staked balance is 14744739032652501957010672606540. Total number of shares 14568650432662305114917822346096"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "ts": 1795821061832788070
    }
   ],
   "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac": [
@@ -1731,6 +1854,27 @@
     "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
     "signer": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac",
     "ts": 1795532524421597409
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "deposit_and_stake",
+      "near": 261817.51170021045
+     }
+    ],
+    "hash": "F8c2iKQ5FXGUUUNuyCk44V13bi3Mkuxehs4quBcZmQpw",
+    "height": 226521787,
+    "logs": [
+     "@1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac deposited 261817511700210462499998951424. New unstaked balance is 261817511700210462499998951424",
+     "@1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac staking 261817511700210462499998951423. Received 258690763984560093528898764109 new staking shares. Total 1 unstaked balance and 258690763984560093528898764109 staking shares",
+     "Contract total staked balance is 15006556544352712419510671557964. Total number of shares 14827341196646865208446721110205"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac",
+    "ts": 1795821062318397338
    }
   ],
   "1ae051814cb385f11242b19a29a40c9a7b33ea769589f8d37d551d7a66eb39fb": [
@@ -7765,6 +7909,336 @@
     "receiver": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
     "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
     "ts": 1795637103250796518
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 5445803.16873216
+     }
+    ],
+    "hash": "4wNZRWeRf5dRp8v1YJDPnt7NMGxeXzaTXxcgi2WeS5ZP",
+    "height": 226499828,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+      "near": 5445803.16873216,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+    "ts": 1795808475169578443
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 0.042499999999999996
+     }
+    ],
+    "hash": "9jYm55hYUHNCLQQH5MUZ27DLQKpR3i58Tw4P6NdMe3AH",
+    "height": 226504575,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+      "near": 0.042499999999999996,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "ts": 1795811199400329483
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "CMhs9p3gfkJn1Z8VEHjfKzJ3pK94mqq1twqjzS7nP391",
+    "height": 226504709,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a"
+     }
+    ],
+    "receiver": "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795811283165274466
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 0.042499999999999996
+     }
+    ],
+    "hash": "D1cDh27YWJUpNk6hbS5Q4XgBvgznjt33E9bSep7uA5dQ",
+    "height": 226505509,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+      "near": 0.042499999999999996,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "ts": 1795811745008095813
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "9ZamYhPpBp14G5yUd95kh2srp4BMMkRFG8hLz2YCNhHr",
+    "height": 226505747,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008"
+     }
+    ],
+    "receiver": "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795811881944519866
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 0.042499999999999996
+     }
+    ],
+    "hash": "CUJDBaH6iBoM9KwhNN2Zuf8eGnVCkr32LGKWYDgUbZv",
+    "height": 226506016,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+      "near": 0.042499999999999996,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "ts": 1795812034980964034
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "4WpQio6oqPLseXKBYEVB6zTeALCUkLLZsKUGjcCeZekJ",
+    "height": 226506167,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a"
+     }
+    ],
+    "receiver": "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795812122673580207
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 0.042499999999999996
+     }
+    ],
+    "hash": "76R87DrFFxYKkcda4EydKSYqzHtb84Vy2p2EJ2DBr3a1",
+    "height": 226506429,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+      "near": 0.042499999999999996,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "ts": 1795812273811758064
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "nMWKFaWvHv3rH1FGXGdcFgCNeqvvsdRXqr7FECyVYPB",
+    "height": 226506582,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb"
+     }
+    ],
+    "receiver": "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795812362640285259
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 0.042499999999999996
+     }
+    ],
+    "hash": "7tyd3TitVAqby4gBGSnmnNiJMphDSFURUp6YytgYbSK3",
+    "height": 226513093,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+      "near": 0.042499999999999996,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "ts": 1795816063148989417
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 785452.3801056
+     }
+    ],
+    "hash": "BexNePo17PcrcrYghPyzf8hSdYTyBjyZnAzf8VNVW5Zw",
+    "height": 226513541,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 785452.3801056,
+      "to": "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b"
+     }
+    ],
+    "receiver": "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795816321887902876
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 0.042499999999999996
+     }
+    ],
+    "hash": "FFRj6Njs2KqaGS3FEdcvioiRGFSqm2Kgph9DVyhEby14",
+    "height": 226513995,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+      "near": 0.042499999999999996,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "ts": 1795816583591897287
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 261817.4600352
+     }
+    ],
+    "hash": "WhVmo46mQRAnH2hVvk2Az87RsePfKij9qc9KD8UBkMJ",
+    "height": 226514587,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 261817.4600352,
+      "to": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672"
+     }
+    ],
+    "receiver": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795816921937620508
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 0.042499999999999996
+     }
+    ],
+    "hash": "D7nn2xBqLxeQo2BfetJfv7VexZH6f6m7EcGBbQcaqb2u",
+    "height": 226514836,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+      "near": 0.042499999999999996,
+      "to": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a"
+     }
+    ],
+    "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "signer": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+    "ts": 1795817069895759438
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 209454.0
+     }
+    ],
+    "hash": "H17zyV8HL3tbfGtqiovyEo7AoRCJD3vaEDg3nSoUTCaS",
+    "height": 226514989,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 209454.0,
+      "to": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75"
+     }
+    ],
+    "receiver": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795817161948742136
    }
   ],
   "25813871189e04dd014b1089360602c3411be16b1913ded2ed99cce5c87d93f7": [
@@ -9107,6 +9581,51 @@
     "ts": 1795201626427832492
    }
   ],
+  "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a": [
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "CMhs9p3gfkJn1Z8VEHjfKzJ3pK94mqq1twqjzS7nP391",
+    "height": 226504709,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a"
+     }
+    ],
+    "receiver": "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795811283165274466
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "deposit_and_stake",
+      "near": 1047269.7901408
+     }
+    ],
+    "hash": "4UG88N8p2v95RgQBnL6Em1pKpJUfV2NHyT5nt9eGQXw4",
+    "height": 226521890,
+    "logs": [
+     "@69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a deposited 1047269790140800000000000000000. New unstaked balance is 1047269790140800000000000000000",
+     "@69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a staking 1047269790140799999999999999999. Received 1034762802343353312050933855926 new staking shares. Total 1 unstaked balance and 1034762802343353312050933855926 staking shares",
+     "Contract total staked balance is 16053826334493512419510671557964. Total number of shares 15862103998990218520497654966131"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a",
+    "ts": 1795821121667312684
+   }
+  ],
   "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049": [
    {
     "actions": [
@@ -9150,6 +9669,51 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049",
     "ts": 1790812501526349404
+   }
+  ],
+  "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b": [
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 785452.3801056
+     }
+    ],
+    "hash": "BexNePo17PcrcrYghPyzf8hSdYTyBjyZnAzf8VNVW5Zw",
+    "height": 226513541,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 785452.3801056,
+      "to": "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b"
+     }
+    ],
+    "receiver": "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795816321887902876
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "deposit_and_stake",
+      "near": 785452.3301056
+     }
+    ],
+    "hash": "9jb7PXgdMT5ykmv89jWfiwj1mN7eokGLHVygAZgj7uE1",
+    "height": 226521892,
+    "logs": [
+     "@6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b deposited 785452330105600000000000000000. New unstaked balance is 785452330105600000000000000000",
+     "@6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b staking 785452330105599999999999999999. Received 776072089406795856015864192013 new staking shares. Total 1 unstaked balance and 776072089406795856015864192013 staking shares",
+     "Contract total staked balance is 17886548454739912419510671557964. Total number of shares 17672938890740367688564453014070"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b",
+    "ts": 1795821122880770623
    }
   ],
   "704cd9cd0d4d46e5ce099f9ef8d2f2767e5ff5334c3a9a958efa8f77f3195791": [
@@ -9354,6 +9918,28 @@
     "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
     "signer": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
     "ts": 1793826902740959040
+   },
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 261817.4600352
+     }
+    ],
+    "hash": "WhVmo46mQRAnH2hVvk2Az87RsePfKij9qc9KD8UBkMJ",
+    "height": 226514587,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 261817.4600352,
+      "to": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672"
+     }
+    ],
+    "receiver": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795816921937620508
    }
   ],
   "72e4edc469375cc9701e07b6384c56b6be93fc717979213becfe31ed53a4a8f8": [
@@ -9693,6 +10279,51 @@
     "ts": 1790812922923548069
    }
   ],
+  "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008": [
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "9ZamYhPpBp14G5yUd95kh2srp4BMMkRFG8hLz2YCNhHr",
+    "height": 226505747,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008"
+     }
+    ],
+    "receiver": "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795811881944519866
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "deposit_and_stake",
+      "near": 1047269.7901408
+     }
+    ],
+    "hash": "BHmfMkHfbnRozdjH77c6JBCCzj6QhpN166KPsfmYGAVZ",
+    "height": 226522422,
+    "logs": [
+     "@81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008 deposited 1047269790140800000000000000000. New unstaked balance is 1047269790140800000000000000000",
+     "@81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008 staking 1047269790140799999999999999999. Received 1034762802343353312050933855926 new staking shares. Total 1 unstaked balance and 1034762802343353312050933855926 staking shares",
+     "Contract total staked balance is 18933818244880712419510671557964. Total number of shares 18707701693083721000615386869996"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008",
+    "ts": 1795821421920112641
+   }
+  ],
   "83e8cbcbb73b57406dfa2287985c9f05f35ebcff3f96d0a7399de385186c57c5": [
    {
     "actions": [
@@ -9871,6 +10502,51 @@
     "receiver": "bitwise_2.poolv1.near",
     "signer": "88db836bdfa4ae5b82a9d92ad732572b2e8d77fab5fb2e5ef6f262bd0b77821d",
     "ts": 1790813822683159908
+   }
+  ],
+  "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb": [
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "nMWKFaWvHv3rH1FGXGdcFgCNeqvvsdRXqr7FECyVYPB",
+    "height": 226506582,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb"
+     }
+    ],
+    "receiver": "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795812362640285259
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "deposit_and_stake",
+      "near": 1047269.7901408
+     }
+    ],
+    "hash": "EiQKRHdSwdo2TzaQuJo9GLp6jLEGG28evTeQr5oYLPyZ",
+    "height": 226522423,
+    "logs": [
+     "@88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb deposited 1047269790140800000000000000000. New unstaked balance is 1047269790140800000000000000000",
+     "@88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb staking 1047269790140799999999999999999. Received 1034762802343353312050933855926 new staking shares. Total 1 unstaked balance and 1034762802343353312050933855926 staking shares",
+     "Contract total staked balance is 19981088035021512419510671557964. Total number of shares 19742464495427074312666320725922"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb",
+    "ts": 1795821422499205473
    }
   ],
   "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf": [
@@ -10975,6 +11651,51 @@
     "receiver": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
     "signer": "ce8b9ff34bfba8179225c7c923f03d8068b5d0e90eeb3014fc5c81cc27d312c7",
     "ts": 1795617602691344772
+   }
+  ],
+  "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a": [
+   {
+    "actions": [
+     {
+      "kind": "Transfer",
+      "near": 1047269.8401408
+     }
+    ],
+    "hash": "4WpQio6oqPLseXKBYEVB6zTeALCUkLLZsKUGjcCeZekJ",
+    "height": 226506167,
+    "logs": [],
+    "ok": true,
+    "receipt_transfers": [
+     {
+      "from": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+      "near": 1047269.8401408,
+      "to": "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a"
+     }
+    ],
+    "receiver": "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a",
+    "signer": "23ced4300a4bf282bf94a4fcd2b0af32ad291ef531f544f6d7d283e8ff1e684a",
+    "ts": 1795812122673580207
+   },
+   {
+    "actions": [
+     {
+      "kind": "FunctionCall",
+      "method": "deposit_and_stake",
+      "near": 1047269.7901408
+     }
+    ],
+    "hash": "6yvNDXrJkLrqP3LvN1qNvQRLF1TvAe4UEgNeDfWNYShm",
+    "height": 226521891,
+    "logs": [
+     "@d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a deposited 1047269790140800000000000000000. New unstaked balance is 1047269790140800000000000000000",
+     "@d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a staking 1047269790140799999999999999999. Received 1034762802343353312050933855926 new staking shares. Total 1 unstaked balance and 1034762802343353312050933855926 staking shares",
+     "Contract total staked balance is 17101096124634312419510671557964. Total number of shares 16896866801333571832548588822057"
+    ],
+    "ok": true,
+    "receipt_transfers": [],
+    "receiver": "bitwise_2.poolv1.near",
+    "signer": "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a",
+    "ts": 1795821122273253163
    }
   ],
   "d18e2eefa397cea5b77b3352e8d5ec1067640459611bbcfe72c53c2bb21cc72a": [
@@ -13561,6 +14282,62 @@
    "height": 226202728,
    "near": 0.042499999999999996,
    "ts": 1795637025411414351
+  },
+  {
+   "from": "af09768659017107aad46477428f1ca3c267ff8b95d96bb1ab8a272f8df7c8f6",
+   "hash": "4wNZRWeRf5dRp8v1YJDPnt7NMGxeXzaTXxcgi2WeS5ZP",
+   "height": 226499828,
+   "near": 5445803.16873216,
+   "ts": 1795808475169578443
+  },
+  {
+   "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+   "hash": "9jYm55hYUHNCLQQH5MUZ27DLQKpR3i58Tw4P6NdMe3AH",
+   "height": 226504575,
+   "near": 0.042499999999999996,
+   "ts": 1795811199400329483
+  },
+  {
+   "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+   "hash": "D1cDh27YWJUpNk6hbS5Q4XgBvgznjt33E9bSep7uA5dQ",
+   "height": 226505509,
+   "near": 0.042499999999999996,
+   "ts": 1795811745008095813
+  },
+  {
+   "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+   "hash": "CUJDBaH6iBoM9KwhNN2Zuf8eGnVCkr32LGKWYDgUbZv",
+   "height": 226506016,
+   "near": 0.042499999999999996,
+   "ts": 1795812034980964034
+  },
+  {
+   "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+   "hash": "76R87DrFFxYKkcda4EydKSYqzHtb84Vy2p2EJ2DBr3a1",
+   "height": 226506429,
+   "near": 0.042499999999999996,
+   "ts": 1795812273811758064
+  },
+  {
+   "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+   "hash": "7tyd3TitVAqby4gBGSnmnNiJMphDSFURUp6YytgYbSK3",
+   "height": 226513093,
+   "near": 0.042499999999999996,
+   "ts": 1795816063148989417
+  },
+  {
+   "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+   "hash": "FFRj6Njs2KqaGS3FEdcvioiRGFSqm2Kgph9DVyhEby14",
+   "height": 226513995,
+   "near": 0.042499999999999996,
+   "ts": 1795816583591897287
+  },
+  {
+   "from": "3fb56deeaa026afe28210136c1198d05a16b00e5eae9648e151b6fe0e3846721",
+   "hash": "D7nn2xBqLxeQo2BfetJfv7VexZH6f6m7EcGBbQcaqb2u",
+   "height": 226514836,
+   "near": 0.042499999999999996,
+   "ts": 1795817069895759438
   }
  ],
  "hub_out": [
@@ -14270,6 +15047,55 @@
    "near": 4440.0,
    "to": "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf",
    "ts": 1795637103250796518
+  },
+  {
+   "hash": "CMhs9p3gfkJn1Z8VEHjfKzJ3pK94mqq1twqjzS7nP391",
+   "height": 226504709,
+   "near": 1047269.8401408,
+   "to": "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a",
+   "ts": 1795811283165274466
+  },
+  {
+   "hash": "9ZamYhPpBp14G5yUd95kh2srp4BMMkRFG8hLz2YCNhHr",
+   "height": 226505747,
+   "near": 1047269.8401408,
+   "to": "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008",
+   "ts": 1795811881944519866
+  },
+  {
+   "hash": "4WpQio6oqPLseXKBYEVB6zTeALCUkLLZsKUGjcCeZekJ",
+   "height": 226506167,
+   "near": 1047269.8401408,
+   "to": "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a",
+   "ts": 1795812122673580207
+  },
+  {
+   "hash": "nMWKFaWvHv3rH1FGXGdcFgCNeqvvsdRXqr7FECyVYPB",
+   "height": 226506582,
+   "near": 1047269.8401408,
+   "to": "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb",
+   "ts": 1795812362640285259
+  },
+  {
+   "hash": "BexNePo17PcrcrYghPyzf8hSdYTyBjyZnAzf8VNVW5Zw",
+   "height": 226513541,
+   "near": 785452.3801056,
+   "to": "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b",
+   "ts": 1795816321887902876
+  },
+  {
+   "hash": "WhVmo46mQRAnH2hVvk2Az87RsePfKij9qc9KD8UBkMJ",
+   "height": 226514587,
+   "near": 261817.4600352,
+   "to": "70aba5d281dde9eed68194da809e7f76184f90f0f2939d5b4adf92af20f6a672",
+   "ts": 1795816921937620508
+  },
+  {
+   "hash": "H17zyV8HL3tbfGtqiovyEo7AoRCJD3vaEDg3nSoUTCaS",
+   "height": 226514989,
+   "near": 209454.0,
+   "to": "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75",
+   "ts": 1795817161948742136
   }
  ],
  "pool_activity": {
@@ -14305,12 +15131,14 @@
   "17aad1b442518e326af3879e31384b8ec1fe8c9db52f1ae4f2489a475aea3d75": [
    218249390,
    223216335,
-   223364868
+   223364868,
+   226521786
   ],
   "1842af8cb7939930545016791c64f73c215dd8c14497df263b31d7005023d4ac": [
    220679528,
    225449103,
-   225606264
+   225606264,
+   226521787
   ],
   "1ae051814cb385f11242b19a29a40c9a7b33ea769589f8d37d551d7a66eb39fb": [
    218249592
@@ -14400,8 +15228,14 @@
    225300391,
    225438451
   ],
+  "69c53962570dbb29a6a7a271a3188aab3f55f7447854f8c697408e842e36d80a": [
+   226521890
+  ],
   "69dfc7170056c9abbf679b4c6bbbefe80b80b796350f9be63e7e66f6e6139049": [
    217984473
+  ],
+  "6f5c3a9bef60f71fedaeb1a0c33804082639b34103ab4c3cd60e466c160e926b": [
+   226521892
   ],
   "704cd9cd0d4d46e5ce099f9ef8d2f2767e5ff5334c3a9a958efa8f77f3195791": [
    218249593
@@ -14437,6 +15271,9 @@
   "80a8d837d7c6ec6155d33e1233bff8e3354b8c66b4a934459994137ed6c6ae85": [
    217985186
   ],
+  "81dd0644e3f57ae614051e546ebb6aa0dabe7d322508f99e50cfd0d3151c6008": [
+   226522422
+  ],
   "83e8cbcbb73b57406dfa2287985c9f05f35ebcff3f96d0a7399de385186c57c5": [
    217984675
   ],
@@ -14448,6 +15285,9 @@
   ],
   "88db836bdfa4ae5b82a9d92ad732572b2e8d77fab5fb2e5ef6f262bd0b77821d": [
    217986715
+  ],
+  "88ffdfd2c640765926c4b8abb776b97be3a2e8f67d2b0d0111801d2bff4205cb": [
+   226522423
   ],
   "8a9d3ceb13def4d60ba8377145f598323c95ae167e19162b382e7dc21ca95bbf": [
    222161205,
@@ -14524,6 +15364,9 @@
    221725829,
    225910512,
    226080619
+  ],
+  "d0f46f15684105dcb9e929b977e343688dc4f96c43f50b4f4602bbc2bfa8a74a": [
+   226521891
   ],
   "d18e2eefa397cea5b77b3352e8d5ec1067640459611bbcfe72c53c2bb21cc72a": [
    221273596
@@ -14892,7 +15735,10 @@
    226299458,
    226342860,
    226385787,
-   226429174
+   226429174,
+   226472452,
+   226515836,
+   226559114
   ],
   "patoutou.near": [
    223674407,
@@ -15493,7 +16339,17 @@
    226351410,
    226351610,
    226351812,
-   226352019
+   226352019,
+   226500241,
+   226500450,
+   226500659,
+   226500863,
+   226501081,
+   226501287,
+   226501498,
+   226501712,
+   226501915,
+   226502122
   ]
  },
  "sources": {
